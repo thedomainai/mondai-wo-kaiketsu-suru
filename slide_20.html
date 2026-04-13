@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>原則3：モデル（式）で考える - 問題解決フレームワーク</title>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: 'Noto Sans JP', sans-serif;
+    }
+    .slide-container {
+        width: 1280px;
+        height: 720px;
+        position: relative;
+        overflow: hidden;
+        background-color: #ececec;
+    }
+</style>
+</head>
+<body>
+<div class="slide-container">
+<!-- === STANDARDIZED HEADER === -->
+<div style="position: absolute; left: 0; top: 0; width: 1280px; height: 148px; background-color: #ffffff; z-index: 50;"></div>
+<div style="position: absolute; left: 40px; top: 16px; z-index: 55;">
+<p style="margin: 0; padding: 5px 18px; border: 2px solid #000; border-radius: 9999px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; color: #000; letter-spacing: 1px; background: #ffffff; display: inline-block;">PROBLEM SOLVING</p>
+</div>
+<div style="position: absolute; right: 40px; top: 22px; z-index: 55;">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #999; letter-spacing: 0.5px;">第4章 論点を分解する</p>
+</div>
+<div style="position: absolute; left: 80px; top: 52px; width: 1120px; z-index: 55;">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 32px; color: #000; letter-spacing: 1px; line-height: 1.2;">ワーク例</p>
+</div>
+<div style="position: absolute; left: 80px; top: 100px; width: 1120px; z-index: 55;">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #888; line-height: 1.4;">「美味しいハンバーガー」の分解</p>
+</div>
+<!-- === END HEADER === -->
+
+<!-- Background Dot Pattern -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 0; top: 0; width: 1280px; height: 720px; background-image: radial-gradient(circle, rgba(0,0,0,0.05) 1px, transparent 1px); background-size: 20px 20px; opacity: 0.4; z-index: 1;"></div>
+<!-- Background Circle Overlays -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 630px; top: 50px; width: 600px; height: 600px; border-radius: 50%; background-color: rgba(0,0,0,0.05); opacity: 0.7; z-index: 1;"></div>
+<div data-object="true" data-object-type="shape" style="position: absolute; left: -100px; top: 470px; width: 400px; height: 400px; border-radius: 50%; background-color: rgba(0,0,0,0.05); opacity: 0.5; z-index: 1;"></div>
+<!-- Title -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 100px; width: 1120px; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 40px; color: #000000; line-height: 1.2; letter-spacing: 1px; margin: 0;">原則3：モデル（式）で考える</p>
+</div>
+<!-- Subtitle -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 160px; width: 1120px; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 16px; color: #333333; margin: 0;">四則演算で上位要素を成立させるように分解する</p>
+</div>
+
+<!-- ===== LOGIC TREE ===== -->
+
+<!-- Level 0: Root Node - 売上 -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 570px; top: 230px; width: 140px; height: 52px; background-color: #000000; border-radius: 8px; z-index: 5; display: flex; align-items: center; justify-content: center;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 22px; color: #ffffff; margin: 0; text-align: center; line-height: 52px;">売上</p>
+</div>
+
+<!-- Connector: Root → Level 1 -->
+<!-- Vertical from root bottom -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 639px; top: 282px; width: 2px; height: 33px; background-color: #000000; z-index: 3;"></div>
+<!-- Horizontal branch -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 360px; top: 315px; width: 560px; height: 2px; background-color: #000000; z-index: 3;"></div>
+<!-- Vertical down to 客数 -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 359px; top: 317px; width: 2px; height: 33px; background-color: #000000; z-index: 3;"></div>
+<!-- Vertical down to 客単価 -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 919px; top: 317px; width: 2px; height: 33px; background-color: #000000; z-index: 3;"></div>
+
+<!-- Operator × at root branch -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 626px; top: 301px; width: 28px; height: 28px; background-color: #000000; border-radius: 50%; z-index: 6; display: flex; align-items: center; justify-content: center;">
+<p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 16px; color: #ffffff; margin: 0; text-align: center; line-height: 28px;">×</p>
+</div>
+
+<!-- Level 1: 客数 -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 296px; top: 350px; width: 128px; height: 50px; background-color: #000000; border-radius: 8px; z-index: 5; display: flex; align-items: center; justify-content: center;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 18px; color: #ffffff; margin: 0; text-align: center; line-height: 50px;">客数</p>
+</div>
+
+<!-- Level 1: 客単価 -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 856px; top: 350px; width: 128px; height: 50px; background-color: #000000; border-radius: 8px; z-index: 5; display: flex; align-items: center; justify-content: center;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 18px; color: #ffffff; margin: 0; text-align: center; line-height: 50px;">客単価</p>
+</div>
+
+<!-- Connector: 客数 → Level 2 -->
+<!-- Vertical from 客数 bottom -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 359px; top: 400px; width: 2px; height: 35px; background-color: #000000; z-index: 3;"></div>
+<!-- Horizontal branch -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 230px; top: 435px; width: 260px; height: 2px; background-color: #000000; z-index: 3;"></div>
+<!-- Vertical down to 新規顧客数 -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 229px; top: 437px; width: 2px; height: 33px; background-color: #000000; z-index: 3;"></div>
+<!-- Vertical down to リピート顧客数 -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 489px; top: 437px; width: 2px; height: 33px; background-color: #000000; z-index: 3;"></div>
+
+<!-- Operator + at 客数 branch -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 346px; top: 421px; width: 28px; height: 28px; background-color: #000000; border-radius: 50%; z-index: 6; display: flex; align-items: center; justify-content: center;">
+<p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 16px; color: #ffffff; margin: 0; text-align: center; line-height: 28px;">+</p>
+</div>
+
+<!-- Connector: 客単価 → Level 2 -->
+<!-- Vertical from 客単価 bottom -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 919px; top: 400px; width: 2px; height: 35px; background-color: #000000; z-index: 3;"></div>
+<!-- Horizontal branch -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 790px; top: 435px; width: 260px; height: 2px; background-color: #000000; z-index: 3;"></div>
+<!-- Vertical down to 注文点数 -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 789px; top: 437px; width: 2px; height: 33px; background-color: #000000; z-index: 3;"></div>
+<!-- Vertical down to 商品平均単価 -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 1049px; top: 437px; width: 2px; height: 33px; background-color: #000000; z-index: 3;"></div>
+
+<!-- Operator × at 客単価 branch -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 906px; top: 421px; width: 28px; height: 28px; background-color: #000000; border-radius: 50%; z-index: 6; display: flex; align-items: center; justify-content: center;">
+<p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 16px; color: #ffffff; margin: 0; text-align: center; line-height: 28px;">×</p>
+</div>
+
+<!-- Level 2 Leaf Nodes (outlined style to distinguish from parent nodes) -->
+
+<!-- 新規顧客数 -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 150px; top: 470px; width: 160px; height: 50px; background-color: #ffffff; border: 2px solid #000000; border-radius: 8px; z-index: 5; display: flex; align-items: center; justify-content: center;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #000000; margin: 0; text-align: center; line-height: 50px;">新規顧客数</p>
+</div>
+
+<!-- リピート顧客数 -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 400px; top: 470px; width: 180px; height: 50px; background-color: #ffffff; border: 2px solid #000000; border-radius: 8px; z-index: 5; display: flex; align-items: center; justify-content: center;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #000000; margin: 0; text-align: center; line-height: 50px;">リピート顧客数</p>
+</div>
+
+<!-- 注文点数 -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 718px; top: 470px; width: 144px; height: 50px; background-color: #ffffff; border: 2px solid #000000; border-radius: 8px; z-index: 5; display: flex; align-items: center; justify-content: center;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #000000; margin: 0; text-align: center; line-height: 50px;">注文点数</p>
+</div>
+
+<!-- 商品平均単価 -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 968px; top: 470px; width: 164px; height: 50px; background-color: #ffffff; border: 2px solid #000000; border-radius: 8px; z-index: 5; display: flex; align-items: center; justify-content: center;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #000000; margin: 0; text-align: center; line-height: 50px;">商品平均単価</p>
+</div>
+
+<!-- ===== KEY MESSAGE ===== -->
+
+<!-- Effect Box -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 80px; top: 580px; width: 540px; height: 100px; background-color: rgba(255,255,255,0.8); border-left: 4px solid #000000; border-radius: 0 8px 8px 0; z-index: 4;"></div>
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 104px; top: 590px; width: 500px; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; margin: 0 0 8px 0;">効果</p>
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 13px; color: #333333; line-height: 1.7; margin: 0;"><i class="fas fa-check" style="color: #000; font-size: 11px; margin-right: 6px;"></i>分解の漏れに気づきやすくなる<br/><i class="fas fa-check" style="color: #000; font-size: 11px; margin-right: 6px;"></i>各論点の寄与度を定量的に評価できる</p>
+</div>
+
+<!-- Reading Guide Box -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 660px; top: 580px; width: 540px; height: 100px; background-color: rgba(255,255,255,0.8); border-left: 4px solid #000000; border-radius: 0 8px 8px 0; z-index: 4;"></div>
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 684px; top: 590px; width: 500px; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; margin: 0 0 8px 0;">読み方</p>
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 13px; color: #333333; line-height: 1.7; margin: 0;"><span style="display: inline-block; width: 24px; height: 24px; background: #000; color: #fff; border-radius: 50%; text-align: center; line-height: 24px; font-size: 12px; font-weight: 700; margin-right: 4px;">×</span> 掛け算の関係（どちらも必要）<br/><span style="display: inline-block; width: 24px; height: 24px; background: #000; color: #fff; border-radius: 50%; text-align: center; line-height: 24px; font-size: 12px; font-weight: 700; margin-right: 4px;">+</span> 足し算の関係（合計で構成）</p>
+</div>
+<!-- === STANDARDIZED FOOTER === -->
+<div style="position: absolute; left: 0; top: 660px; width: 1280px; height: 60px; background-color: #ffffff; border-top: 1px solid rgba(0,0,0,0.08); z-index: 50;"></div>
+<div style="position: absolute; left: 40px; top: 680px; z-index: 55;">
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 1.5px;">LOGICAL THINKING TRAINING</p>
+</div>
+<div style="position: absolute; right: 40px; top: 680px; z-index: 55;">
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 0.5px;">20 / 47</p>
+</div>
+<!-- === END FOOTER === -->
+</div>
+</body>
+</html>

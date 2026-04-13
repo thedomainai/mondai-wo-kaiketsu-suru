@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>3. ネクストアクション + 4. 残論点 - 問題解決フレームワーク</title>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&amp;family=Space+Grotesk:wght@600;700&amp;family=Roboto+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: 'Noto Sans JP', sans-serif;
+    }
+    .slide-container {
+        width: 1280px;
+        height: 720px;
+        position: relative;
+        overflow: hidden;
+        background-color: #ececec;
+    }
+    .dot-pattern {
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(circle, rgba(0,0,0,0.05) 1px, transparent 1px);
+        background-size: 20px 20px;
+        opacity: 0.4;
+    }
+    .circle-overlay {
+        border-radius: 50%;
+        background-color: rgba(0,0,0,0.05);
+    }
+    .techvantage-pill {
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 9999px;
+        padding: 0.35rem 1.05rem;
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: #000000;
+        font-family: 'Space Grotesk', sans-serif;
+        letter-spacing: 1px;
+    }
+    .header-text {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-weight: 900;
+        letter-spacing: 1px;
+        line-height: 1.2;
+        font-size: 34px;
+        color: #000000;
+        margin: 0;
+    }
+    .section-header {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        color: #000000;
+        margin: 0 0 0.7rem 0;
+        border-bottom: 2px solid #000;
+        padding-bottom: 0.35rem;
+        display: inline-block;
+    }
+    .body-text {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #000000;
+        margin: 0 0 0.35rem 0;
+    }
+    .list-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 0.7rem;
+    }
+    .list-number {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        color: #000;
+        margin-right: 0.7rem;
+        min-width: 1.2rem;
+    }
+    .example-box {
+        background-color: #2b2b2b;
+        color: #f8f8f2;
+        padding: 1.05rem;
+        border-radius: 8px;
+        font-family: 'Roboto Mono', monospace;
+        font-size: 13px;
+        line-height: 1.8;
+        margin-top: 1.05rem;
+    }
+    .nav-arrow {
+        background-color: #ffffff;
+        border-radius: 50%;
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+</style>
+</head>
+<body>
+<div class="slide-container">
+<!-- === STANDARDIZED HEADER === -->
+<div style="position: absolute; left: 0; top: 0; width: 1280px; height: 148px; background-color: #ffffff; z-index: 50;"></div>
+<div style="position: absolute; left: 40px; top: 16px; z-index: 55;">
+<p style="margin: 0; padding: 5px 18px; border: 2px solid #000; border-radius: 9999px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; color: #000; letter-spacing: 1px; background: #ffffff; display: inline-block;">PROBLEM SOLVING</p>
+</div>
+<div style="position: absolute; right: 40px; top: 22px; z-index: 55;">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #999; letter-spacing: 0.5px;">まとめ</p>
+</div>
+<div style="position: absolute; left: 80px; top: 52px; width: 1120px; z-index: 55;">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 32px; color: #000; letter-spacing: 1px; line-height: 1.2;">覚えるべき5つの原則</p>
+</div>
+<div style="position: absolute; left: 80px; top: 100px; width: 1120px; z-index: 55;">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #888; line-height: 1.4;">問題解決の5つの原則</p>
+</div>
+<!-- === END HEADER === -->
+
+<!-- Background Shapes -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 0; top: 0; width: 1280px; height: 720px; z-index: 1;">
+<div class="dot-pattern"></div>
+</div>
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 600px; top: 20px; width: 660px; height: 660px; z-index: 1;">
+<div class="circle-overlay" style="width: 100%; height: 100%; opacity: 0.7;"></div>
+</div>
+<div data-object="true" data-object-type="shape" style="position: absolute; left: -100px; top: 470px; width: 400px; height: 400px; z-index: 1;">
+<div class="circle-overlay" style="width: 100%; height: 100%; opacity: 0.5;"></div>
+</div>
+<!-- Title -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 110px; width: 800px; height: 60px; z-index: 10;">
+<h1 class="header-text">3. ネクストアクション + 4. 残論点</h1>
+</div>
+<!-- Left Column: 3. ネクストアクション -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 220px; width: 500px; height: 350px; z-index: 10;">
+<h2 class="section-header">3. ネクストアクション</h2>
+<p class="body-text" style="font-weight: 700;">担当者・期限とともに具体的な行動を明示</p>
+<div class="example-box">
+<p style="margin:0;">担当：山田さん</p>
+<p style="margin:0;">期限：今週金曜18時</p>
+<p style="margin:0;">内容：顧客アンケート実施設計</p>
+</div>
+</div>
+<!-- Right Column: 4. 残論点 -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 660px; top: 220px; width: 540px; height: 350px; z-index: 10;">
+<h2 class="section-header">4. 残論点</h2>
+<p class="body-text" style="font-weight: 700; margin-bottom: 1.05rem;">解決しきれなかった論点を正直に示す</p>
+<p class="body-text" style="font-weight: 700; color: #555; margin-bottom: 0.7rem;">2つの原則：</p>
+<div class="list-item">
+<div class="list-number">1</div>
+<div>
+<p class="body-text" style="font-weight: 700;">残論点を隠す＝問題の先送り＝問題解決の放棄</p>
+</div>
+</div>
+<div class="list-item">
+<div class="list-number">2</div>
+<div>
+<p class="body-text" style="font-weight: 700;">不確実性の明示＝リスク管理が可能</p>
+</div>
+</div>
+</div>
+<!-- === STANDARDIZED FOOTER === -->
+<div style="position: absolute; left: 0; top: 660px; width: 1280px; height: 60px; background-color: #ffffff; border-top: 1px solid rgba(0,0,0,0.08); z-index: 50;"></div>
+<div style="position: absolute; left: 40px; top: 680px; z-index: 55;">
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 1.5px;">LOGICAL THINKING TRAINING</p>
+</div>
+<div style="position: absolute; right: 40px; top: 680px; z-index: 55;">
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 0.5px;">46 / 47</p>
+</div>
+<!-- === END FOOTER === -->
+</div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Q&amp;A - ご質問をお待ちしています</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&amp;family=Space+Grotesk:wght@600;700;900&amp;display=swap" rel="stylesheet"/>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: 'Noto Sans JP', sans-serif;
+    }
+    
+    .slide-container {
+        width: 1280px;
+        height: 720px;
+        position: relative;
+        overflow: hidden;
+        background-color: #ececec;
+    }
+    
+    .dot-pattern {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px);
+        background-size: 20px 20px;
+        opacity: 0.4;
+    }
+    
+    .circle-overlay {
+        position: absolute;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(236,236,236,0) 70%);
+    }
+    
+    .header-text {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 900;
+        letter-spacing: 2px;
+        line-height: 1.1;
+        font-size: 72px;
+        color: #000000;
+        margin: 0;
+    }
+    
+    .subtitle-text {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-size: 22px;
+        color: #000000;
+        margin-top: 10px;
+        margin-bottom: 28px;
+    }
+    
+    .body-text {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+        font-size: 18px;
+        line-height: 1.6;
+        color: #333333;
+        max-width: 650px;
+        margin: 0;
+    }
+    
+    .closing-text {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-weight: 900;
+        letter-spacing: 1px;
+        font-size: 26px;
+        color: #000000;
+        margin-top: 32px;
+        margin-bottom: 0;
+    }
+    
+    .brand-pill {
+        background-color: rgba(0, 0, 0, 0.1);
+        border: 2px solid #000000;
+        border-radius: 9999px;
+        padding: 8px 24px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #000000;
+        font-family: 'Space Grotesk', sans-serif;
+    }
+    
+    .nav-arrow {
+        background-color: #ffffff;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+</style>
+</head>
+<body>
+<div class="slide-container">
+<!-- Background Elements -->
+<div class="dot-pattern" data-object="true" data-object-type="shape" style="position: absolute; left: 0; top: 0; width: 1280px; height: 720px; z-index: 1;"></div>
+<div class="circle-overlay" data-object="true" data-object-type="shape" style="position: absolute; left: 780px; top: -100px; width: 600px; height: 600px; opacity: 0.7; z-index: 1;"></div>
+<div class="circle-overlay" data-object="true" data-object-type="shape" style="position: absolute; left: -100px; top: 420px; width: 500px; height: 500px; opacity: 0.5; z-index: 1;"></div>
+<div class="circle-overlay" data-object="true" data-object-type="shape" style="position: absolute; left: 780px; top: 320px; width: 300px; height: 300px; opacity: 0.3; z-index: 1;"></div>
+<!-- Branding -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 40px; top: 32px; width: 220px; height: 40px; z-index: 10;">
+<div class="brand-pill" style="display: inline-block;">
+            PROBLEM SOLVING
+        </div>
+</div>
+<!-- Main Content -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 160px; width: 650px; height: 450px; z-index: 10;">
+<h1 class="header-text">Q&amp;A</h1>
+<p class="subtitle-text">ご質問をお待ちしています</p>
+<p class="body-text">
+            問題を再現性高く解決する能力が身につけば、世の中の全てが問題と論点に見える。<br/>
+            理論的には何事も上手くいく。
+        </p>
+<p class="closing-text">問題を解決しましょう。</p>
+</div>
+<!-- Navigation Arrow -->
+<div data-object="true" data-object-type="icon" style="position: absolute; left: 1192px; top: 640px; width: 48px; height: 48px; z-index: 10;">
+<div class="nav-arrow">
+<i class="fas fa-chevron-right text-black text-xl"></i>
+</div>
+</div>
+</div>
+</body>
+</html>

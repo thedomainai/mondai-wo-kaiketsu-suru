@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ピラミッドストラクチャー - 再現性のある問題解決フレームワーク</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&amp;family=Space+Grotesk:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: 'Noto Sans JP', sans-serif;
+        background-color: #ffffff;
+    }
+    .slide-container {
+        width: 1280px;
+        height: 720px;
+        position: relative;
+        overflow: hidden;
+        background-color: #ffffff;
+    }
+    p {
+        margin: 0;
+    }
+</style>
+</head>
+<body>
+<div class="slide-container">
+<!-- Background Dot Pattern (Shape) -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 0px; top: 0px; width: 1280px; height: 720px; background-image: radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px); background-size: 20px 20px; opacity: 0.4; z-index: 1;"></div>
+<!-- Gray Accent Banner Top-Right (Shape) -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 880px; top: 0px; width: 400px; height: 180px; background-color: #ececec; clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%); z-index: 1;"></div>
+<!-- Branding Pill (Textbox) -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 40px; top: 24px; width: 220px; height: 40px; z-index: 10;">
+<p style="padding: 8px 24px; border: 2px solid #000000; border-radius: 9999px; background-color: #ffffff; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 1px; color: #000000; text-align: center; margin: 0;">PROBLEM SOLVING</p>
+</div>
+<!-- Section Title and Subtitle (Textbox) -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 80px; width: 780px; height: 100px; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 36px; color: #000000; line-height: 1.2; margin: 0 0 8px 0; letter-spacing: 1px;">ピラミッドストラクチャー</p>
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #333333; line-height: 1.5; margin: 0;">解を伝える際の基本構造はピラミッド型である</p>
+</div>
+<!-- Tree Diagram Lines (Shapes) -->
+<!-- Root to H-line 1 -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 639px; top: 228px; width: 2px; height: 16px; background-color: #000000; z-index: 5;"></div>
+<!-- H-line 1 -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 239px; top: 244px; width: 802px; height: 2px; background-color: #000000; z-index: 5;"></div>
+<!-- H-line to Child A -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 239px; top: 244px; width: 2px; height: 16px; background-color: #000000; z-index: 5;"></div>
+<!-- H-line to Child B -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 639px; top: 244px; width: 2px; height: 16px; background-color: #000000; z-index: 5;"></div>
+<!-- H-line to Child C -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 1039px; top: 244px; width: 2px; height: 16px; background-color: #000000; z-index: 5;"></div>
+<!-- Child A to H-line A -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 239px; top: 300px; width: 2px; height: 16px; background-color: #000000; z-index: 5;"></div>
+<!-- H-line A -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 169px; top: 316px; width: 142px; height: 2px; background-color: #000000; z-index: 5;"></div>
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 169px; top: 316px; width: 2px; height: 16px; background-color: #000000; z-index: 5;"></div>
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 309px; top: 316px; width: 2px; height: 16px; background-color: #000000; z-index: 5;"></div>
+<!-- Child B to H-line B -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 639px; top: 300px; width: 2px; height: 16px; background-color: #000000; z-index: 5;"></div>
+<!-- H-line B -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 569px; top: 316px; width: 142px; height: 2px; background-color: #000000; z-index: 5;"></div>
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 569px; top: 316px; width: 2px; height: 16px; background-color: #000000; z-index: 5;"></div>
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 709px; top: 316px; width: 2px; height: 16px; background-color: #000000; z-index: 5;"></div>
+<!-- Child C to H-line C -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 1039px; top: 300px; width: 2px; height: 16px; background-color: #000000; z-index: 5;"></div>
+<!-- H-line C -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 969px; top: 316px; width: 142px; height: 2px; background-color: #000000; z-index: 5;"></div>
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 969px; top: 316px; width: 2px; height: 16px; background-color: #000000; z-index: 5;"></div>
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 1109px; top: 316px; width: 2px; height: 16px; background-color: #000000; z-index: 5;"></div>
+<!-- Tree Diagram Nodes (Textboxes) -->
+<!-- Root Node -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 490px; top: 188px; width: 300px; height: 40px; background-color: #000000; border-radius: 6px; display: flex; align-items: center; justify-content: center; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #ffffff; margin: 0;">結論（メインメッセージ）</p>
+</div>
+<!-- Child A -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 140px; top: 260px; width: 200px; height: 40px; background-color: #ececec; border: 2px solid #000000; border-radius: 6px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 13px; color: #000000; margin: 0;">根拠1</p>
+</div>
+<!-- Child B -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 540px; top: 260px; width: 200px; height: 40px; background-color: #ececec; border: 2px solid #000000; border-radius: 6px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 13px; color: #000000; margin: 0;">根拠2</p>
+</div>
+<!-- Child C -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 940px; top: 260px; width: 200px; height: 40px; background-color: #ececec; border: 2px solid #000000; border-radius: 6px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 13px; color: #000000; margin: 0;">根拠3</p>
+</div>
+<!-- A-1, A-2 -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 100px; top: 332px; width: 140px; height: 32px; background-color: #f8f8f8; border: 1px solid #000000; border-radius: 6px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 13px; color: #000000; margin: 0;">事実 / データ</p>
+</div>
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 240px; top: 332px; width: 140px; height: 32px; background-color: #f8f8f8; border: 1px solid #000000; border-radius: 6px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 13px; color: #000000; margin: 0;">事実 / データ</p>
+</div>
+<!-- B-1, B-2 -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 500px; top: 332px; width: 140px; height: 32px; background-color: #f8f8f8; border: 1px solid #000000; border-radius: 6px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 13px; color: #000000; margin: 0;">事実 / データ</p>
+</div>
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 640px; top: 332px; width: 140px; height: 32px; background-color: #f8f8f8; border: 1px solid #000000; border-radius: 6px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 13px; color: #000000; margin: 0;">事実 / データ</p>
+</div>
+<!-- C-1, C-2 -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 900px; top: 332px; width: 140px; height: 32px; background-color: #f8f8f8; border: 1px solid #000000; border-radius: 6px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 13px; color: #000000; margin: 0;">事実 / データ</p>
+</div>
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 1040px; top: 332px; width: 140px; height: 32px; background-color: #f8f8f8; border: 1px solid #000000; border-radius: 6px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 13px; color: #000000; margin: 0;">事実 / データ</p>
+</div>
+<!-- Points Section (Textbox) -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 400px; width: 1120px; height: 140px; background-color: rgba(0,0,0,0.05); border-left: 4px solid #000000; padding: 16px 20px; box-sizing: border-box; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 18px; color: #000000; margin: 0 0 10px 0;">3つの検証軸</p>
+<div style="display: flex; align-items: flex-start; margin-bottom: 4px;">
+<span style="color: #000000; margin-right: 8px; font-size: 12px; margin-top: 4px;">●</span>
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 13px; color: #333333; line-height: 1.5; margin: 0;">上位のメッセージは下位のメッセージの要約になっている</p>
+</div>
+<div style="display: flex; align-items: flex-start; margin-bottom: 4px;">
+<span style="color: #000000; margin-right: 8px; font-size: 12px; margin-top: 4px;">●</span>
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 13px; color: #333333; line-height: 1.5; margin: 0;">同一階層のメッセージはMECEに並んでいる</p>
+</div>
+<div style="display: flex; align-items: flex-start;">
+<span style="color: #000000; margin-right: 8px; font-size: 12px; margin-top: 4px;">●</span>
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 13px; color: #333333; line-height: 1.5; margin: 0;">So What?（だから何？）とWhy So?（なぜそう言える？）で上下の論理を検証する</p>
+</div>
+</div>
+<!-- Navigation Arrow (Icon) -->
+<div data-object="true" data-object-type="icon" style="position: absolute; left: 1192px; top: 640px; width: 48px; height: 48px; background-color: #000000; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 6px rgba(0,0,0,0.2); z-index: 10;">
+<i class="fas fa-chevron-right" style="color: #ffffff; font-size: 20px;"></i>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>問題を解決する - スライドビューワー</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background: #1a1a1a;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    background: #111;
+    border-bottom: 1px solid #333;
+    flex-shrink: 0;
+  }
+  header h1 { font-size: 14px; font-weight: 600; color: #aaa; }
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .controls button {
+    background: #333;
+    border: none;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background 0.15s;
+  }
+  .controls button:hover { background: #555; }
+  .controls button:disabled { opacity: 0.3; cursor: default; }
+  .controls span { font-size: 13px; color: #888; min-width: 70px; text-align: center; }
+  .main {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+  }
+  .sidebar {
+    width: 220px;
+    background: #111;
+    border-right: 1px solid #333;
+    overflow-y: auto;
+    flex-shrink: 0;
+  }
+  .sidebar button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    color: #999;
+    padding: 10px 16px;
+    font-size: 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #222;
+    transition: all 0.15s;
+  }
+  .sidebar button:hover { background: #222; color: #fff; }
+  .sidebar button.active { background: #2a2a2a; color: #fff; border-left: 3px solid #fff; }
+  .sidebar button .num { color: #555; margin-right: 8px; font-variant-numeric: tabular-nums; }
+  .viewer {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    overflow: hidden;
+  }
+  .viewer iframe {
+    width: 1280px;
+    height: 720px;
+    border: none;
+    border-radius: 4px;
+    transform-origin: center center;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>問題を解決する — 全50スライド</h1>
+  <div class="controls">
+    <button id="prevBtn" onclick="go(-1)">← Prev</button>
+    <span id="counter">1 / 50</span>
+    <button id="nextBtn" onclick="go(1)">Next →</button>
+  </div>
+</header>
+<div class="main">
+  <div class="sidebar" id="sidebar"></div>
+  <div class="viewer">
+    <iframe id="slideFrame" src="slide_01.html"></iframe>
+  </div>
+</div>
+<script>
+const TOTAL = 50;
+let current = 1;
+
+const titles = [
+  "問題を解決する",
+  "アジェンダ",
+  "ワーク",
+  "ワーク：問題解決の体験",
+  "前提・背景",
+  "問題解決能力が高いとは何か",
+  "結果と行動を切り離す",
+  "再現性とは「正しく間違えること」",
+  "問題解決の概要",
+  "問題解決の本質",
+  "問題解決の型（7ステップ）",
+  "メタ認知：プロセスを回す",
+  "論点を定義する",
+  "論点には必ず「べき」を含める",
+  "実践ルール",
+  "論点を分解する",
+  "分解の5原則：概要",
+  "原則1：ツリー状に分解する",
+  "原則2：MECEに分解する",
+  "原則3：モデル（式）で考える",
+  "原則4：5分以上1つの論点を考えない",
+  "原則5：トップダウンとボトムアップ",
+  "ワーク例：ハンバーガーの分解",
+  "ダメな分解 vs 良い分解",
+  "仮説を構築する",
+  "仮説構築の目的",
+  "良い仮説の条件",
+  "仮説の作り方",
+  "仮説を作る技法",
+  "知見がないときどうするか",
+  "Deep Dive：情報の海に潜る",
+  "仮の答えを出すことから逃げない",
+  "論点と仮説を検証する",
+  "何を先に検証するか",
+  "検証可能な形に変換する",
+  "検証手段を選ぶ",
+  "トレードオフを評価する",
+  "検証結果から次の行動を決める",
+  "問題解決におけるコミュニケーション",
+  "受け手視点で伝達を設計する",
+  "意思決定構造を押さえる",
+  "誤解ポイントを先回りして潰す",
+  "解を伝える基本構造：5要素",
+  "結論：曖昧性を排除する",
+  "根拠：センターピンに接続する",
+  "ネクストアクション + 残論点",
+  "情報確度の明示",
+  "ピラミッドストラクチャー",
+  "まとめ：覚えるべき5つの原則",
+  "Q&A"
+];
+
+// Build sidebar
+const sidebar = document.getElementById('sidebar');
+titles.forEach((t, i) => {
+  const btn = document.createElement('button');
+  btn.innerHTML = `<span class="num">${String(i+1).padStart(2,'0')}</span>${t}`;
+  btn.onclick = () => goTo(i + 1);
+  btn.id = `sb-${i+1}`;
+  sidebar.appendChild(btn);
+});
+
+function goTo(n) {
+  current = Math.max(1, Math.min(TOTAL, n));
+  document.getElementById('slideFrame').src = `slide_${String(current).padStart(2,'0')}.html`;
+  document.getElementById('counter').textContent = `${current} / ${TOTAL}`;
+  document.getElementById('prevBtn').disabled = current === 1;
+  document.getElementById('nextBtn').disabled = current === TOTAL;
+  document.querySelectorAll('.sidebar button').forEach(b => b.classList.remove('active'));
+  const active = document.getElementById(`sb-${current}`);
+  if (active) { active.classList.add('active'); active.scrollIntoView({ block: 'nearest' }); }
+}
+
+function go(delta) { goTo(current + delta); }
+
+// Keyboard nav
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); go(1); }
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); go(-1); }
+});
+
+// Fit iframe to viewport
+function fitIframe() {
+  const viewer = document.querySelector('.viewer');
+  const iframe = document.getElementById('slideFrame');
+  const scaleX = (viewer.clientWidth - 48) / 1280;
+  const scaleY = (viewer.clientHeight - 48) / 720;
+  const scale = Math.min(scaleX, scaleY, 1);
+  iframe.style.transform = `scale(${scale})`;
+}
+window.addEventListener('resize', fitIframe);
+fitIframe();
+goTo(1);
+</script>
+</body>
+</html>

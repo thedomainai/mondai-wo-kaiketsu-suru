@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>何を先に検証するか</title>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet"/>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #ffffff;
+    }
+    .slide-container {
+        width: 1280px;
+        height: 720px;
+        position: relative;
+        overflow: hidden;
+        background-color: #ffffff;
+        font-family: 'Noto Sans JP', sans-serif;
+    }
+</style>
+</head>
+<body>
+<div class="slide-container">
+<!-- === STANDARDIZED HEADER === -->
+<div style="position: absolute; left: 0; top: 0; width: 1280px; height: 148px; background-color: #ffffff; z-index: 50;"></div>
+<div style="position: absolute; left: 40px; top: 16px; z-index: 55;">
+<p style="margin: 0; padding: 5px 18px; border: 2px solid #000; border-radius: 9999px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; color: #000; letter-spacing: 1px; background: #ffffff; display: inline-block;">PROBLEM SOLVING</p>
+</div>
+<div style="position: absolute; right: 40px; top: 22px; z-index: 55;">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #999; letter-spacing: 0.5px;">第6章 仮説を検証する</p>
+</div>
+<div style="position: absolute; left: 80px; top: 52px; width: 1120px; z-index: 55;">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 32px; color: #000; letter-spacing: 1px; line-height: 1.2;">トレードオフを評価する</p>
+</div>
+<div style="position: absolute; left: 80px; top: 100px; width: 1120px; z-index: 55;">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #888; line-height: 1.4;">選択肢が複数ある場合は表形式で可視化する</p>
+</div>
+<!-- === END HEADER === -->
+
+<!-- Background Dot Pattern (Shape) -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 0px; top: 0px; width: 1280px; height: 720px; background-image: radial-gradient(circle, rgba(236,236,236,0.5) 1px, transparent 1px); background-size: 20px 20px; z-index: 1;"></div>
+<!-- Gray Banner (Shape) -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 60px; top: 0px; width: 1220px; height: 180px; background-color: #ececec; clip-path: polygon(0 0, 100% 0, 100% 100%, 25% 100%); z-index: 1;"></div>
+<!-- Section Title (Textbox) -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 120px; width: 1120px; height: 80px; z-index: 10;">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 44px; color: #000000; line-height: 1.2; letter-spacing: 2px;">何を先に検証するか</p>
+</div>
+
+<!-- Visual Hierarchy: Center Pin Concept -->
+<!-- Constraint Section -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 230px; width: 1120px; height: 60px; z-index: 10; background-color: #f5f5f5; border-left: 8px solid #666666; border-radius: 8px; padding: 16px 24px; box-sizing: border-box;">
+<p style="margin: 0; font-size: 20px; font-weight: 700; color: #666666; line-height: 1.4;">
+<span style="font-weight: 900; color: #000000; margin-right: 12px;">制約:</span>全ての論点を同時に検証できない
+</p>
+</div>
+
+<!-- Priority Principle + Center Pin Visualization -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 320px; width: 1120px; height: 80px; z-index: 10; background-color: #ececec; border-radius: 8px; padding: 20px 24px; box-sizing: border-box;">
+<p style="margin: 0; font-size: 24px; font-weight: 900; color: #000000; line-height: 1.4; text-align: center;">
+優先順位の原則: 最初に見極める = <span style="background-color: #000000; color: #ffffff; padding: 8px 20px; border-radius: 8px; font-size: 28px; margin: 0 8px; display: inline-block;">センターピン</span> (最も影響の大きい論点)
+</p>
+</div>
+
+<!-- Visual Hierarchy of Hypotheses -->
+<div style="position: absolute; left: 80px; top: 430px; width: 1120px; height: 200px; z-index: 10;">
+<!-- Center Pin (Prominent) -->
+<div style="position: absolute; left: 50%; transform: translateX(-50%); top: 0; width: 360px; height: 120px; background-color: #000000; border-radius: 16px; padding: 24px; box-sizing: border-box; box-shadow: 0 8px 16px rgba(0,0,0,0.3);">
+<div style="display: flex; align-items: center; margin-bottom: 12px;">
+<i class="fas fa-star" style="color: #ffffff; font-size: 28px; margin-right: 12px;"></i>
+<p style="margin: 0; font-size: 20px; font-weight: 900; color: #ffffff; text-transform: uppercase; letter-spacing: 1px;">Center Pin</p>
+</div>
+<p style="margin: 0; font-size: 18px; font-weight: 900; color: #ffffff; line-height: 1.4; text-align: center;">
+全論点を検証せずとも<br/>前に進める
+</p>
+</div>
+
+<!-- Subordinate Hypothesis (Left) -->
+<div style="position: absolute; left: 0; top: 60px; width: 240px; height: 80px; background-color: #f5f5f5; border: 3px solid #cccccc; border-radius: 12px; padding: 16px; box-sizing: border-box;">
+<p style="margin: 0; font-size: 16px; font-weight: 700; color: #666666; line-height: 1.4; text-align: center;">
+その他の論点
+</p>
+</div>
+
+<!-- Subordinate Hypothesis (Right) -->
+<div style="position: absolute; right: 0; top: 60px; width: 240px; height: 80px; background-color: #f5f5f5; border: 3px solid #cccccc; border-radius: 12px; padding: 16px; box-sizing: border-box;">
+<p style="margin: 0; font-size: 16px; font-weight: 700; color: #666666; line-height: 1.4; text-align: center;">
+その他の論点
+</p>
+</div>
+
+<!-- Connection lines from center to subordinates -->
+<div style="position: absolute; left: 280px; top: 100px; width: 260px; height: 3px; background-color: #cccccc; transform: rotate(-10deg); transform-origin: right;"></div>
+<div style="position: absolute; right: 280px; top: 100px; width: 260px; height: 3px; background-color: #cccccc; transform: rotate(10deg); transform-origin: left;"></div>
+</div>
+
+<!-- Importance Section (Bottom) -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 630px; width: 1120px; height: 50px; z-index: 10;">
+<div style="display: flex; gap: 32px; align-items: center; justify-content: center;">
+<div style="display: flex; align-items: center;">
+<span style="display: inline-block; width: 12px; height: 12px; background-color: #666666; margin-right: 12px;"></span>
+<p style="margin: 0; font-size: 17px; font-weight: 700; color: #666666;">
+センターピンを外す → いくら精緻でも意思決定に効かない
+</p>
+</div>
+<div style="display: flex; align-items: center;">
+<span style="display: inline-block; width: 12px; height: 12px; background-color: #000000; margin-right: 12px;"></span>
+<p style="margin: 0; font-size: 17px; font-weight: 900; color: #000000;">
+センターピンを押さえる → 全論点を検証せずとも前に進める
+</p>
+</div>
+</div>
+</div>
+<!-- === STANDARDIZED FOOTER === -->
+<div style="position: absolute; left: 0; top: 660px; width: 1280px; height: 60px; background-color: #ffffff; border-top: 1px solid rgba(0,0,0,0.08); z-index: 50;"></div>
+<div style="position: absolute; left: 40px; top: 680px; z-index: 55;">
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 1.5px;">LOGICAL THINKING TRAINING</p>
+</div>
+<div style="position: absolute; right: 40px; top: 680px; z-index: 55;">
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 0.5px;">34 / 47</p>
+</div>
+<!-- === END FOOTER === -->
+</div>
+</body>
+</html>

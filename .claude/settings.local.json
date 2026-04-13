@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(lsof:*)",
+      "Bash(python3:*)",
+      "Bash(curl:*)",
+      "Bash(/Applications/Google Chrome.app/Contents/MacOS/Google Chrome:*)",
+      "Bash(node:*)",
+      "Bash(kill:*)",
+      "Bash(grep:*)",
+      "Bash(xargs:*)",
+      "Bash(for i in 02 09 16 25 33 39 48 50)",
+      "Bash(do echo \"=== slide_$i.html ===\" grep -E \"第[0-9]章|<title>\" /private/tmp/slides/slide_$i.html)",
+      "Bash(for i in 33 39)",
+      "Bash(do echo \"=== slide_$i.html ===\" sed -n '28,57p' /private/tmp/slides/slide_$i.html)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}

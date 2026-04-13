@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>原則1：ツリー状に分解する - 再現性のある問題解決フレームワーク</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&amp;family=Space+Grotesk:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: 'Noto Sans JP', sans-serif;
+        background-color: #ffffff;
+    }
+    .slide-container {
+        width: 1280px;
+        height: 720px;
+        position: relative;
+        overflow: hidden;
+        background-color: #ffffff;
+    }
+    p {
+        margin: 0;
+    }
+</style>
+</head>
+<body>
+<div class="slide-container">
+<!-- === STANDARDIZED HEADER === -->
+<div style="position: absolute; left: 0; top: 0; width: 1280px; height: 148px; background-color: #ffffff; z-index: 50;"></div>
+<div style="position: absolute; left: 40px; top: 16px; z-index: 55;">
+<p style="margin: 0; padding: 5px 18px; border: 2px solid #000; border-radius: 9999px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; color: #000; letter-spacing: 1px; background: #ffffff; display: inline-block;">PROBLEM SOLVING</p>
+</div>
+<div style="position: absolute; right: 40px; top: 22px; z-index: 55;">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #999; letter-spacing: 0.5px;">第4章 論点を分解する</p>
+</div>
+<div style="position: absolute; left: 80px; top: 52px; width: 1120px; z-index: 55;">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 32px; color: #000; letter-spacing: 1px; line-height: 1.2;">原則4：5分ルール</p>
+</div>
+<div style="position: absolute; left: 80px; top: 100px; width: 1120px; z-index: 55;">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #888; line-height: 1.4;">5分以上かかるなら論点が間違っているか、さらに分解が必要</p>
+</div>
+<!-- === END HEADER === -->
+
+<!-- Background Dot Pattern (Shape) -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 0px; top: 0px; width: 1280px; height: 720px; background-image: radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px); background-size: 20px 20px; opacity: 0.4; z-index: 1;"></div>
+<!-- Gray Accent Banner Top-Right (Shape) -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 880px; top: 0px; width: 400px; height: 180px; background-color: #ececec; clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%); z-index: 1;"></div>
+<!-- Section Title and Subtitle (Textbox) -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 110px; width: 780px; height: 80px; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 36px; color: #000000; line-height: 1.2; margin: 0 0 8px 0; letter-spacing: 1px;">原則1：ツリー状に分解する</p>
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #333333; line-height: 1.5; margin: 0;">論点はツリー構造（イシューツリー）で階層的に分解する。</p>
+</div>
+<!-- Tree Diagram Lines (Shapes) -->
+<!-- Root to H-line -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 639px; top: 236px; width: 2px; height: 25px; background-color: #000000; z-index: 5;"></div>
+<!-- H-line 1 -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 239px; top: 261px; width: 802px; height: 2px; background-color: #000000; z-index: 5;"></div>
+<!-- H-line to Child A -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 239px; top: 261px; width: 2px; height: 25px; background-color: #000000; z-index: 5;"></div>
+<!-- H-line to Child B -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 639px; top: 261px; width: 2px; height: 25px; background-color: #000000; z-index: 5;"></div>
+<!-- H-line to Child C -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 1039px; top: 261px; width: 2px; height: 25px; background-color: #000000; z-index: 5;"></div>
+<!-- Child A to H-line 2 -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 239px; top: 326px; width: 2px; height: 25px; background-color: #000000; z-index: 5;"></div>
+<!-- H-line 2 -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 139px; top: 351px; width: 222px; height: 2px; background-color: #000000; z-index: 5;"></div>
+<!-- H-line 2 to A-1 -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 139px; top: 351px; width: 2px; height: 25px; background-color: #000000; z-index: 5;"></div>
+<!-- H-line 2 to A-2 -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 359px; top: 351px; width: 2px; height: 25px; background-color: #000000; z-index: 5;"></div>
+<!-- Tree Diagram Nodes (Textboxes) -->
+<!-- Root Node -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 540px; top: 196px; width: 200px; height: 40px; background-color: #000000; border-radius: 8px; display: flex; align-items: center; justify-content: center; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #ffffff; margin: 0; padding: 6px 16px;">大論点</p>
+</div>
+<!-- Child A -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 140px; top: 286px; width: 200px; height: 40px; background-color: #ececec; border: 2px solid #000000; border-radius: 8px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; margin: 0; padding: 6px 16px;">小論点A</p>
+</div>
+<!-- Child B -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 540px; top: 286px; width: 200px; height: 40px; background-color: #ececec; border: 2px solid #000000; border-radius: 8px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; margin: 0; padding: 6px 16px;">小論点B</p>
+</div>
+<!-- Child C -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 940px; top: 286px; width: 200px; height: 40px; background-color: #ececec; border: 2px solid #000000; border-radius: 8px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; margin: 0; padding: 6px 16px;">小論点C</p>
+</div>
+<!-- A-1 -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 59px; top: 376px; width: 160px; height: 32px; background-color: #f8f8f8; border: 1px solid #000000; border-radius: 8px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #000000; margin: 0; padding: 6px 16px;">検証項目1</p>
+</div>
+<!-- A-2 -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 279px; top: 376px; width: 160px; height: 32px; background-color: #f8f8f8; border: 1px solid #000000; border-radius: 8px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #000000; margin: 0; padding: 6px 16px;">検証項目2</p>
+</div>
+<!-- Points Section (Textbox) -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 460px; width: 1120px; height: 120px; background-color: rgba(0,0,0,0.05); border-left: 4px solid #000000; padding: 10px 16px; box-sizing: border-box; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 16px; color: #000000; margin: 0 0 8px 0;">ポイント</p>
+<div style="display: flex; align-items: flex-start; margin-bottom: 6px;">
+<span style="color: #000000; margin-right: 8px; font-size: 12px; margin-top: 3px;">●</span>
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #333333; line-height: 1.5; margin: 0;">上位の論点に対して、下位の論点が「答え」の構成要素になるように配置する</p>
+</div>
+<div style="display: flex; align-items: flex-start;">
+<span style="color: #000000; margin-right: 8px; font-size: 12px; margin-top: 3px;">●</span>
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #333333; line-height: 1.5; margin: 0;">親子関係が明確な階層構造を作る</p>
+</div>
+</div>
+<!-- === STANDARDIZED FOOTER === -->
+<div style="position: absolute; left: 0; top: 660px; width: 1280px; height: 60px; background-color: #ffffff; border-top: 1px solid rgba(0,0,0,0.08); z-index: 50;"></div>
+<div style="position: absolute; left: 40px; top: 680px; z-index: 55;">
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 1.5px;">LOGICAL THINKING TRAINING</p>
+</div>
+<div style="position: absolute; right: 40px; top: 680px; z-index: 55;">
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 0.5px;">18 / 47</p>
+</div>
+<!-- === END FOOTER === -->
+</div>
+</body>
+</html>

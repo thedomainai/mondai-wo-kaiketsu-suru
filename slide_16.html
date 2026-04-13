@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>論点を分解する - 再現性のある問題解決フレームワーク</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&amp;family=Space+Grotesk:wght@700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: 'Noto Sans JP', sans-serif;
+        background-color: #ececec;
+    }
+    .slide-container {
+        width: 1280px;
+        height: 720px;
+        position: relative;
+        overflow: hidden;
+        background-color: #ececec;
+    }
+</style>
+</head>
+<body>
+<div class="slide-container">
+<!-- === STANDARDIZED HEADER === -->
+<div style="position: absolute; left: 0; top: 0; width: 1280px; height: 148px; background-color: #ffffff; z-index: 50;"></div>
+<div style="position: absolute; left: 40px; top: 16px; z-index: 55;">
+<p style="margin: 0; padding: 5px 18px; border: 2px solid #000; border-radius: 9999px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; color: #000; letter-spacing: 1px; background: #ffffff; display: inline-block;">PROBLEM SOLVING</p>
+</div>
+<div style="position: absolute; right: 40px; top: 22px; z-index: 55;">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #999; letter-spacing: 0.5px;">第4章 論点を分解する</p>
+</div>
+<div style="position: absolute; left: 80px; top: 52px; width: 1120px; z-index: 55;">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 32px; color: #000; letter-spacing: 1px; line-height: 1.2;">原則2：MECEに分解する</p>
+</div>
+<div style="position: absolute; left: 80px; top: 100px; width: 1120px; z-index: 55;">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #888; line-height: 1.4;">1階層ずつ、網羅的かつMECEに</p>
+</div>
+<!-- === END HEADER === -->
+
+<!-- Background Dot Pattern (Shape) -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 0px; top: 0px; width: 1280px; height: 720px; background-image: radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px); background-size: 20px 20px; opacity: 0.4; z-index: 1;"></div>
+<!-- Circle Overlay Top-Right (Shape) -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 880px; top: -100px; width: 500px; height: 500px; border-radius: 50%; background-color: rgba(0,0,0,0.05); z-index: 1;"></div>
+<!-- Circle Overlay Bottom-Left (Shape) -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: -100px; top: 420px; width: 400px; height: 400px; border-radius: 50%; background-color: rgba(0,0,0,0.03); z-index: 1;"></div>
+<!-- Chapter Indicator (Textbox) -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 0px; top: 120px; width: 1280px; height: 160px; text-align: center; z-index: 10;">
+<p style="font-family: 'Space Grotesk', sans-serif; font-weight: 900; font-size: 120px; color: rgba(0,0,0,0.15); margin: 0; line-height: 1;">05</p>
+</div>
+<!-- Chapter Title (Textbox) -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 0px; top: 280px; width: 1280px; height: 160px; text-align: center; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 56px; color: #000000; margin: 0; line-height: 1.2; letter-spacing: 2px;">論点を分解する</p>
+</div>
+<!-- Why Decompose: 3-column flex layout (Problem → Arrow → Solution) -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 80px; top: 470px; width: 1120px; height: 140px; display: flex; align-items: center; gap: 24px; z-index: 10;">
+<!-- Problem Box (Left) -->
+<div style="flex: 0 0 420px; height: 140px; background-color: #ffffff; border-left: 6px solid #000000; box-shadow: 0 10px 25px rgba(0,0,0,0.05); display: flex; align-items: center; padding: 0 24px;">
+<div>
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 16px; color: #000000; margin: 0 0 10px 0;">論点を定義しても...</p>
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 15px; color: #555555; margin: 0 0 4px 0; line-height: 1.6;">・大きすぎて直接答えを出せない</p>
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 15px; color: #555555; margin: 0; line-height: 1.6;">・直接検証できない</p>
+</div>
+</div>
+<!-- Arrow -->
+<div style="flex: 0 0 auto; display: flex; align-items: center; justify-content: center;">
+<i class="fas fa-arrow-right" style="font-size: 32px; color: #000000;"></i>
+</div>
+<!-- Solution Box (Right) -->
+<div style="flex: 1; height: 140px; background-color: #000000; box-shadow: 0 10px 25px rgba(0,0,0,0.15); display: flex; align-items: center; padding: 0 32px;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 20px; color: #ffffff; margin: 0; line-height: 1.5;">より細かい論点に分解する必要がある</p>
+</div>
+</div>
+<!-- === STANDARDIZED FOOTER === -->
+<div style="position: absolute; left: 0; top: 660px; width: 1280px; height: 60px; background-color: #ffffff; border-top: 1px solid rgba(0,0,0,0.08); z-index: 50;"></div>
+<div style="position: absolute; left: 40px; top: 680px; z-index: 55;">
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 1.5px;">LOGICAL THINKING TRAINING</p>
+</div>
+<div style="position: absolute; right: 40px; top: 680px; z-index: 55;">
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 0.5px;">16 / 47</p>
+</div>
+<!-- === END FOOTER === -->
+</div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ダメな分解 vs 良い分解 - 再現性のある問題解決フレームワーク</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&amp;family=Space+Grotesk:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: 'Noto Sans JP', sans-serif;
+        background-color: #ffffff;
+    }
+    .slide-container {
+        width: 1280px;
+        height: 720px;
+        position: relative;
+        overflow: hidden;
+        background-color: #ffffff;
+    }
+    p {
+        margin: 0;
+    }
+    .tree-line {
+        font-family: monospace;
+        white-space: pre;
+        font-size: 12px;
+        line-height: 1.4;
+    }
+</style>
+</head>
+<body>
+<div class="slide-container">
+<!-- === STANDARDIZED HEADER === -->
+<div style="position: absolute; left: 0; top: 0; width: 1280px; height: 148px; background-color: #ffffff; z-index: 50;"></div>
+<div style="position: absolute; left: 40px; top: 16px; z-index: 55;">
+<p style="margin: 0; padding: 5px 18px; border: 2px solid #000; border-radius: 9999px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; color: #000; letter-spacing: 1px; background: #ffffff; display: inline-block;">PROBLEM SOLVING</p>
+</div>
+<div style="position: absolute; right: 40px; top: 22px; z-index: 55;">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #999; letter-spacing: 0.5px;">第5章 仮説を構築する</p>
+</div>
+<div style="position: absolute; left: 80px; top: 52px; width: 1120px; z-index: 55;">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 32px; color: #000; letter-spacing: 1px; line-height: 1.2;">良い仮説の条件</p>
+</div>
+<div style="position: absolute; left: 80px; top: 100px; width: 1120px; z-index: 55;">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #888; line-height: 1.4;">4つの必須条件</p>
+</div>
+<!-- === END HEADER === -->
+
+<!-- Background Dot Pattern (Shape) -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 0px; top: 0px; width: 1280px; height: 720px; background-image: radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px); background-size: 20px 20px; opacity: 0.4; z-index: 1;"></div>
+<!-- Gray Accent Banner Top-Right (Shape) -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 880px; top: 0px; width: 400px; height: 180px; background-color: #ececec; clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%); z-index: 1;"></div>
+<!-- Section Title (Textbox) -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 110px; width: 750px; height: 70px; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 34px; color: #000000; line-height: 1.2; margin: 0 0 16px 0; letter-spacing: 1px;">ダメな分解 vs 良い分解</p>
+</div>
+<!-- Comparison Table (Textbox) -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 170px; width: 1120px; height: 410px; z-index: 10;">
+<!-- Header -->
+<div style="display: flex; width: 100%; border-bottom: 2px solid #ffffff;">
+<div style="flex: 1; background-color: #000000; padding: 12px 24px; color: #ffffff; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px;">
+<span style="color: #ff6666; margin-right: 8px;">×</span>NG: ダメな分解（要素の羅列）
+    </div>
+<div style="flex: 1; background-color: #000000; padding: 12px 24px; color: #ffffff; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; border-left: 2px solid #ffffff;">
+<span style="color: #66ff66; margin-right: 8px;">○</span>OK: 良い分解（問いの分解＋打ち手）
+    </div>
+</div>
+<!-- Row 1: Content -->
+<div style="display: flex; width: 100%; height: 360px;">
+<div style="flex: 1; background-color: #f8f8f8; padding: 16px 24px; color: #333333; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; display: flex; flex-direction: column;">
+<p style="margin-bottom: 12px;">「美味しいハンバーガー」とは何か（What）で構成要素を並べただけ。</p>
+<div style="background-color: #ffffff; padding: 12px; border-radius: 4px; border: 1px solid #e0e0e0; flex: 1;">
+<p style="font-weight: 700; margin-bottom: 8px;">美味しいハンバーガー</p>
+<p class="tree-line">├── バンズ（表面、中身）</p>
+<p class="tree-line">├── お肉（焼き具合、味）</p>
+<p class="tree-line">├── チーズ</p>
+<p class="tree-line">├── 野菜</p>
+<p class="tree-line">└── ソース</p>
+</div>
+<p style="margin-top: 12px; font-weight: 700; color: #d32f2f;">問題点：行動に繋がらない要素の列挙に過ぎない。</p>
+</div>
+<div style="flex: 1; background-color: #ececec; padding: 16px 24px; color: #000000; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; display: flex; flex-direction: column; border-left: 2px solid #ffffff;">
+<p style="margin-bottom: 12px;">「解決するべき問い」に対して評価基準と打ち手が構造化されている。</p>
+<div style="background-color: #ffffff; padding: 12px; border-radius: 4px; border: 1px solid #cccccc; flex: 1;">
+<p style="font-weight: 700; margin-bottom: 8px;">美味しいハンバーガーを作るにはどうするべきか？</p>
+<p class="tree-line">├── 問いの分解</p>
+<p class="tree-line">│   ├── 「美味しい」の定義 → 基準：10人のプロが食べて8人が店で出せると言う</p>
+<p class="tree-line">│   │   └── 評価項目：五感（視覚・味覚・嗅覚・触覚・聴覚）</p>
+<p class="tree-line">│   └── 「ハンバーガー」の制約 → 原価率3割で提供できるもの</p>
+<p class="tree-line">└── 打ち手（五感別）</p>
+<p class="tree-line">    ├── 視覚：物体、レイアウト、色</p>
+<p class="tree-line">    ├── 味覚：...</p>
+<p class="tree-line">    └── ...</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Conclusion Bottom (Textbox) -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 600px; width: 1120px; height: 50px; background-color: rgba(0,0,0,0.05); border-left: 4px solid #000000; padding: 8px 16px; box-sizing: border-box; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 13px; color: #000000; margin: 0; line-height: 1.5; display: flex; align-items: center;">
+<span style="color: #555555; margin-right: 8px;">違いの本質：</span> <span style="color: #ff6666;">×</span> 前者：単なる要素の羅列 <i class="fas fa-arrows-alt-h" style="margin: 0 16px; color: #999999;"></i> <span style="color: #66ff66;">○</span> 後者：「解決するべき問い」に対して評価基準と打ち手が構造化されている
+</p>
+</div>
+<!-- === STANDARDIZED FOOTER === -->
+<div style="position: absolute; left: 0; top: 660px; width: 1280px; height: 60px; background-color: #ffffff; border-top: 1px solid rgba(0,0,0,0.08); z-index: 50;"></div>
+<div style="position: absolute; left: 40px; top: 680px; z-index: 55;">
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 1.5px;">LOGICAL THINKING TRAINING</p>
+</div>
+<div style="position: absolute; right: 40px; top: 680px; z-index: 55;">
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 0.5px;">24 / 47</p>
+</div>
+<!-- === END FOOTER === -->
+</div>
+</body>
+</html>

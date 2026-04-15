@@ -3,130 +3,46 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ワーク：問題解決の体験 - 再現性のある問題解決フレームワーク</title>
+<title>苦手なこと</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
-<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="./slides.css" rel="stylesheet"/>
+<script defer src="./slides.js"></script>
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        font-family: 'Noto Sans JP', sans-serif;
-        background-color: #ececec;
-    }
-    .slide-container {
-        width: 1280px;
-        height: 720px;
-        position: relative;
-        overflow: hidden;
-        background-color: #ececec;
-    }
+.intro-shell { position:absolute; left:80px; top:120px; width:1120px; display:grid; grid-template-columns:minmax(0, 610px) minmax(0, 430px); align-items:center; gap:80px; }
+.intro-main { display:flex; flex-direction:column; }
+.intro-eyebrow { color:rgba(0,0,0,0.34); font-family:"Space Grotesk",sans-serif; font-size:12px; font-weight:700; letter-spacing:2.4px; text-transform:uppercase; margin:0 0 18px; }
+.intro-title { max-width:610px; font-size:70px; font-weight:900; line-height:1.06; letter-spacing:1px; margin:0 0 20px; }
+.intro-lead { max-width:610px; font-size:22px; line-height:1.8; color:rgba(0,0,0,0.64); margin:0; }
+.anti-list { display:flex; flex-direction:column; gap:18px; }
+.anti-item { padding:0 0 18px 0; border-bottom:1px solid rgba(0,0,0,0.09); }
+.anti-item:last-child { padding-bottom:0; border-bottom:none; }
+.anti-item__title { margin:0 0 8px; font-size:23px; font-weight:900; line-height:1.45; }
+.anti-item__text { margin:0; font-size:17px; line-height:1.75; color:rgba(0,0,0,0.68); }
 </style>
 </head>
 <body>
-<div class="slide-container">
-<!-- === STANDARDIZED HEADER === -->
-<div style="position: absolute; left: 0; top: 0; width: 1280px; height: 148px; background-color: #ffffff; z-index: 50;"></div>
-<div style="position: absolute; left: 40px; top: 16px; z-index: 55;">
-<p style="margin: 0; padding: 5px 18px; border: 2px solid #000; border-radius: 9999px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; color: #000; letter-spacing: 1px; background: #ffffff; display: inline-block;">PROBLEM SOLVING</p>
-</div>
-<div style="position: absolute; right: 40px; top: 22px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #999; letter-spacing: 0.5px;">第1章 前提：期待値と再現性</p>
-</div>
-<div style="position: absolute; left: 80px; top: 52px; width: 1120px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 32px; color: #000; letter-spacing: 1px; line-height: 1.2;">結果と行動を切り離す</p>
-</div>
-<div style="position: absolute; left: 80px; top: 100px; width: 1120px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #888; line-height: 1.4;">思考/行動が悪かったことを以って変える</p>
-</div>
-<!-- === END HEADER === -->
-
-    <!-- Background Dot Pattern -->
-    <div data-object="true" data-object-type="shape" style="position: absolute; left: 0px; top: 0px; width: 1280px; height: 720px; background-image: radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px); background-size: 20px 20px; opacity: 0.4; z-index: 1;"></div>
-
-    <!-- Circle Overlay Top-Right -->
-    <div data-object="true" data-object-type="shape" style="position: absolute; left: 880px; top: -100px; width: 500px; height: 500px; border-radius: 50%; background-color: rgba(0,0,0,0.05); z-index: 1;"></div>
-
-    <!-- Circle Overlay Bottom-Left -->
-    <div data-object="true" data-object-type="shape" style="position: absolute; left: -100px; top: 420px; width: 400px; height: 400px; border-radius: 50%; background-color: rgba(0,0,0,0.03); z-index: 1;"></div>
-<!-- Title -->
-    <div data-object="true" data-object-type="textbox" style="position: absolute; left: 60px; top: 100px; z-index: 10;">
-        <h1 style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 36px; color: #000000; margin: 0; line-height: 1.2;">ワーク：問題解決の体験</h1>
+<div class="slide-container slide-theme-mist" data-slide-kind="intro" data-background="halftone" data-footer="standard" data-footer-page="03">
+<div class="intro-shell">
+  <div class="intro-main">
+    <p class="intro-eyebrow">ANTI-PATTERN</p>
+    <p class="intro-title">苦手なこと</p>
+    <p class="intro-lead">問題より先に作業に入ること、言葉が曖昧なまま議論が進むこと、行動が決まらない会議が苦手です。</p>
+  </div>
+  <div class="anti-list">
+    <div class="anti-item">
+      <p class="anti-item__title">作業が先に立つ</p>
+      <p class="anti-item__text">何を解くべきかが曖昧なまま、手段だけが先に動き始める。</p>
     </div>
-
-    <!-- Card 1: お題 -->
-    <div data-object="true" data-object-type="shape" style="position: absolute; left: 60px; top: 180px; width: 560px; background-color: #ffffff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); padding: 32px; z-index: 10;">
-        <!-- Card Header -->
-        <div style="margin-bottom: 16px;">
-            <p style="font-family: 'Space Grotesk', sans-serif; font-weight: 900; font-size: 14px; letter-spacing: 1px; color: rgba(0,0,0,0.5); margin: 0;">TASK</p>
-            <h2 style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 24px; color: #000000; margin: 8px 0 0 0;">お題</h2>
-        </div>
-
-        <!-- Card Content -->
-        <div style="background-color: rgba(0,0,0,0.03); border-radius: 8px; padding: 20px; margin-top: 20px;">
-            <p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 16px; color: #000000; margin: 0; line-height: 1.7;">あなたはコンサルティング会社のマネージャーです。クライアント企業の売上が前年比15%減少しています。10分で、クライアントに提示する初期的な分析と提案の骨子を作成してください。</p>
-        </div>
+    <div class="anti-item">
+      <p class="anti-item__title">定義が曖昧</p>
+      <p class="anti-item__text">同じ言葉を使っていても、互いに見ているものが揃っていない。</p>
     </div>
-
-    <!-- Card 2: 進め方 -->
-    <div data-object="true" data-object-type="shape" style="position: absolute; left: 660px; top: 180px; width: 560px; background-color: #ffffff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); padding: 32px; z-index: 10;">
-        <!-- Card Header -->
-        <div style="margin-bottom: 16px;">
-            <p style="font-family: 'Space Grotesk', sans-serif; font-weight: 900; font-size: 14px; letter-spacing: 1px; color: rgba(0,0,0,0.5); margin: 0;">PROCESS</p>
-            <h2 style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 24px; color: #000000; margin: 8px 0 0 0;">進め方</h2>
-        </div>
-
-        <!-- Card Content -->
-        <div style="margin-top: 20px;">
-            <!-- Step 1 -->
-            <div style="display: flex; align-items: flex-start; margin-bottom: 16px;">
-                <div style="width: 32px; height: 32px; border-radius: 50%; background-color: #000000; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-right: 12px;">
-                    <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 900; font-size: 14px; color: #ffffff;">1</span>
-                </div>
-                <p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 16px; color: #000000; margin: 6px 0 0 0; line-height: 1.5;">個人ワーク：10分間</p>
-            </div>
-
-            <!-- Step 2 -->
-            <div style="display: flex; align-items: flex-start; margin-bottom: 16px;">
-                <div style="width: 32px; height: 32px; border-radius: 50%; background-color: #000000; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-right: 12px;">
-                    <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 900; font-size: 14px; color: #ffffff;">2</span>
-                </div>
-                <p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 16px; color: #000000; margin: 6px 0 0 0; line-height: 1.5;">この場で考え、メモに書き出す</p>
-            </div>
-
-            <!-- Step 3 -->
-            <div style="display: flex; align-items: flex-start; margin-bottom: 16px;">
-                <div style="width: 32px; height: 32px; border-radius: 50%; background-color: #000000; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-right: 12px;">
-                    <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 900; font-size: 14px; color: #ffffff;">3</span>
-                </div>
-                <p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 16px; color: #000000; margin: 6px 0 0 0; line-height: 1.5;">正解はない — 現時点の思考プロセスを観察する</p>
-            </div>
-
-            <!-- Step 4 -->
-            <div style="display: flex; align-items: flex-start; margin-bottom: 0;">
-                <div style="width: 32px; height: 32px; border-radius: 50%; background-color: #000000; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-right: 12px;">
-                    <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 900; font-size: 14px; color: #ffffff;">4</span>
-                </div>
-                <p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 16px; color: #000000; margin: 6px 0 0 0; line-height: 1.5;">研修後に同じ問題を再度解く</p>
-            </div>
-        </div>
+    <div class="anti-item">
+      <p class="anti-item__title">行動が決まらない</p>
+      <p class="anti-item__text">話した量は多いのに、次に何をするかが最後まで決まらない。</p>
     </div>
-
-    <!-- Bottom Note -->
-    <div data-object="true" data-object-type="textbox" style="position: absolute; left: 60px; bottom: 120px; width: 1160px; z-index: 10;">
-        <div style="background-color: rgba(0,0,0,0.05); border-left: 4px solid rgba(0,0,0,0.3); border-radius: 4px; padding: 16px 24px;">
-            <p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: rgba(0,0,0,0.7); margin: 0; line-height: 1.6;">※ 研修を通じて、問題解決のフレームワークを学んだ後に、アプローチがどう変わるかを実感します</p>
-        </div>
-    </div>
-<!-- === STANDARDIZED FOOTER === -->
-<div style="position: absolute; left: 0; top: 660px; width: 1280px; height: 60px; background-color: #ffffff; border-top: 1px solid rgba(0,0,0,0.08); z-index: 50;"></div>
-<div style="position: absolute; left: 40px; top: 680px; z-index: 55;">
-<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 1.5px;">LOGICAL THINKING TRAINING</p>
+  </div>
 </div>
-<div style="position: absolute; right: 40px; top: 680px; z-index: 55;">
-<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 0.5px;">04 / 47</p>
-</div>
-<!-- === END FOOTER === -->
 </div>
 </body>
 </html>

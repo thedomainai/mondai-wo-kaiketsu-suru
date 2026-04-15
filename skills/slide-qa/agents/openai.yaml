@@ -1,0 +1,4 @@
+interface:
+  display_name: "Slide QA"
+  short_description: "manifest と schema に沿って deterministic QA を行う"
+  default_prompt: "この deck に deterministic QA をかけ、contract drift を洗い出す"

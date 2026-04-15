@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
 """
-Standardize headers and footers for all content slides.
-Header: 140px (chapter label, slide title, main message)
-Footer: 60px (left: LOGICAL THINKING TRAINING, right: page number)
+LEGACY MIGRATION ONLY.
+
+Standardize headers and footers for an older 47-slide deck snapshot.
+This script is kept for migration/reference purposes and is not a source of
+truth for the current 73-slide deck. Use docs/ai-slide-system plus
+tools/slide_governance.py for canonical metadata.
 """
 import os
+import re
 
 SLIDES_DIR = "/tmp/slides"
 TOTAL_SLIDES = 47
@@ -14,9 +18,9 @@ SLIDE_DATA = {
     3:  ("第1章 前提：期待値と再現性", "問題解決能力が高いとは何か", "本質は「期待値を高めること」", "#ffffff"),
     4:  ("第1章 前提：期待値と再現性", "結果と行動を切り離す", "思考/行動が悪かったことを以って変える", "#ffffff"),
     5:  ("第1章 前提：期待値と再現性", "再現性とは「正しく間違えること」", "誤りを検知した階層で、同じ親の別の枝を探索する", "#ececec"),
-    7:  ("第2章 問題解決の全体像", "問題解決の本質", "正しい行動が決まれば、あとは実行するのみ", "#ffffff"),
-    8:  ("第2章 問題解決の全体像", "問題解決の型（7ステップ）", "再現性のあるプロセスを意識的に回す", "#ffffff"),
-    9:  ("第2章 問題解決の全体像", "メタ認知：プロセスを回す", "4つの必須行動", "#ffffff"),
+    7:  ("第2章 前提・背景", "問題解決の本質", "正しい行動が決まれば、あとは実行するのみ", "#ffffff"),
+    8:  ("第2章 前提・背景", "問題解決の型（7ステップ）", "再現性のあるプロセスを意識的に回す", "#ffffff"),
+    9:  ("第2章 前提・背景", "メタ認知：プロセスを回す", "4つの必須行動", "#ffffff"),
     11: ("第3章 論点を定義する", "論点には必ず「べき」を含める", "行動を伴わない問い ＝ 自己満足・無意味", "#ffffff"),
     12: ("第3章 論点を定義する", "実践ルール", "論点定義の3つの必須行動", "#ffffff"),
     14: ("第4章 論点を分解する", "分解の5原則：概要", "論点を効果的に分解するための5つの原則", "#ffffff"),
@@ -55,17 +59,13 @@ SLIDE_DATA = {
 def make_header_html(chapter_label, slide_title, main_message, bg_color):
     return f'''<!-- === STANDARDIZED HEADER === -->
 <div style="position: absolute; left: 0; top: 0; width: 1280px; height: 148px; background-color: {bg_color}; z-index: 50;"></div>
-<div style="position: absolute; left: 40px; top: 16px; z-index: 55;">
-<p style="margin: 0; padding: 5px 18px; border: 2px solid #000; border-radius: 9999px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; color: #000; letter-spacing: 1px; background: {bg_color}; display: inline-block;">PROBLEM SOLVING</p>
+<div style="position: absolute; right: 80px; top: 18px; z-index: 55;">
+<p style="margin: 0; padding: 3px 12px; border: 2px solid #000; border-radius: 9999px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: var(--font-size-header-pill); color: #000; letter-spacing: 0.8px; background: {bg_color}; display: inline-block; white-space: nowrap;">PROBLEM SOLVING</p>
 </div>
-<div style="position: absolute; right: 40px; top: 22px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #999; letter-spacing: 0.5px;">{chapter_label}</p>
-</div>
-<div style="position: absolute; left: 80px; top: 52px; width: 1120px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 32px; color: #000; letter-spacing: 1px; line-height: 1.2;">{slide_title}</p>
-</div>
-<div style="position: absolute; left: 80px; top: 100px; width: 1120px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #888; line-height: 1.4;">{main_message}</p>
+<div style="position: absolute; left: 80px; top: 22px; width: 960px; z-index: 55; display: flex; flex-direction: column; align-items: flex-start; gap: 4px;">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: var(--font-size-header-chapter); color: #999; letter-spacing: 0.5px; white-space: nowrap;">{chapter_label}</p>
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: var(--font-size-header-title); color: #000; letter-spacing: var(--letter-spacing-header-title); line-height: var(--line-height-header-title); white-space: nowrap;">{slide_title}</p>
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: var(--font-size-header-subtitle); color: #888; line-height: var(--line-height-header-subtitle); white-space: nowrap;">{main_message}</p>
 </div>
 <!-- === END HEADER === -->'''
 
@@ -75,10 +75,10 @@ def make_footer_html(slide_num, bg_color):
     return f'''<!-- === STANDARDIZED FOOTER === -->
 <div style="position: absolute; left: 0; top: 660px; width: 1280px; height: 60px; background-color: {bg_color}; border-top: 1px solid rgba(0,0,0,0.08); z-index: 50;"></div>
 <div style="position: absolute; left: 40px; top: 680px; z-index: 55;">
-<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 1.5px;">LOGICAL THINKING TRAINING</p>
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: var(--font-size-footer-meta); color: #bbb; letter-spacing: 1.5px;">LOGICAL THINKING TRAINING</p>
 </div>
 <div style="position: absolute; right: 40px; top: 680px; z-index: 55;">
-<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 0.5px;">{page_str}</p>
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: var(--font-size-footer-meta); color: #bbb; letter-spacing: 0.5px;">{page_str}</p>
 </div>
 <!-- === END FOOTER === -->'''
 
@@ -147,6 +147,17 @@ def remove_element_containing(html, search_text):
     return html[:comment_start] + html[div_end:]
 
 
+def remove_leading_title_blocks(html):
+    """Remove body-level title blocks replaced by the standardized header."""
+    pattern = (
+        r'\s*<!--\s*(?:Section Title(?: and Subtitle)?|Title(?:\s*&\s*Subtitle)?|Subtitle)\s*(?:\([^)]+\))?\s*-->\s*'
+        r'<div\s+data-object="true"\s+data-object-type="textbox"\s+'
+        r'style="position:\s*absolute;\s*left:\s*80px;\s*top:\s*160px;[^"]*">'
+        r'(?:(?!<div\b).)*?</div>\s*'
+    )
+    return re.sub(pattern, '\n', html, flags=re.DOTALL)
+
+
 def process_slide(slide_num):
     if slide_num not in SLIDE_DATA:
         return
@@ -168,6 +179,7 @@ def process_slide(slide_num):
 
     # 2. Remove navigation arrow (contains "fa-chevron-right")
     html = remove_element_containing(html, 'fa-chevron-right')
+    html = remove_leading_title_blocks(html)
 
     # 3. Insert header after <div class="slide-container">
     header_html = make_header_html(chapter_label, slide_title, main_message, bg_color)

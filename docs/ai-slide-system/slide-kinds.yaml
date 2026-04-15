@@ -1,0 +1,157 @@
+authoring_conventions:
+  layout_mode: section-first
+  default_wrapper: main.content-stage
+  preferred_children:
+    - section
+    - article
+  sequence:
+    - decide-slide-kind-and-one-message
+    - define-section-skeleton
+    - allocate-height-width-gap-budgets
+    - place-content-inside-owning-sections
+    - allow-absolute-positioning-only-for-local-diagrams
+  anti_patterns:
+    - page-level-object-stacking-with-top-left-as-primary-layout
+    - overlap-fix-by-nudging-children-without-rebalancing-sections
+    - leaving-dead-space-after-copy-removal
+
+kinds:
+  cover:
+    runtime_shape: custom
+    required_container_attrs:
+      - data-slide-kind
+    required_markers:
+      - slide-container
+      - slides.css
+      - slides.js
+    allowed_backgrounds:
+      - grain
+      - none
+    forbidden_markers:
+      - agenda-panel
+      - data-header-title=
+      - data-divider-title=
+  intro:
+    runtime_shape: custom
+    required_container_attrs:
+      - data-slide-kind
+    required_markers:
+      - slide-container
+      - slides.css
+      - slides.js
+    allowed_backgrounds:
+      - halftone
+      - none
+  agenda:
+    runtime_shape: agenda
+    required_container_attrs:
+      - data-slide-kind
+    required_markers:
+      - agenda-panel
+      - agenda-panel__list
+      - slides.css
+      - slides.js
+    allowed_backgrounds:
+      - grain
+  divider:
+    runtime_shape: divider
+    required_container_attrs:
+      - data-slide-kind
+      - data-divider-title
+      - data-divider-kicker
+      - data-divider-index
+    required_markers:
+      - slide-container
+      - slides.css
+      - slides.js
+    allowed_backgrounds:
+      - halftone
+  center-title:
+    runtime_shape: center-title
+    required_container_attrs:
+      - data-slide-kind
+    required_markers:
+      - slide-center-title
+      - class="chapter"
+      - class="title"
+      - class="subtitle"
+      - slides.css
+      - slides.js
+    allowed_backgrounds:
+      - none
+  content:
+    runtime_shape: content
+    required_container_attrs:
+      - data-slide-kind
+      - data-header-chapter
+      - data-header-title
+      - data-header-subtitle
+      - data-footer
+      - data-footer-page
+    required_attr_values:
+      data-footer: standard
+    required_markers:
+      - slide-container
+      - slides.css
+      - slides.js
+    forbidden_markers:
+      - agenda-panel
+      - data-divider-title=
+    allowed_backgrounds:
+      - none
+      - grain
+      - halftone
+    preferred_layout:
+      wrapper: main.content-stage
+      notes:
+        - standard header/footer remain outside the wrapper
+        - major layout should be grid/flex before local absolute positioning
+  summary:
+    runtime_shape: custom
+    required_container_attrs:
+      - data-slide-kind
+    required_markers:
+      - LOGICAL THINKING TRAINING
+      - slides.css
+      - slides.js
+    allowed_backgrounds:
+      - none
+  closing:
+    runtime_shape: custom
+    required_container_attrs:
+      - data-slide-kind
+    required_markers:
+      - CLOSING MESSAGE
+      - LOGICAL THINKING TRAINING
+      - slides.css
+      - slides.js
+    allowed_backgrounds:
+      - halftone
+      - none
+  cta:
+    runtime_shape: custom
+    required_container_attrs:
+      - data-slide-kind
+    required_markers:
+      - ACTION
+      - LOGICAL THINKING TRAINING
+      - slides.css
+      - slides.js
+    allowed_backgrounds:
+      - halftone
+      - none
+  qa:
+    runtime_shape: custom
+    required_container_attrs:
+      - data-slide-kind
+    required_markers:
+      - Q&amp;A
+      - LOGICAL THINKING TRAINING
+      - slides.css
+      - slides.js
+    allowed_backgrounds:
+      - none
+    preferred_layout:
+      wrapper: main.content-stage
+      notes:
+        - custom kinds also inherit section-first layout as the default authoring mode

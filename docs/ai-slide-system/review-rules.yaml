@@ -1,0 +1,98 @@
+static_rules:
+  - id: contiguous-slide-files
+    severity: error
+    scope: deck
+    description: slide_*.html は欠番なしで連番にする。
+  - id: manifest-order
+    severity: error
+    scope: deck
+    description: manifest の slide order は実ファイル順と一致させる。
+  - id: canonical-kind-attribute
+    severity: error
+    scope: slide
+    description: すべての slide container は data-slide-kind を持ち、manifest と一致させる。
+  - id: content-header-footer-contract
+    severity: error
+    scope: content
+    description: content slide は data-header-* と data-footer="standard" / data-footer-page を必須にする。
+  - id: agenda-derived-from-manifest
+    severity: error
+    scope: agenda
+    description: agenda row は manifest.slides[].agenda から導出し、HTML を source-of-truth にしない。
+  - id: divider-contract
+    severity: error
+    scope: divider
+    description: divider は data-divider-* と halftone background を維持する。
+  - id: center-title-contract
+    severity: error
+    scope: center-title
+    description: center-title は slide-center-title と chapter/title/subtitle block を持つ。
+  - id: asset-exists
+    severity: error
+    scope: slide
+    description: ./assets, ./slides.css, ./slides.js の参照は実在ファイルに限る。
+  - id: section-first-layout
+    severity: warning
+    scope: authoring
+    description: 新規作成 / 大幅改修 slide は section skeleton を先に定義し、その内側に content を入れる。legacy slide への即時強制ではなく、今後の authoring default とする。
+  - id: local-absolute-positioning-only
+    severity: warning
+    scope: authoring
+    description: absolute positioning は section 内の diagram や局所整列に限定し、page 直下への primary block 積み上げを避ける。
+  - id: stale-total-slides
+    severity: warning
+    scope: scripts
+    description: TOTAL_SLIDES の固定値は canonical total 74 と一致させるか legacy migration と明示する。
+  - id: no-inline-header-footer-for-content
+    severity: error
+    scope: content
+    description: content slide での header/footer 手書き DOM 再実装は禁止する。
+
+semantic_rules:
+  - id: bridge-slide-clarity
+    severity: warning
+    scope: narrative
+    description: source -> method -> outcome の橋渡し slide は接続文法を 1 種類に絞る。
+    known_examples:
+      - slide_17.html
+  - id: five-card-horizontal-balance
+    severity: warning
+    scope: layout
+    description: 5 要素の横並びは card 幅・視線誘導・右端欠けを監視する。
+    known_examples:
+      - slide_63.html
+  - id: summary-closing-cta-separation
+    severity: warning
+    scope: narrative
+    description: summary / closing / cta / qa は役割を混ぜず、各 slide の one message を保つ。
+    known_examples:
+      - slide_70.html
+      - slide_71.html
+      - slide_72.html
+      - slide_73.html
+  - id: object-grammar-consistency
+    severity: warning
+    scope: graphics
+    description: 1 slide 内で card, line, arrow, pill, black-fill の文法を増やしすぎない。
+  - id: section-ownership-and-budget
+    severity: warning
+    scope: layout
+    description: 主要 object は owning section を持ち、余白と密度は section ごとの height / width 配分で最適化する。
+  - id: whitespace-reflow-after-content-change
+    severity: warning
+    scope: layout
+    description: copy の追加 / 削除後は section budget を再配分し、空白を残したまま object を据え置かない。
+  - id: overlap-fix-by-relayout-not-nudge
+    severity: warning
+    scope: layout
+    description: 重なりや詰まりは object の微調整より先に section structure と grid / flex 配分で解く。
+  - id: parallel-card-track-alignment
+    severity: warning
+    scope: layout
+    description: 同一 row の parallel card は、対応する内部領域の開始位置と divider line を copy 量に依存させず揃える。`head / body / foot` や `label / text / note` は明示的な track、stretch、`min-height` で管理する。
+    known_examples:
+      - slide_66.html
+  - id: density-and-scan-order
+    severity: warning
+    scope: readability
+    description: 情報密度は 1 読でスキャン可能な範囲に収め、左上から右下への順序を壊さない。

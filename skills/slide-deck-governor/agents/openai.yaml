@@ -1,0 +1,4 @@
+interface:
+  display_name: "Slide Deck Governor"
+  short_description: "manifest と kind schema を起点に authoring / review / qa を振り分ける"
+  default_prompt: "この deck 作業を slide kind ごとに整理し、適切な slide skill へ振り分ける"

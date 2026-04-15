@@ -1,106 +1,14 @@
 <!DOCTYPE html>
-
-<html data-theme="light" lang="ja" style=""><head>
+<html lang="ja">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>結果と行動を切り離す - 再現性のある問題解決フレームワーク</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&amp;family=Space+Grotesk:wght@700&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        font-family: 'Noto Sans JP', sans-serif;
-        background-color: #ffffff;
-    }
-    .slide-container {
-        width: 1280px;
-        height: 720px;
-        position: relative;
-        overflow: hidden;
-        background: white;
-    }
-    p {
-        margin: 0;
-    }
-</style>
+<title>第01章 ワーク</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
+<link href="./slides.css" rel="stylesheet"/>
+<script defer src="./slides.js"></script>
 </head>
-<body style="user-select: none;">
-<div class="slide-container">
-<!-- === STANDARDIZED HEADER === -->
-<div style="position: absolute; left: 0; top: 0; width: 1280px; height: 148px; background-color: #ffffff; z-index: 50;"></div>
-<div style="position: absolute; left: 40px; top: 16px; z-index: 55;">
-<p style="margin: 0; padding: 5px 18px; border: 2px solid #000; border-radius: 9999px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; color: #000; letter-spacing: 1px; background: #ffffff; display: inline-block;">PROBLEM SOLVING</p>
-</div>
-<div style="position: absolute; right: 40px; top: 22px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #999; letter-spacing: 0.5px;">第2章 問題解決の全体像</p>
-</div>
-<div style="position: absolute; left: 80px; top: 52px; width: 1120px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 32px; color: #000; letter-spacing: 1px; line-height: 1.2;">問題解決の本質</p>
-</div>
-<div style="position: absolute; left: 80px; top: 100px; width: 1120px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #888; line-height: 1.4;">正しい行動が決まれば、あとは実行するのみ</p>
-</div>
-<!-- === END HEADER === -->
-
-<!-- Background Elements -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 0; top: 0; width: 1280px; height: 720px; background-image: radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px); background-size: 20px 20px; opacity: 0.4; z-index: 1;"></div>
-<div data-object="true" data-object-type="shape" id="fabric-obj-0-1776105563176" style="position: absolute; left: 640px; top: 0; width: 640px; height: 720px; background-color: #ececec; clip-path: polygon(20px 0, 100% 0, 100% 100%, 0 100%, 0 20px); z-index: 1;"></div>
-<!-- Left Panel Content -->
-<div data-object="true" data-object-type="textbox" id="fabric-obj-2-1776105563176" style="position: absolute; left: 80px; top: 200px; width: 500px; height: 450px; z-index: 10;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 44px; line-height: 1.1; color: #000000; margin-bottom: 24px; letter-spacing: 1px;">結果と行動を<br/>切り離す</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 20px; line-height: 1.5; color: #000000; margin-bottom: 24px;">現実は膨大な要素で決まる<br/>→ 全てはコントロールできない</p>
-<div style="background-color: rgba(0,0,0,0.05); border-left: 5px solid #e53e3e; padding: 16px; margin-bottom: 16px; display: flex; align-items: center;">
-<i class="fas fa-times" style="color: #e53e3e; font-size: 20px; margin-right: 12px; width: 20px; text-align: center;"></i>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 17px; color: #000000; margin: 0;">結果が悪い <i class="fas fa-arrow-right" style="margin: 0 6px; color: #718096;"></i> 行動を変える</p>
-</div>
-<div style="background-color: rgba(0,0,0,0.05); border-left: 5px solid #38a169; padding: 16px; display: flex; align-items: center;">
-<i class="fas fa-circle" style="color: #38a169; font-size: 17px; margin-right: 12px; width: 20px; text-align: center;"></i>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 17px; color: #000000; margin: 0;">思考/行動が悪い <i class="fas fa-arrow-right" style="margin: 0 6px; color: #718096;"></i> 思考/行動を変える</p>
-</div>
-</div>
-<!-- Right Panel Content -->
-<div data-object="true" data-object-type="textbox" id="fabric-obj-3-1776105563176" style="position: absolute; left: 700px; top: 120px; width: 500px; height: 500px; z-index: 10;">
-<p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; color: rgba(0,0,0,0.5); letter-spacing: 1px; margin-bottom: 12px;">EVALUATION &amp; EXPECTATION</p>
-<!-- Evaluation Section -->
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 26px; line-height: 1.2; color: #000000; margin-bottom: 20px; border-bottom: 2px solid #000000; padding-bottom: 8px; display: inline-block;">評価基準の転換</p>
-<div style="margin-bottom: 16px; padding-left: 12px;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 18px; line-height: 1.5; color: #000000; margin-bottom: 8px; display: flex; align-items: center;">
-<span style="color: #e53e3e; margin-right: 10px; font-weight: 900;">×</span> 成功か失敗か？
-            </p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 18px; line-height: 1.5; color: #000000; display: flex; align-items: flex-start;">
-<span style="color: #38a169; margin-right: 10px; font-weight: 900;">○</span>
-<span>成功確度の高い意思決定・<br/>実行だったか？</span>
-</p>
-</div>
-<!-- Expectation Section -->
-<div style="margin-top: 36px;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 26px; line-height: 1.2; color: #000000; margin-bottom: 20px; border-bottom: 2px solid #000000; padding-bottom: 8px; display: inline-block;">期待値思考</p>
-<div style="background-color: #ffffff; border: 1px solid rgba(0,0,0,0.1); padding: 24px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); border-radius: 8px;">
-<div style="display: flex; align-items: flex-start; margin-bottom: 16px;">
-<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; color: #000000; margin-right: 12px; opacity: 0.3;">01</span>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 16px; line-height: 1.4; color: #000000; margin: 0; padding-top: 2px;">
-                        「100回やったらどうなるか？」を考える
-                    </p>
-</div>
-<div style="display: flex; align-items: flex-start;">
-<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; color: #000000; margin-right: 12px; opacity: 0.3;">02</span>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 16px; line-height: 1.4; color: #000000; margin: 0; padding-top: 2px;">
-                        51回成功するなら、49回失敗してもやるべき
-                    </p>
-</div>
-</div>
-</div>
-</div>
-<!-- === STANDARDIZED FOOTER === -->
-<div style="position: absolute; left: 0; top: 660px; width: 1280px; height: 60px; background-color: #ffffff; border-top: 1px solid rgba(0,0,0,0.08); z-index: 50;"></div>
-<div style="position: absolute; left: 40px; top: 680px; z-index: 55;">
-<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 1.5px;">LOGICAL THINKING TRAINING</p>
-</div>
-<div style="position: absolute; right: 40px; top: 680px; z-index: 55;">
-<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 0.5px;">07 / 47</p>
-</div>
-<!-- === END FOOTER === -->
-</div>
-</body></html>
+<body>
+<div class="slide-container slide-theme-mist" data-slide-kind="divider" data-background="halftone" data-divider-brand="ロジカル・シンキング研修" data-divider-index="01" data-divider-kicker="Chapter 01" data-divider-title="ワーク" data-divider-subtitle="差が出る瞬間を体感する"></div>
+</body>
+</html>

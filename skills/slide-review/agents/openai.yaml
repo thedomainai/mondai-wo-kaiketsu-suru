@@ -1,0 +1,4 @@
+interface:
+  display_name: "Slide Review"
+  short_description: "deck 全体を layout / type / graphics / narrative でレビューする"
+  default_prompt: "この HTML slide deck を review rules に沿ってレビューする"

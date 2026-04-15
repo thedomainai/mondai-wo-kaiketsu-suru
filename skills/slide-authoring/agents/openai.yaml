@@ -1,0 +1,4 @@
+interface:
+  display_name: "Slide Authoring"
+  short_description: "kind-first で HTML slide を作る"
+  default_prompt: "manifest と kind schema に従って HTML slide を作成または改修する"

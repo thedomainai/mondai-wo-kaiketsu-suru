@@ -4,8 +4,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>問題解決におけるコミュニケーション - 再現性のある問題解決フレームワーク</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&amp;family=Space+Grotesk:wght@700;900&amp;display=swap" rel="stylesheet"/>
+<title>原則5：トップダウンとボトムアップを行き来する - 再現性のある問題解決フレームワーク</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&amp;family=Space+Grotesk:wght@700&amp;display=swap" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
 <style>
     body {
@@ -13,64 +13,72 @@
         padding: 0;
         overflow: hidden;
         font-family: 'Noto Sans JP', sans-serif;
-        background-color: #ececec;
+        background-color: #ffffff;
     }
     .slide-container {
         width: 1280px;
         height: 720px;
         position: relative;
         overflow: hidden;
-        background-color: #ececec;
+        background-color: #ffffff;
     }
 </style>
 </head>
 <body>
 <div class="slide-container">
-<!-- === STANDARDIZED HEADER === -->
-<div style="position: absolute; left: 0; top: 0; width: 1280px; height: 148px; background-color: #ffffff; z-index: 50;"></div>
-<div style="position: absolute; left: 40px; top: 16px; z-index: 55;">
-<p style="margin: 0; padding: 5px 18px; border: 2px solid #000; border-radius: 9999px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; color: #000; letter-spacing: 1px; background: #ffffff; display: inline-block;">PROBLEM SOLVING</p>
-</div>
-<div style="position: absolute; right: 40px; top: 22px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #999; letter-spacing: 0.5px;">第7章 解を伝える</p>
-</div>
-<div style="position: absolute; left: 80px; top: 52px; width: 1120px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 32px; color: #000; letter-spacing: 1px; line-height: 1.2;">誤解ポイントを先回りして潰す</p>
-</div>
-<div style="position: absolute; left: 80px; top: 100px; width: 1120px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #888; line-height: 1.4;">× どう話すか / ○ どこで誤解されるか</p>
-</div>
-<!-- === END HEADER === -->
-
 <!-- Background Dot Pattern (Shape) -->
 <div data-object="true" data-object-type="shape" style="position: absolute; left: 0px; top: 0px; width: 1280px; height: 720px; background-image: radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px); background-size: 20px 20px; opacity: 0.4; z-index: 1;"></div>
-<!-- Circle Overlay Top-Right (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 880px; top: -100px; width: 500px; height: 500px; border-radius: 50%; background-color: rgba(0,0,0,0.05); z-index: 1;"></div>
-<!-- Circle Overlay Bottom-Left (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: -100px; top: 420px; width: 400px; height: 400px; border-radius: 50%; background-color: rgba(0,0,0,0.03); z-index: 1;"></div>
-<!-- Chapter Indicator (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 0px; top: 120px; width: 1280px; height: 160px; text-align: center; z-index: 10;">
-<p style="font-family: 'Space Grotesk', sans-serif; font-weight: 900; font-size: 120px; color: rgba(0,0,0,0.15); margin: 0; line-height: 1;">08</p>
+<!-- Branding Pill (Textbox) -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 40px; top: 32px; padding: 8px 24px; border: 2px solid #000000; border-radius: 9999px; background-color: #ffffff; z-index: 10;">
+<p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 1px; color: #000000; text-align: center; margin: 0;">PROBLEM SOLVING</p>
 </div>
-<!-- Chapter Title (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 0px; top: 232px; width: 1280px; height: 160px; text-align: center; z-index: 10;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 44px; color: #000000; margin: 0; line-height: 1.2; letter-spacing: 2px;">問題解決における<br/>コミュニケーション</p>
+<!-- Section Title (Textbox) -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 100px; width: 1120px; height: 70px; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 36px; color: #000000; line-height: 1.1; margin: 0; letter-spacing: 1px;">原則5：トップダウンとボトムアップを行き来する</p>
 </div>
-<!-- Key Quote Box Background (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 240px; top: 390px; width: 800px; height: 140px; background-color: #ffffff; border-left: 6px solid #000000; box-shadow: 0 10px 25px rgba(0,0,0,0.05); z-index: 5;"></div>
-<!-- Key Quote Content (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 270px; top: 425px; width: 740px; height: 70px; text-align: center; z-index: 10;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 20px; color: #333333; margin: 0; line-height: 1.6;">解を相手の意思決定と行動に接続する形で伝える。</p>
+<!-- Table Header Background (Shape) -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 80px; top: 180px; width: 1120px; height: 40px; background-color: #000000; z-index: 1;"></div>
+<!-- Table Row 1 Background (Shape) -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 80px; top: 220px; width: 1120px; height: 60px; background-color: #f5f5f5; z-index: 1;"></div>
+<!-- Table Row 2 Background (Shape) -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 80px; top: 280px; width: 1120px; height: 60px; background-color: #ffffff; border-bottom: 2px solid #000000; z-index: 1;"></div>
+<!-- Table Content (Textbox) -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 180px; width: 1120px; height: 160px; z-index: 10;">
+<!-- Header Text -->
+<div style="display: flex; align-items: center; height: 40px; padding: 0 16px;">
+<div style="width: 360px;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #ffffff; margin: 0;">アプローチ</p></div>
+<div style="width: 360px;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #ffffff; margin: 0;">強み</p></div>
+<div style="flex: 1;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #ffffff; margin: 0;">弱み</p></div>
 </div>
-<!-- === STANDARDIZED FOOTER === -->
-<div style="position: absolute; left: 0; top: 660px; width: 1280px; height: 60px; background-color: #ffffff; border-top: 1px solid rgba(0,0,0,0.08); z-index: 50;"></div>
-<div style="position: absolute; left: 40px; top: 680px; z-index: 55;">
-<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 1.5px;">LOGICAL THINKING TRAINING</p>
+<!-- Row 1 -->
+<div style="display: flex; align-items: center; height: 60px; padding: 0 16px;">
+<div style="width: 360px;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #000000; margin: 0; line-height: 1.2;">トップダウン<br/><span style="font-size: 13px; color: #555555; font-weight: 400;">（大論点→小論点）</span></p></div>
+<div style="width: 360px;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 15px; color: #333333; margin: 0;">構造化しやすい</p></div>
+<div style="flex: 1;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 15px; color: #333333; margin: 0;">無味乾燥な一般論になりがち</p></div>
 </div>
-<div style="position: absolute; right: 40px; top: 680px; z-index: 55;">
-<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 0.5px;">39 / 47</p>
+<!-- Row 2 -->
+<div style="display: flex; align-items: center; height: 60px; padding: 0 16px;">
+<div style="width: 360px;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #000000; margin: 0; line-height: 1.2;">ボトムアップ<br/><span style="font-size: 13px; color: #555555; font-weight: 400;">（思いつき→構造化）</span></p></div>
+<div style="width: 360px;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 15px; color: #333333; margin: 0;">具体的な切り口が出やすい</p></div>
+<div style="flex: 1;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 15px; color: #333333; margin: 0;">モレやダブリが生じやすい</p></div>
 </div>
-<!-- === END FOOTER === -->
+</div>
+<!-- Practice Tips Section (Textbox) -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 380px; width: 1120px; height: 160px; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 18px; color: #000000; margin: 0 0 12px 0;">実践のコツ</p>
+<div style="display: flex; margin-bottom: 8px;">
+<div style="width: 20px; font-size: 15px; color: #000000;">•</div>
+<div style="flex: 1;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 15px; color: #333333; margin: 0; line-height: 1.5;">両者を行き来しながら作り込む</p></div>
+</div>
+<div style="display: flex;">
+<div style="width: 20px; font-size: 15px; color: #000000;">•</div>
+<div style="flex: 1;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 15px; color: #333333; margin: 0; line-height: 1.5;">実務では「真ん中あたり」から着手し、上下に伸ばしていくのが効率的</p></div>
+</div>
+</div>
+<!-- Navigation Arrow (Icon) -->
+<div data-object="true" data-object-type="icon" style="position: absolute; left: 1192px; top: 640px; width: 48px; height: 48px; background-color: #000000; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 6px rgba(0,0,0,0.2); z-index: 10;">
+<i class="fas fa-chevron-right" style="color: #ffffff; font-size: 20px;"></i>
+</div>
 </div>
 </body>
 </html>

@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>論点には必ず「べき」を含める - 再現性のある問題解決フレームワーク</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&amp;family=Space+Grotesk:wght@700&amp;display=swap" rel="stylesheet"/>
+<title>問題解決能力が高いとは何か</title>
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet"/>
 <style>
     body {
         margin: 0;
         padding: 0;
         overflow: hidden;
-        font-family: 'Noto Sans JP', sans-serif;
         background-color: #ffffff;
     }
     .slide-container {
@@ -21,102 +19,89 @@
         position: relative;
         overflow: hidden;
         background-color: #ffffff;
-    }
-    p {
-        margin: 0;
+        font-family: 'Noto Sans JP', sans-serif;
     }
 </style>
 </head>
 <body>
 <div class="slide-container">
-<!-- === STANDARDIZED HEADER === -->
-<div style="position: absolute; left: 0; top: 0; width: 1280px; height: 148px; background-color: #ffffff; z-index: 50;"></div>
-<div style="position: absolute; left: 40px; top: 16px; z-index: 55;">
-<p style="margin: 0; padding: 5px 18px; border: 2px solid #000; border-radius: 9999px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; color: #000; letter-spacing: 1px; background: #ffffff; display: inline-block;">PROBLEM SOLVING</p>
-</div>
-<div style="position: absolute; right: 40px; top: 22px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #999; letter-spacing: 0.5px;">第4章 論点を分解する</p>
-</div>
-<div style="position: absolute; left: 80px; top: 52px; width: 1120px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 32px; color: #000; letter-spacing: 1px; line-height: 1.2;">分解の5原則：概要</p>
-</div>
-<div style="position: absolute; left: 80px; top: 100px; width: 1120px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #888; line-height: 1.4;">論点を効果的に分解するための5つの原則</p>
-</div>
-<!-- === END HEADER === -->
-
 <!-- Background Dot Pattern (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 0px; top: 0px; width: 1280px; height: 720px; background-image: radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px); background-size: 20px 20px; opacity: 0.4; z-index: 1;"></div>
-<!-- Gray Accent Banner Top-Right (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 880px; top: 0px; width: 400px; height: 180px; background-color: #ececec; clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%); z-index: 1;"></div>
-<!-- Section Title and Subtitle (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 110px; width: 1120px; height: 130px; z-index: 10;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 34px; color: #000000; line-height: 1.2; margin: 0 0 16px 0; letter-spacing: 1px;">論点には必ず「べき」を含める</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #333333; line-height: 1.5; margin: 0; width: 750px;">問いの目的 ＝ 行動を起こすこと <span style="color: #dd0000; margin: 0 8px;">/</span> × 行動を伴わない問い ＝ 自己満足・無意味</p>
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 0px; top: 0px; width: 1280px; height: 720px; background-image: radial-gradient(circle, rgba(236,236,236,0.5) 1px, transparent 1px); background-size: 20px 20px; z-index: 1;"></div>
+<!-- Gray Banner (Shape) -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 60px; top: 0px; width: 1220px; height: 200px; background-color: #ececec; clip-path: polygon(0 0, 100% 0, 100% 100%, 25% 100%); z-index: 1;"></div>
+<!-- Company Pill (Textbox) -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 32px; width: 240px; height: 40px; z-index: 10; display: flex; align-items: center;">
+<p style="margin: 0; padding: 6px 24px; border: 2px solid #000000; border-radius: 9999px; font-size: 14px; font-weight: 700; color: #000000; letter-spacing: 1px; background-color: #ffffff; font-family: 'Space Grotesk', sans-serif;">PROBLEM SOLVING</p>
 </div>
-<!-- Comparison Table (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 250px; width: 1120px; height: 280px; z-index: 10;">
-<!-- Header -->
-<div style="display: flex; width: 100%; border-bottom: 2px solid #ffffff;">
-<div style="flex: 1; background-color: #000000; padding: 16px 24px; color: #ffffff; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 16px;">
-<span style="color: #ff6666; margin-right: 8px;">×</span>なんちゃって論点（行動に繋がらない）
-    </div>
-<div style="flex: 1; background-color: #000000; padding: 16px 24px; color: #ffffff; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 16px; border-left: 2px solid #ffffff;">
-<span style="color: #66ff66; margin-right: 8px;">○</span>問題を解決する論点（行動を決める）
-    </div>
+<!-- Section Title (Textbox) -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 140px; width: 1120px; height: 80px; z-index: 10;">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 48px; color: #000000; line-height: 1.1; letter-spacing: 2px;">問題解決能力が高いとは何か</p>
 </div>
-<!-- Row 1 -->
-<div style="display: flex; width: 100%; border-bottom: 2px solid #ffffff;">
-<div style="flex: 1; background-color: #f8f8f8; padding: 6px 10px; color: #333333; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 15px; display: flex; align-items: center;">
-<p>A社は買収対象として魅力的なのか？</p>
+
+<!-- 3-Step Transformation Flow -->
+<!-- Step 1: NG (Wrong Understanding) -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 270px; width: 300px; height: 140px; z-index: 10; background-color: #ffebee; border: 3px solid #c62828; border-radius: 12px; padding: 20px; box-sizing: border-box;">
+<div style="display: flex; align-items: center; margin-bottom: 12px;">
+<span style="display: inline-block; width: 36px; height: 36px; background-color: #c62828; color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 900; margin-right: 12px; flex-shrink: 0;">×</span>
+<p style="margin: 0; font-size: 14px; font-weight: 700; color: #666666; text-transform: uppercase; letter-spacing: 1px;">Wrong</p>
 </div>
-<div style="flex: 1; background-color: #ececec; padding: 6px 10px; color: #000000; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; display: flex; align-items: center; border-left: 2px solid #ffffff;">
-<p>A社を買収するべきか？</p>
-</div>
-</div>
-<!-- Row 2 -->
-<div style="display: flex; width: 100%; border-bottom: 2px solid #ffffff;">
-<div style="flex: 1; background-color: #f8f8f8; padding: 6px 10px; color: #333333; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 15px; display: flex; align-items: center;">
-<p>新製品のターゲット顧客セグメントは誰か？</p>
-</div>
-<div style="flex: 1; background-color: #ececec; padding: 6px 10px; color: #000000; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; display: flex; align-items: center; border-left: 2px solid #ffffff;">
-<p>新製品はどの顧客セグメントを狙うべきか？</p>
-</div>
-</div>
-<!-- Row 3 -->
-<div style="display: flex; width: 100%; border-bottom: 2px solid #ffffff;">
-<div style="flex: 1; background-color: #f8f8f8; padding: 6px 10px; color: #333333; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 15px; display: flex; align-items: center;">
-<p>どのようにすれば売上は伸びるか？</p>
-</div>
-<div style="flex: 1; background-color: #ececec; padding: 6px 10px; color: #000000; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; display: flex; align-items: center; border-left: 2px solid #ffffff;">
-<p>売上を伸ばすためには何をするべきか？</p>
-</div>
-</div>
-<!-- Row 4 -->
-<div style="display: flex; width: 100%;">
-<div style="flex: 1; background-color: #f8f8f8; padding: 6px 10px; color: #333333; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 15px; display: flex; align-items: center;">
-<p>これまで市場はどのくらいのペースで伸びてきたのか？</p>
-</div>
-<div style="flex: 1; background-color: #ececec; padding: 6px 10px; color: #000000; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; display: flex; align-items: center; border-left: 2px solid #ffffff;">
-<p>市場はどのくらいのペースで伸びてきたと想定するべきか？</p>
-</div>
-</div>
-</div>
-<!-- Conclusion Bottom (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 560px; width: 1120px; height: 70px; background-color: rgba(0,0,0,0.05); border-left: 4px solid #000000; padding: 20px 24px; box-sizing: border-box; z-index: 10;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #000000; margin: 0;">
-<span style="color: #555555; margin-right: 8px;">結論：</span>「べき」がない ＝ なんちゃって論点。苦しくても「べき」を入れる <i class="fas fa-arrow-right" style="margin: 0 8px;"></i> 例外なし
+<p style="margin: 0; font-size: 19px; font-weight: 700; color: #000000; line-height: 1.4;">
+どんな問題も<br/>必ず解決できる
 </p>
 </div>
-<!-- === STANDARDIZED FOOTER === -->
-<div style="position: absolute; left: 0; top: 660px; width: 1280px; height: 60px; background-color: #ffffff; border-top: 1px solid rgba(0,0,0,0.08); z-index: 50;"></div>
-<div style="position: absolute; left: 40px; top: 680px; z-index: 55;">
-<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 1.5px;">LOGICAL THINKING TRAINING</p>
+
+<!-- Arrow 1 -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 400px; top: 330px; width: 80px; height: 4px; background-color: #000000; z-index: 10;"></div>
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 480px; top: 320px; width: 0; height: 0; border-top: 12px solid transparent; border-bottom: 12px solid transparent; border-left: 20px solid #000000; z-index: 10;"></div>
+
+<!-- Step 2: OK (Correct Understanding) -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 520px; top: 270px; width: 320px; height: 140px; z-index: 10; background-color: #e8f5e9; border: 3px solid #2e7d32; border-radius: 12px; padding: 20px; box-sizing: border-box;">
+<div style="display: flex; align-items: center; margin-bottom: 12px;">
+<span style="display: inline-block; width: 36px; height: 36px; background-color: #2e7d32; color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 900; margin-right: 12px; flex-shrink: 0;">○</span>
+<p style="margin: 0; font-size: 14px; font-weight: 700; color: #666666; text-transform: uppercase; letter-spacing: 1px;">Correct</p>
 </div>
-<div style="position: absolute; right: 40px; top: 680px; z-index: 55;">
-<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 0.5px;">14 / 47</p>
+<p style="margin: 0; font-size: 19px; font-weight: 700; color: #000000; line-height: 1.4;">
+どんな問題も<br/>「解決できる可能性が高い」
+</p>
 </div>
-<!-- === END FOOTER === -->
+
+<!-- Arrow 2 -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 860px; top: 330px; width: 80px; height: 4px; background-color: #000000; z-index: 10;"></div>
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 940px; top: 320px; width: 0; height: 0; border-top: 12px solid transparent; border-bottom: 12px solid transparent; border-left: 20px solid #000000; z-index: 10;"></div>
+
+<!-- Step 3: Core Insight -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 980px; top: 270px; width: 220px; height: 140px; z-index: 10; background-color: #000000; border-radius: 12px; padding: 20px; box-sizing: border-box; display: flex; align-items: center; justify-content: center;">
+<p style="margin: 0; font-size: 22px; font-weight: 900; color: #ffffff; line-height: 1.3; text-align: center;">
+本質は<br/>「期待値を<br/>高めること」
+</p>
+</div>
+
+<!-- Explanation Section -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 460px; width: 1120px; height: 180px; z-index: 10; background-color: #f5f5f5; border-radius: 12px; padding: 28px 32px; box-sizing: border-box;">
+<div style="display: flex; align-items: center; margin-bottom: 20px;">
+<i class="fas fa-lightbulb" style="font-size: 32px; color: #000000; margin-right: 16px;"></i>
+<p style="margin: 0; font-size: 24px; font-weight: 900; color: #000000;">期待値を高めるとは</p>
+</div>
+<div style="display: flex; gap: 48px;">
+<div style="flex: 1;">
+<p style="margin: 0 0 8px 0; font-size: 18px; font-weight: 700; color: #000000; display: flex; align-items: center;">
+<span style="display: inline-block; width: 10px; height: 10px; background-color: #000000; border-radius: 50%; margin-right: 12px;"></span>
+一回勝負ではなく100回の平均で設計
+</p>
+</div>
+<div style="flex: 1;">
+<p style="margin: 0; font-size: 18px; font-weight: 700; color: #000000; display: flex; align-items: center;">
+<span style="display: inline-block; width: 10px; height: 10px; background-color: #000000; border-radius: 50%; margin-right: 12px;"></span>
+51回成功なら戦略として正しい
+</p>
+</div>
+</div>
+</div>
+
+<!-- Navigation Arrow (Icon) -->
+<div data-object="true" data-object-type="icon" style="position: absolute; left: 1192px; top: 640px; width: 48px; height: 48px; background-color: #000000; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 6px rgba(0,0,0,0.2); z-index: 10;">
+<i class="fas fa-chevron-right" style="color: #ffffff; font-size: 20px;"></i>
+</div>
 </div>
 </body>
 </html>

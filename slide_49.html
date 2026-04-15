@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>まとめ：覚えるべき5つの原則 - 再現性のある問題解決フレームワーク</title>
+<title>Deep Dive：情報の海に潜る - 再現性のある問題解決フレームワーク</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&amp;family=Space+Grotesk:wght@700&amp;display=swap" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
 <style>
@@ -20,78 +20,91 @@
         height: 720px;
         position: relative;
         overflow: hidden;
-        background-color: #ffffff;
+        background: white;
+    }
+    p {
+        margin: 0;
     }
 </style>
 </head>
 <body>
 <div class="slide-container">
-<!-- Background Dot Pattern (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 0px; top: 0px; width: 1280px; height: 720px; background-image: radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px); background-size: 20px 20px; opacity: 0.4; z-index: 1;"></div>
-<!-- Gray Accent Banner Top-Right (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 880px; top: 0px; width: 400px; height: 180px; background-color: #ececec; clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%); z-index: 1;"></div>
-<!-- Branding Pill (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 40px; top: 32px; width: 220px; height: 40px; z-index: 10;">
-<p style="padding: 8px 24px; border: 2px solid #000000; border-radius: 9999px; background-color: #ffffff; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 1px; color: #000000; text-align: center; margin: 0;">PROBLEM SOLVING</p>
+<!-- === STANDARDIZED HEADER === -->
+<div style="position: absolute; left: 0; top: 0; width: 1280px; height: 148px; background-color: #ffffff; z-index: 50;"></div>
+<div style="position: absolute; left: 40px; top: 16px; z-index: 55;">
+<p style="margin: 0; padding: 5px 18px; border: 2px solid #000; border-radius: 9999px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; color: #000; letter-spacing: 1px; background: #ffffff; display: inline-block;">PROBLEM SOLVING</p>
 </div>
-<!-- Section Title (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 110px; width: 780px; height: 60px; z-index: 10;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 36px; color: #000000; line-height: 1.1; margin: 0; letter-spacing: 1px;">まとめ：覚えるべき5つの原則</p>
+<div style="position: absolute; right: 40px; top: 22px; z-index: 55;">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #999; letter-spacing: 0.5px;">第6章 仮説を検証する</p>
 </div>
-<!-- Item 1 (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 190px; width: 540px; height: 80px; background-color: #ffffff; border-left: 4px solid #000000; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: 8px 16px; box-sizing: border-box; z-index: 10;">
+<div style="position: absolute; left: 80px; top: 52px; width: 1120px; z-index: 55;">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 32px; color: #000; letter-spacing: 1px; line-height: 1.2;">何を先に検証するか</p>
+</div>
+<div style="position: absolute; left: 80px; top: 100px; width: 1120px; z-index: 55;">
+<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #888; line-height: 1.4;">制約下で最も影響の大きい論点から検証する</p>
+</div>
+<!-- === END HEADER === -->
+
+<!-- Background Elements -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 0; top: 0; width: 1280px; height: 720px; background-image: radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px); background-size: 20px 20px; opacity: 0.4; z-index: 1;"></div>
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 640px; top: 0; width: 640px; height: 720px; background-color: #ececec; clip-path: polygon(20px 0, 100% 0, 100% 100%, 0 100%, 0 20px); z-index: 1;"></div>
+<!-- Left Panel Content -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 168px; width: 500px; z-index: 10;">
+<p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; color: rgba(0,0,0,0.5); letter-spacing: 2px; margin-bottom: 6px;">DEEP DIVE</p>
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 38px; line-height: 1.1; color: #000000; margin-bottom: 24px; letter-spacing: 1px;">情報の海に<br/>潜る</p>
+<div style="margin-bottom: 32px;">
+<div style="background-color: #000000; color: #ffffff; padding: 6px 12px; display: inline-block; font-weight: 700; font-size: 14px; border-radius: 4px; vertical-align: middle; margin-right: 8px;">
+            筋のいい仮説が出ないとき
+        </div>
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 20px; line-height: 1.2; color: #000000; border-bottom: 2px solid #000000; padding-bottom: 3px; display: inline-block; vertical-align: middle; margin-top: 3px;">やること</p>
+</div>
+<div style="display: flex; align-items: flex-start; margin-bottom: 22px;">
+<i class="fas fa-check-circle" style="color: #000000; font-size: 16px; margin-right: 12px; margin-top: 4px;"></i>
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 16px; line-height: 1.5; color: #000000;">論点は頭の片隅に置く</p>
+</div>
+<div style="display: flex; align-items: flex-start; margin-bottom: 22px;">
+<i class="fas fa-check-circle" style="color: #000000; font-size: 16px; margin-right: 12px; margin-top: 4px;"></i>
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 16px; line-height: 1.5; color: #000000;">素朴な感情に耳を傾ける<br/><span style="font-size: 14px; font-weight: 400; color: #555;">（面白い、驚き、違和感）</span></p>
+</div>
+<div style="display: flex; align-items: flex-start; margin-bottom: 22px;">
+<i class="fas fa-check-circle" style="color: #000000; font-size: 16px; margin-right: 12px; margin-top: 4px;"></i>
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 16px; line-height: 1.5; color: #000000;">目的を定めすぎず広く情報を浴びる</p>
+</div>
 <div style="display: flex; align-items: flex-start;">
-<div style="width: 32px;"><p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; color: #000000; margin: 0;">1</p></div>
-<div style="flex: 1;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #000000; margin: 0 0 4px 0; line-height: 1.4;">問題解決とは行動を見つけることである</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #555555; margin: 0; line-height: 1.5;">正しい行動が決まれば勝ち確</p>
+<i class="fas fa-check-circle" style="color: #000000; font-size: 16px; margin-right: 12px; margin-top: 4px;"></i>
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 16px; line-height: 1.5; color: #000000;">予想外の接続点を見つける</p>
+</div>
+</div>
+<!-- Right Panel Content -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 700px; top: 168px; width: 500px; z-index: 10;">
+<p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; color: rgba(0,0,0,0.5); letter-spacing: 2px; margin-bottom: 6px;">AVOID</p>
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 20px; line-height: 1.2; color: #000000; margin-bottom: 28px; border-bottom: 2px solid #000000; padding-bottom: 6px; display: inline-block;">やってはいけないこと</p>
+<div style="background-color: rgba(0,0,0,0.05); border-left: 6px solid #e53e3e; padding: 20px; margin-bottom: 48px; box-sizing: border-box; width: 500px;">
+<div style="display: flex; align-items: center; margin-bottom: 14px;">
+<i class="fas fa-times-circle" style="color: #e53e3e; font-size: 20px; margin-right: 12px; flex-shrink: 0;"></i>
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 17px; color: #e53e3e; margin: 0;">無制限に潜り続ける</p>
+</div>
+<div style="padding-left: 32px;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 20px; color: #000000; margin: 0;">＝ 思考停止</p>
+</div>
+</div>
+<div style="background-color: #ffffff; border: 2px solid #000000; padding: 28px; box-shadow: 8px 8px 0px rgba(0,0,0,0.1); border-radius: 4px; text-align: center; box-sizing: border-box; width: 500px;">
+<p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; color: #555555; letter-spacing: 2px; margin-bottom: 10px;">EMPHASIZED RULE</p>
+<div style="display: flex; align-items: center; justify-content: center;">
+<i class="fas fa-stopwatch" style="font-size: 24px; margin-right: 10px; color: #000000;"></i>
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 26px; line-height: 1.4; color: #000000; margin: 0;">必ず時間を区切る</p>
 </div>
 </div>
 </div>
-<!-- Item 2 (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 660px; top: 190px; width: 540px; height: 80px; background-color: #ffffff; border-left: 4px solid #000000; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: 8px 16px; box-sizing: border-box; z-index: 10;">
-<div style="display: flex; align-items: flex-start;">
-<div style="width: 32px;"><p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; color: #000000; margin: 0;">2</p></div>
-<div style="flex: 1;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #000000; margin: 0 0 4px 0; line-height: 1.4;">論点定義が最も重要である</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #555555; margin: 0; line-height: 1.5;">問いが間違えていたら行動は間違える（負け確）</p>
+<!-- === STANDARDIZED FOOTER === -->
+<div style="position: absolute; left: 0; top: 660px; width: 1280px; height: 60px; background-color: #ffffff; border-top: 1px solid rgba(0,0,0,0.08); z-index: 50;"></div>
+<div style="position: absolute; left: 40px; top: 680px; z-index: 55;">
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 1.5px;">LOGICAL THINKING TRAINING</p>
 </div>
+<div style="position: absolute; right: 40px; top: 680px; z-index: 55;">
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 0.5px;">31 / 47</p>
 </div>
-</div>
-<!-- Item 3 (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 290px; width: 540px; height: 80px; background-color: #ffffff; border-left: 4px solid #000000; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: 8px 16px; box-sizing: border-box; z-index: 10;">
-<div style="display: flex; align-items: flex-start;">
-<div style="width: 32px;"><p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; color: #000000; margin: 0;">3</p></div>
-<div style="flex: 1;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #000000; margin: 0 0 4px 0; line-height: 1.4;">論点には必ず「べき」を含める</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #555555; margin: 0; line-height: 1.5;">苦しくてもこの規律は守る</p>
-</div>
-</div>
-</div>
-<!-- Item 4 (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 660px; top: 290px; width: 540px; height: 80px; background-color: #ffffff; border-left: 4px solid #000000; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: 8px 16px; box-sizing: border-box; z-index: 10;">
-<div style="display: flex; align-items: flex-start;">
-<div style="width: 32px;"><p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; color: #000000; margin: 0;">4</p></div>
-<div style="flex: 1;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #000000; margin: 0 0 4px 0; line-height: 1.4;">仮説はベストエフォートで必ず出す</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #555555; margin: 0; line-height: 1.5;">正しさではなく検証可能性が重要</p>
-</div>
-</div>
-</div>
-<!-- Item 5 (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 370px; top: 390px; width: 540px; height: 80px; background-color: #ffffff; border-left: 4px solid #000000; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: 8px 16px; box-sizing: border-box; z-index: 10;">
-<div style="display: flex; align-items: flex-start;">
-<div style="width: 32px;"><p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; color: #000000; margin: 0;">5</p></div>
-<div style="flex: 1;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #000000; margin: 0 0 4px 0; line-height: 1.4;">結果と行動を切り離す</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #555555; margin: 0; line-height: 1.5;">正しく間違えれば、繰り返すだけでいつかは成功する</p>
-</div>
-</div>
-</div>
-<!-- Navigation Arrow (Icon) -->
-<div data-object="true" data-object-type="icon" style="position: absolute; left: 1192px; top: 640px; width: 48px; height: 48px; background-color: #000000; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 6px rgba(0,0,0,0.2); z-index: 10;">
-<i class="fas fa-chevron-right" style="color: #ffffff; font-size: 20px;"></i>
-</div>
+<!-- === END FOOTER === -->
 </div>
 </body>
 </html>

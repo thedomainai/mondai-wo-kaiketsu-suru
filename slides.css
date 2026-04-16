@@ -3,7 +3,6 @@
   --header-band-height: 156px;
   --header-pill-top: 20px;
   --header-text-top: 28px;
-  --header-text-gap: 8px;
   --content-left: 80px;
   --content-width: 1120px;
   --content-right: 1200px;
@@ -34,8 +33,10 @@
   --font-size-agenda-label: 11px;
   --font-size-agenda-title: 52px;
 
-  --space-eyebrow-title-boost: 6px;
-  --space-eyebrow-title-boost-sm: 4px;
+  --space-stack-lead-title: 12px;
+  --space-stack-title-body: 16px;
+  --space-stack-lead-title-loose: 36px;
+  --space-stack-title-body-loose: 24px;
 
   --slide-bg-paper: #ffffff;
   --slide-bg-mist: #ffffff;
@@ -111,13 +112,13 @@ body {
   position: absolute;
   left: 0;
   width: 1280px;
-  background: var(--slide-bg);
   z-index: 50;
 }
 
 .slide-standard-header__band {
   top: 0;
   height: var(--header-band-height);
+  background: var(--slide-bg);
 }
 
 .slide-standard-header__brand {
@@ -148,13 +149,17 @@ body {
   top: var(--header-text-top);
   width: 920px;
   z-index: 55;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--header-text-gap);
+  display: grid;
+  --stack-gap: var(--space-stack-lead-title);
+}
+
+.slide-standard-header__body {
+  display: grid;
+  row-gap: 12px;
 }
 
 .slide-standard-header__chapter {
+  margin: 0;
   color: #999;
   font-size: var(--font-size-header-chapter);
   font-weight: 400;
@@ -162,6 +167,7 @@ body {
 }
 
 .slide-standard-header__title {
+  margin: 0;
   color: var(--soft-black);
   font-size: var(--font-size-header-title);
   font-weight: 900;
@@ -170,6 +176,7 @@ body {
 }
 
 .slide-standard-header__subtitle {
+  margin: 0;
   color: #888;
   font-size: var(--font-size-header-subtitle);
   font-weight: 400;
@@ -179,6 +186,7 @@ body {
 .slide-standard-footer__band {
   top: 660px;
   height: 60px;
+  background: transparent;
 }
 
 .slide-standard-footer__brand {
@@ -214,8 +222,9 @@ body {
 
 .slide-divider__brand {
   position: absolute;
-  left: 40px;
+  left: var(--content-left);
   top: 32px;
+  width: var(--content-width);
   z-index: 10;
 }
 
@@ -245,15 +254,21 @@ body {
   position: absolute;
   inset: 0;
   z-index: 10;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  --stack-gap: var(--space-stack-lead-title-loose);
   text-align: center;
 }
 
+.slide-divider__body {
+  display: grid;
+  justify-items: center;
+  row-gap: calc(var(--space-stack-title-body-loose) - 4px);
+}
+
 .slide-divider__kicker {
+  margin: 0;
   color: rgba(0, 0, 0, 0.35);
   font-family: "Space Grotesk", sans-serif;
   font-size: var(--font-size-divider-kicker);
@@ -263,6 +278,7 @@ body {
 }
 
 .slide-divider__title {
+  margin: 0;
   color: var(--soft-black);
   font-size: var(--font-size-divider-title);
   font-weight: 900;
@@ -271,6 +287,7 @@ body {
 }
 
 .slide-divider__subtitle {
+  margin: 0;
   color: rgba(0, 0, 0, 0.45);
   font-size: var(--font-size-divider-subtitle);
   font-weight: 400;
@@ -292,7 +309,7 @@ body {
 }
 
 .slide-center-title .chapter {
-  margin: 0 0 24px;
+  margin: 0;
   color: rgba(0, 0, 0, 0.34);
   font-family: "Space Grotesk", sans-serif;
   font-size: var(--font-size-center-chapter);
@@ -312,7 +329,7 @@ body {
 }
 
 .slide-center-title .subtitle {
-  margin: 24px auto 0;
+  margin: 0 auto;
   max-width: 860px;
   color: rgba(0, 0, 0, 0.48);
   font-size: var(--font-size-center-subtitle);
@@ -329,7 +346,7 @@ body {
 }
 
 .agenda-panel__eyebrow {
-  margin: 0 0 16px;
+  margin: 0 0 var(--space-stack-lead-title-loose);
   color: rgba(0, 0, 0, 0.4);
   font-family: "Space Grotesk", sans-serif;
   font-size: var(--font-size-agenda-label);
@@ -348,7 +365,7 @@ body {
 }
 
 .agenda-panel__title--spaced {
-  margin-bottom: 12px;
+  margin-bottom: var(--space-stack-title-body);
 }
 
 .agenda-panel__list-wrap {
@@ -436,9 +453,53 @@ body {
 }
 
 /* Shared vertical rhythm:
-   older slides mix shared templates and inline margins, so eyebrow-title
-   spacing ended up systematically tight. Add spacing at the eyebrow layer
-   instead of rewriting each title margin individually. */
+   older slides expressed spacing in four different places:
+   1) eyebrow/title margin-bottom
+   2) eyebrow padding-bottom
+   3) parent gap / row-gap
+   4) inline style on one-off slides
+   This made fixes partial and fragile. The rule is now:
+   - shared containers own their own rhythm here
+   - local slides should reference the stack tokens below
+   - do not use eyebrow padding as a spacing mechanism */
+.stack {
+  display: grid;
+  row-gap: var(--stack-gap, 0px);
+}
+
+.stack--center {
+  justify-items: center;
+  text-align: center;
+}
+
+.stack--left {
+  justify-items: start;
+  text-align: left;
+}
+
+.stack > :is(p, h1, h2, h3, h4, h5, h6, span, div, section, article, ul, ol) {
+  margin: 0;
+}
+
+.stack-optical {
+  display: grid;
+  row-gap: calc(var(--stack-gap, 0px) + var(--stack-optical-comp, 0px));
+}
+
+.stack-optical--center {
+  justify-items: center;
+  text-align: center;
+}
+
+.stack-optical--left {
+  justify-items: start;
+  text-align: left;
+}
+
+.stack-optical > :is(p, h1, h2, h3, h4, h5, h6, span) {
+  margin: 0;
+}
+
 .slide-container :is(
   .eyebrow,
   .kicker,
@@ -447,23 +508,11 @@ body {
   [class*="-eyebrow"],
   [class*="-kicker"]
 ):not(.statement__eyebrow):not(.layers-kicker):not(.layer-card__eyebrow):not(.points-panel__kicker):not(.principles-kicker):not(.panel__kicker):not(.agenda-panel__eyebrow):not(.ui-kicker):not(.ui-kicker-sm) {
-  padding-bottom: var(--space-eyebrow-title-boost-sm);
-}
-
-.slide-standard-header__chapter,
-.slide-divider__kicker,
-.slide-center-title .chapter,
-.agenda-panel__eyebrow,
-.ui-kicker {
-  padding-bottom: var(--space-eyebrow-title-boost);
-}
-
-.ui-kicker-sm {
-  padding-bottom: var(--space-eyebrow-title-boost-sm);
+  padding-bottom: 0;
 }
 
 .ui-kicker {
-  margin: 0 0 18px;
+  margin: 0 0 var(--space-stack-lead-title);
   color: rgba(0, 0, 0, 0.34);
   font-family: "Space Grotesk", sans-serif;
   font-size: 12px;
@@ -472,7 +521,7 @@ body {
 }
 
 .ui-kicker-sm {
-  margin: 0 0 10px;
+  margin: 0 0 var(--space-stack-lead-title);
   color: rgba(0, 0, 0, 0.34);
   font-family: "Space Grotesk", sans-serif;
   font-size: 11px;
@@ -489,7 +538,7 @@ body {
 }
 
 .ui-title-sm {
-  margin: 0 0 8px;
+  margin: 0 0 var(--space-stack-title-body);
   color: var(--soft-black);
   font-size: 15px;
   font-weight: 700;
@@ -510,7 +559,7 @@ body {
 }
 
 .number-card__index {
-  margin: 0 0 14px;
+  margin: 0 0 var(--space-stack-lead-title);
   color: var(--soft-black);
   font-family: "Space Grotesk", sans-serif;
   font-size: 32px;
@@ -519,7 +568,7 @@ body {
 }
 
 .number-card__title {
-  margin: 0 0 10px;
+  margin: 0 0 var(--space-stack-title-body);
   color: var(--soft-black);
   font-size: 15px;
   font-weight: 700;
@@ -545,7 +594,7 @@ body {
 }
 
 .step-card__index-wrap {
-  margin-bottom: 14px;
+  margin-bottom: var(--space-stack-lead-title);
   text-align: center;
 }
 
@@ -559,7 +608,7 @@ body {
 }
 
 .step-card__title {
-  margin: 0 0 8px;
+  margin: 0 0 var(--space-stack-title-body);
   color: var(--soft-black);
   font-size: 16px;
   font-weight: 700;

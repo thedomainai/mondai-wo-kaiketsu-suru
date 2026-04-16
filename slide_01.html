@@ -1,49 +1,125 @@
 <!DOCTYPE html>
-<html data-theme="light" lang="ja" style=""><head>
+<html lang="ja">
+<head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>問題を解決する</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&amp;display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet">
+<link href="./slides.css" rel="stylesheet">
+<script defer src="./slides.js"></script>
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        font-family: 'Noto Sans JP', sans-serif;
-        background-color: #ececec;
-    }
-    .slide-container {
-        width: 1280px;
-        height: 720px;
-        position: relative;
-        overflow: hidden;
-        background-color: #ececec;
-    }
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: "Noto Sans JP", sans-serif;
+  }
+
+  .cover-shell {
+    position: absolute;
+    inset: 0;
+    padding: 72px 80px 68px;
+    display: grid;
+    grid-template-rows: 1fr auto;
+  }
+
+  .cover-hero {
+    align-self: center;
+    max-width: 920px;
+  }
+
+  .cover-eyebrow {
+    margin: 0 0 var(--space-stack-lead-title-loose);
+    color: rgba(0, 0, 0, 0.42);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+
+  .cover-title {
+    margin: 0 0 var(--space-stack-title-body-loose);
+    color: #000000;
+    font-size: 82px;
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: 0;
+  }
+
+  .cover-subtitle {
+    margin: 0;
+    max-width: 760px;
+    color: rgba(0, 0, 0, 0.64);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: 0;
+  }
+
+  .cover-meta {
+    width: min(860px, 100%);
+    padding-top: 24px;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 64px;
+  }
+
+  .cover-meta__item {
+    display: grid;
+    gap: 10px;
+    align-content: start;
+  }
+
+  .cover-meta__label {
+    margin: 0;
+    color: rgba(0, 0, 0, 0.42);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+
+  .cover-meta__value {
+    margin: 0;
+    color: var(--soft-black);
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1.45;
+    letter-spacing: 0;
+  }
+
+  .cover-meta__subvalue {
+    margin: 4px 0 0;
+    color: rgba(0, 0, 0, 0.56);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0;
+  }
 </style>
 </head>
 <body style="user-select: none;">
-<div class="slide-container">
-<!-- Background Circle 1 -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 680px; top: -200px; width: 800px; height: 800px; border-radius: 50%; background-color: rgba(0,0,0,0.07); z-index: 1;"></div>
-<!-- Background Circle 2 -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: -200px; top: 420px; width: 500px; height: 500px; border-radius: 50%; background-color: rgba(0,0,0,0.05); z-index: 1;"></div>
-<!-- Top Left Pill -->
-<div data-object="true" data-object-type="textbox" id="fabric-obj-0-1776105217366" style="position: absolute; left: 40px; top: 32px; padding: 6px 20px; background-color: rgba(0, 0, 0, 0.7); border-radius: 9999px; z-index: 10;">
-<p style="margin: 0; font-size: 14px; font-weight: 700; color: #ffffff; letter-spacing: 1px;">ロジカルシンキング研修</p>
+<div class="slide-container slide-theme-mist" data-slide-kind="cover" data-background="grain" data-grain-opacity="0.18" data-vignette="false">
+  <main class="cover-shell">
+    <section class="cover-hero" aria-label="表紙タイトル">
+      <p class="cover-eyebrow">ロジカル・シンキング研修</p>
+      <h1 class="cover-title">問題を解決する</h1>
+      <p class="cover-subtitle">問題解決フレームワークの原理原則と実践</p>
+    </section>
+
+    <section class="cover-meta" aria-label="研修情報">
+      <div class="cover-meta__item">
+        <p class="cover-meta__label">実施日</p>
+        <p class="cover-meta__value">2026年4月16日（木）</p>
+      </div>
+
+      <div class="cover-meta__item">
+        <p class="cover-meta__label">担当</p>
+        <div>
+          <p class="cover-meta__value">中林 佑太</p>
+        </div>
+      </div>
+    </section>
+  </main>
 </div>
-<!-- Main Title & Subtitle -->
-<div data-object="true" data-object-type="textbox" id="fabric-obj-1-1776105217366" style="position: absolute; left: 140px; top: 240px; width: 1000px; height: 180px; text-align: center; z-index: 10;">
-<p style="margin: 0 0 12px 0; font-size: 88px; font-weight: 900; color: #000000; letter-spacing: 4px; line-height: 1.1;">問題を解決する</p>
-<p style="margin: 0; font-size: 28px; font-weight: 700; color: #000000; letter-spacing: 2px;">再現性のある問題解決フレームワーク</p>
-</div>
-<!-- Training Details -->
-<div data-object="true" data-object-type="textbox" id="fabric-obj-2-1776105217366" style="position: absolute; left: 140px; top: 460px; width: 1000px; height: 120px; text-align: right; z-index: 10;">
-<p style="margin: 0 0 8px 0; font-size: 20px; font-weight: 700; color: #333333;">2026/04/16 (月)</p><p style="margin: 0 0 8px 0; font-size: 20px; font-weight: 700; color: #333333;">経営企画室長 中林 佑太</p>
-</div>
-<!-- Bottom Right Navigation Arrow -->
-<div data-object="true" data-object-type="icon" id="fabric-obj-3-1776105217367" style="position: absolute; left: 1192px; top: 640px; width: 48px; height: 48px; background-color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); z-index: 10;">
-<i class="fas fa-chevron-right" style="color: #000000; font-size: 20px;"></i>
-</div>
-</div>
-</body></html>
+</body>
+</html>

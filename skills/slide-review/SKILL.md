@@ -28,6 +28,11 @@ description: HTML スライド deck を Layout / Typography / Graphics / Narrati
 - 重なりや余白を relayout で解いているか
 - copy の増減が section budget に反映されているか
 - parallel card / 比較表で、対応する内部 line や foot の開始位置が明示的な track 設計で揃っているか
+- `eyebrow / kicker / label / num / index -> title / head -> body / copy / text` の距離が token ベースで揃っているか
+- 同じ semantic role の要素を複数 slide で見たとき、1 枚だけ tight / loose になっていないか
+- 余白責任が `margin` / `padding-bottom` / 親 `gap` / inline style に分散していないか
+- 「48px 空ける」のような要求が raw `margin-bottom` として実装されていないか。視覚距離の要求なら、親 stack の gap と optical compensation で持っているか
+- optical gap を使った箇所は、スクリーンショット上の見た目距離で最終確認されているか
 - bridge slide の接続の明確さ
 - 5 card 横並びのバランス
 - summary / closing / cta / qa の役割分離
@@ -40,3 +45,4 @@ description: HTML スライド deck を Layout / Typography / Graphics / Narrati
 - file reference を添える
 - whole-deck summary は短く保つ
 - content-first stacking の疑いがあるときは、その object ではなく section 設計から指摘する
+- vertical rhythm の指摘は、対象 slide 単体ではなく「同種要素の deck 内相場」とセットで指摘する

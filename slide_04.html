@@ -7,42 +7,50 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
-<style>
-.intro-shell { position:absolute; left:80px; top:120px; width:1120px; display:grid; grid-template-columns:minmax(0, 610px) minmax(0, 430px); align-items:center; gap:80px; }
-.intro-main { display:flex; flex-direction:column; }
-.intro-eyebrow { color:rgba(0,0,0,0.34); font-family:"Space Grotesk",sans-serif; font-size:12px; font-weight:700; letter-spacing:2.4px; text-transform:uppercase; margin:0 0 18px; }
-.intro-title { max-width:610px; font-size:70px; font-weight:900; line-height:1.06; letter-spacing:1px; margin:0 0 20px; }
-.intro-lead { max-width:610px; font-size:22px; line-height:1.8; color:rgba(0,0,0,0.64); margin:0; }
-.anti-list { display:flex; flex-direction:column; gap:18px; }
-.anti-item { padding:0 0 18px 0; border-bottom:1px solid rgba(0,0,0,0.09); }
-.anti-item:last-child { padding-bottom:0; border-bottom:none; }
-.anti-item__title { margin:0 0 8px; font-size:23px; font-weight:900; line-height:1.45; }
-.anti-item__text { margin:0; font-size:17px; line-height:1.75; color:rgba(0,0,0,0.68); }
-</style>
 </head>
 <body>
-<div class="slide-container slide-theme-mist" data-slide-kind="intro" data-background="halftone" data-footer="standard" data-footer-page="03">
-<div class="intro-shell">
-  <div class="intro-main">
-    <p class="intro-eyebrow">ANTI-PATTERN</p>
-    <p class="intro-title">苦手なこと</p>
-    <p class="intro-lead">問題より先に作業に入ること、言葉が曖昧なまま議論が進むこと、行動が決まらない会議が苦手です。</p>
+<div class="slide-container slide-theme-mist" data-slide-kind="intro" data-background="grain" data-grain-opacity="0.18" data-vignette="false" data-footer="standard" data-footer-page="04">
+  <div style="position:absolute; left:80px; top:0; width:1110px; height:720px; z-index:10; display:grid; grid-template-columns:370px 700px; column-gap:40px; align-items:start; align-content:center;">
+    <div class="stack stack--left" style="--stack-gap:var(--space-stack-lead-title-loose);">
+      <p style="margin:0; color:rgba(0,0,0,.34); font-family:'Space Grotesk',sans-serif; font-size:12px; font-weight:700; letter-spacing:2.4px; text-transform:uppercase;">DISLIKE</p>
+      <div class="stack stack--left" style="--stack-gap:var(--space-stack-title-body-loose);">
+        <p style="font-weight:900; font-size:64px; line-height:1.08; color:var(--soft-black); margin:0;">苦手なこと</p>
+        <p style="font-size:16px; font-weight:400; line-height:1.75; color:rgba(0,0,0,.58); margin:0;"></p>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:24px;">
+      <div style="min-height:125px; padding:24px 28px; box-sizing:border-box; background:transparent; border:1px solid rgba(0,0,0,0.08); border-radius:8px; display:flex; align-items:flex-start; gap:22px;">
+        <div style="width:52px; height:52px; flex:0 0 52px; align-self:center; border:1px solid rgba(0,0,0,0.08); border-radius:8px; display:flex; align-items:center; justify-content:center; background:transparent;">
+          <p style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:20px; line-height:1; color:var(--soft-black); margin:0;">01</p>
+        </div>
+        <div class="stack stack--left" style="flex:1; --stack-gap:var(--space-stack-title-body);">
+          <p style="font-weight:900; font-size:24px; line-height:1.4; color:var(--soft-black); margin:0;">私生活全般</p>
+          <p style="font-size:16px; line-height:1.7; color:rgba(0,0,0,.58); margin:0;">家事全般・運転・公共料金の支払いとか。</p>
+        </div>
+      </div>
+
+      <div style="min-height:125px; padding:24px 28px; box-sizing:border-box; background:transparent; border:1px solid rgba(0,0,0,0.08); border-radius:8px; display:flex; align-items:flex-start; gap:22px;">
+        <div style="width:52px; height:52px; flex:0 0 52px; align-self:center; border:1px solid rgba(0,0,0,0.08); border-radius:8px; display:flex; align-items:center; justify-content:center; background:transparent;">
+          <p style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:20px; line-height:1; color:var(--soft-black); margin:0;">02</p>
+        </div>
+        <div class="stack stack--left" style="flex:1; --stack-gap:var(--space-stack-title-body);">
+          <p style="font-weight:900; font-size:24px; line-height:1.4; color:var(--soft-black); margin:0;">歌</p>
+          <p style="font-size:16px; line-height:1.7; color:rgba(0,0,0,.58); margin:0;">信じられないほど音痴。</p>
+        </div>
+      </div>
+
+      <div style="min-height:125px; padding:24px 28px; box-sizing:border-box; background:transparent; border:1px solid rgba(0,0,0,0.08); border-radius:8px; display:flex; align-items:flex-start; gap:22px;">
+        <div style="width:52px; height:52px; flex:0 0 52px; align-self:center; border:1px solid rgba(0,0,0,0.08); border-radius:8px; display:flex; align-items:center; justify-content:center; background:transparent;">
+          <p style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:20px; line-height:1; color:var(--soft-black); margin:0;">03</p>
+        </div>
+        <div class="stack stack--left" style="flex:1; --stack-gap:var(--space-stack-title-body);">
+          <p style="font-weight:900; font-size:24px; line-height:1.4; color:var(--soft-black); margin:0;">お酒</p>
+          <p style="font-size:16px; line-height:1.7; color:rgba(0,0,0,.58); margin:0;">これに関してはまじで来世は酒豪になりたいです。</p>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="anti-list">
-    <div class="anti-item">
-      <p class="anti-item__title">作業が先に立つ</p>
-      <p class="anti-item__text">何を解くべきかが曖昧なまま、手段だけが先に動き始める。</p>
-    </div>
-    <div class="anti-item">
-      <p class="anti-item__title">定義が曖昧</p>
-      <p class="anti-item__text">同じ言葉を使っていても、互いに見ているものが揃っていない。</p>
-    </div>
-    <div class="anti-item">
-      <p class="anti-item__title">行動が決まらない</p>
-      <p class="anti-item__text">話した量は多いのに、次に何をするかが最後まで決まらない。</p>
-    </div>
-  </div>
-</div>
 </div>
 </body>
 </html>

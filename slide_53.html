@@ -4,125 +4,32 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>何を先に検証するか</title>
-<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
+<link href="./slides.css" rel="stylesheet"/>
+<script defer src="./slides.js"></script>
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #ffffff;
-    }
-    .slide-container {
-        width: 1280px;
-        height: 720px;
-        position: relative;
-        overflow: hidden;
-        background-color: #ffffff;
-        font-family: 'Noto Sans JP', sans-serif;
-    }
+.stage{position:absolute;left:80px;top:160px;width:1120px;display:flex;flex-direction:column;gap:16px}.kicker{margin:0;color:#5a4970;font-size:15px;font-weight:900;line-height:1.55}.matrix-wrap{display:grid;grid-template-columns:184px 1fr;gap:18px;align-items:stretch}.axis-note{padding:18px 20px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff;display:flex;flex-direction:column;justify-content:center;gap:16px}.axis-note p{margin:0;font-size:16px;font-weight:900;line-height:1.6}.axis-note span{display:block;color:rgba(0,0,0,.68);font-size:13px;font-weight:400;line-height:1.7}.matrix{position:relative;height:388px;border:1px solid rgba(0,0,0,.12);border-radius:8px;background:#fff}.matrix::before,.matrix::after{content:"";position:absolute;background:rgba(0,0,0,.14)}.matrix::before{left:50%;top:24px;bottom:24px;width:1px}.matrix::after{top:50%;left:24px;right:24px;height:1px}.y-axis{position:absolute;left:-6px;top:168px;transform:rotate(-90deg);transform-origin:left top;color:rgba(0,0,0,.42);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px}.x-axis{position:absolute;left:50%;bottom:-28px;transform:translateX(-50%);color:rgba(0,0,0,.42);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px}.quad{position:absolute;padding:18px 20px}.quad p{margin:0}.quad__label{margin-bottom:8px;color:rgba(0,0,0,.34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.quad__title{font-size:20px;font-weight:900;line-height:1.5}.quad__text{margin-top:6px;color:rgba(0,0,0,.68);font-size:14px;line-height:1.68}.quad--focus{right:24px;top:24px;width:468px;height:164px;border:2px solid rgba(0,0,0,.82);border-radius:8px}.quad--other{width:468px;height:164px}.tl{left:24px;top:24px}.bl{left:24px;bottom:24px}.br{right:24px;bottom:24px}.summary{padding-top:14px;border-top:1px solid rgba(0,0,0,.1)}.summary p{margin:0;font-size:17px;font-weight:900;line-height:1.65}
 </style>
 </head>
 <body>
-<div class="slide-container">
-<!-- === STANDARDIZED HEADER === -->
-<div style="position: absolute; left: 0; top: 0; width: 1280px; height: 148px; background-color: #ffffff; z-index: 50;"></div>
-<div style="position: absolute; left: 40px; top: 16px; z-index: 55;">
-<p style="margin: 0; padding: 5px 18px; border: 2px solid #000; border-radius: 9999px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; color: #000; letter-spacing: 1px; background: #ffffff; display: inline-block;">PROBLEM SOLVING</p>
-</div>
-<div style="position: absolute; right: 40px; top: 22px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #999; letter-spacing: 0.5px;">第6章 仮説を検証する</p>
-</div>
-<div style="position: absolute; left: 80px; top: 52px; width: 1120px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 32px; color: #000; letter-spacing: 1px; line-height: 1.2;">トレードオフを評価する</p>
-</div>
-<div style="position: absolute; left: 80px; top: 100px; width: 1120px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #888; line-height: 1.4;">選択肢が複数ある場合は表形式で可視化する</p>
-</div>
-<!-- === END HEADER === -->
-
-<!-- Background Dot Pattern (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 0px; top: 0px; width: 1280px; height: 720px; background-image: radial-gradient(circle, rgba(236,236,236,0.5) 1px, transparent 1px); background-size: 20px 20px; z-index: 1;"></div>
-<!-- Gray Banner (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 60px; top: 0px; width: 1220px; height: 180px; background-color: #ececec; clip-path: polygon(0 0, 100% 0, 100% 100%, 25% 100%); z-index: 1;"></div>
-<!-- Section Title (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 120px; width: 1120px; height: 80px; z-index: 10;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 44px; color: #000000; line-height: 1.2; letter-spacing: 2px;">何を先に検証するか</p>
-</div>
-
-<!-- Visual Hierarchy: Center Pin Concept -->
-<!-- Constraint Section -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 230px; width: 1120px; height: 60px; z-index: 10; background-color: #f5f5f5; border-left: 8px solid #666666; border-radius: 8px; padding: 16px 24px; box-sizing: border-box;">
-<p style="margin: 0; font-size: 20px; font-weight: 700; color: #666666; line-height: 1.4;">
-<span style="font-weight: 900; color: #000000; margin-right: 12px;">制約:</span>全ての論点を同時に検証できない
-</p>
-</div>
-
-<!-- Priority Principle + Center Pin Visualization -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 320px; width: 1120px; height: 80px; z-index: 10; background-color: #ececec; border-radius: 8px; padding: 20px 24px; box-sizing: border-box;">
-<p style="margin: 0; font-size: 24px; font-weight: 900; color: #000000; line-height: 1.4; text-align: center;">
-優先順位の原則: 最初に見極める = <span style="background-color: #000000; color: #ffffff; padding: 8px 20px; border-radius: 8px; font-size: 28px; margin: 0 8px; display: inline-block;">センターピン</span> (最も影響の大きい論点)
-</p>
-</div>
-
-<!-- Visual Hierarchy of Hypotheses -->
-<div style="position: absolute; left: 80px; top: 430px; width: 1120px; height: 200px; z-index: 10;">
-<!-- Center Pin (Prominent) -->
-<div style="position: absolute; left: 50%; transform: translateX(-50%); top: 0; width: 360px; height: 120px; background-color: #000000; border-radius: 16px; padding: 24px; box-sizing: border-box; box-shadow: 0 8px 16px rgba(0,0,0,0.3);">
-<div style="display: flex; align-items: center; margin-bottom: 12px;">
-<i class="fas fa-star" style="color: #ffffff; font-size: 28px; margin-right: 12px;"></i>
-<p style="margin: 0; font-size: 20px; font-weight: 900; color: #ffffff; text-transform: uppercase; letter-spacing: 1px;">Center Pin</p>
-</div>
-<p style="margin: 0; font-size: 18px; font-weight: 900; color: #ffffff; line-height: 1.4; text-align: center;">
-全論点を検証せずとも<br/>前に進める
-</p>
-</div>
-
-<!-- Subordinate Hypothesis (Left) -->
-<div style="position: absolute; left: 0; top: 60px; width: 240px; height: 80px; background-color: #f5f5f5; border: 3px solid #cccccc; border-radius: 12px; padding: 16px; box-sizing: border-box;">
-<p style="margin: 0; font-size: 16px; font-weight: 700; color: #666666; line-height: 1.4; text-align: center;">
-その他の論点
-</p>
-</div>
-
-<!-- Subordinate Hypothesis (Right) -->
-<div style="position: absolute; right: 0; top: 60px; width: 240px; height: 80px; background-color: #f5f5f5; border: 3px solid #cccccc; border-radius: 12px; padding: 16px; box-sizing: border-box;">
-<p style="margin: 0; font-size: 16px; font-weight: 700; color: #666666; line-height: 1.4; text-align: center;">
-その他の論点
-</p>
-</div>
-
-<!-- Connection lines from center to subordinates -->
-<div style="position: absolute; left: 280px; top: 100px; width: 260px; height: 3px; background-color: #cccccc; transform: rotate(-10deg); transform-origin: right;"></div>
-<div style="position: absolute; right: 280px; top: 100px; width: 260px; height: 3px; background-color: #cccccc; transform: rotate(10deg); transform-origin: left;"></div>
-</div>
-
-<!-- Importance Section (Bottom) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 630px; width: 1120px; height: 50px; z-index: 10;">
-<div style="display: flex; gap: 32px; align-items: center; justify-content: center;">
-<div style="display: flex; align-items: center;">
-<span style="display: inline-block; width: 12px; height: 12px; background-color: #666666; margin-right: 12px;"></span>
-<p style="margin: 0; font-size: 17px; font-weight: 700; color: #666666;">
-センターピンを外す → いくら精緻でも意思決定に効かない
-</p>
-</div>
-<div style="display: flex; align-items: center;">
-<span style="display: inline-block; width: 12px; height: 12px; background-color: #000000; margin-right: 12px;"></span>
-<p style="margin: 0; font-size: 17px; font-weight: 900; color: #000000;">
-センターピンを押さえる → 全論点を検証せずとも前に進める
-</p>
-</div>
-</div>
-</div>
-<!-- === STANDARDIZED FOOTER === -->
-<div style="position: absolute; left: 0; top: 660px; width: 1280px; height: 60px; background-color: #ffffff; border-top: 1px solid rgba(0,0,0,0.08); z-index: 50;"></div>
-<div style="position: absolute; left: 40px; top: 680px; z-index: 55;">
-<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 1.5px;">LOGICAL THINKING TRAINING</p>
-</div>
-<div style="position: absolute; right: 40px; top: 680px; z-index: 55;">
-<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 0.5px;">34 / 47</p>
-</div>
-<!-- === END FOOTER === -->
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第07章 論点と仮説を検証する" data-header-title="何を先に検証するか" data-header-subtitle="設計した検証案の中から、全体を左右する不確実性に先に当てる" data-footer="standard" data-footer-page="53">
+  <div class="stage">
+    <p class="kicker">検証案が複数あるなら、全部を同時には当てられない。だからこそ、外したときの影響が大きく、まだ確信が持てない仮説から先に確かめる。</p>
+    <div class="matrix-wrap">
+      <div class="axis-note">
+        <p>優先順位は、<br/>「重要か」と<br/>「まだ怪しいか」で決める<span>気になる順ではなく、外すと痛い順に検証資源を配る。</span></p>
+      </div>
+      <div class="matrix">
+        <p class="y-axis">BUSINESS IMPACT</p>
+        <p class="x-axis">UNCERTAINTY</p>
+        <div class="quad quad--other tl"><p class="quad__label">High Impact / Low Uncertainty</p><p class="quad__title">重要だが、ほぼ見えている</p><p class="quad__text">軽く確認すればよい。ここに時間を使いすぎない。</p></div>
+        <div class="quad quad--focus"><p class="quad__label">Center Pin</p><p class="quad__title">重要で、まだ怪しい</p><p class="quad__text">ここを外すと全体が崩れる。最初に検証して次の論点を決める。</p></div>
+        <div class="quad quad--other bl"><p class="quad__label">Low Impact / Low Uncertainty</p><p class="quad__title">後回しでよい</p><p class="quad__text">確認しても意思決定をほとんど動かさない。</p></div>
+        <div class="quad quad--other br"><p class="quad__label">Low Impact / High Uncertainty</p><p class="quad__title">面白いが、今は脇に置く</p><p class="quad__text">不確実でも、全体を左右しないなら優先度は上げない。</p></div>
+      </div>
+    </div>
+    <div class="summary"><p>検証は「気になること」ではなく、「全体を左右する不確実性」から潰す。</p></div>
+  </div>
 </div>
 </body>
 </html>

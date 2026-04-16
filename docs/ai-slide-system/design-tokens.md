@@ -14,7 +14,6 @@
 - `--header-band-height: 156px`
 - `--header-pill-top: 20px`
 - `--header-text-top: 28px`
-- `--header-text-gap: 8px`
 - `--content-left: 80px`
 - `--content-width: 1120px`
 - `--content-right: 1200px`
@@ -70,6 +69,44 @@ Custom slide でも背景はこの family に寄せる。新規 background style
 - `--font-size-agenda-label: 11px`
 - `--font-size-agenda-title: 52px`
 
+### Vertical rhythm
+
+- `--space-stack-lead-title: 12px`
+- `--space-stack-title-body: 16px`
+- `--space-stack-lead-title-loose: 24px`
+- `--space-stack-title-body-loose: 36px`
+
+lead-in (`eyebrow / kicker / label / num`) → title → body の距離は、この 4 token を SSOT にする。shared header / divider / center-title / agenda も別 token を増やさず、この scale に乗せる。局所修正で `padding-bottom` や生の `8px` を足して吸収しない。
+
+### Optical gap
+
+- 「48px 空ける」のような指定は、既定では `margin-bottom: 48px` ではなく「文字の見た目の上下端の距離」と解釈する。
+- この場合、距離の責任は親 stack が持つ。子テキストの `margin` は 0 に寄せる。
+- 補正は global token を増やさず、stack ローカルの custom property で持つ。3 枚以上で同じ補正を繰り返すまで、SSOT へ昇格させない。
+- 共通パターンは `.stack-optical` を使う。
+
+```css
+.stack-optical {
+  display: grid;
+  row-gap: calc(var(--stack-gap) + var(--stack-optical-comp, 0px));
+}
+
+.stack-optical > :is(p, h1, h2, h3, h4, h5, h6, span) {
+  margin: 0;
+}
+```
+
+例:
+
+```css
+.qa-stack {
+  --stack-gap: var(--space-stack-title-body-loose);
+  --stack-optical-comp: 12px;
+}
+```
+
+補正値はコード上の box gap ではなく、スクリーンショット上の見た目距離で決める。
+
 ## Shared UI Classes
 
 - `.slide-standard-header*`
@@ -95,3 +132,5 @@ Custom slide でも背景はこの family に寄せる。新規 background style
 4. `divider` と `center-title` は既存 class/data contract を維持する。
 5. `summary / closing / cta / qa` は custom kind だが、background / footer meta / visual family は shared token に揃える。
 6. token 名ではなく生の px 値を増やすときは、まず SSOT へ昇格すべきか判断する。
+7. `eyebrow / title / body` の距離は、親の `gap` か子の `margin` のどちらか一方で持つ。両方に分散させない。
+8. 「見た目で 48px」のような指定は optical gap とみなし、親 `gap / row-gap` と local compensation で実装する。

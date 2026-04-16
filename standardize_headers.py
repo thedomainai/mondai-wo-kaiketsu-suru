@@ -4,14 +4,15 @@ LEGACY MIGRATION ONLY.
 
 Standardize headers and footers for an older 47-slide deck snapshot.
 This script is kept for migration/reference purposes and is not a source of
-truth for the current 73-slide deck. Use docs/ai-slide-system plus
+truth for the current 74-slide deck. Use docs/ai-slide-system plus
 tools/slide_governance.py for canonical metadata.
 """
 import os
 import re
+from pathlib import Path
 
 SLIDES_DIR = "/tmp/slides"
-TOTAL_SLIDES = 47
+TOTAL_SLIDES = len(list(Path(SLIDES_DIR).glob("slide_*.html")))
 
 # slide_num -> (chapter_label, slide_title, main_message, bg_color)
 SLIDE_DATA = {
@@ -62,9 +63,9 @@ def make_header_html(chapter_label, slide_title, main_message, bg_color):
 <div style="position: absolute; right: 80px; top: 18px; z-index: 55;">
 <p style="margin: 0; padding: 3px 12px; border: 2px solid #000; border-radius: 9999px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: var(--font-size-header-pill); color: #000; letter-spacing: 0.8px; background: {bg_color}; display: inline-block; white-space: nowrap;">PROBLEM SOLVING</p>
 </div>
-<div style="position: absolute; left: 80px; top: 22px; width: 960px; z-index: 55; display: flex; flex-direction: column; align-items: flex-start; gap: 4px;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: var(--font-size-header-chapter); color: #999; letter-spacing: 0.5px; white-space: nowrap;">{chapter_label}</p>
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: var(--font-size-header-title); color: #000; letter-spacing: var(--letter-spacing-header-title); line-height: var(--line-height-header-title); white-space: nowrap;">{slide_title}</p>
+<div style="position: absolute; left: 80px; top: 22px; width: 960px; z-index: 55;">
+<p style="margin: 0 0 var(--space-stack-lead-title); font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: var(--font-size-header-chapter); color: #999; letter-spacing: 0.5px; white-space: nowrap;">{chapter_label}</p>
+<p style="margin: 0 0 var(--space-stack-title-body); font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: var(--font-size-header-title); color: #000; letter-spacing: var(--letter-spacing-header-title); line-height: var(--line-height-header-title); white-space: nowrap;">{slide_title}</p>
 <p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: var(--font-size-header-subtitle); color: #888; line-height: var(--line-height-header-subtitle); white-space: nowrap;">{main_message}</p>
 </div>
 <!-- === END HEADER === -->'''

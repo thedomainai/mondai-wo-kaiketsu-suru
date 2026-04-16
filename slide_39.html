@@ -1,84 +1,97 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>原則5：トップダウンとボトムアップを行き来する - 再現性のある問題解決フレームワーク</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&amp;family=Space+Grotesk:wght@700&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<title>原則3：モデル（式）で考える</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
+<link href="./slides.css" rel="stylesheet"/>
+<script defer src="./slides.js"></script>
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        font-family: 'Noto Sans JP', sans-serif;
-        background-color: #ffffff;
-    }
-    .slide-container {
-        width: 1280px;
-        height: 720px;
-        position: relative;
-        overflow: hidden;
-        background-color: #ffffff;
-    }
+.formula-grid{position:absolute;left:80px;top:186px;width:1120px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.formula-card{height:390px;padding:22px 20px 16px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff;display:flex;flex-direction:column;gap:14px}
+.formula-card__eyebrow{margin:0;color:rgba(0,0,0,.34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px}
+.formula-card__title{margin:0;font-size:24px;font-weight:900;line-height:1.4}
+.formula-card__formula{margin:0;padding:12px 14px;border-radius:8px;background:rgba(0,0,0,.04);font-size:15px;font-weight:900;line-height:1.6}
+.formula-card__body{display:flex;flex-direction:column;align-items:stretch;gap:10px}
+.formula-card__note{margin:0;font-size:12px;line-height:1.7;color:rgba(0,0,0,.68)}
+
+.sales-tree{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:max-content;column-gap:12px;row-gap:12px;padding-top:4px;align-content:start}
+.sales-tree::before{content:"";position:absolute;left:25%;right:25%;top:76px;height:1px;background:rgba(0,0,0,.18)}
+.tree-node,.term-pill{min-height:74px}
+.sales-tree__box{position:relative;padding:12px 10px;border-radius:8px;background:rgba(0,0,0,.04);text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.sales-tree__box strong{display:block;font-size:16px;line-height:1.35}
+.sales-tree__box span{display:block;margin-top:4px;font-size:12px;line-height:1.55;color:rgba(0,0,0,.62)}
+.sales-tree__box--root{grid-column:1 / span 2;justify-self:center;width:172px}
+.sales-tree__box--root::after{content:"";position:absolute;left:50%;top:100%;width:1px;height:18px;background:rgba(0,0,0,.18);transform:translateX(-50%)}
+.sales-tree__box--branch{padding-top:18px}
+.sales-tree__box--branch::before{content:"";position:absolute;left:50%;top:0;width:1px;height:18px;background:rgba(0,0,0,.18);transform:translateX(-50%)}
+
+.term-pill{padding:10px 10px;border-radius:8px;background:rgba(0,0,0,.04);font-size:15px;font-weight:700;line-height:1.45;text-align:center;display:flex;align-items:center;justify-content:center}
+.term-pill--strong{background:rgba(0,0,0,.08);font-weight:900}
+.operator{font-family:"Space Grotesk",sans-serif;font-size:18px;font-weight:900;line-height:1;text-align:center;color:rgba(0,0,0,.42)}
+.sum-model,.diff-model{display:grid;gap:12px}
+.sum-model__row{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);gap:8px;align-items:center}
+.diff-model__row{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:8px;align-items:center}
+
+.formula-bottom-note{position:absolute;left:80px;top:612px;width:1120px;padding-top:14px;border-top:1px solid rgba(0,0,0,.1)}
+.formula-bottom-note p{margin:0;font-size:14px;font-weight:900;line-height:1.7}
 </style>
 </head>
 <body>
-<div class="slide-container">
-<!-- Background Dot Pattern (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 0px; top: 0px; width: 1280px; height: 720px; background-image: radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px); background-size: 20px 20px; opacity: 0.4; z-index: 1;"></div>
-<!-- Branding Pill (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 40px; top: 32px; padding: 8px 24px; border: 2px solid #000000; border-radius: 9999px; background-color: #ffffff; z-index: 10;">
-<p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 1px; color: #000000; text-align: center; margin: 0;">PROBLEM SOLVING</p>
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第05章 論点を分解する" data-header-title="原則3：モデル（式）で考える" data-header-subtitle="下位要素が上位要素を MECE に構成し、かつ式として読める状態をつくる" data-footer="standard" data-footer-page="39">
+<div class="formula-grid">
+<section class="formula-card">
+<p class="formula-card__eyebrow">Multiply</p>
+<p class="formula-card__title">掛け算の例</p>
+<p class="formula-card__formula">売上 = 客数 × 客単価</p>
+<div class="formula-card__body">
+<div class="sales-tree">
+<div class="sales-tree__box tree-node sales-tree__box--root"><strong>売上</strong><span>上位KPI</span></div>
+<div class="sales-tree__box tree-node sales-tree__box--branch"><strong>客数</strong><span>来店者数 × 購入率</span></div>
+<div class="sales-tree__box tree-node sales-tree__box--branch"><strong>客単価</strong><span>購入点数 × 平均単価</span></div>
 </div>
-<!-- Section Title (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 100px; width: 1120px; height: 70px; z-index: 10;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 36px; color: #000000; line-height: 1.1; margin: 0; letter-spacing: 1px;">原則5：トップダウンとボトムアップを行き来する</p>
+<p class="formula-card__note">売上をツリーで置くと、効かせる変数がそのまま見える。</p>
 </div>
-<!-- Table Header Background (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 80px; top: 180px; width: 1120px; height: 40px; background-color: #000000; z-index: 1;"></div>
-<!-- Table Row 1 Background (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 80px; top: 220px; width: 1120px; height: 60px; background-color: #f5f5f5; z-index: 1;"></div>
-<!-- Table Row 2 Background (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 80px; top: 280px; width: 1120px; height: 60px; background-color: #ffffff; border-bottom: 2px solid #000000; z-index: 1;"></div>
-<!-- Table Content (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 180px; width: 1120px; height: 160px; z-index: 10;">
-<!-- Header Text -->
-<div style="display: flex; align-items: center; height: 40px; padding: 0 16px;">
-<div style="width: 360px;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #ffffff; margin: 0;">アプローチ</p></div>
-<div style="width: 360px;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #ffffff; margin: 0;">強み</p></div>
-<div style="flex: 1;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #ffffff; margin: 0;">弱み</p></div>
-</div>
-<!-- Row 1 -->
-<div style="display: flex; align-items: center; height: 60px; padding: 0 16px;">
-<div style="width: 360px;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #000000; margin: 0; line-height: 1.2;">トップダウン<br/><span style="font-size: 13px; color: #555555; font-weight: 400;">（大論点→小論点）</span></p></div>
-<div style="width: 360px;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 15px; color: #333333; margin: 0;">構造化しやすい</p></div>
-<div style="flex: 1;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 15px; color: #333333; margin: 0;">無味乾燥な一般論になりがち</p></div>
-</div>
-<!-- Row 2 -->
-<div style="display: flex; align-items: center; height: 60px; padding: 0 16px;">
-<div style="width: 360px;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #000000; margin: 0; line-height: 1.2;">ボトムアップ<br/><span style="font-size: 13px; color: #555555; font-weight: 400;">（思いつき→構造化）</span></p></div>
-<div style="width: 360px;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 15px; color: #333333; margin: 0;">具体的な切り口が出やすい</p></div>
-<div style="flex: 1;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 15px; color: #333333; margin: 0;">モレやダブリが生じやすい</p></div>
+</section>
+
+<section class="formula-card">
+<p class="formula-card__eyebrow">Addition</p>
+<p class="formula-card__title">足し算の例</p>
+<p class="formula-card__formula">集客数 = 自然流入 + 広告流入 + 紹介流入</p>
+<div class="formula-card__body">
+<div class="sum-model">
+<div class="term-pill term-pill--strong">集客数</div>
+<div class="sum-model__row">
+<div class="term-pill">自然流入</div>
+<div class="operator">+</div>
+<div class="term-pill">広告流入</div>
+<div class="operator">+</div>
+<div class="term-pill">紹介流入</div>
 </div>
 </div>
-<!-- Practice Tips Section (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 380px; width: 1120px; height: 160px; z-index: 10;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 18px; color: #000000; margin: 0 0 12px 0;">実践のコツ</p>
-<div style="display: flex; margin-bottom: 8px;">
-<div style="width: 20px; font-size: 15px; color: #000000;">•</div>
-<div style="flex: 1;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 15px; color: #333333; margin: 0; line-height: 1.5;">両者を行き来しながら作り込む</p></div>
+<p class="formula-card__note">足し算は、並列要素の寄与を漏れなく見るときに使う。</p>
 </div>
-<div style="display: flex;">
-<div style="width: 20px; font-size: 15px; color: #000000;">•</div>
-<div style="flex: 1;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 15px; color: #333333; margin: 0; line-height: 1.5;">実務では「真ん中あたり」から着手し、上下に伸ばしていくのが効率的</p></div>
+</section>
+
+<section class="formula-card">
+<p class="formula-card__eyebrow">Subtraction</p>
+<p class="formula-card__title">引き算の例</p>
+<p class="formula-card__formula">粗利 = 売上 - 原価</p>
+<div class="formula-card__body">
+<div class="diff-model">
+<div class="term-pill term-pill--strong">粗利</div>
+<div class="diff-model__row">
+<div class="term-pill">売上</div>
+<div class="operator">-</div>
+<div class="term-pill">原価</div>
 </div>
 </div>
-<!-- Navigation Arrow (Icon) -->
-<div data-object="true" data-object-type="icon" style="position: absolute; left: 1192px; top: 640px; width: 48px; height: 48px; background-color: #000000; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 6px rgba(0,0,0,0.2); z-index: 10;">
-<i class="fas fa-chevron-right" style="color: #ffffff; font-size: 20px;"></i>
+<p class="formula-card__note">引き算は、何を差し引いた残りを管理したいかを明確にする。</p>
 </div>
+</section>
+</div>
+<div class="formula-bottom-note"><p>式の型が決まると、全体を構成する変数と、次に動かすべき変数が同時に見える。</p></div>
 </div>
 </body>
 </html>

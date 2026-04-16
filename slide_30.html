@@ -1,122 +1,14 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>論点には必ず「べき」を含める - 再現性のある問題解決フレームワーク</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&amp;family=Space+Grotesk:wght@700&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        font-family: 'Noto Sans JP', sans-serif;
-        background-color: #ffffff;
-    }
-    .slide-container {
-        width: 1280px;
-        height: 720px;
-        position: relative;
-        overflow: hidden;
-        background-color: #ffffff;
-    }
-    p {
-        margin: 0;
-    }
-</style>
+<title>第04章 論点を定義する</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
+<link href="./slides.css" rel="stylesheet"/>
+<script defer src="./slides.js"></script>
 </head>
 <body>
-<div class="slide-container">
-<!-- === STANDARDIZED HEADER === -->
-<div style="position: absolute; left: 0; top: 0; width: 1280px; height: 148px; background-color: #ffffff; z-index: 50;"></div>
-<div style="position: absolute; left: 40px; top: 16px; z-index: 55;">
-<p style="margin: 0; padding: 5px 18px; border: 2px solid #000; border-radius: 9999px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; color: #000; letter-spacing: 1px; background: #ffffff; display: inline-block;">PROBLEM SOLVING</p>
-</div>
-<div style="position: absolute; right: 40px; top: 22px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #999; letter-spacing: 0.5px;">第4章 論点を分解する</p>
-</div>
-<div style="position: absolute; left: 80px; top: 52px; width: 1120px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 32px; color: #000; letter-spacing: 1px; line-height: 1.2;">分解の5原則：概要</p>
-</div>
-<div style="position: absolute; left: 80px; top: 100px; width: 1120px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #888; line-height: 1.4;">論点を効果的に分解するための5つの原則</p>
-</div>
-<!-- === END HEADER === -->
-
-<!-- Background Dot Pattern (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 0px; top: 0px; width: 1280px; height: 720px; background-image: radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px); background-size: 20px 20px; opacity: 0.4; z-index: 1;"></div>
-<!-- Gray Accent Banner Top-Right (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 880px; top: 0px; width: 400px; height: 180px; background-color: #ececec; clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%); z-index: 1;"></div>
-<!-- Section Title and Subtitle (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 110px; width: 1120px; height: 130px; z-index: 10;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 34px; color: #000000; line-height: 1.2; margin: 0 0 16px 0; letter-spacing: 1px;">論点には必ず「べき」を含める</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #333333; line-height: 1.5; margin: 0; width: 750px;">問いの目的 ＝ 行動を起こすこと <span style="color: #dd0000; margin: 0 8px;">/</span> × 行動を伴わない問い ＝ 自己満足・無意味</p>
-</div>
-<!-- Comparison Table (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 250px; width: 1120px; height: 280px; z-index: 10;">
-<!-- Header -->
-<div style="display: flex; width: 100%; border-bottom: 2px solid #ffffff;">
-<div style="flex: 1; background-color: #000000; padding: 16px 24px; color: #ffffff; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 16px;">
-<span style="color: #ff6666; margin-right: 8px;">×</span>なんちゃって論点（行動に繋がらない）
-    </div>
-<div style="flex: 1; background-color: #000000; padding: 16px 24px; color: #ffffff; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 16px; border-left: 2px solid #ffffff;">
-<span style="color: #66ff66; margin-right: 8px;">○</span>問題を解決する論点（行動を決める）
-    </div>
-</div>
-<!-- Row 1 -->
-<div style="display: flex; width: 100%; border-bottom: 2px solid #ffffff;">
-<div style="flex: 1; background-color: #f8f8f8; padding: 6px 10px; color: #333333; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 15px; display: flex; align-items: center;">
-<p>A社は買収対象として魅力的なのか？</p>
-</div>
-<div style="flex: 1; background-color: #ececec; padding: 6px 10px; color: #000000; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; display: flex; align-items: center; border-left: 2px solid #ffffff;">
-<p>A社を買収するべきか？</p>
-</div>
-</div>
-<!-- Row 2 -->
-<div style="display: flex; width: 100%; border-bottom: 2px solid #ffffff;">
-<div style="flex: 1; background-color: #f8f8f8; padding: 6px 10px; color: #333333; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 15px; display: flex; align-items: center;">
-<p>新製品のターゲット顧客セグメントは誰か？</p>
-</div>
-<div style="flex: 1; background-color: #ececec; padding: 6px 10px; color: #000000; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; display: flex; align-items: center; border-left: 2px solid #ffffff;">
-<p>新製品はどの顧客セグメントを狙うべきか？</p>
-</div>
-</div>
-<!-- Row 3 -->
-<div style="display: flex; width: 100%; border-bottom: 2px solid #ffffff;">
-<div style="flex: 1; background-color: #f8f8f8; padding: 6px 10px; color: #333333; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 15px; display: flex; align-items: center;">
-<p>どのようにすれば売上は伸びるか？</p>
-</div>
-<div style="flex: 1; background-color: #ececec; padding: 6px 10px; color: #000000; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; display: flex; align-items: center; border-left: 2px solid #ffffff;">
-<p>売上を伸ばすためには何をするべきか？</p>
-</div>
-</div>
-<!-- Row 4 -->
-<div style="display: flex; width: 100%;">
-<div style="flex: 1; background-color: #f8f8f8; padding: 6px 10px; color: #333333; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 15px; display: flex; align-items: center;">
-<p>これまで市場はどのくらいのペースで伸びてきたのか？</p>
-</div>
-<div style="flex: 1; background-color: #ececec; padding: 6px 10px; color: #000000; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; display: flex; align-items: center; border-left: 2px solid #ffffff;">
-<p>市場はどのくらいのペースで伸びてきたと想定するべきか？</p>
-</div>
-</div>
-</div>
-<!-- Conclusion Bottom (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 560px; width: 1120px; height: 70px; background-color: rgba(0,0,0,0.05); border-left: 4px solid #000000; padding: 20px 24px; box-sizing: border-box; z-index: 10;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #000000; margin: 0;">
-<span style="color: #555555; margin-right: 8px;">結論：</span>「べき」がない ＝ なんちゃって論点。苦しくても「べき」を入れる <i class="fas fa-arrow-right" style="margin: 0 8px;"></i> 例外なし
-</p>
-</div>
-<!-- === STANDARDIZED FOOTER === -->
-<div style="position: absolute; left: 0; top: 660px; width: 1280px; height: 60px; background-color: #ffffff; border-top: 1px solid rgba(0,0,0,0.08); z-index: 50;"></div>
-<div style="position: absolute; left: 40px; top: 680px; z-index: 55;">
-<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 1.5px;">LOGICAL THINKING TRAINING</p>
-</div>
-<div style="position: absolute; right: 40px; top: 680px; z-index: 55;">
-<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 0.5px;">14 / 47</p>
-</div>
-<!-- === END FOOTER === -->
-</div>
+<div class="slide-container slide-theme-mist" data-slide-kind="divider" data-background="halftone" data-divider-brand="ロジカル・シンキング研修" data-divider-index="04" data-divider-kicker="Chapter 04" data-divider-title="論点を定義する" data-divider-subtitle="解くべき問いを一文で定める"></div>
 </body>
 </html>

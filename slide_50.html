@@ -3,111 +3,65 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>仮の答えを出すことから逃げない</title>
-<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet"/>
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #ffffff;
-    }
-    .slide-container {
-        width: 1280px;
-        height: 720px;
-        position: relative;
-        overflow: hidden;
-        background-color: #ffffff;
-        font-family: 'Noto Sans JP', sans-serif;
-    }
-</style>
+<title>アジェンダ｜第07章 論点と仮説を検証する</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
+<link href="./slides.css" rel="stylesheet"/>
+<script defer src="./slides.js"></script>
 </head>
 <body>
-<div class="slide-container">
-<!-- === STANDARDIZED HEADER === -->
-<div style="position: absolute; left: 0; top: 0; width: 1280px; height: 148px; background-color: #ffffff; z-index: 50;"></div>
-<div style="position: absolute; left: 40px; top: 16px; z-index: 55;">
-<p style="margin: 0; padding: 5px 18px; border: 2px solid #000; border-radius: 9999px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; color: #000; letter-spacing: 1px; background: #ffffff; display: inline-block;">PROBLEM SOLVING</p>
-</div>
-<div style="position: absolute; right: 40px; top: 22px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #999; letter-spacing: 0.5px;">第6章 仮説を検証する</p>
-</div>
-<div style="position: absolute; left: 80px; top: 52px; width: 1120px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 32px; color: #000; letter-spacing: 1px; line-height: 1.2;">検証可能な形に変換する</p>
-</div>
-<div style="position: absolute; left: 80px; top: 100px; width: 1120px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #888; line-height: 1.4;">曖昧な仮説＝検証不可能 → 反証可能な命題に変換する</p>
-</div>
-<!-- === END HEADER === -->
+<div class="slide-container slide-theme-mist" data-slide-kind="agenda" data-background="grain" data-grain-opacity="0.5" data-vignette="true">
+  <div class="agenda-panel">
+    <p class="agenda-panel__eyebrow">Agenda</p>
+    <h1 class="agenda-panel__title agenda-panel__title--spaced">アジェンダ</h1>
+  </div>
+  <div class="agenda-panel__list-wrap">
+    <div class="agenda-panel__list">
+                                                <div class="agenda-panel__row">
+        <span class="agenda-panel__index">01</span>
+        <span class="agenda-panel__item">ワーク</span>
+      </div>
 
-<!-- Background Dot Pattern (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 0px; top: 0px; width: 1280px; height: 720px; background-image: radial-gradient(circle, rgba(236,236,236,0.5) 1px, transparent 1px); background-size: 20px 20px; z-index: 1;"></div>
-<!-- Gray Banner (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 60px; top: 0px; width: 1220px; height: 200px; background-color: #ececec; clip-path: polygon(0 0, 100% 0, 100% 100%, 25% 100%); z-index: 1;"></div>
-<!-- Section Title (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 140px; width: 1120px; height: 80px; z-index: 10;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 44px; color: #000000; line-height: 1.2; letter-spacing: 2px;">仮の答えを出すことから逃げない</p>
-</div>
+      <div class="agenda-panel__row">
+        <span class="agenda-panel__index">02</span>
+        <span class="agenda-panel__item">前提・背景</span>
+      </div>
 
-<!-- Transformation: Before → After -->
-<!-- BEFORE: Human Tendency (Left Side) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 280px; width: 480px; height: 320px; z-index: 10; background-color: #f5f5f5; border: 4px solid #999999; border-radius: 16px; padding: 32px; box-sizing: border-box;">
-<div style="display: flex; align-items: center; margin-bottom: 24px;">
-<div style="width: 48px; height: 48px; background-color: #999999; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 16px; flex-shrink: 0;">
-<i class="fas fa-times" style="color: #ffffff; font-size: 28px;"></i>
-</div>
-<p style="margin: 0; font-size: 28px; font-weight: 900; color: #666666; text-transform: uppercase; letter-spacing: 1px;">Before</p>
-</div>
-<p style="margin: 0 0 24px 0; font-size: 26px; font-weight: 900; color: #666666; border-bottom: 3px solid #cccccc; padding-bottom: 12px;">人間の傾向</p>
-<ul style="margin: 0; padding-left: 0; list-style: none; font-size: 22px; font-weight: 700; color: #666666; line-height: 1.8;">
-<li style="margin-bottom: 20px; padding-left: 32px; position: relative;">
-<span style="position: absolute; left: 0; top: 4px; font-size: 32px; color: #999999;">×</span>
-決断から逃げる
-</li>
-<li style="padding-left: 32px; position: relative;">
-<span style="position: absolute; left: 0; top: 4px; font-size: 32px; color: #999999;">×</span>
-「調べてから答えを出そう」
-</li>
-</ul>
-</div>
+      <div class="agenda-panel__row">
+        <span class="agenda-panel__index">03</span>
+        <span class="agenda-panel__item">問題解決の概要</span>
+      </div>
 
-<!-- Transformation Arrow -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 580px; top: 425px; width: 120px; height: 8px; background: linear-gradient(to right, #999999, #000000); z-index: 10;"></div>
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 700px; top: 405px; width: 0; height: 0; border-top: 24px solid transparent; border-bottom: 24px solid transparent; border-left: 40px solid #000000; z-index: 10;"></div>
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 585px; top: 380px; width: 110px; height: 30px; z-index: 11;">
-<p style="margin: 0; font-size: 16px; font-weight: 900; color: #000000; text-align: center; background-color: #ffffff; padding: 4px 8px; border-radius: 6px; border: 2px solid #000000;">Transform</p>
-</div>
+      <div class="agenda-panel__row">
+        <span class="agenda-panel__index">04</span>
+        <span class="agenda-panel__item">論点を定義する</span>
+      </div>
 
-<!-- AFTER: Required Discipline (Right Side) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 760px; top: 280px; width: 440px; height: 320px; z-index: 10; background-color: #000000; border-radius: 16px; padding: 32px; box-sizing: border-box;">
-<div style="display: flex; align-items: center; margin-bottom: 24px;">
-<div style="width: 48px; height: 48px; background-color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 16px; flex-shrink: 0;">
-<i class="fas fa-check" style="color: #000000; font-size: 28px;"></i>
-</div>
-<p style="margin: 0; font-size: 28px; font-weight: 900; color: #ffffff; text-transform: uppercase; letter-spacing: 1px;">After</p>
-</div>
-<p style="margin: 0 0 24px 0; font-size: 26px; font-weight: 900; color: #ffffff; border-bottom: 3px solid #ffffff; padding-bottom: 12px;">持つべき規律</p>
-<ul style="margin: 0; padding-left: 0; list-style: none; font-size: 22px; font-weight: 900; color: #ffffff; line-height: 1.8;">
-<li style="margin-bottom: 20px; padding-left: 32px; position: relative;">
-<span style="position: absolute; left: 0; top: 4px; font-size: 32px; color: #ffffff;">○</span>
-その場で仮の答えを出す
-</li>
-<li style="padding-left: 32px; position: relative;">
-<span style="position: absolute; left: 0; top: 4px; font-size: 32px; color: #ffffff;">○</span>
-指示を出す
-</li>
-</ul>
-</div>
-<!-- === STANDARDIZED FOOTER === -->
-<div style="position: absolute; left: 0; top: 660px; width: 1280px; height: 60px; background-color: #ffffff; border-top: 1px solid rgba(0,0,0,0.08); z-index: 50;"></div>
-<div style="position: absolute; left: 40px; top: 680px; z-index: 55;">
-<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 1.5px;">LOGICAL THINKING TRAINING</p>
-</div>
-<div style="position: absolute; right: 40px; top: 680px; z-index: 55;">
-<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 0.5px;">32 / 47</p>
-</div>
-<!-- === END FOOTER === -->
+      <div class="agenda-panel__row">
+        <span class="agenda-panel__index">05</span>
+        <span class="agenda-panel__item">論点を分解する</span>
+      </div>
+
+      <div class="agenda-panel__row">
+        <span class="agenda-panel__index">06</span>
+        <span class="agenda-panel__item">仮説を構築する</span>
+      </div>
+
+      <div class="agenda-panel__row agenda-panel__row--active">
+        <span class="agenda-panel__index agenda-panel__index--active">07</span>
+        <span class="agenda-panel__item agenda-panel__item--active">論点と仮説を検証する</span>
+      </div>
+
+      <div class="agenda-panel__row">
+        <span class="agenda-panel__index">08</span>
+        <span class="agenda-panel__item agenda-panel__item--soft">問題解決におけるコミュニケーション</span>
+      </div>
+
+      <div class="agenda-panel__row agenda-panel__row--last">
+        <span class="agenda-panel__index">09</span>
+        <span class="agenda-panel__item agenda-panel__item--soft">まとめ</span>
+      </div>
+    </div>
+  </div>
 </div>
 </body>
 </html>

@@ -1,77 +1,42 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>検証手段を選ぶ - 再現性のある問題解決フレームワーク</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&amp;family=Space+Grotesk:wght@700&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<title>検証結果から次の行動を決める</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
+<link href="./slides.css" rel="stylesheet"/>
+<script defer src="./slides.js"></script>
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        font-family: 'Noto Sans JP', sans-serif;
-        background-color: #ffffff;
-    }
-    .slide-container {
-        width: 1280px;
-        height: 720px;
-        position: relative;
-        overflow: hidden;
-        background-color: #ffffff;
-    }
+.stage{position:absolute;left:80px;top:160px;width:1120px;display:flex;flex-direction:column;gap:18px}.kicker{margin:0;color:#5a4970;font-size:15px;font-weight:900;line-height:1.55}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.card{min-height:318px;padding:22px 22px 18px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff;display:grid;grid-template-rows:auto auto 1fr auto;row-gap:14px}.card__symbol{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:999px;border:2px solid rgba(0,0,0,.82);font-family:"Space Grotesk",sans-serif;font-size:24px;font-weight:900;line-height:1}.card__title{margin:0;font-size:23px;font-weight:900;line-height:1.45}.card__body{margin:0;color:rgba(0,0,0,.72);font-size:17px;line-height:1.72}.card__foot{margin:0;padding-top:14px;border-top:1px solid rgba(0,0,0,.08);font-size:17px;font-weight:900;line-height:1.65}.summary{padding-top:14px;border-top:1px solid rgba(0,0,0,.1)}.summary p{margin:0;font-size:17px;font-weight:900;line-height:1.65}
 </style>
 </head>
 <body>
-<div class="slide-container">
-<!-- Background Dot Pattern (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 0px; top: 0px; width: 1280px; height: 720px; background-image: radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px); background-size: 20px 20px; opacity: 0.4; z-index: 1;"></div>
-<!-- Branding Pill (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 40px; top: 32px; padding: 8px 24px; border: 2px solid #000000; border-radius: 9999px; background-color: #ffffff; z-index: 10;">
-<p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 1px; color: #000000; text-align: center; margin: 0;">PROBLEM SOLVING</p>
-</div>
-<!-- Section Title and Subtitle (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 100px; width: 1120px; height: 100px; z-index: 10;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 36px; color: #000000; line-height: 1.1; margin: 0 0 12px 0; letter-spacing: 1px;">検証手段を選ぶ</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #333333; line-height: 1.5; margin: 0;">原則：最も低コスト × 判定力が高い手段から当てる</p>
-</div>
-<!-- Table Header Background (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 80px; top: 220px; width: 1120px; height: 48px; background-color: #000000; z-index: 1;"></div>
-<!-- Table Row 1 Background (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 80px; top: 268px; width: 1120px; height: 64px; background-color: #f5f5f5; z-index: 1;"></div>
-<!-- Table Row 2 Background (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 80px; top: 332px; width: 1120px; height: 64px; background-color: #ffffff; z-index: 1;"></div>
-<!-- Table Row 3 Background (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 80px; top: 396px; width: 1120px; height: 64px; background-color: #f5f5f5; z-index: 1;"></div>
-<!-- Table Content (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 220px; width: 1120px; height: 240px; z-index: 10;">
-<!-- Header Text -->
-<div style="display: flex; align-items: center; height: 48px; padding: 0 24px;">
-<div style="width: 240px;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #ffffff; margin: 0;">コスト</p></div>
-<div style="flex: 1;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #ffffff; margin: 0;">手段</p></div>
-</div>
-<!-- Row 1 -->
-<div style="display: flex; align-items: center; height: 64px; padding: 0 24px;">
-<div style="width: 240px;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 18px; color: #000000; margin: 0;">低</p></div>
-<div style="flex: 1;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 15px; color: #333333; margin: 0;">既存データ分析、社内ヒアリング、デスクリサーチ</p></div>
-</div>
-<!-- Row 2 -->
-<div style="display: flex; align-items: center; height: 64px; padding: 0 24px;">
-<div style="width: 240px;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 18px; color: #000000; margin: 0;">中</p></div>
-<div style="flex: 1;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 15px; color: #333333; margin: 0;">アンケート、プロトタイプ、A/Bテスト</p></div>
-</div>
-<!-- Row 3 -->
-<div style="display: flex; align-items: center; height: 64px; padding: 0 24px;">
-<div style="width: 240px;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 18px; color: #000000; margin: 0;">高</p></div>
-<div style="flex: 1;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 15px; color: #333333; margin: 0;">大規模実験、パイロット展開、外部調査</p></div>
-</div>
-</div>
-<!-- Navigation Arrow (Icon) -->
-<div data-object="true" data-object-type="icon" style="position: absolute; left: 1192px; top: 640px; width: 48px; height: 48px; background-color: #000000; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 6px rgba(0,0,0,0.2); z-index: 10;">
-<i class="fas fa-chevron-right" style="color: #ffffff; font-size: 20px;"></i>
-</div>
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第07章 論点と仮説を検証する" data-header-title="検証結果から次の行動を決める" data-header-subtitle="検証の価値は、次の一手が明確になることにある" data-footer="standard" data-footer-page="55">
+  <div class="stage">
+    <p class="kicker">検証のゴールは、真偽判定そのものではない。結果を踏まえて次に何をするかを決められることに、はじめて意味がある。</p>
+    <div class="grid">
+      <section class="card">
+        <span class="card__symbol">○</span>
+        <p class="card__title">仮説が支持された</p>
+        <p class="card__body">主要前提が概ね成立した。次は実行に移すか、横展開して効果を広げる。</p>
+        <p class="card__foot">行動に移す。必要なら実装条件だけ追加で詰める。</p>
+      </section>
+      <section class="card">
+        <span class="card__symbol">×</span>
+        <p class="card__title">仮説が外れた</p>
+        <p class="card__body">何が違ったのかを見て、論点か前提か打ち手かを修正する。外れ方が次の学びになる。</p>
+        <p class="card__foot">仮説を修正し、もう一度確かめる。</p>
+      </section>
+      <section class="card">
+        <span class="card__symbol">?</span>
+        <p class="card__title">まだ判断できない</p>
+        <p class="card__body">情報が足りない、粒度が粗い、方法が弱い。判断に必要な差分を追加で取りにいく。</p>
+        <p class="card__foot">追加検証を設計するか、リスクを明示して仮決定する。</p>
+      </section>
+    </div>
+    <div class="summary"><p>検証は終点ではない。次の行動を決めるための分岐点である。</p></div>
+  </div>
 </div>
 </body>
 </html>

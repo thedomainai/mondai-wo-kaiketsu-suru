@@ -35,11 +35,13 @@
       container.dataset.headerBrand || "ロジカル・シンキング研修"
     );
     const copy = createElement("div", "slide-standard-header__copy");
+    copy.classList.add("stack", "stack--left");
     const chapter = createElement(
       "p",
       "slide-standard-header__chapter",
       container.dataset.headerChapter || ""
     );
+    const body = createElement("div", "slide-standard-header__body");
     const title = createElement(
       "p",
       "slide-standard-header__title",
@@ -53,10 +55,11 @@
 
     brandWrap.appendChild(brandText);
     copy.appendChild(chapter);
-    copy.appendChild(title);
+    body.appendChild(title);
     if (subtitle.textContent) {
-      copy.appendChild(subtitle);
+      body.appendChild(subtitle);
     }
+    copy.appendChild(body);
 
     wrapper.appendChild(band);
     wrapper.appendChild(brandWrap);
@@ -67,7 +70,12 @@
   }
 
   function renderStandardFooter(container) {
-    if (container.dataset.footer !== "standard" || container.querySelector(".slide-standard-footer")) {
+    const footerCompatibleKinds = new Set(["content", "intro", "center-title", "summary"]);
+    if (
+      container.dataset.footer !== "standard" ||
+      container.querySelector(".slide-standard-footer") ||
+      !footerCompatibleKinds.has(container.dataset.slideKind || "")
+    ) {
       return;
     }
 
@@ -178,11 +186,13 @@
       container.dataset.dividerIndex || ""
     );
     const copy = createElement("div", "slide-divider__copy");
+    copy.classList.add("stack", "stack--center");
     const kicker = createElement(
       "p",
       "slide-divider__kicker",
       container.dataset.dividerKicker || ""
     );
+    const body = createElement("div", "slide-divider__body");
     const title = createElement(
       "p",
       "slide-divider__title",
@@ -196,10 +206,11 @@
 
     brandWrap.appendChild(brandText);
     copy.appendChild(kicker);
-    copy.appendChild(title);
+    body.appendChild(title);
     if (subtitle.textContent) {
-      copy.appendChild(subtitle);
+      body.appendChild(subtitle);
     }
+    copy.appendChild(body);
 
     wrapper.appendChild(brandWrap);
     wrapper.appendChild(index);

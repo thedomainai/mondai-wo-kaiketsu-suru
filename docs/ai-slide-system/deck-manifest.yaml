@@ -11,7 +11,7 @@ deck:
     shared_js: slides.js
   page_numbering:
     cover_file: slide_01.html
-    first_labeled_file: slide_02.html
+    first_labeled_file: slide_01.html
     label_format: zero-padded-2
     max_label: '73'
   agenda_source: manifest.slides[].agenda
@@ -27,78 +27,75 @@ deck:
   - cta
   - qa
 counts:
-  total_slides: 74
+  total_slides: 73
   by_kind:
     cover: 1
-    intro: 3
-    agenda: 9
+    intro: 6
+    agenda: 8
     divider: 8
-    center-title: 7
-    content: 42
+    center-title: 3
+    content: 43
     summary: 1
     closing: 1
     cta: 1
     qa: 1
 chapters:
-- id: section-01-work
+- id: section-01
   number: 1
   title: ワーク
-  agenda_file: slide_06.html
-  divider_file: slide_07.html
+  agenda_file: slide_09.html
+  divider_file: slide_10.html
   slide_files:
-  - slide_06.html
-  - slide_07.html
-  - slide_08.html
   - slide_09.html
   - slide_10.html
   - slide_11.html
-- id: section-02-background
-  number: 2
-  title: 前提・背景
-  agenda_file: slide_12.html
-  divider_file: slide_13.html
-  slide_files:
   - slide_12.html
   - slide_13.html
   - slide_14.html
+- id: section-02
+  number: 2
+  title: 前提・背景
+  agenda_file: slide_15.html
+  divider_file: slide_16.html
+  slide_files:
   - slide_15.html
   - slide_16.html
   - slide_17.html
   - slide_18.html
-- id: section-03-overview
-  number: 3
-  title: 問題解決の概要
-  agenda_file: slide_19.html
-  divider_file: slide_20.html
-  slide_files:
   - slide_19.html
   - slide_20.html
   - slide_21.html
+- id: section-03
+  number: 3
+  title: 問題解決の概要
+  agenda_file: slide_22.html
+  divider_file: slide_23.html
+  slide_files:
   - slide_22.html
   - slide_23.html
   - slide_24.html
   - slide_25.html
   - slide_26.html
-- id: section-04-issue-definition
-  number: 4
-  title: 論点を定義する
-  agenda_file: slide_27.html
-  divider_file: slide_28.html
-  slide_files:
   - slide_27.html
   - slide_28.html
+- id: section-04
+  number: 4
+  title: 論点を定義する
+  agenda_file: slide_29.html
+  divider_file: slide_30.html
+  slide_files:
   - slide_29.html
   - slide_30.html
   - slide_31.html
   - slide_32.html
-- id: section-05-decomposition
+  - slide_33.html
+  - slide_34.html
+- id: section-05
   number: 5
   title: 論点を分解する
   agenda_file: null
-  divider_file: slide_33.html
+  divider_file: slide_35.html
   slide_files:
-  - slide_33.html
-  - slide_34.html
   - slide_35.html
   - slide_36.html
   - slide_37.html
@@ -106,11 +103,11 @@ chapters:
   - slide_39.html
   - slide_40.html
   - slide_41.html
-- id: section-06-hypothesis
+- id: section-06
   number: 6
   title: 仮説を構築する
-  agenda_file: slide_42.html
-  divider_file: slide_43.html
+  agenda_file: null
+  divider_file: slide_42.html
   slide_files:
   - slide_42.html
   - slide_43.html
@@ -120,26 +117,26 @@ chapters:
   - slide_47.html
   - slide_48.html
   - slide_49.html
-  - slide_50.html
-- id: section-07-validation
+- id: section-07
   number: 7
   title: 論点と仮説を検証する
-  agenda_file: slide_51.html
-  divider_file: slide_52.html
+  agenda_file: slide_50.html
+  divider_file: slide_51.html
   slide_files:
+  - slide_50.html
   - slide_51.html
   - slide_52.html
   - slide_53.html
   - slide_54.html
   - slide_55.html
   - slide_56.html
-  - slide_57.html
-- id: section-08-communication
+- id: section-08
   number: 8
   title: 問題解決におけるコミュニケーション
-  agenda_file: slide_58.html
-  divider_file: slide_59.html
+  agenda_file: slide_57.html
+  divider_file: slide_58.html
   slide_files:
+  - slide_57.html
   - slide_58.html
   - slide_59.html
   - slide_60.html
@@ -151,60 +148,59 @@ chapters:
   - slide_66.html
   - slide_67.html
   - slide_68.html
-  - slide_69.html
-- id: section-09-summary
+- id: section-09
   number: 9
   title: まとめ
-  agenda_file: slide_70.html
+  agenda_file: slide_69.html
   divider_file: null
   slide_files:
+  - slide_69.html
   - slide_70.html
   - slide_71.html
   - slide_72.html
   - slide_73.html
-  - slide_74.html
 agendas:
-- file: slide_05.html
+- file: slide_08.html
   mode: timed-overview
   active_item: null
   items:
   - index: '01'
     label: ワーク
     state: timed
-    duration: 10 min
+    duration: null
   - index: '02'
     label: 前提・背景
     state: timed
-    duration: 10 min
+    duration: null
   - index: '03'
     label: 問題解決の概要
     state: timed
-    duration: 5 min
+    duration: null
   - index: '04'
     label: 論点を定義する
     state: timed
-    duration: 10 min
+    duration: null
   - index: '05'
     label: 論点を分解する
     state: timed
-    duration: 20 min
+    duration: null
   - index: '06'
     label: 仮説を構築する
     state: timed
-    duration: 15 min
+    duration: null
   - index: '07'
     label: 論点と仮説を検証する
     state: timed
-    duration: 15 min
+    duration: null
   - index: 08
     label: 問題解決におけるコミュニケーション
     state: timed
-    duration: 15 min
+    duration: null
   - index: 09
-    label: Q&A
+    label: まとめ
     state: timed
-    duration: 20 min
-- file: slide_06.html
+    duration: null
+- file: slide_09.html
   mode: progress
   active_item: '01'
   items:
@@ -244,7 +240,7 @@ agendas:
     label: まとめ
     state: soft
     duration: null
-- file: slide_12.html
+- file: slide_15.html
   mode: progress
   active_item: '02'
   items:
@@ -284,7 +280,7 @@ agendas:
     label: まとめ
     state: soft
     duration: null
-- file: slide_19.html
+- file: slide_22.html
   mode: progress
   active_item: '03'
   items:
@@ -324,7 +320,7 @@ agendas:
     label: まとめ
     state: soft
     duration: null
-- file: slide_27.html
+- file: slide_29.html
   mode: progress
   active_item: '04'
   items:
@@ -364,47 +360,7 @@ agendas:
     label: まとめ
     state: soft
     duration: null
-- file: slide_42.html
-  mode: progress
-  active_item: '06'
-  items:
-  - index: '01'
-    label: ワーク
-    state: normal
-    duration: null
-  - index: '02'
-    label: 前提・背景
-    state: normal
-    duration: null
-  - index: '03'
-    label: 問題解決の概要
-    state: normal
-    duration: null
-  - index: '04'
-    label: 論点を定義する
-    state: normal
-    duration: null
-  - index: '05'
-    label: 論点を分解する
-    state: normal
-    duration: null
-  - index: '06'
-    label: 仮説を構築する
-    state: active
-    duration: null
-  - index: '07'
-    label: 論点と仮説を検証する
-    state: soft
-    duration: null
-  - index: 08
-    label: 問題解決におけるコミュニケーション
-    state: soft
-    duration: null
-  - index: 09
-    label: まとめ
-    state: soft
-    duration: null
-- file: slide_51.html
+- file: slide_50.html
   mode: progress
   active_item: '07'
   items:
@@ -444,7 +400,7 @@ agendas:
     label: まとめ
     state: soft
     duration: null
-- file: slide_58.html
+- file: slide_57.html
   mode: progress
   active_item: 08
   items:
@@ -484,7 +440,7 @@ agendas:
     label: まとめ
     state: soft
     duration: null
-- file: slide_70.html
+- file: slide_69.html
   mode: progress
   active_item: 09
   items:
@@ -527,66 +483,106 @@ agendas:
 slides:
 - order: 1
   file: slide_01.html
-  page_label: null
+  page_label: '01'
   kind: cover
   runtime_shape: custom
   title: 問題を解決する
   index_title: 問題を解決する
-  index_type: normal
   section_id: null
+  section_number: null
   section_title: null
+  index_type: normal
   legacy_exceptions:
   - manual-cover-layout
   - no-standard-footer
 - order: 2
   file: slide_02.html
-  page_label: '01'
+  page_label: '02'
   kind: intro
   runtime_shape: custom
   title: 中林 佑太
   index_title: 中林 佑太
-  index_type: normal
   section_id: null
+  section_number: null
   section_title: null
+  index_type: normal
   legacy_exceptions:
   - manual-intro-layout
   - manual-footer
 - order: 3
   file: slide_03.html
-  page_label: '02'
+  page_label: '03'
   kind: intro
   runtime_shape: custom
-  title: 仕事で大事にしていること
-  index_title: 仕事で大事にしていること
-  index_type: normal
+  title: 仕事において大事にしていること
+  index_title: 仕事において大事にしていること
   section_id: null
+  section_number: null
   section_title: null
+  index_type: normal
   legacy_exceptions:
   - manual-intro-layout
   - manual-footer
 - order: 4
   file: slide_04.html
-  page_label: '03'
+  page_label: '04'
   kind: intro
   runtime_shape: custom
   title: 苦手なこと
   index_title: 苦手なこと
-  index_type: normal
   section_id: null
+  section_number: null
   section_title: null
+  index_type: normal
   legacy_exceptions:
   - manual-intro-layout
   - manual-footer
 - order: 5
   file: slide_05.html
-  page_label: '04'
+  page_label: '05'
+  kind: intro
+  runtime_shape: custom
+  title: Q. なぜロジカル・シンキング講座が用意されているか
+  index_title: Q. なぜロジカル・シンキング講座が用意されているか
+  section_id: null
+  section_number: null
+  section_title: null
+  index_type: normal
+  legacy_exceptions:
+  - timed-deck-agenda
+- order: 6
+  file: slide_06.html
+  page_label: '06'
+  kind: intro
+  runtime_shape: custom
+  title: A. 最も普遍的で大切なスキルだと認識されているから
+  index_title: A. 最も普遍的で大切なスキルだと認識されているから
+  section_id: null
+  section_number: null
+  section_title: null
+  index_type: normal
+- order: 7
+  file: slide_07.html
+  page_label: '07'
+  kind: intro
+  runtime_shape: custom
+  title: 成果を出す上で重要な要素
+  index_title: 成果を出す上で重要な要素
+  section_id: null
+  section_number: null
+  section_title: null
+  index_type: normal
+- order: 8
+  file: slide_08.html
+  page_label: 08
   kind: agenda
   runtime_shape: agenda
   title: アジェンダ
   index_title: アジェンダ
-  index_type: normal
   section_id: null
+  section_number: null
   section_title: null
+  index_type: normal
   agenda:
     mode: timed-overview
     active_item: null
@@ -594,51 +590,50 @@ slides:
     - index: '01'
       label: ワーク
       state: timed
-      duration: 10 min
+      duration: null
     - index: '02'
       label: 前提・背景
       state: timed
-      duration: 10 min
+      duration: null
     - index: '03'
       label: 問題解決の概要
       state: timed
-      duration: 5 min
+      duration: null
     - index: '04'
       label: 論点を定義する
       state: timed
-      duration: 10 min
+      duration: null
     - index: '05'
       label: 論点を分解する
       state: timed
-      duration: 20 min
+      duration: null
     - index: '06'
       label: 仮説を構築する
       state: timed
-      duration: 15 min
+      duration: null
     - index: '07'
       label: 論点と仮説を検証する
       state: timed
-      duration: 15 min
+      duration: null
     - index: 08
       label: 問題解決におけるコミュニケーション
       state: timed
-      duration: 15 min
+      duration: null
     - index: 09
-      label: Q&A
+      label: まとめ
       state: timed
-      duration: 20 min
-  legacy_exceptions:
-  - timed-deck-agenda
-- order: 6
-  file: slide_06.html
-  page_label: '05'
+      duration: null
+- order: 9
+  file: slide_09.html
+  page_label: 09
   kind: agenda
   runtime_shape: agenda
-  title: アジェンダ — 第01章
-  index_title: アジェンダ — 第01章
-  index_type: chapter-agenda
-  section_id: section-01-work
+  title: アジェンダ
+  index_title: アジェンダ｜第01章 ワーク
+  section_id: section-01
+  section_number: 1
   section_title: ワーク
+  index_type: chapter-agenda
   agenda:
     mode: progress
     active_item: '01'
@@ -679,66 +674,72 @@ slides:
       label: まとめ
       state: soft
       duration: null
-- order: 7
-  file: slide_07.html
-  page_label: '06'
+- order: 10
+  file: slide_10.html
+  page_label: '10'
   kind: divider
   runtime_shape: divider
-  title: 第01章 ワーク
+  title: ワーク
   index_title: 第01章 ワーク
-  index_type: chapter-title
-  section_id: section-01-work
+  section_id: section-01
+  section_number: 1
   section_title: ワーク
-- order: 8
-  file: slide_08.html
-  page_label: '07'
+  index_type: chapter-title
+- order: 11
+  file: slide_11.html
+  page_label: '11'
   kind: content
   runtime_shape: content
-  title: ワーク：問題解決の体験
-  index_title: ワーク：問題解決の体験
-  index_type: normal
-  section_id: section-01-work
+  title: 'ワーク: 問題解決の体験（ケーススタディ）'
+  index_title: 'ワーク: 問題解決の体験（ケーススタディ）'
+  section_id: section-01
+  section_number: 1
   section_title: ワーク
-- order: 9
-  file: slide_09.html
-  page_label: 08
+  index_type: normal
+- order: 12
+  file: slide_12.html
+  page_label: '12'
   kind: center-title
   runtime_shape: center-title
   title: どのように考えましたか？
   index_title: どのように考えましたか？
-  index_type: normal
-  section_id: section-01-work
+  section_id: section-01
+  section_number: 1
   section_title: ワーク
-- order: 10
-  file: slide_10.html
-  page_label: 09
+  index_type: normal
+- order: 13
+  file: slide_13.html
+  page_label: '13'
   kind: content
   runtime_shape: content
-  title: 分解の差はどこに出るか
-  index_title: 分解の差はどこに出るか
-  index_type: normal
-  section_id: section-01-work
+  title: 思考の差はどこに現れるか
+  index_title: 思考の差はどこに現れるか
+  section_id: section-01
+  section_number: 1
   section_title: ワーク
-- order: 11
-  file: slide_11.html
-  page_label: '10'
+  index_type: normal
+- order: 14
+  file: slide_14.html
+  page_label: '14'
   kind: content
   runtime_shape: content
   title: 見えている要素とつながりで差が出る
   index_title: 見えている要素とつながりで差が出る
-  index_type: normal
-  section_id: section-01-work
+  section_id: section-01
+  section_number: 1
   section_title: ワーク
-- order: 12
-  file: slide_12.html
-  page_label: '11'
+  index_type: normal
+- order: 15
+  file: slide_15.html
+  page_label: '15'
   kind: agenda
   runtime_shape: agenda
-  title: アジェンダ — 第02章
-  index_title: アジェンダ — 第02章
-  index_type: chapter-agenda
-  section_id: section-02-background
+  title: アジェンダ
+  index_title: アジェンダ｜第02章 前提・背景
+  section_id: section-02
+  section_number: 2
   section_title: 前提・背景
+  index_type: chapter-agenda
   agenda:
     mode: progress
     active_item: '02'
@@ -779,76 +780,83 @@ slides:
       label: まとめ
       state: soft
       duration: null
-- order: 13
-  file: slide_13.html
-  page_label: '12'
+- order: 16
+  file: slide_16.html
+  page_label: '16'
   kind: divider
   runtime_shape: divider
-  title: 第02章 前提・背景
+  title: 前提・背景
   index_title: 第02章 前提・背景
-  index_type: chapter-title
-  section_id: section-02-background
+  section_id: section-02
+  section_number: 2
   section_title: 前提・背景
-- order: 14
-  file: slide_14.html
-  page_label: '13'
+  index_type: chapter-title
+- order: 17
+  file: slide_17.html
+  page_label: '17'
   kind: center-title
   runtime_shape: center-title
   title: 問題解決能力が高いとは何か
   index_title: 問題解決能力が高いとは何か
-  index_type: normal
-  section_id: section-02-background
+  section_id: section-02
+  section_number: 2
   section_title: 前提・背景
-- order: 15
-  file: slide_15.html
-  page_label: '14'
+  index_type: normal
+- order: 18
+  file: slide_18.html
+  page_label: '18'
   kind: content
   runtime_shape: content
   title: 高い問題解決能力 = 高い問題解決期待値
   index_title: 高い問題解決能力 = 高い問題解決期待値
-  index_type: normal
-  section_id: section-02-background
+  section_id: section-02
+  section_number: 2
   section_title: 前提・背景
-- order: 16
-  file: slide_16.html
-  page_label: '15'
+  index_type: normal
+- order: 19
+  file: slide_19.html
+  page_label: '19'
   kind: content
   runtime_shape: content
   title: 結果と行動を切り離す
   index_title: 結果と行動を切り離す
-  index_type: normal
-  section_id: section-02-background
+  section_id: section-02
+  section_number: 2
   section_title: 前提・背景
-- order: 17
-  file: slide_17.html
-  page_label: '16'
+  index_type: normal
+- order: 20
+  file: slide_20.html
+  page_label: '20'
   kind: content
   runtime_shape: content
   title: 再現性とは「正しく間違えること」
   index_title: 再現性とは「正しく間違えること」
-  index_type: normal
-  section_id: section-02-background
+  section_id: section-02
+  section_number: 2
   section_title: 前提・背景
-- order: 18
-  file: slide_18.html
-  page_label: '17'
+  index_type: normal
+- order: 21
+  file: slide_21.html
+  page_label: '21'
   kind: content
   runtime_shape: content
-  title: 今日のテーマ
-  index_title: 今日のテーマ
-  index_type: normal
-  section_id: section-02-background
+  title: '研修のテーマ: 再現性高く問題を解決する'
+  index_title: '研修のテーマ: 再現性高く問題を解決する'
+  section_id: section-02
+  section_number: 2
   section_title: 前提・背景
-- order: 19
-  file: slide_19.html
-  page_label: '18'
+  index_type: normal
+- order: 22
+  file: slide_22.html
+  page_label: '22'
   kind: agenda
   runtime_shape: agenda
-  title: アジェンダ — 第03章
-  index_title: アジェンダ — 第03章
-  index_type: chapter-agenda
-  section_id: section-03-overview
+  title: アジェンダ
+  index_title: アジェンダ｜第03章 問題解決の概要
+  section_id: section-03
+  section_number: 3
   section_title: 問題解決の概要
+  index_type: chapter-agenda
   agenda:
     mode: progress
     active_item: '03'
@@ -889,86 +897,83 @@ slides:
       label: まとめ
       state: soft
       duration: null
-- order: 20
-  file: slide_20.html
-  page_label: '19'
+- order: 23
+  file: slide_23.html
+  page_label: '23'
   kind: divider
   runtime_shape: divider
-  title: 第03章 問題解決の概要
+  title: 問題解決の概要
   index_title: 第03章 問題解決の概要
-  index_type: chapter-title
-  section_id: section-03-overview
+  section_id: section-03
+  section_number: 3
   section_title: 問題解決の概要
-- order: 21
-  file: slide_21.html
-  page_label: '20'
+  index_type: chapter-title
+- order: 24
+  file: slide_24.html
+  page_label: '24'
   kind: content
   runtime_shape: content
   title: 問題解決とは論点に対して答えを出すこと
   index_title: 問題解決とは論点に対して答えを出すこと
-  index_type: normal
-  section_id: section-03-overview
+  section_id: section-03
+  section_number: 3
   section_title: 問題解決の概要
-- order: 22
-  file: slide_22.html
-  page_label: '21'
+  index_type: normal
+- order: 25
+  file: slide_25.html
+  page_label: '25'
   kind: content
   runtime_shape: content
   title: 7ステップのフレームワーク
   index_title: 7ステップのフレームワーク
-  index_type: normal
-  section_id: section-03-overview
+  section_id: section-03
+  section_number: 3
   section_title: 問題解決の概要
-- order: 23
-  file: slide_23.html
-  page_label: '22'
+  index_type: normal
+- order: 26
+  file: slide_26.html
+  page_label: '26'
   kind: content
   runtime_shape: content
   title: 実務では役割ごとに重心が変わる
   index_title: 実務では役割ごとに重心が変わる
-  index_type: normal
-  section_id: section-03-overview
+  section_id: section-03
+  section_number: 3
   section_title: 問題解決の概要
-- order: 24
-  file: slide_24.html
-  page_label: '23'
+  index_type: normal
+- order: 27
+  file: slide_27.html
+  page_label: '27'
   kind: content
   runtime_shape: content
   title: アインシュタインの言葉
   index_title: アインシュタインの言葉
-  index_type: normal
-  section_id: section-03-overview
+  section_id: section-03
+  section_number: 3
   section_title: 問題解決の概要
-- order: 25
-  file: slide_25.html
-  page_label: '24'
+  index_type: normal
+- order: 28
+  file: slide_28.html
+  page_label: '28'
   kind: content
   runtime_shape: content
-  title: メタ認知：プロセスを回す
-  index_title: メタ認知：プロセスを回す
-  index_type: normal
-  section_id: section-03-overview
+  title: 問題解決のプロセスを回す際に重要な点
+  index_title: 問題解決のプロセスを回す際に重要な点
+  section_id: section-03
+  section_number: 3
   section_title: 問題解決の概要
-- order: 26
-  file: slide_26.html
-  page_label: '25'
-  kind: center-title
-  runtime_shape: center-title
-  title: 問題解決の本質
-  index_title: 問題解決の本質
   index_type: normal
-  section_id: section-03-overview
-  section_title: 問題解決の概要
-- order: 27
-  file: slide_27.html
-  page_label: '26'
+- order: 29
+  file: slide_29.html
+  page_label: '29'
   kind: agenda
   runtime_shape: agenda
-  title: アジェンダ — 第04章
-  index_title: アジェンダ — 第04章
-  index_type: chapter-agenda
-  section_id: section-04-issue-definition
+  title: アジェンダ
+  index_title: アジェンダ｜第04章 論点を定義する
+  section_id: section-04
+  section_number: 4
   section_title: 論点を定義する
+  index_type: chapter-agenda
   agenda:
     mode: progress
     active_item: '04'
@@ -1009,286 +1014,237 @@ slides:
       label: まとめ
       state: soft
       duration: null
-- order: 28
-  file: slide_28.html
-  page_label: '27'
-  kind: divider
-  runtime_shape: divider
-  title: 第04章 論点を定義する
-  index_title: 第04章 論点を定義する
-  index_type: chapter-title
-  section_id: section-04-issue-definition
-  section_title: 論点を定義する
-- order: 29
-  file: slide_29.html
-  page_label: '28'
-  kind: content
-  runtime_shape: content
-  title: 論点とは
-  index_title: 論点とは
-  index_type: normal
-  section_id: section-04-issue-definition
-  section_title: 論点を定義する
 - order: 30
   file: slide_30.html
-  page_label: '29'
-  kind: content
-  runtime_shape: content
-  title: 論点には必ず「べき」を含める
-  index_title: 論点には必ず「べき」を含める
-  index_type: normal
-  section_id: section-04-issue-definition
+  page_label: '30'
+  kind: divider
+  runtime_shape: divider
+  title: 論点を定義する
+  index_title: 第04章 論点を定義する
+  section_id: section-04
+  section_number: 4
   section_title: 論点を定義する
+  index_type: chapter-title
 - order: 31
   file: slide_31.html
-  page_label: '30'
-  kind: content
-  runtime_shape: content
-  title: 実践ルール
-  index_title: 実践ルール
-  index_type: normal
-  section_id: section-04-issue-definition
-  section_title: 論点を定義する
-- order: 32
-  file: slide_32.html
   page_label: '31'
   kind: content
   runtime_shape: content
-  title: 原則3：モデル（式）で考える
-  index_title: 原則3：モデル（式）で考える
-  index_type: normal
-  section_id: section-04-issue-definition
+  title: 問題解決の全工程で最も重要なステップ
+  index_title: 問題解決の全工程で最も重要なステップ
+  section_id: section-04
+  section_number: 4
   section_title: 論点を定義する
+  index_type: normal
+- order: 32
+  file: slide_32.html
+  page_label: '32'
+  kind: content
+  runtime_shape: content
+  title: 論点定義における重要な3ポイント
+  index_title: 論点定義における重要な3ポイント
+  section_id: section-04
+  section_number: 4
+  section_title: 論点を定義する
+  index_type: normal
 - order: 33
   file: slide_33.html
-  page_label: '32'
-  kind: divider
-  runtime_shape: divider
-  title: 第05章 論点を分解する
-  index_title: 第05章 論点を分解する
-  index_type: chapter-title
-  section_id: section-05-decomposition
-  section_title: 論点を分解する
-- order: 34
-  file: slide_34.html
   page_label: '33'
   kind: content
   runtime_shape: content
-  title: 分解の5原則：概要
-  index_title: 分解の5原則：概要
+  title: 'ポイント③: 論点の文末には必ず「べき」を入れる'
+  index_title: 'ポイント③: 論点の文末には必ず「べき」を入れる'
+  section_id: section-04
+  section_number: 4
+  section_title: 論点を定義する
   index_type: normal
-  section_id: section-05-decomposition
-  section_title: 論点を分解する
+- order: 34
+  file: slide_34.html
+  page_label: '34'
+  kind: content
+  runtime_shape: content
+  title: 論点定義のまとめ
+  index_title: 論点定義のまとめ
+  section_id: section-04
+  section_number: 4
+  section_title: 論点を定義する
+  index_type: normal
 - order: 35
   file: slide_35.html
-  page_label: '34'
+  page_label: '35'
+  kind: divider
+  runtime_shape: divider
+  title: 論点を分解する
+  index_title: 第05章 論点を分解する
+  section_id: section-05
+  section_number: 5
+  section_title: 論点を分解する
+  index_type: chapter-title
+- order: 36
+  file: slide_36.html
+  page_label: '36'
+  kind: content
+  runtime_shape: content
+  title: 論点分解における重要な5つのポイント
+  index_title: 論点分解における重要な5つのポイント
+  section_id: section-05
+  section_number: 5
+  section_title: 論点を分解する
+  index_type: normal
+- order: 37
+  file: slide_37.html
+  page_label: '37'
   kind: content
   runtime_shape: content
   title: 原則1：ツリー状に分解する
   index_title: 原則1：ツリー状に分解する
-  index_type: normal
-  section_id: section-05-decomposition
+  section_id: section-05
+  section_number: 5
   section_title: 論点を分解する
-- order: 36
-  file: slide_36.html
-  page_label: '35'
+  index_type: normal
+- order: 38
+  file: slide_38.html
+  page_label: '38'
   kind: content
   runtime_shape: content
   title: 原則2：MECEに分解する
   index_title: 原則2：MECEに分解する
-  index_type: normal
-  section_id: section-05-decomposition
+  section_id: section-05
+  section_number: 5
   section_title: 論点を分解する
-- order: 37
-  file: slide_37.html
-  page_label: '36'
+  index_type: normal
+- order: 39
+  file: slide_39.html
+  page_label: '39'
   kind: content
   runtime_shape: content
   title: 原則3：モデル（式）で考える
   index_title: 原則3：モデル（式）で考える
-  index_type: normal
-  section_id: section-05-decomposition
+  section_id: section-05
+  section_number: 5
   section_title: 論点を分解する
-- order: 38
-  file: slide_38.html
-  page_label: '37'
+  index_type: normal
+- order: 40
+  file: slide_40.html
+  page_label: '40'
   kind: content
   runtime_shape: content
   title: 原則4：5分以上1つの論点を考えない
   index_title: 原則4：5分以上1つの論点を考えない
-  index_type: normal
-  section_id: section-05-decomposition
+  section_id: section-05
+  section_number: 5
   section_title: 論点を分解する
-- order: 39
-  file: slide_39.html
-  page_label: '38'
+  index_type: normal
+- order: 41
+  file: slide_41.html
+  page_label: '41'
   kind: content
   runtime_shape: content
   title: 原則5：トップダウンとボトムアップを行き来する
   index_title: 原則5：トップダウンとボトムアップを行き来する
-  index_type: normal
-  section_id: section-05-decomposition
+  section_id: section-05
+  section_number: 5
   section_title: 論点を分解する
-- order: 40
-  file: slide_40.html
-  page_label: '39'
-  kind: content
-  runtime_shape: content
-  title: 比較の観点
-  index_title: 比較の観点
   index_type: normal
-  section_id: section-05-decomposition
-  section_title: 論点を分解する
-- order: 41
-  file: slide_41.html
-  page_label: '40'
-  kind: content
-  runtime_shape: content
-  title: ダメな分解 vs 良い分解
-  index_title: ダメな分解 vs 良い分解
-  index_type: normal
-  section_id: section-05-decomposition
-  section_title: 論点を分解する
 - order: 42
   file: slide_42.html
-  page_label: '41'
-  kind: agenda
-  runtime_shape: agenda
-  title: アジェンダ — 第06章
-  index_title: アジェンダ — 第06章
-  index_type: chapter-agenda
-  section_id: section-06-hypothesis
-  section_title: 仮説を構築する
-  agenda:
-    mode: progress
-    active_item: '06'
-    items:
-    - index: '01'
-      label: ワーク
-      state: normal
-      duration: null
-    - index: '02'
-      label: 前提・背景
-      state: normal
-      duration: null
-    - index: '03'
-      label: 問題解決の概要
-      state: normal
-      duration: null
-    - index: '04'
-      label: 論点を定義する
-      state: normal
-      duration: null
-    - index: '05'
-      label: 論点を分解する
-      state: normal
-      duration: null
-    - index: '06'
-      label: 仮説を構築する
-      state: active
-      duration: null
-    - index: '07'
-      label: 論点と仮説を検証する
-      state: soft
-      duration: null
-    - index: 08
-      label: 問題解決におけるコミュニケーション
-      state: soft
-      duration: null
-    - index: 09
-      label: まとめ
-      state: soft
-      duration: null
-- order: 43
-  file: slide_43.html
   page_label: '42'
   kind: divider
   runtime_shape: divider
-  title: 第06章 仮説を構築する
+  title: 仮説を構築する
   index_title: 第06章 仮説を構築する
-  index_type: chapter-title
-  section_id: section-06-hypothesis
+  section_id: section-06
+  section_number: 6
   section_title: 仮説を構築する
-- order: 44
-  file: slide_44.html
+  index_type: chapter-title
+- order: 43
+  file: slide_43.html
   page_label: '43'
   kind: content
   runtime_shape: content
   title: 仮説構築の目的
   index_title: 仮説構築の目的
-  index_type: normal
-  section_id: section-06-hypothesis
+  section_id: section-06
+  section_number: 6
   section_title: 仮説を構築する
-- order: 45
-  file: slide_45.html
+  index_type: normal
+- order: 44
+  file: slide_44.html
   page_label: '44'
   kind: content
   runtime_shape: content
-  title: 良い仮説の条件
-  index_title: 良い仮説の条件
-  index_type: normal
-  section_id: section-06-hypothesis
+  title: 良い仮説とは
+  index_title: 良い仮説とは
+  section_id: section-06
+  section_number: 6
   section_title: 仮説を構築する
-- order: 46
-  file: slide_46.html
+  index_type: normal
+- order: 45
+  file: slide_45.html
   page_label: '45'
   kind: content
   runtime_shape: content
-  title: 仮説の作り方
-  index_title: 仮説の作り方
-  index_type: normal
-  section_id: section-06-hypothesis
+  title: 仮説の基本手順
+  index_title: 仮説の基本手順
+  section_id: section-06
+  section_number: 6
   section_title: 仮説を構築する
-- order: 47
-  file: slide_47.html
+  index_type: normal
+- order: 46
+  file: slide_46.html
   page_label: '46'
   kind: content
   runtime_shape: content
-  title: 仮説を作る技法
-  index_title: 仮説を作る技法
-  index_type: normal
-  section_id: section-06-hypothesis
+  title: 仮説生成の技法
+  index_title: 仮説生成の技法
+  section_id: section-06
+  section_number: 6
   section_title: 仮説を構築する
-- order: 48
-  file: slide_48.html
+  index_type: normal
+- order: 47
+  file: slide_47.html
   page_label: '47'
   kind: center-title
   runtime_shape: center-title
-  title: 仮説思考の罠：知見がないときどうするか
-  index_title: 仮説思考の罠：知見がないときどうするか
-  index_type: normal
-  section_id: section-06-hypothesis
+  title: 知見がないとき、どう進めるか
+  index_title: 知見がないとき、どう進めるか
+  section_id: section-06
+  section_number: 6
   section_title: 仮説を構築する
-- order: 49
-  file: slide_49.html
+  index_type: normal
+- order: 48
+  file: slide_48.html
   page_label: '48'
   kind: content
   runtime_shape: content
   title: Deep Dive：情報の海に潜る
   index_title: Deep Dive：情報の海に潜る
-  index_type: normal
-  section_id: section-06-hypothesis
+  section_id: section-06
+  section_number: 6
   section_title: 仮説を構築する
-- order: 50
-  file: slide_50.html
+  index_type: normal
+- order: 49
+  file: slide_49.html
   page_label: '49'
   kind: content
   runtime_shape: content
   title: 仮の答えを出すことから逃げない
   index_title: 仮の答えを出すことから逃げない
-  index_type: normal
-  section_id: section-06-hypothesis
+  section_id: section-06
+  section_number: 6
   section_title: 仮説を構築する
-- order: 51
-  file: slide_51.html
+  index_type: normal
+- order: 50
+  file: slide_50.html
   page_label: '50'
   kind: agenda
   runtime_shape: agenda
-  title: アジェンダ — 第07章
-  index_title: アジェンダ — 第07章
-  index_type: chapter-agenda
-  section_id: section-07-validation
+  title: アジェンダ
+  index_title: アジェンダ｜第07章 論点と仮説を検証する
+  section_id: section-07
+  section_number: 7
   section_title: 論点と仮説を検証する
+  index_type: chapter-agenda
   agenda:
     mode: progress
     active_item: '07'
@@ -1329,76 +1285,83 @@ slides:
       label: まとめ
       state: soft
       duration: null
-- order: 52
-  file: slide_52.html
+- order: 51
+  file: slide_51.html
   page_label: '51'
   kind: divider
   runtime_shape: divider
-  title: 第07章 論点と仮説を検証する
+  title: 論点と仮説を検証する
   index_title: 第07章 論点と仮説を検証する
-  index_type: chapter-title
-  section_id: section-07-validation
+  section_id: section-07
+  section_number: 7
   section_title: 論点と仮説を検証する
+  index_type: chapter-title
+- order: 52
+  file: slide_52.html
+  page_label: '52'
+  kind: content
+  runtime_shape: content
+  title: 検証を設計する
+  index_title: 検証を設計する
+  section_id: section-07
+  section_number: 7
+  section_title: 論点と仮説を検証する
+  index_type: normal
 - order: 53
   file: slide_53.html
-  page_label: '52'
+  page_label: '53'
   kind: content
   runtime_shape: content
   title: 何を先に検証するか
   index_title: 何を先に検証するか
-  index_type: normal
-  section_id: section-07-validation
+  section_id: section-07
+  section_number: 7
   section_title: 論点と仮説を検証する
+  index_type: normal
 - order: 54
   file: slide_54.html
-  page_label: '53'
+  page_label: '54'
   kind: content
   runtime_shape: content
-  title: 検証可能な形に変換する
-  index_title: 検証可能な形に変換する
-  index_type: normal
-  section_id: section-07-validation
+  title: 検証結果を読む
+  index_title: 検証結果を読む
+  section_id: section-07
+  section_number: 7
   section_title: 論点と仮説を検証する
+  index_type: normal
 - order: 55
   file: slide_55.html
-  page_label: '54'
-  kind: center-title
-  runtime_shape: center-title
-  title: 検証手段を選ぶ
-  index_title: 検証手段を選ぶ
-  index_type: normal
-  section_id: section-07-validation
-  section_title: 論点と仮説を検証する
-- order: 56
-  file: slide_56.html
   page_label: '55'
-  kind: content
-  runtime_shape: content
-  title: 複数案のトレードオフを評価する
-  index_title: 複数案のトレードオフを評価する
-  index_type: normal
-  section_id: section-07-validation
-  section_title: 論点と仮説を検証する
-- order: 57
-  file: slide_57.html
-  page_label: '56'
   kind: content
   runtime_shape: content
   title: 検証結果から次の行動を決める
   index_title: 検証結果から次の行動を決める
-  index_type: normal
-  section_id: section-07-validation
+  section_id: section-07
+  section_number: 7
   section_title: 論点と仮説を検証する
-- order: 58
-  file: slide_58.html
+  index_type: normal
+- order: 56
+  file: slide_56.html
+  page_label: '56'
+  kind: content
+  runtime_shape: content
+  title: 仮説検証の全体像
+  index_title: 仮説検証の全体像
+  section_id: section-07
+  section_number: 7
+  section_title: 論点と仮説を検証する
+  index_type: normal
+- order: 57
+  file: slide_57.html
   page_label: '57'
   kind: agenda
   runtime_shape: agenda
-  title: アジェンダ — 第08章
-  index_title: アジェンダ — 第08章
-  index_type: chapter-agenda
-  section_id: section-08-communication
+  title: アジェンダ
+  index_title: アジェンダ｜第08章 問題解決におけるコミュニケーション
+  section_id: section-08
+  section_number: 8
   section_title: 問題解決におけるコミュニケーション
+  index_type: chapter-agenda
   agenda:
     mode: progress
     active_item: 08
@@ -1439,126 +1402,138 @@ slides:
       label: まとめ
       state: soft
       duration: null
-- order: 59
-  file: slide_59.html
+- order: 58
+  file: slide_58.html
   page_label: '58'
   kind: divider
   runtime_shape: divider
-  title: 第08章 問題解決におけるコミュニケーション
+  title: 問題解決におけるコミュニケーション
   index_title: 第08章 問題解決におけるコミュニケーション
-  index_type: chapter-title
-  section_id: section-08-communication
+  section_id: section-08
+  section_number: 8
   section_title: 問題解決におけるコミュニケーション
-- order: 60
-  file: slide_60.html
+  index_type: chapter-title
+- order: 59
+  file: slide_59.html
   page_label: '59'
   kind: content
   runtime_shape: content
-  title: コミュニケーションは誤解可能性を排除するゲーム
-  index_title: コミュニケーションは誤解可能性を排除するゲーム
-  index_type: normal
-  section_id: section-08-communication
+  title: 1. コミュニケーションは誤解を排除するゲーム
+  index_title: 1. コミュニケーションは誤解を排除するゲーム
+  section_id: section-08
+  section_number: 8
   section_title: 問題解決におけるコミュニケーション
-- order: 61
-  file: slide_61.html
+  index_type: normal
+- order: 60
+  file: slide_60.html
   page_label: '60'
   kind: content
   runtime_shape: content
-  title: 受け手視点で伝達を設計する
-  index_title: 受け手視点で伝達を設計する
-  index_type: normal
-  section_id: section-08-communication
+  title: 2. 誤解を排除するための要素
+  index_title: 2. 誤解を排除するための要素
+  section_id: section-08
+  section_number: 8
   section_title: 問題解決におけるコミュニケーション
-- order: 62
-  file: slide_62.html
+  index_type: normal
+- order: 61
+  file: slide_61.html
   page_label: '61'
   kind: content
   runtime_shape: content
-  title: 意思決定構造を押さえる
-  index_title: 意思決定構造を押さえる
-  index_type: normal
-  section_id: section-08-communication
+  title: 3. 受け手の理解
+  index_title: 3. 受け手の理解
+  section_id: section-08
+  section_number: 8
   section_title: 問題解決におけるコミュニケーション
-- order: 63
-  file: slide_63.html
+  index_type: normal
+- order: 62
+  file: slide_62.html
   page_label: '62'
   kind: content
   runtime_shape: content
-  title: 誤解ポイントを先回りして潰す
-  index_title: 誤解ポイントを先回りして潰す
-  index_type: normal
-  section_id: section-08-communication
+  title: 3-1. 意思決定構造を押さえる
+  index_title: 3-1. 意思決定構造を押さえる
+  section_id: section-08
+  section_number: 8
   section_title: 問題解決におけるコミュニケーション
-- order: 64
-  file: slide_64.html
+  index_type: normal
+- order: 63
+  file: slide_63.html
   page_label: '63'
   kind: content
   runtime_shape: content
-  title: 解を伝える基本構造：5要素
-  index_title: 解を伝える基本構造：5要素
-  index_type: normal
-  section_id: section-08-communication
+  title: 4. 内容設計
+  index_title: 4. 内容設計
+  section_id: section-08
+  section_number: 8
   section_title: 問題解決におけるコミュニケーション
-- order: 65
-  file: slide_65.html
+  index_type: normal
+- order: 64
+  file: slide_64.html
   page_label: '64'
   kind: content
   runtime_shape: content
-  title: 1. 結論：曖昧性を排除する
-  index_title: 1. 結論：曖昧性を排除する
-  index_type: normal
-  section_id: section-08-communication
+  title: 4-1. 結論：曖昧性を排除する
+  index_title: 4-1. 結論：曖昧性を排除する
+  section_id: section-08
+  section_number: 8
   section_title: 問題解決におけるコミュニケーション
-- order: 66
-  file: slide_66.html
+  index_type: normal
+- order: 65
+  file: slide_65.html
   page_label: '65'
   kind: content
   runtime_shape: content
-  title: 2. 根拠：センターピンに接続する
-  index_title: 2. 根拠：センターピンに接続する
-  index_type: normal
-  section_id: section-08-communication
+  title: 4-2. 根拠：センターピンに接続する
+  index_title: 4-2. 根拠：センターピンに接続する
+  section_id: section-08
+  section_number: 8
   section_title: 問題解決におけるコミュニケーション
-- order: 67
-  file: slide_67.html
+  index_type: normal
+- order: 66
+  file: slide_66.html
   page_label: '66'
   kind: content
   runtime_shape: content
-  title: 3. ネクストアクション + 4. 残論点
-  index_title: 3. ネクストアクション + 4. 残論点
-  index_type: normal
-  section_id: section-08-communication
+  title: 4-3. ネクストアクションと残論点
+  index_title: 4-3. ネクストアクションと残論点
+  section_id: section-08
+  section_number: 8
   section_title: 問題解決におけるコミュニケーション
+  index_type: normal
+- order: 67
+  file: slide_67.html
+  page_label: '67'
+  kind: content
+  runtime_shape: content
+  title: 4-4. 補足：情報確度を明示する
+  index_title: 4-4. 補足：情報確度を明示する
+  section_id: section-08
+  section_number: 8
+  section_title: 問題解決におけるコミュニケーション
+  index_type: normal
 - order: 68
   file: slide_68.html
-  page_label: '67'
-  kind: center-title
-  runtime_shape: center-title
-  title: 5. 情報確度の明示
-  index_title: 5. 情報確度の明示
-  index_type: normal
-  section_id: section-08-communication
+  page_label: '68'
+  kind: content
+  runtime_shape: content
+  title: '5. Tips: 誤解ポイントを先回りして潰す'
+  index_title: '5. Tips: 誤解ポイントを先回りして潰す'
+  section_id: section-08
+  section_number: 8
   section_title: 問題解決におけるコミュニケーション
+  index_type: normal
 - order: 69
   file: slide_69.html
-  page_label: '68'
-  kind: center-title
-  runtime_shape: center-title
-  title: ピラミッドストラクチャー
-  index_title: ピラミッドストラクチャー
-  index_type: normal
-  section_id: section-08-communication
-  section_title: 問題解決におけるコミュニケーション
-- order: 70
-  file: slide_70.html
   page_label: '69'
   kind: agenda
   runtime_shape: agenda
-  title: アジェンダ — 第09章
-  index_title: アジェンダ — 第09章
-  index_type: chapter-agenda
-  section_id: section-09-summary
+  title: アジェンダ
+  index_title: アジェンダ｜第09章 まとめ
+  section_id: section-09
+  section_number: 9
   section_title: まとめ
+  index_type: chapter-agenda
   agenda:
     mode: progress
     active_item: 09
@@ -1599,57 +1574,58 @@ slides:
       label: まとめ
       state: active
       duration: null
-  legacy_exceptions:
-  - summary-agenda-without-divider
-- order: 71
-  file: slide_71.html
+- order: 70
+  file: slide_70.html
   page_label: '70'
   kind: summary
   runtime_shape: custom
   title: まとめ
   index_title: まとめ
-  index_type: normal
-  section_id: section-09-summary
+  section_id: section-09
+  section_number: 9
   section_title: まとめ
+  index_type: normal
   legacy_exceptions:
-  - manual-header-reimplementation
-  - manual-footer-reimplementation
-- order: 72
-  file: slide_72.html
+  - summary-agenda-without-divider
+- order: 71
+  file: slide_71.html
   page_label: '71'
   kind: closing
   runtime_shape: custom
   title: 理論的には何事も上手くいきます
   index_title: 理論的には何事も上手くいきます
-  index_type: normal
-  section_id: section-09-summary
+  section_id: section-09
+  section_number: 9
   section_title: まとめ
+  index_type: normal
   legacy_exceptions:
-  - manual-closing-layout
+  - manual-header-reimplementation
   - manual-footer-reimplementation
-- order: 73
-  file: slide_73.html
+- order: 72
+  file: slide_72.html
   page_label: '72'
   kind: cta
   runtime_shape: custom
   title: 問題を解決しましょう
   index_title: 問題を解決しましょう
-  index_type: normal
-  section_id: section-09-summary
+  section_id: section-09
+  section_number: 9
   section_title: まとめ
+  index_type: normal
   legacy_exceptions:
-  - manual-cta-layout
+  - manual-closing-layout
   - manual-footer-reimplementation
-- order: 74
-  file: slide_74.html
+- order: 73
+  file: slide_73.html
   page_label: '73'
   kind: qa
   runtime_shape: custom
   title: Q&A
   index_title: Q&A
-  index_type: normal
-  section_id: section-09-summary
+  section_id: section-09
+  section_number: 9
   section_title: まとめ
+  index_type: normal
   legacy_exceptions:
-  - manual-qa-layout
+  - manual-cta-layout
   - manual-footer-reimplementation

@@ -3,12 +3,283 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>第02章 前提・背景</title>
+<title>思考の差はどこに現れるか</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
+<style>
+  .content-stage {
+    position: absolute;
+    left: 80px;
+    top: 166px;
+    width: 1120px;
+    height: 470px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    row-gap: 18px;
+    z-index: 10;
+  }
+
+  .intro-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .intro-line__text {
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 1.5;
+    color: var(--soft-black);
+  }
+
+  .intro-line__tag {
+    flex-shrink: 0;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: rgba(0, 0, 0, 0.42);
+    text-transform: uppercase;
+  }
+
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+  }
+
+  .compare-card {
+    height: 100%;
+    padding: 20px 22px 18px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    background: #ffffff;
+    display: grid;
+    grid-template-rows: 52px 1fr;
+    gap: 14px;
+  }
+
+  .compare-card--strong {
+    border: 2px solid var(--soft-black);
+  }
+
+  .compare-card__header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .compare-card__token {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .compare-card__token--outline {
+    border: 2px solid var(--soft-black);
+    background: #ffffff;
+    color: var(--soft-black);
+  }
+
+  .compare-card__token--solid {
+    background: var(--soft-black);
+    color: #ffffff;
+  }
+
+  .compare-card__token-text {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+  }
+
+  .compare-card__title-wrap {
+    min-width: 0;
+  }
+
+  .compare-card__eyebrow {
+    margin: 0 0 var(--space-stack-lead-title);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    color: rgba(0, 0, 0, 0.34);
+    text-transform: uppercase;
+  }
+
+  .compare-card__title {
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1.15;
+    color: var(--soft-black);
+  }
+
+  .compare-visual {
+    display: grid;
+    grid-template-rows: 156px auto;
+    gap: 12px;
+  }
+
+  .compare-image-wrap {
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .compare-image-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(3px);
+    opacity: 0.28;
+    transform: scale(1.1);
+  }
+
+  .compare-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .compare-image {
+    position: relative;
+    z-index: 1;
+    width: auto;
+    height: 100%;
+    max-width: none;
+    object-fit: contain;
+    display: block;
+  }
+
+  .compare-caption {
+    display: grid;
+    gap: 8px;
+  }
+
+  .compare-caption__eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: rgba(0, 0, 0, 0.42);
+  }
+
+  .compare-caption__title {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--soft-black);
+  }
+
+  .compare-caption__body {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.55;
+    color: rgba(0, 0, 0, 0.72);
+  }
+
+  .conclusion-band {
+    min-height: 66px;
+    padding: 10px 18px;
+    border-top: 1px solid rgba(0, 0, 0, 0.14);
+    background: #f7f7f7;
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 14px;
+    align-items: start;
+  }
+
+  .conclusion-band__label {
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.42);
+  }
+
+  .conclusion-band__text {
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 1.6;
+    color: var(--soft-black);
+  }
+</style>
 </head>
 <body>
-<div class="slide-container slide-theme-mist" data-slide-kind="divider" data-background="halftone" data-divider-brand="ロジカル・シンキング研修" data-divider-index="02" data-divider-kicker="Chapter 02" data-divider-title="前提・背景" data-divider-subtitle="期待値と再現性を理解する"></div>
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第01章 ワーク" data-header-title="思考の差はどこに現れるか" data-header-subtitle="構成要素を見るか、価値が生まれる条件を見るか" data-footer="standard" data-footer-page="13">
+  <main class="content-stage">
+    <div class="intro-line">
+      <p class="intro-line__text">思考の差は、①何を見ているか（範囲）と、②どこまで見ているか（粒度）の差異から構成される</p>
+      <p class="intro-line__tag">Object vs Experience</p>
+    </div>
+
+    <section class="comparison-grid" aria-label="分解の比較">
+      <article class="compare-card">
+        <div class="compare-card__header">
+          <div class="compare-card__token compare-card__token--outline">
+            <p class="compare-card__token-text">A</p>
+          </div>
+          <div class="compare-card__title-wrap">
+            <p class="compare-card__eyebrow">Before</p>
+            <p class="compare-card__title">ただ作業をしている人の分解</p>
+          </div>
+        </div>
+
+        <div class="compare-visual">
+          <div class="compare-image-wrap">
+            <img class="compare-image-bg" src="./assets/p10/burger_object.png" alt=""/>
+            <div aria-hidden="true" class="compare-image-overlay"></div>
+            <img class="compare-image" src="./assets/p10/burger_object.png" alt="白背景の上に置かれたハンバーガー単体"/>
+          </div>
+          <div class="compare-caption">
+            <p class="compare-caption__eyebrow">見ている対象</p>
+            <p class="compare-caption__title">ハンバーガー</p>
+            <p class="compare-caption__body">ハンバーガーを構成するバンズ・パティ・野菜・チーズ・ソースなどから勝負</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="compare-card compare-card--strong">
+        <div class="compare-card__header">
+          <div class="compare-card__token compare-card__token--solid">
+            <p class="compare-card__token-text">B</p>
+          </div>
+          <div class="compare-card__title-wrap">
+            <p class="compare-card__eyebrow">After</p>
+            <p class="compare-card__title">問題を解決したい人の分解</p>
+          </div>
+        </div>
+
+        <div class="compare-visual">
+          <div class="compare-image-wrap">
+            <img class="compare-image-bg" src="./assets/p10/burger_experience.png" alt=""/>
+            <div aria-hidden="true" class="compare-image-overlay"></div>
+            <img class="compare-image" src="./assets/p10/burger_experience.png" alt="店内でハンバーガーを食べている人物"/>
+          </div>
+          <div class="compare-caption">
+            <p class="compare-caption__eyebrow">見ている対象</p>
+            <p class="compare-caption__title">「美味しい」を感じる体験</p>
+            <p class="compare-caption__body">「美味しい」を感じる、見た目（視覚）、音（聴覚）、香り（嗅覚）、食感（触覚）、味（味覚）の五感で勝負</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="conclusion-band" aria-label="結論">
+      <p class="conclusion-band__label">結論</p>
+      <p class="conclusion-band__text">美味しいハンバーガーをつくれる可能性が高いのは、ハンバーガーから分解していくAさんではなく、「美味しさを感じる体験」から分解していくBさんである</p>
+    </section>
+  </main>
+</div>
 </body>
 </html>

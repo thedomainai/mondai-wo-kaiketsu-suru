@@ -86,6 +86,22 @@ semantic_rules:
     severity: warning
     scope: layout
     description: 重なりや詰まりは object の微調整より先に section structure と grid / flex 配分で解く。
+  - id: vertical-rhythm-token-ssot
+    severity: warning
+    scope: typography
+    description: `eyebrow / kicker / label / num / index -> title / head -> body / copy / text` の距離は `slides.css` の 4 つの stack token を SSOT とし、生の px 値や component 専用 token を deck 全体で増やさない。
+  - id: vertical-rhythm-single-owner
+    severity: warning
+    scope: typography
+    description: 同一 block の vertical rhythm は、子要素の margin か親の `gap / row-gap` のどちらか一方で持つ。`padding-bottom` と混在させない。
+  - id: optical-gap-over-box-gap
+    severity: warning
+    scope: typography
+    description: 「48px 空ける」などの視覚距離指定は raw `margin-bottom` ではなく optical gap として扱い、親 `gap / row-gap` と local compensation で実装する。child margin を足して似せない。
+  - id: cross-deck-semantic-consistency
+    severity: warning
+    scope: typography
+    description: 余白は対象 slide 単体ではなく、deck 内の同種 semantic 要素を横断比較して揃える。1 枚だけ tight / loose にしない。
   - id: parallel-card-track-alignment
     severity: warning
     scope: layout

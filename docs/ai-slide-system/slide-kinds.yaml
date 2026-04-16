@@ -51,6 +51,8 @@ kinds:
       - agenda-panel__list
       - slides.css
       - slides.js
+    forbidden_markers:
+      - data-footer=
     allowed_backgrounds:
       - grain
   divider:
@@ -111,7 +113,6 @@ kinds:
     required_container_attrs:
       - data-slide-kind
     required_markers:
-      - LOGICAL THINKING TRAINING
       - slides.css
       - slides.js
     allowed_backgrounds:
@@ -146,7 +147,6 @@ kinds:
       - data-slide-kind
     required_markers:
       - Q&amp;A
-      - LOGICAL THINKING TRAINING
       - slides.css
       - slides.js
     allowed_backgrounds:

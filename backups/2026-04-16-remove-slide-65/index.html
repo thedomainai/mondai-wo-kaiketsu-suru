@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>問題を解決する - スライドビューワー</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background: #1a1a1a;
+    color: #fff;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    background: #111;
+    border-bottom: 1px solid #333;
+    flex-shrink: 0;
+    gap: 8px;
+  }
+  header h1 {
+    font-size: 12px;
+    font-weight: 600;
+    color: #aaa;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+    min-width: 0;
+  }
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .controls button {
+    background: #333;
+    border: none;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background 0.15s;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  .controls button:hover { background: #555; }
+  .controls button:active { background: #666; }
+  .controls button:disabled { opacity: 0.3; cursor: default; }
+  .controls span {
+    font-size: 12px;
+    color: #888;
+    min-width: 52px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .main {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    min-height: 0;
+  }
+  .sidebar {
+    width: 200px;
+    background: #111;
+    border-right: 1px solid #333;
+    overflow-y: auto;
+    flex-shrink: 0;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sidebar button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    color: #999;
+    padding: 9px 14px;
+    font-size: 11px;
+    cursor: pointer;
+    border-bottom: 1px solid #222;
+    transition: all 0.15s;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    line-height: 1.4;
+  }
+  .sidebar button:hover { background: #222; color: #fff; }
+  .sidebar button.active { background: #2a2a2a; color: #fff; border-left: 3px solid #fff; }
+  .sidebar button.chapter-agenda { border-top: 1px solid #333; }
+  .sidebar button .num { color: #555; margin-right: 6px; font-variant-numeric: tabular-nums; }
+  .viewer {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    overflow: hidden;
+    min-width: 0;
+  }
+  .iframe-wrapper {
+    position: relative;
+    width: 1280px;
+    height: 720px;
+    transform-origin: center center;
+    border-radius: 4px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+    flex-shrink: 0;
+  }
+  .viewer iframe {
+    width: 1280px;
+    height: 720px;
+    border: none;
+    border-radius: 4px;
+    display: block;
+  }
+  .nav-btn {
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    z-index: 90;
+    border: none;
+    background: transparent;
+    color: rgba(255,255,255,0);
+    font-size: 32px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .nav-btn--prev { left: 0; border-radius: 4px 0 0 4px; }
+  .nav-btn--next { right: 0; border-radius: 0 4px 4px 0; }
+  .iframe-wrapper:hover .nav-btn {
+    color: rgba(255,255,255,0.5);
+    background: rgba(0,0,0,0.15);
+  }
+  .nav-btn:hover {
+    color: rgba(255,255,255,0.9) !important;
+    background: rgba(0,0,0,0.35) !important;
+  }
+  .nav-btn:active { background: rgba(0,0,0,0.5) !important; }
+  .nav-btn:disabled { opacity: 0; cursor: default; pointer-events: none; }
+  .touch-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 100;
+    display: none;
+  }
+  .mobile-bar {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    background: #111;
+    border-top: 1px solid #333;
+    flex-shrink: 0;
+    gap: 8px;
+  }
+  .mobile-bar button {
+    background: #333;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.15s;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-width: 64px;
+  }
+  .mobile-bar button:active { background: #555; }
+  .mobile-bar button:disabled { opacity: 0.3; }
+  .mobile-bar .counter {
+    font-size: 13px;
+    color: #888;
+    text-align: center;
+    flex: 1;
+  }
+  .mobile-bar .menu-btn {
+    background: none;
+    border: 1px solid #444;
+    color: #aaa;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    min-width: auto;
+  }
+  .drawer-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 200;
+  }
+  .drawer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #111;
+    border-top: 1px solid #333;
+    border-radius: 16px 16px 0 0;
+    max-height: 65dvh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    z-index: 201;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+  .drawer.open { transform: translateY(0); }
+  .drawer-handle {
+    width: 36px;
+    height: 4px;
+    background: #444;
+    border-radius: 2px;
+    margin: 12px auto 8px;
+  }
+  .drawer-title {
+    padding: 8px 16px 12px;
+    font-size: 12px;
+    color: #666;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #222;
+  }
+  .drawer button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    color: #999;
+    padding: 11px 16px;
+    font-size: 13px;
+    cursor: pointer;
+    border-bottom: 1px solid #1a1a1a;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    line-height: 1.4;
+  }
+  .drawer button:active { background: #222; }
+  .drawer button.active { color: #fff; background: #2a2a2a; border-left: 3px solid #fff; padding-left: 13px; }
+  .drawer button .num { color: #555; margin-right: 8px; }
+
+  @media (max-width: 768px) {
+    .sidebar { display: none; }
+    .mobile-bar { display: flex; }
+    .touch-overlay { display: block; }
+    header h1 { font-size: 11px; }
+    .controls { display: none; }
+    .viewer { padding: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1 id="deckTitle">問題を解決する — 全77スライド</h1>
+  <div class="controls">
+    <button id="prevBtn" onclick="go(-1)">← Prev</button>
+    <span id="counter">1 / 77</span>
+    <button id="nextBtn" onclick="go(1)">Next →</button>
+  </div>
+</header>
+
+<div class="main">
+  <div class="sidebar" id="sidebar"></div>
+  <div class="viewer">
+    <div class="iframe-wrapper" id="iframeWrapper">
+      <iframe id="slideFrame" src="slide_01.html"></iframe>
+      <button class="nav-btn nav-btn--prev" id="navPrev" onclick="go(-1)">&#8249;</button>
+      <button class="nav-btn nav-btn--next" id="navNext" onclick="go(1)">&#8250;</button>
+      <div class="touch-overlay" id="touchOverlay"></div>
+    </div>
+  </div>
+</div>
+
+<div class="mobile-bar">
+  <button id="mPrevBtn" onclick="go(-1)">←</button>
+  <div class="counter">
+    <div id="mCounter" style="font-weight:600;font-size:15px;color:#fff;">1 / 77</div>
+    <div id="mTitle" style="font-size:11px;color:#666;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:180px;"></div>
+  </div>
+  <button id="mNextBtn" onclick="go(1)">→</button>
+  <button class="menu-btn" onclick="openDrawer()">一覧</button>
+</div>
+
+<div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-handle"></div>
+  <div class="drawer-title">スライド一覧</div>
+</div>
+
+<script>
+let current = 1;
+
+// type: 'normal' | 'chapter-agenda' | 'chapter-title'
+// BEGIN GENERATED SLIDES
+const slides = [
+  { title: "問題を解決する", type: "normal", file: "slide_01.html" },
+  { title: "中林 佑太", type: "normal", file: "slide_02.html" },
+  { title: "仕事において大事にしていること", type: "normal", file: "slide_03.html" },
+  { title: "苦手なこと", type: "normal", file: "slide_04.html" },
+  { title: "Q. なぜロジカル・シンキング講座が用意されているか", type: "normal", file: "slide_05.html" },
+  { title: "A. 最も普遍的で大切なスキルだと認識されているから", type: "normal", file: "slide_06.html" },
+  { title: "成果を出す上で重要な要素", type: "normal", file: "slide_07.html" },
+  { title: "アジェンダ", type: "normal", file: "slide_08.html" },
+  { title: "アジェンダ｜第01章 ワーク", type: "chapter-agenda", file: "slide_09.html" },
+  { title: "第01章 ワーク", type: "chapter-title", file: "slide_10.html" },
+  { title: "ワーク: 問題解決の体験（ケーススタディ）", type: "normal", file: "slide_11.html" },
+  { title: "どのように考えましたか？", type: "normal", file: "slide_12.html" },
+  { title: "思考の差はどこに現れるか", type: "normal", file: "slide_13.html" },
+  { title: "見えている要素とつながりで差が出る", type: "normal", file: "slide_14.html" },
+  { title: "アジェンダ｜第02章 前提・背景", type: "chapter-agenda", file: "slide_15.html" },
+  { title: "第02章 前提・背景", type: "chapter-title", file: "slide_16.html" },
+  { title: "問題解決能力が高いとは何か", type: "normal", file: "slide_17.html" },
+  { title: "高い問題解決能力 = 高い問題解決期待値", type: "normal", file: "slide_18.html" },
+  { title: "結果と行動を切り離す", type: "normal", file: "slide_19.html" },
+  { title: "再現性とは「正しく間違えること」", type: "normal", file: "slide_20.html" },
+  { title: "研修のテーマ: 再現性高く問題を解決する", type: "normal", file: "slide_21.html" },
+  { title: "アジェンダ｜第03章 問題解決の概要", type: "chapter-agenda", file: "slide_22.html" },
+  { title: "第03章 問題解決の概要", type: "chapter-title", file: "slide_23.html" },
+  { title: "問題解決とは論点に対して答えを出すこと", type: "normal", file: "slide_24.html" },
+  { title: "7ステップのフレームワーク", type: "normal", file: "slide_25.html" },
+  { title: "実務では役割ごとに重心が変わる", type: "normal", file: "slide_26.html" },
+  { title: "アインシュタインの言葉", type: "normal", file: "slide_27.html" },
+  { title: "問題解決のプロセスを回す際に重要な点", type: "normal", file: "slide_28.html" },
+  { title: "アジェンダ｜第04章 論点を定義する", type: "chapter-agenda", file: "slide_29.html" },
+  { title: "第04章 論点を定義する", type: "chapter-title", file: "slide_30.html" },
+  { title: "問題解決の全工程で最も重要なステップ", type: "normal", file: "slide_31.html" },
+  { title: "論点定義における重要な3ポイント", type: "normal", file: "slide_32.html" },
+  { title: "ポイント③: 論点の文末には必ず「べき」を入れる", type: "normal", file: "slide_33.html" },
+  { title: "論点定義のまとめ", type: "normal", file: "slide_34.html" },
+  { title: "第05章 論点を分解する", type: "chapter-title", file: "slide_35.html" },
+  { title: "論点分解における重要な5つのポイント", type: "normal", file: "slide_36.html" },
+  { title: "原則1：ツリー状に分解する", type: "normal", file: "slide_37.html" },
+  { title: "原則2：MECEに分解する", type: "normal", file: "slide_38.html" },
+  { title: "原則3：モデル（式）で考える", type: "normal", file: "slide_39.html" },
+  { title: "原則4：5分以上1つの論点を考えない", type: "normal", file: "slide_40.html" },
+  { title: "原則5：トップダウンとボトムアップを行き来する", type: "normal", file: "slide_41.html" },
+  { title: "比較の観点", type: "normal", file: "slide_42.html" },
+  { title: "ダメな分解 vs 良い分解", type: "normal", file: "slide_43.html" },
+  { title: "アジェンダ｜第06章 仮説を構築する", type: "chapter-agenda", file: "slide_44.html" },
+  { title: "第06章 仮説を構築する", type: "chapter-title", file: "slide_45.html" },
+  { title: "仮説構築の目的", type: "normal", file: "slide_46.html" },
+  { title: "良い仮説の条件", type: "normal", file: "slide_47.html" },
+  { title: "仮説の作り方", type: "normal", file: "slide_48.html" },
+  { title: "仮説を作る技法", type: "normal", file: "slide_49.html" },
+  { title: "知見がないときの進め方", type: "normal", file: "slide_50.html" },
+  { title: "まず広く潜って仮説の種を拾う", type: "normal", file: "slide_51.html" },
+  { title: "拾った種から仮の答えを置く", type: "normal", file: "slide_52.html" },
+  { title: "アジェンダ｜第07章 論点と仮説を検証する", type: "chapter-agenda", file: "slide_53.html" },
+  { title: "第07章 論点と仮説を検証する", type: "chapter-title", file: "slide_54.html" },
+  { title: "何を先に検証するか", type: "normal", file: "slide_55.html" },
+  { title: "検証可能な形に変換する", type: "normal", file: "slide_56.html" },
+  { title: "検証手段を選ぶ", type: "normal", file: "slide_57.html" },
+  { title: "複数案のトレードオフを評価する", type: "normal", file: "slide_58.html" },
+  { title: "検証結果から次の行動を決める", type: "normal", file: "slide_59.html" },
+  { title: "アジェンダ｜第08章 問題解決におけるコミュニケーション", type: "chapter-agenda", file: "slide_60.html" },
+  { title: "第08章 問題解決におけるコミュニケーション", type: "chapter-title", file: "slide_61.html" },
+  { title: "1. コミュニケーションは誤解を排除するゲーム", type: "normal", file: "slide_62.html" },
+  { title: "2. 誤解を排除するための要素", type: "normal", file: "slide_63.html" },
+  { title: "3. 受け手の理解", type: "normal", file: "slide_64.html" },
+  { title: "3-1. 意思決定構造を押さえる", type: "normal", file: "slide_65.html" },
+  { title: "4. 内容設計", type: "normal", file: "slide_66.html" },
+  { title: "4-1. メッセージのゴールと前提・背景", type: "normal", file: "slide_67.html" },
+  { title: "4-2. 結論：曖昧性を排除する", type: "normal", file: "slide_68.html" },
+  { title: "4-3. 根拠：センターピンに接続する", type: "normal", file: "slide_69.html" },
+  { title: "4-4. ネクストアクションと残論点", type: "normal", file: "slide_70.html" },
+  { title: "4-5. 補足：情報確度を明示する", type: "normal", file: "slide_71.html" },
+  { title: "5. Tips: 誤解ポイントを先回りして潰す", type: "normal", file: "slide_72.html" },
+  { title: "アジェンダ｜第09章 まとめ", type: "chapter-agenda", file: "slide_73.html" },
+  { title: "まとめ", type: "normal", file: "slide_74.html" },
+  { title: "理論的には何事も上手くいきます", type: "normal", file: "slide_75.html" },
+  { title: "問題を解決しましょう", type: "normal", file: "slide_76.html" },
+  { title: "Q&A", type: "normal", file: "slide_77.html" },
+];
+// END GENERATED SLIDES
+const TOTAL = slides.length;
+const deckTitle = slides[0]?.title || 'スライド';
+document.getElementById('deckTitle').textContent = `${deckTitle} — 全${TOTAL}スライド`;
+document.title = `${deckTitle} - スライドビューワー`;
+
+// Build sidebar
+const sidebar = document.getElementById('sidebar');
+slides.forEach((s, i) => {
+  const btn = document.createElement('button');
+  const cls = s.type === 'chapter-agenda' ? 'chapter-agenda' : s.type === 'chapter-title' ? 'chapter-title' : '';
+  if (cls) btn.classList.add(cls);
+  btn.innerHTML = `<span class="num">${String(i+1).padStart(2,'0')}</span>${s.title}`;
+  btn.onclick = () => goTo(i + 1);
+  btn.id = `sb-${i+1}`;
+  sidebar.appendChild(btn);
+});
+
+// Build drawer
+const drawer = document.getElementById('drawer');
+slides.forEach((s, i) => {
+  const btn = document.createElement('button');
+  btn.innerHTML = `<span class="num">${String(i+1).padStart(2,'0')}</span>${s.title}`;
+  btn.onclick = () => { goTo(i + 1); closeDrawer(); };
+  btn.id = `dr-${i+1}`;
+  drawer.appendChild(btn);
+});
+
+function goTo(n) {
+  current = Math.max(1, Math.min(TOTAL, n));
+  document.getElementById('slideFrame').src = slides[current - 1].file;
+  document.getElementById('counter').textContent = `${current} / ${TOTAL}`;
+  document.getElementById('prevBtn').disabled = current === 1;
+  document.getElementById('nextBtn').disabled = current === TOTAL;
+  document.getElementById('navPrev').disabled = current === 1;
+  document.getElementById('navNext').disabled = current === TOTAL;
+  document.querySelectorAll('.sidebar button').forEach(b => b.classList.remove('active'));
+  const sbActive = document.getElementById(`sb-${current}`);
+  if (sbActive) { sbActive.classList.add('active'); sbActive.scrollIntoView({ block: 'nearest' }); }
+  document.getElementById('mCounter').textContent = `${current} / ${TOTAL}`;
+  document.getElementById('mTitle').textContent = slides[current-1].title;
+  document.getElementById('mPrevBtn').disabled = current === 1;
+  document.getElementById('mNextBtn').disabled = current === TOTAL;
+  document.querySelectorAll('.drawer button').forEach(b => b.classList.remove('active'));
+  const drActive = document.getElementById(`dr-${current}`);
+  if (drActive) drActive.classList.add('active');
+}
+
+function go(delta) { goTo(current + delta); }
+
+function openDrawer() {
+  document.getElementById('drawerOverlay').style.display = 'block';
+  const d = document.getElementById('drawer');
+  d.style.display = 'block';
+  requestAnimationFrame(() => d.classList.add('open'));
+  const active = document.getElementById(`dr-${current}`);
+  if (active) setTimeout(() => active.scrollIntoView({ block: 'center' }), 350);
+}
+function closeDrawer() {
+  const d = document.getElementById('drawer');
+  d.classList.remove('open');
+  setTimeout(() => {
+    document.getElementById('drawerOverlay').style.display = 'none';
+    d.style.display = 'none';
+  }, 300);
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); go(1); }
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); go(-1); }
+});
+
+let touchStartX = 0, touchStartY = 0;
+const overlay = document.getElementById('touchOverlay');
+overlay.addEventListener('touchstart', e => {
+  touchStartX = e.touches[0].clientX;
+  touchStartY = e.touches[0].clientY;
+}, { passive: true });
+overlay.addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - touchStartX;
+  const dy = e.changedTouches[0].clientY - touchStartY;
+  if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+    if (dx < 0) go(1); else go(-1);
+  }
+}, { passive: true });
+
+function fitIframe() {
+  const viewer = document.querySelector('.viewer');
+  const wrapper = document.getElementById('iframeWrapper');
+  const pad = window.innerWidth <= 768 ? 16 : 32;
+  const scaleX = (viewer.clientWidth - pad) / 1280;
+  const scaleY = (viewer.clientHeight - pad) / 720;
+  const scale = Math.min(scaleX, scaleY, 1);
+  wrapper.style.transform = `scale(${scale})`;
+}
+window.addEventListener('resize', fitIframe);
+window.addEventListener('orientationchange', () => setTimeout(fitIframe, 100));
+
+fitIframe();
+goTo(1);
+</script>
+</body>
+</html>

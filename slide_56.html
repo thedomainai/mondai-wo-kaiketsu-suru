@@ -1,121 +1,59 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>複数案のトレードオフを評価する - 再現性のある問題解決フレームワーク</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&amp;family=Space+Grotesk:wght@700&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<title>仮説検証の全体像</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
+<link href="./slides.css" rel="stylesheet"/>
+<script defer src="./slides.js"></script>
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        font-family: 'Noto Sans JP', sans-serif;
-        background-color: #ffffff;
-    }
-    .slide-container {
-        width: 1280px;
-        height: 720px;
-        position: relative;
-        overflow: hidden;
-        background-color: #ffffff;
-    }
+.stage{position:absolute;left:80px;top:156px;width:1120px;display:flex;flex-direction:column;gap:18px}.kicker{margin:0;color:#5a4970;font-size:15px;font-weight:900;line-height:1.55}.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.card{min-height:236px;padding:18px 18px 16px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff;display:grid;grid-template-rows:auto auto 1fr}.card__num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:999px;border:2px solid rgba(0,0,0,.82);font-family:"Space Grotesk",sans-serif;font-size:16px;font-weight:900;line-height:1}.card__title{margin:12px 0 0;font-size:22px;font-weight:900;line-height:1.45}.card__body{margin:10px 0 0;color:rgba(0,0,0,.72);font-size:15px;line-height:1.68}.bridge{display:grid;grid-template-columns:220px 1fr 220px;gap:18px;align-items:center}.bridge__card{padding:16px 18px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff}.bridge__label{margin:0 0 6px;color:rgba(0,0,0,.34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.bridge__title{margin:0;font-size:19px;font-weight:900;line-height:1.5}.bridge__text{margin:6px 0 0;color:rgba(0,0,0,.7);font-size:14px;line-height:1.68}.bridge__center{padding:18px 20px;border:2px solid rgba(0,0,0,.82);border-radius:8px;background:#fff}.bridge__center p{margin:0;font-size:18px;font-weight:900;line-height:1.6;text-align:center}.summary{padding-top:12px;border-top:1px solid rgba(0,0,0,.1)}.summary p{margin:0;font-size:17px;font-weight:900;line-height:1.65}
 </style>
 </head>
 <body>
-<div class="slide-container">
-<!-- === STANDARDIZED HEADER === -->
-<div style="position: absolute; left: 0; top: 0; width: 1280px; height: 148px; background-color: #ffffff; z-index: 50;"></div>
-<div style="position: absolute; left: 40px; top: 16px; z-index: 55;">
-<p style="margin: 0; padding: 5px 18px; border: 2px solid #000; border-radius: 9999px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; color: #000; letter-spacing: 1px; background: #ffffff; display: inline-block;">PROBLEM SOLVING</p>
-</div>
-<div style="position: absolute; right: 40px; top: 22px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #999; letter-spacing: 0.5px;">第7章 解を伝える</p>
-</div>
-<div style="position: absolute; left: 80px; top: 52px; width: 1120px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 32px; color: #000; letter-spacing: 1px; line-height: 1.2;">受け手視点で伝達を設計する</p>
-</div>
-<div style="position: absolute; left: 80px; top: 100px; width: 1120px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #888; line-height: 1.4;">伝達の起点は受け手視点</p>
-</div>
-<!-- === END HEADER === -->
-
-<!-- Background Dot Pattern (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 0px; top: 0px; width: 1280px; height: 720px; background-image: radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px); background-size: 20px 20px; opacity: 0.4; z-index: 1;"></div>
-<!-- Section Title and Subtitle (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 100px; width: 1120px; height: 100px; z-index: 10;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 36px; color: #000000; line-height: 1.1; margin: 0 0 12px 0; letter-spacing: 1px;">複数案のトレードオフを評価する</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #333333; line-height: 1.5; margin: 0;">選択肢が複数ある場合は、トレードオフを表形式で可視化する</p>
-</div>
-<!-- Table Header Background (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 80px; top: 220px; width: 1120px; height: 48px; background-color: #000000; z-index: 1;"></div>
-<!-- Table Row 1 Background (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 80px; top: 268px; width: 1120px; height: 48px; background-color: #f5f5f5; z-index: 1;"></div>
-<!-- Table Row 2 Background (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 80px; top: 316px; width: 1120px; height: 48px; background-color: #ffffff; z-index: 1;"></div>
-<!-- Table Row 3 Background (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 80px; top: 364px; width: 1120px; height: 48px; background-color: #f5f5f5; z-index: 1;"></div>
-<!-- Table Row 4 Background (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 80px; top: 412px; width: 1120px; height: 48px; background-color: #ffffff; z-index: 1;"></div>
-<!-- Table Content (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 220px; width: 1120px; height: 280px; z-index: 10;">
-<!-- Header Text -->
-<div style="display: flex; align-items: center; height: 48px; padding: 6px 12px;">
-<div style="width: 25%;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #ffffff; margin: 0;">評価軸</p></div>
-<div style="width: 25%;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #ffffff; margin: 0; text-align: center;">案A: 自社開発</p></div>
-<div style="width: 25%;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #ffffff; margin: 0; text-align: center;">案B: OSS導入</p></div>
-<div style="width: 25%;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #ffffff; margin: 0; text-align: center;">案C: 外注</p></div>
-</div>
-<!-- Row 1 -->
-<div style="display: flex; align-items: center; height: 48px; padding: 6px 12px;">
-<div style="width: 25%;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; margin: 0;">開発コスト</p></div>
-<div style="width: 25%;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; margin: 0; text-align: center;">高</p></div>
-<div style="width: 25%;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; margin: 0; text-align: center;">低</p></div>
-<div style="width: 25%;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; margin: 0; text-align: center;">中</p></div>
-</div>
-<!-- Row 2 -->
-<div style="display: flex; align-items: center; height: 48px; padding: 6px 12px;">
-<div style="width: 25%;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; margin: 0;">カスタマイズ性</p></div>
-<div style="width: 25%;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; margin: 0; text-align: center;">高</p></div>
-<div style="width: 25%;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; margin: 0; text-align: center;">中</p></div>
-<div style="width: 25%;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; margin: 0; text-align: center;">低</p></div>
-</div>
-<!-- Row 3 -->
-<div style="display: flex; align-items: center; height: 48px; padding: 6px 12px;">
-<div style="width: 25%;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; margin: 0;">保守性</p></div>
-<div style="width: 25%;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; margin: 0; text-align: center;">中</p></div>
-<div style="width: 25%;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; margin: 0; text-align: center;">高</p></div>
-<div style="width: 25%;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; margin: 0; text-align: center;">低</p></div>
-</div>
-<!-- Row 4 -->
-<div style="display: flex; align-items: center; height: 48px; padding: 6px 12px;">
-<div style="width: 25%;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; margin: 0;">リードタイム</p></div>
-<div style="width: 25%;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; margin: 0; text-align: center;">長</p></div>
-<div style="width: 25%;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; margin: 0; text-align: center;">短</p></div>
-<div style="width: 25%;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; margin: 0; text-align: center;">中</p></div>
-</div>
-</div>
-<!-- Bottom Section: Points for Weighting (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 520px; width: 1120px; height: 100px; z-index: 10;">
-<div style="border-left: 4px solid #000000; padding-left: 16px;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 16px; color: #000000; margin: 0 0 8px 0;">重み付けのポイント</p>
-<ul style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #333333; margin: 0; padding-left: 20px; line-height: 1.6;">
-<li>各評価軸に重要度（例：1〜5）を設定</li>
-<li>加重スコアで比較する</li>
-</ul>
-</div>
-</div>
-<!-- === STANDARDIZED FOOTER === -->
-<div style="position: absolute; left: 0; top: 660px; width: 1280px; height: 60px; background-color: #ffffff; border-top: 1px solid rgba(0,0,0,0.08); z-index: 50;"></div>
-<div style="position: absolute; left: 40px; top: 680px; z-index: 55;">
-<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 1.5px;">LOGICAL THINKING TRAINING</p>
-</div>
-<div style="position: absolute; right: 40px; top: 680px; z-index: 55;">
-<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 0.5px;">37 / 47</p>
-</div>
-<!-- === END FOOTER === -->
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第07章 論点と仮説を検証する" data-header-title="仮説検証の全体像" data-header-subtitle="設計、優先順位、解釈、行動の4段で、不確実性を意思決定に変える" data-footer="standard" data-footer-page="56">
+  <div class="stage">
+    <p class="kicker">第7章で学ぶのは、個別のテクニックではない。仮説を意思決定に変えるための一連の流れそのものである。</p>
+    <div class="flow">
+      <section class="card">
+        <span class="card__num">1</span>
+        <p class="card__title">設計</p>
+        <p class="card__body">何が分かれば支持できるかを定め、何で確かめるかを決める。</p>
+      </section>
+      <section class="card">
+        <span class="card__num">2</span>
+        <p class="card__title">優先順位</p>
+        <p class="card__body">設計した検証案の中から、外すと痛い不確実性に先に当てる。</p>
+      </section>
+      <section class="card">
+        <span class="card__num">3</span>
+        <p class="card__title">解釈</p>
+        <p class="card__body">事実と解釈を分け、評価軸に照らして結果を判断へ変える。</p>
+      </section>
+      <section class="card">
+        <span class="card__num">4</span>
+        <p class="card__title">行動</p>
+        <p class="card__body">支持されたか、外れたか、まだ判断できないかで次の一手を決める。</p>
+      </section>
+    </div>
+    <div class="bridge">
+      <section class="bridge__card">
+        <p class="bridge__label">Chapter 06</p>
+        <p class="bridge__title">仮説を置く</p>
+        <p class="bridge__text">まずはベストエフォートの答えを置く。</p>
+      </section>
+      <section class="bridge__center">
+        <p>第7章は、置いた仮説を<br/>判断に使える形へ変える章である</p>
+      </section>
+      <section class="bridge__card">
+        <p class="bridge__label">Chapter 08</p>
+        <p class="bridge__title">解を伝える</p>
+        <p class="bridge__text">判断した内容を、相手が動ける形で渡す。</p>
+      </section>
+    </div>
+    <div class="summary"><p>仮説検証とは、証明ではない。不確実性を下げ、次の判断と行動を可能にするためのプロセスである。</p></div>
+  </div>
 </div>
 </body>
 </html>

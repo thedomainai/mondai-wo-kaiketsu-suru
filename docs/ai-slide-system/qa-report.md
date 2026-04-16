@@ -1,17 +1,17 @@
 # AI Slide System QA Report
 
 - Deck: `問題を解決する`
-- Total slides: `74`
-- Findings: `391`
+- Total slides: `73`
+- Findings: `82`
 
 ## Inventory
 
 - `cover`: `1`
-- `intro`: `3`
-- `agenda`: `9`
+- `intro`: `6`
+- `agenda`: `8`
 - `divider`: `8`
-- `center-title`: `7`
-- `content`: `42`
+- `center-title`: `3`
+- `content`: `43`
 - `summary`: `1`
 - `closing`: `1`
 - `cta`: `1`
@@ -19,394 +19,85 @@
 
 ## Findings
 
-- **ERROR** `missing-required-attr` `slide_01.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-marker` `slide_01.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_01.html`: Expected marker `slides.js`
-- **ERROR** `agenda-drift` `slide_05.html`: Agenda rows do not match the manifest-backed agenda source
-- **ERROR** `inline-footer-reimplementation` `slide_08.html`: Content slides must not hand-roll footer markup
-- **ERROR** `inline-header-reimplementation` `slide_08.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_08.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_08.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_08.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_08.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_08.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_08.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_08.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_08.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_08.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `missing-required-attr` `slide_14.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-marker` `slide_14.html`: Expected marker `slide-center-title`
-- **ERROR** `missing-required-marker` `slide_14.html`: Expected marker `class="chapter"`
-- **ERROR** `missing-required-marker` `slide_14.html`: Expected marker `class="title"`
-- **ERROR** `missing-required-marker` `slide_14.html`: Expected marker `class="subtitle"`
-- **ERROR** `missing-required-marker` `slide_14.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_14.html`: Expected marker `slides.js`
-- **ERROR** `inline-footer-reimplementation` `slide_16.html`: Content slides must not hand-roll footer markup
-- **ERROR** `inline-header-reimplementation` `slide_16.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_16.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_16.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_16.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_16.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_16.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_16.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_16.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_16.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_16.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `inline-footer-reimplementation` `slide_17.html`: Content slides must not hand-roll footer markup
-- **ERROR** `inline-header-reimplementation` `slide_17.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_17.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_17.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_17.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_17.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_17.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_17.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_17.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_17.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_17.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `inline-header-reimplementation` `slide_21.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_21.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_21.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_21.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_21.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_21.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_21.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_21.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_21.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_21.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `inline-footer-reimplementation` `slide_22.html`: Content slides must not hand-roll footer markup
-- **ERROR** `inline-header-reimplementation` `slide_22.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_22.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_22.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_22.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_22.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_22.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_22.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_22.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_22.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_22.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `inline-footer-reimplementation` `slide_25.html`: Content slides must not hand-roll footer markup
-- **ERROR** `inline-header-reimplementation` `slide_25.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_25.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_25.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_25.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_25.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_25.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_25.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_25.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_25.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_25.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `missing-required-attr` `slide_26.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-marker` `slide_26.html`: Expected marker `slide-center-title`
-- **ERROR** `missing-required-marker` `slide_26.html`: Expected marker `class="chapter"`
-- **ERROR** `missing-required-marker` `slide_26.html`: Expected marker `class="title"`
-- **ERROR** `missing-required-marker` `slide_26.html`: Expected marker `class="subtitle"`
-- **ERROR** `missing-required-marker` `slide_26.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_26.html`: Expected marker `slides.js`
-- **ERROR** `inline-footer-reimplementation` `slide_30.html`: Content slides must not hand-roll footer markup
-- **ERROR** `inline-header-reimplementation` `slide_30.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_30.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_30.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_30.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_30.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_30.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_30.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_30.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_30.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_30.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `inline-footer-reimplementation` `slide_31.html`: Content slides must not hand-roll footer markup
-- **ERROR** `inline-header-reimplementation` `slide_31.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_31.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_31.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_31.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_31.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_31.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_31.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_31.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_31.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_31.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `inline-footer-reimplementation` `slide_32.html`: Content slides must not hand-roll footer markup
-- **ERROR** `inline-header-reimplementation` `slide_32.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_32.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_32.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_32.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_32.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_32.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_32.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_32.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_32.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_32.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `inline-footer-reimplementation` `slide_34.html`: Content slides must not hand-roll footer markup
-- **ERROR** `inline-header-reimplementation` `slide_34.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_34.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_34.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_34.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_34.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_34.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_34.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_34.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_34.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_34.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `inline-footer-reimplementation` `slide_36.html`: Content slides must not hand-roll footer markup
-- **ERROR** `inline-header-reimplementation` `slide_36.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_36.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_36.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_36.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_36.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_36.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_36.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_36.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_36.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_36.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `inline-footer-reimplementation` `slide_37.html`: Content slides must not hand-roll footer markup
-- **ERROR** `inline-header-reimplementation` `slide_37.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_37.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_37.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_37.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_37.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_37.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_37.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_37.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_37.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_37.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `inline-footer-reimplementation` `slide_38.html`: Content slides must not hand-roll footer markup
-- **ERROR** `inline-header-reimplementation` `slide_38.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_38.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_38.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_38.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_38.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_38.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_38.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_38.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_38.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_38.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `inline-header-reimplementation` `slide_39.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_39.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_39.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_39.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_39.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_39.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_39.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_39.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_39.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_39.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `inline-footer-reimplementation` `slide_41.html`: Content slides must not hand-roll footer markup
-- **ERROR** `inline-header-reimplementation` `slide_41.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_41.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_41.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_41.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_41.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_41.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_41.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_41.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_41.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_41.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `agenda-drift` `slide_42.html`: Agenda rows do not match the manifest-backed agenda source
-- **ERROR** `inline-footer-reimplementation` `slide_44.html`: Content slides must not hand-roll footer markup
-- **ERROR** `inline-header-reimplementation` `slide_44.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_44.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_44.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_44.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_44.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_44.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_44.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_44.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_44.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_44.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `inline-footer-reimplementation` `slide_45.html`: Content slides must not hand-roll footer markup
-- **ERROR** `inline-header-reimplementation` `slide_45.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_45.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_45.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_45.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_45.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_45.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_45.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_45.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_45.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_45.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `inline-footer-reimplementation` `slide_46.html`: Content slides must not hand-roll footer markup
-- **ERROR** `inline-header-reimplementation` `slide_46.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_46.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_46.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_46.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_46.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_46.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_46.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_46.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_46.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_46.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `inline-footer-reimplementation` `slide_47.html`: Content slides must not hand-roll footer markup
-- **ERROR** `inline-header-reimplementation` `slide_47.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_47.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_47.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_47.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_47.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_47.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_47.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_47.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_47.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_47.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `missing-required-attr` `slide_48.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-marker` `slide_48.html`: Expected marker `slide-center-title`
-- **ERROR** `missing-required-marker` `slide_48.html`: Expected marker `class="chapter"`
-- **ERROR** `missing-required-marker` `slide_48.html`: Expected marker `class="title"`
-- **ERROR** `missing-required-marker` `slide_48.html`: Expected marker `class="subtitle"`
-- **ERROR** `missing-required-marker` `slide_48.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_48.html`: Expected marker `slides.js`
-- **ERROR** `inline-footer-reimplementation` `slide_49.html`: Content slides must not hand-roll footer markup
-- **ERROR** `inline-header-reimplementation` `slide_49.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_49.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_49.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_49.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_49.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_49.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_49.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_49.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_49.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_49.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `inline-footer-reimplementation` `slide_50.html`: Content slides must not hand-roll footer markup
-- **ERROR** `inline-header-reimplementation` `slide_50.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_50.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_50.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_50.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_50.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_50.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_50.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_50.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_50.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_50.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `agenda-drift` `slide_51.html`: Agenda rows do not match the manifest-backed agenda source
-- **ERROR** `inline-footer-reimplementation` `slide_53.html`: Content slides must not hand-roll footer markup
-- **ERROR** `inline-header-reimplementation` `slide_53.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_53.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_53.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_53.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_53.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_53.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_53.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_53.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_53.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_53.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `inline-footer-reimplementation` `slide_54.html`: Content slides must not hand-roll footer markup
-- **ERROR** `inline-header-reimplementation` `slide_54.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_54.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_54.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_54.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_54.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_54.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_54.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_54.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_54.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_54.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `missing-required-attr` `slide_55.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-marker` `slide_55.html`: Expected marker `slide-center-title`
-- **ERROR** `missing-required-marker` `slide_55.html`: Expected marker `class="chapter"`
-- **ERROR** `missing-required-marker` `slide_55.html`: Expected marker `class="title"`
-- **ERROR** `missing-required-marker` `slide_55.html`: Expected marker `class="subtitle"`
-- **ERROR** `missing-required-marker` `slide_55.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_55.html`: Expected marker `slides.js`
-- **ERROR** `inline-footer-reimplementation` `slide_56.html`: Content slides must not hand-roll footer markup
-- **ERROR** `inline-header-reimplementation` `slide_56.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_56.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_56.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_56.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_56.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_56.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_56.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_56.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_56.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_56.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `inline-footer-reimplementation` `slide_57.html`: Content slides must not hand-roll footer markup
-- **ERROR** `inline-header-reimplementation` `slide_57.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_57.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_57.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_57.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_57.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_57.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_57.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_57.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_57.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_57.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `agenda-drift` `slide_58.html`: Agenda rows do not match the manifest-backed agenda source
-- **ERROR** `inline-footer-reimplementation` `slide_61.html`: Content slides must not hand-roll footer markup
-- **ERROR** `inline-header-reimplementation` `slide_61.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_61.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_61.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_61.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_61.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_61.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_61.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_61.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_61.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_61.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `inline-footer-reimplementation` `slide_62.html`: Content slides must not hand-roll footer markup
-- **ERROR** `inline-header-reimplementation` `slide_62.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_62.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_62.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_62.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_62.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_62.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_62.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_62.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_62.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_62.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `inline-footer-reimplementation` `slide_64.html`: Content slides must not hand-roll footer markup
-- **ERROR** `inline-header-reimplementation` `slide_64.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_64.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_64.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_64.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_64.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_64.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_64.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_64.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_64.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_64.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `inline-footer-reimplementation` `slide_65.html`: Content slides must not hand-roll footer markup
-- **ERROR** `inline-header-reimplementation` `slide_65.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_65.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_65.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_65.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_65.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_65.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_65.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_65.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_65.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_65.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `inline-footer-reimplementation` `slide_66.html`: Content slides must not hand-roll footer markup
-- **ERROR** `inline-header-reimplementation` `slide_66.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_66.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_66.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_66.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_66.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_66.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_66.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_66.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_66.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_66.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `inline-footer-reimplementation` `slide_67.html`: Content slides must not hand-roll footer markup
-- **ERROR** `inline-header-reimplementation` `slide_67.html`: Content slides must not hand-roll header markup
-- **ERROR** `missing-required-attr` `slide_67.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-attr` `slide_67.html`: Missing `data-header-chapter` on slide container
-- **ERROR** `missing-required-attr` `slide_67.html`: Missing `data-header-title` on slide container
-- **ERROR** `missing-required-attr` `slide_67.html`: Missing `data-header-subtitle` on slide container
-- **ERROR** `missing-required-attr` `slide_67.html`: Missing `data-footer` on slide container
-- **ERROR** `missing-required-attr` `slide_67.html`: Missing `data-footer-page` on slide container
-- **ERROR** `missing-required-marker` `slide_67.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_67.html`: Expected marker `slides.js`
-- **ERROR** `unexpected-attr-value` `slide_67.html`: Expected `data-footer=standard` but found `None`
-- **ERROR** `missing-required-attr` `slide_68.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-marker` `slide_68.html`: Expected marker `slide-center-title`
-- **ERROR** `missing-required-marker` `slide_68.html`: Expected marker `class="chapter"`
-- **ERROR** `missing-required-marker` `slide_68.html`: Expected marker `class="title"`
-- **ERROR** `missing-required-marker` `slide_68.html`: Expected marker `class="subtitle"`
-- **ERROR** `missing-required-marker` `slide_68.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_68.html`: Expected marker `slides.js`
-- **ERROR** `missing-required-attr` `slide_69.html`: Missing `data-slide-kind` on slide container
-- **ERROR** `missing-required-marker` `slide_69.html`: Expected marker `slide-center-title`
-- **ERROR** `missing-required-marker` `slide_69.html`: Expected marker `class="chapter"`
-- **ERROR** `missing-required-marker` `slide_69.html`: Expected marker `class="title"`
-- **ERROR** `missing-required-marker` `slide_69.html`: Expected marker `class="subtitle"`
-- **ERROR** `missing-required-marker` `slide_69.html`: Expected marker `slides.css`
-- **ERROR** `missing-required-marker` `slide_69.html`: Expected marker `slides.js`
-- **ERROR** `agenda-drift` `slide_70.html`: Agenda rows do not match the manifest-backed agenda source
-- **WARNING** `stale-total-slides` `standardize_headers.py`: `TOTAL_SLIDES` declares 47, expected canonical deck total 74
-- **WARNING** `stale-total-slides` `standardize_headers_v2.py`: `TOTAL_SLIDES` declares 50, expected canonical deck total 74
+- **ERROR** `invalid-background` `slide_02.html`: Background `grain` is not allowed for kind `intro`
+- **ERROR** `invalid-background` `slide_03.html`: Background `grain` is not allowed for kind `intro`
+- **ERROR** `invalid-background` `slide_04.html`: Background `grain` is not allowed for kind `intro`
+- **ERROR** `invalid-background` `slide_05.html`: Background `grain` is not allowed for kind `intro`
+- **ERROR** `invalid-background` `slide_06.html`: Background `grain` is not allowed for kind `intro`
+- **ERROR** `invalid-background` `slide_07.html`: Background `grain` is not allowed for kind `intro`
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_11.html`: Selector `.work-card__body ol` uses raw px in `margin: 12px 0 0 1.4em`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_11.html`: Selector `.work-card__body li + li` uses raw px in `margin-top: 4px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_18.html`: Selector `.expect-label` uses raw px in `margin: 0 0 18px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_18.html`: Selector `.expect-core .expect-label` uses raw px in `margin-bottom: 14px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_19.html`: Selector `.separate-point__label` uses raw px in `margin: 0 0 8px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_24.html`: Selector `.logic-card__title` uses raw px in `margin: 10px 0 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_27.html`: Selector `.slide-container .quote-body` uses raw px in `margin: 0 0 48px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_27.html`: Selector `.slide-container .quote-note` uses raw px in `margin: 0 0 18px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_31.html`: Selector `.cascade__branch-label` uses raw px in `margin: 0 0 2px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_31.html`: Selector `.cascade__node-kicker` uses raw px in `margin: 0 0 6px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_32.html`: Selector `.action-card__fail-label` uses raw px in `margin: 0 0 4px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_34.html`: Selector `.summary-kicker` uses raw px in `margin: 0 0 14px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_34.html`: Selector `.summary-head` uses raw px in `margin: 0 0 14px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_34.html`: Selector `.summary-card__num` uses raw px in `margin: 0 0 12px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_34.html`: Selector `.summary-card__head` uses raw px in `margin: 0 0 10px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_37.html`: Inline text style uses raw px in `margin: 0 0 8px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_37.html`: Inline text style uses raw px in `margin-top: 3px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_37.html`: Inline text style uses raw px in `margin-top: 3px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_38.html`: Selector `.mece-card__eyebrow` uses raw px in `margin: 0 0 8px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_38.html`: Selector `.mece-card__head` uses raw px in `margin: 0 0 8px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_38.html`: Selector `.mece-ng__label,.mece-ok__label` uses raw px in `margin: 0 0 10px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_40.html`: Selector `.five-card__eyebrow` uses raw px in `margin: 0 0 8px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_40.html`: Selector `.five-card__head` uses raw px in `margin: 0 0 8px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_43.html`: Selector `.kicker` uses raw px in `margin: 0 0 24px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_44.html`: Selector `.panel__label` uses raw px in `margin: 0 0 10px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_44.html`: Selector `.panel__title` uses raw px in `margin: 0 0 18px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_44.html`: Selector `.check__head` uses raw px in `margin-bottom: 4px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_44.html`: Selector `.example__label` uses raw px in `margin: 0 0 8px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_45.html`: Selector `.step__num` uses raw px in `margin: 0 0 10px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_45.html`: Selector `.step__title` uses raw px in `margin: 0 0 12px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_46.html`: Selector `.card__label` uses raw px in `margin: 0 0 8px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_46.html`: Selector `.card__title` uses raw px in `margin: 0 0 14px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_46.html`: Selector `.card__text` uses raw px in `margin: 0 0 16px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_48.html`: Selector `.panel__title` uses raw px in `margin: 0 0 16px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_48.html`: Selector `.item__head` uses raw px in `margin-bottom: 4px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_49.html`: Selector `.card__label` uses raw px in `margin: 0 0 8px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_49.html`: Selector `.card__title` uses raw px in `margin: 0 0 16px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_52.html`: Selector `.panel__label` uses raw px in `margin: 0 0 6px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_53.html`: Selector `.quad__label` uses raw px in `margin-bottom: 8px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_53.html`: Selector `.quad__text` uses raw px in `margin-top: 6px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_54.html`: Selector `.step__label` uses raw px in `margin: 0 0 8px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_54.html`: Selector `.step__body` uses raw px in `margin: 8px 0 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_54.html`: Selector `.panel__title` uses raw px in `margin: 0 0 12px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_56.html`: Selector `.card__title` uses raw px in `margin: 12px 0 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_56.html`: Selector `.card__body` uses raw px in `margin: 10px 0 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_56.html`: Selector `.bridge__label` uses raw px in `margin: 0 0 6px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_56.html`: Selector `.bridge__text` uses raw px in `margin: 6px 0 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_59.html`: Selector `.card__head` uses raw px in `margin: 34px 0 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_59.html`: Selector `.card__body` uses raw px in `margin: 32px 0 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_61.html`: Selector `.card__label` uses raw px in `margin: 0 0 10px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_61.html`: Selector `.card__title` uses raw px in `margin: 0 0 10px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_62.html`: Selector `.card__label` uses raw px in `margin: 0 0 8px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_62.html`: Selector `.card__title` uses raw px in `margin: 0 0 8px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_63.html`: Selector `.card__num` uses raw px in `margin: 0 0 8px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_63.html`: Selector `.card__title` uses raw px in `margin: 0 0 8px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_65.html`: Selector `.card__label` uses raw px in `margin: 0 0 8px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_65.html`: Selector `.card__title` uses raw px in `margin: 0 0 14px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_67.html`: Selector `.card__label` uses raw px in `margin: 0 0 8px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_67.html`: Selector `.card__title` uses raw px in `margin: 0 0 10px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_70.html`: Inline text style uses raw px in `margin: 0 0 10px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_70.html`: Inline text style uses raw px in `margin: 0 0 8px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_70.html`: Inline text style uses raw px in `margin: 0 0 6px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_70.html`: Inline text style uses raw px in `margin: 0 0 8px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_70.html`: Inline text style uses raw px in `margin: 0 0 6px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_70.html`: Inline text style uses raw px in `margin: 0 0 8px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_70.html`: Inline text style uses raw px in `margin: 0 0 6px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_70.html`: Inline text style uses raw px in `margin: 0 0 8px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_70.html`: Inline text style uses raw px in `margin: 0 0 6px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_70.html`: Inline text style uses raw px in `margin: 0 0 8px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_70.html`: Inline text style uses raw px in `margin: 0 0 6px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_70.html`: Inline text style uses raw px in `margin: 0 0 8px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_70.html`: Inline text style uses raw px in `margin: 0 0 6px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_72.html`: Inline text style uses raw px in `margin: 0 0 28px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_72.html`: Inline text style uses raw px in `margin: 0 0 36px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_73.html`: Inline text style uses raw px in `margin: 0 0 28px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_73.html`: Inline text style uses raw px in `margin: 0 0 36px 0`; use `--space-stack-*`.

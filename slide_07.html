@@ -3,12 +3,96 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>第01章 ワーク</title>
+<title>成果を出す上で重要な要素</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
+<style>
+.p7-body {
+  position: absolute;
+  left: 72px;
+  right: 72px;
+  top: 0;
+  bottom: 60px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 56px;
+}
+
+.p7-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  color: rgba(0, 0, 0, 0.48);
+}
+
+.title {
+  margin: 0;
+  text-align: center;
+  max-width: 980px;
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1.2;
+  color: var(--soft-black);
+}
+
+.circles-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 120px;
+}
+
+.circle-obj {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: 3px solid var(--soft-black);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+}
+
+.circle-label {
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1.2;
+  color: var(--soft-black);
+}
+</style>
 </head>
 <body>
-<div class="slide-container slide-theme-mist" data-slide-kind="divider" data-background="halftone" data-divider-brand="ロジカル・シンキング研修" data-divider-index="01" data-divider-kicker="Chapter 01" data-divider-title="ワーク" data-divider-subtitle="差が出る瞬間を体感する"></div>
+<div class="slide-container slide-theme-mist" data-slide-kind="intro" data-background="grain" data-grain-opacity="0.18" data-vignette="false" data-footer="standard" data-footer-page="07">
+  <div class="p7-body">
+    <div class="p7-heading">
+      <p class="brand">ロジカル・シンキング研修</p>
+      <p class="title">成果を出す上で重要な要素</p>
+    </div>
+
+    <div class="circles-wrap">
+      <div class="circle-obj">
+        <p class="circle-label">スタンス</p>
+      </div>
+      <div class="circle-obj">
+        <p class="circle-label">問題解決</p>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>

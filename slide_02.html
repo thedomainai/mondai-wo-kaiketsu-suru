@@ -8,42 +8,144 @@
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
 <style>
-.intro-shell { position:absolute; left:80px; top:124px; width:1120px; display:grid; grid-template-columns:minmax(0, 620px) minmax(0, 420px); align-items:center; gap:72px; }
-.intro-main { display:flex; flex-direction:column; }
-.intro-eyebrow { color:rgba(0,0,0,0.34); font-family:"Space Grotesk",sans-serif; font-size:12px; font-weight:700; letter-spacing:2.4px; text-transform:uppercase; margin:0 0 18px; }
-.intro-title { max-width:620px; font-size:72px; font-weight:900; line-height:1.05; letter-spacing:1px; margin:0 0 18px; }
-.intro-lead { max-width:620px; font-size:24px; line-height:1.65; color:rgba(0,0,0,0.62); margin:0; }
-.intro-panel { padding:8px 0 8px 28px; border-left:1px solid rgba(0,0,0,0.12); display:flex; flex-direction:column; gap:18px; }
-.intro-panel__row { padding-bottom:18px; border-bottom:1px solid rgba(0,0,0,0.09); }
-.intro-panel__row:last-child { padding-bottom:0; border-bottom:none; }
-.intro-panel__label { margin:0 0 8px; color:rgba(0,0,0,0.34); font-family:"Space Grotesk",sans-serif; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; }
-.intro-panel__value { margin:0; font-size:28px; font-weight:900; line-height:1.45; }
-.intro-panel__value--compact { font-size:20px; line-height:1.7; color:rgba(0,0,0,0.76); }
+.profile-shell{position:absolute;left:80px;top:112px;width:1120px}
+.profile-head{display:grid;grid-template-columns:330px 1fr;column-gap:42px;align-items:start;margin-bottom:0}
+.profile-main{padding-top:8px}
+.profile-eyebrow{margin:0 0 var(--space-stack-lead-title);color:rgba(0,0,0,.34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase}
+.profile-name{margin:0 0 var(--space-stack-lead-title-loose);color:#000000;font-size:64px;font-weight:900;line-height:1.02;letter-spacing:1px}
+.profile-roman{margin:0 0 var(--space-stack-title-body);color:rgba(0,0,0,.54);font-family:"Space Grotesk",sans-serif;font-size:19px;font-weight:700;letter-spacing:1px}
+.profile-role{margin:0;font-size:28px;font-weight:900;line-height:1.24}
+.sections{display:grid;gap:18px}
+.section{display:grid;grid-template-columns:78px 1fr;column-gap:8px;align-items:stretch}
+.section__label{display:flex;align-items:center;justify-content:flex-start;padding-top:6px}
+.section__label p{margin:0 0 0 -16px;color:rgba(0,0,0,.36);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;white-space:nowrap}
+.section__body{padding:22px 24px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:rgba(255,255,255,.9)}
+.info-rows{display:grid;gap:16px}
+.info-row{display:grid;grid-template-columns:84px 1fr;column-gap:18px;align-items:center}
+.info-row__key{margin:0;color:rgba(0,0,0,.42);font-size:15px;font-weight:700;line-height:1.6}
+.info-row__value{margin:0;font-size:18px;font-weight:900;line-height:1.65}
+.birth-wrap{display:grid;gap:8px}
+.birth-scale{display:flex;justify-content:space-between;max-width:680px;color:rgba(0,0,0,.34);font-family:"Space Grotesk",sans-serif;font-size:11px;font-weight:700;letter-spacing:1.4px}
+.birth-bar{display:flex;max-width:680px;height:24px;border-radius:0;overflow:hidden;background:rgba(0,0,0,.06)}
+.birth-seg{display:flex;align-items:center;justify-content:center;border-right:1px solid rgba(255,255,255,.6);font-size:12px;font-weight:900;white-space:nowrap}
+.birth-seg:last-child{border-right:none}
+.birth-seg--hiroshima{width:3%;min-width:18px;background:#d8d8d8}
+.birth-seg--shizuoka{width:37%;background:#c4c8cf}
+.birth-seg--tokyo{width:50%;background:#9ca4ae}
+.birth-seg--kumamoto{width:10%;min-width:40px;background:#626c78;color:#fff}
+.role-tree{display:grid;grid-template-rows:auto auto auto;row-gap:0;width:100%}
+.tree-parent{width:100%;padding:14px 20px;border:1.5px solid rgba(0,0,0,.22);border-radius:8px;background:#fff;text-align:center}
+.tree-parent p{margin:0;font-size:18px;font-weight:900;line-height:1.55}
+.tree-wire{position:relative;width:100%;height:28px;--gap:14px;--c1:calc((100% - var(--gap)*2)/6);--c2:50%;--c3:calc(100% - (100% - var(--gap)*2)/6)}
+.tree-wire__vt{position:absolute;left:50%;top:0;width:1.5px;height:12px;background:rgba(0,0,0,.18);transform:translateX(-50%)}
+.tree-wire__hl{position:absolute;top:12px;left:var(--c1);right:calc(100% - var(--c3));height:1.5px;background:rgba(0,0,0,.18)}
+.tree-wire__vb{position:absolute;top:12px;width:1.5px;height:16px;background:rgba(0,0,0,.18)}
+.tree-wire__vb--l{left:var(--c1)}
+.tree-wire__vb--c{left:var(--c2);transform:translateX(-50%)}
+.tree-wire__vb--r{left:var(--c3)}
+.tree-children{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;width:100%}
+.tree-child{padding:14px 14px 16px;border:1.5px solid rgba(0,0,0,.1);border-radius:8px;background:#fff;display:flex;flex-direction:column;align-items:flex-start}
+.tree-child__title-wrap{min-height:52px;display:flex;align-items:center}
+.tree-child__title{margin:0;font-size:18px;font-weight:900;line-height:1.45;color:var(--soft-black)}
+.tree-child__divider{width:28px;height:2px;background:rgba(0,0,0,.18);margin:8px 0 12px}
+.tree-child__body{margin:0;color:rgba(0,0,0,.62);font-size:14px;font-weight:400;line-height:1.7}
+.career-row{display:grid;grid-template-columns:84px 1fr;column-gap:18px;align-items:center}
+.career-key{margin:0;color:rgba(0,0,0,.42);font-size:15px;font-weight:700;line-height:1.6}
+.career-track-wrap{display:grid;gap:8px}
+.career-scale{display:flex;justify-content:space-between;max-width:760px;color:rgba(0,0,0,.34);font-family:"Space Grotesk",sans-serif;font-size:11px;font-weight:700;letter-spacing:1.4px}
+.career-track{display:flex;max-width:760px;height:28px;border-radius:0;overflow:hidden;background:rgba(0,0,0,.06)}
+.career-seg{display:flex;align-items:center;justify-content:center;border-right:1px solid rgba(255,255,255,.62);font-size:13px;font-weight:900;line-height:1}
+.career-seg:last-child{border-right:none}
+.career-seg--product{width:30%;background:#cbd0d5}
+.career-seg--cost{width:20%;background:#9fa8b2}
+.career-seg--mgmt{width:50%;background:#5f6875;color:#fff}
 </style>
 </head>
 <body>
-<div class="slide-container slide-theme-mist" data-slide-kind="intro" data-background="halftone" data-footer="standard" data-footer-page="01">
-<div class="intro-shell">
-  <div class="intro-main">
-    <p class="intro-eyebrow">PROFILE</p>
-    <p class="intro-title">中林 佑太</p>
-    <p class="intro-lead">2026/04/16 ロジカルシンキング研修</p>
+<div class="slide-container slide-theme-mist" data-slide-kind="intro" data-background="grain" data-grain-opacity="0.18" data-vignette="false" data-footer="standard" data-footer-page="02">
+  <div class="profile-shell">
+    <div class="profile-head">
+      <div class="profile-main">
+        <p class="profile-eyebrow">PROFILE</p>
+        <p class="profile-name">中林 佑太</p>
+        <p class="profile-roman">Yuta Nakabayashi</p>
+        <p class="profile-role">経営企画室長</p>
+      </div>
+      <div class="sections">
+        <section class="section">
+          <div class="section__label"><p>基本情報</p></div>
+          <div class="section__body">
+            <div class="info-rows">
+              <div class="info-row">
+                <p class="info-row__key">出身</p>
+                <div class="birth-wrap">
+                  <div class="birth-scale"><span>0</span><span>12</span><span>28</span><span>29</span><span>30</span></div>
+                  <div class="birth-bar" aria-label="出身の年齢バー">
+                    <div class="birth-seg birth-seg--hiroshima"></div>
+                    <div class="birth-seg birth-seg--shizuoka">静岡</div>
+                    <div class="birth-seg birth-seg--tokyo">東京</div>
+                    <div class="birth-seg birth-seg--kumamoto">熊本</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section__label"><p>当社での役割</p></div>
+          <div class="section__body">
+            <div class="role-tree">
+              <div class="tree-parent"><p>経営管理: 再現性をもった企業価値の最大化</p></div>
+              <div class="tree-wire">
+                <div class="tree-wire__vt"></div>
+                <div class="tree-wire__hl"></div>
+                <div class="tree-wire__vb tree-wire__vb--l"></div>
+                <div class="tree-wire__vb tree-wire__vb--c"></div>
+                <div class="tree-wire__vb tree-wire__vb--r"></div>
+              </div>
+              <div class="tree-children">
+                <div class="tree-child">
+                  <div class="tree-child__title-wrap">
+                    <p class="tree-child__title">戦略策定</p>
+                  </div>
+                  <div class="tree-child__divider"></div>
+                  <p class="tree-child__body">エクイティストーリーの設計</p>
+                </div>
+                <div class="tree-child">
+                  <div class="tree-child__title-wrap">
+                    <p class="tree-child__title">戦略の係数化と管理</p>
+                  </div>
+                  <div class="tree-child__divider"></div>
+                  <p class="tree-child__body">予算策定 / KPI策定と予実管理 / KPIモニタリング</p>
+                </div>
+                <div class="tree-child">
+                  <div class="tree-child__title-wrap">
+                    <p class="tree-child__title">達成支援</p>
+                  </div>
+                  <div class="tree-child__divider"></div>
+                  <p class="tree-child__body">各事業部の予算達成支援</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+          <section class="section">
+          <div class="section__label"><p>経歴</p></div>
+          <div class="section__body">
+            <div class="career-track-wrap">
+              <div class="career-scale"><span>20</span><span>23</span><span>25</span><span>30</span></div>
+              <div class="career-track" aria-label="経歴の年齢バー">
+                <div class="career-seg career-seg--product">プロダクト</div>
+                <div class="career-seg career-seg--cost">コストカット</div>
+                <div class="career-seg career-seg--mgmt">経営管理</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
   </div>
-  <div class="intro-panel">
-    <div class="intro-panel__row">
-      <p class="intro-panel__label">Role</p>
-      <p class="intro-panel__value">経営企画室長</p>
-    </div>
-    <div class="intro-panel__row">
-      <p class="intro-panel__label">Focus</p>
-      <p class="intro-panel__value intro-panel__value--compact">問題設定<br/>構造化<br/>意思決定</p>
-    </div>
-    <div class="intro-panel__row">
-      <p class="intro-panel__label">Context</p>
-      <p class="intro-panel__value intro-panel__value--compact">ロジカルシンキング研修の冒頭で、考え方の前提を揃える。</p>
-    </div>
-  </div>
-</div>
 </div>
 </body>
 </html>

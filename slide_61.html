@@ -1,102 +1,47 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>受け手視点で伝達を設計する - 再現性のある問題解決フレームワーク</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&amp;family=Space+Grotesk:wght@700&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<title>3. 受け手の理解</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
+<link href="./slides.css" rel="stylesheet"/>
+<script defer src="./slides.js"></script>
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        font-family: 'Noto Sans JP', sans-serif;
-        background-color: #ffffff;
-    }
-    .slide-container {
-        width: 1280px;
-        height: 720px;
-        position: relative;
-        overflow: hidden;
-        background-color: #ffffff;
-    }
-    p {
-        margin: 0;
-    }
+.stage{position:absolute;left:80px;top:156px;width:1120px;display:flex;flex-direction:column;gap:18px}.kicker{margin:0;color:#5a4970;font-size:15px;font-weight:900;line-height:1.55}.map{position:relative;height:392px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff}.root{position:absolute;left:50%;top:26px;transform:translateX(-50%);width:300px;padding:18px 20px;border:2px solid rgba(0,0,0,.82);border-radius:8px;background:#fff;text-align:center}.root p{margin:0;font-size:24px;font-weight:900;line-height:1.45}.line-v{position:absolute;left:50%;top:102px;width:2px;height:38px;background:rgba(0,0,0,.2);transform:translateX(-50%)}.line-h{position:absolute;left:190px;top:140px;width:740px;height:2px;background:rgba(0,0,0,.2)}.node-line{position:absolute;top:140px;width:2px;height:36px;background:rgba(0,0,0,.2)}.cards{position:absolute;left:28px;right:28px;top:176px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.card{min-height:180px;padding:22px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff}.card__label{margin:0 0 10px;color:rgba(0,0,0,.34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.card__title{margin:0 0 10px;font-size:22px;font-weight:900;line-height:1.45}.card__text{margin:0;color:rgba(0,0,0,.72);font-size:14px;line-height:1.72}.summary{padding-top:14px;border-top:1px solid rgba(0,0,0,.1)}.summary p{margin:0;font-size:17px;font-weight:900;line-height:1.65}
 </style>
 </head>
 <body>
-<div class="slide-container">
-<!-- === STANDARDIZED HEADER === -->
-<div style="position: absolute; left: 0; top: 0; width: 1280px; height: 148px; background-color: #ffffff; z-index: 50;"></div>
-<div style="position: absolute; left: 40px; top: 16px; z-index: 55;">
-<p style="margin: 0; padding: 5px 18px; border: 2px solid #000; border-radius: 9999px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; color: #000; letter-spacing: 1px; background: #ffffff; display: inline-block;">PROBLEM SOLVING</p>
-</div>
-<div style="position: absolute; right: 40px; top: 22px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #999; letter-spacing: 0.5px;">第7章 解を伝える</p>
-</div>
-<div style="position: absolute; left: 80px; top: 52px; width: 1120px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 32px; color: #000; letter-spacing: 1px; line-height: 1.2;">解を伝える基本構造：5要素</p>
-</div>
-<div style="position: absolute; left: 80px; top: 100px; width: 1120px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #888; line-height: 1.4;">解を伝えるための構造化フレーム</p>
-</div>
-<!-- === END HEADER === -->
-
-<!-- Background Dot Pattern (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 0px; top: 0px; width: 1280px; height: 720px; background-image: radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px); background-size: 20px 20px; opacity: 0.4; z-index: 1;"></div>
-<!-- Gray Accent Banner Top-Right (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 880px; top: 0px; width: 400px; height: 180px; background-color: #ececec; clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%); z-index: 1;"></div>
-<!-- Section Title and Subtitle (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 110px; width: 1120px; height: 80px; z-index: 10;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 36px; color: #000000; line-height: 1.1; margin: 0 0 8px 0; letter-spacing: 1px;">受け手視点で伝達を設計する</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #555555; margin: 0; line-height: 1.5;">
-<span style="color: #d32f2f; font-weight: 700;">×</span> 自分が何を言いたいか
-<span style="color: #388e3c; font-weight: 700;">○</span> 相手に何を理解・納得・行動してもらえたら成功か
-</p>
-</div>
-<!-- 5 Items in a single horizontal row -->
-<!-- Item 1 -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 240px; width: 216px; height: 360px; background-color: #ffffff; border-top: 4px solid #000000; box-shadow: 0 4px 12px rgba(0,0,0,0.06); padding: 24px 20px; box-sizing: border-box; z-index: 10;">
-<p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 36px; color: #000000; margin: 0 0 16px 0; line-height: 1;">1</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 16px; color: #000000; margin: 0 0 12px 0; line-height: 1.4;">相手の前提知識</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 13px; color: #555555; margin: 0; line-height: 1.6;">何を既に知っているか、何を知らないかを把握する</p>
-</div>
-<!-- Item 2 -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 320px; top: 240px; width: 216px; height: 360px; background-color: #ffffff; border-top: 4px solid #000000; box-shadow: 0 4px 12px rgba(0,0,0,0.06); padding: 24px 20px; box-sizing: border-box; z-index: 10;">
-<p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 36px; color: #000000; margin: 0 0 16px 0; line-height: 1;">2</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 16px; color: #000000; margin: 0 0 12px 0; line-height: 1.4;">相手の関心</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 13px; color: #555555; margin: 0; line-height: 1.6;">何に興味があるか、何を評価するかを理解する</p>
-</div>
-<!-- Item 3 -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 560px; top: 240px; width: 216px; height: 360px; background-color: #ffffff; border-top: 4px solid #000000; box-shadow: 0 4px 12px rgba(0,0,0,0.06); padding: 24px 20px; box-sizing: border-box; z-index: 10;">
-<p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 36px; color: #000000; margin: 0 0 16px 0; line-height: 1;">3</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 16px; color: #000000; margin: 0 0 12px 0; line-height: 1.4;">相手が先に<br/>知りたいこと</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 13px; color: #555555; margin: 0; line-height: 1.6;">情報の優先順位を相手目線で設計する</p>
-</div>
-<!-- Item 4 -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 800px; top: 240px; width: 216px; height: 360px; background-color: #ffffff; border-top: 4px solid #000000; box-shadow: 0 4px 12px rgba(0,0,0,0.06); padding: 24px 20px; box-sizing: border-box; z-index: 10;">
-<p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 36px; color: #000000; margin: 0 0 16px 0; line-height: 1;">4</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 16px; color: #000000; margin: 0 0 12px 0; line-height: 1.4;">相手が違和感を<br/>持つポイント</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 13px; color: #555555; margin: 0; line-height: 1.6;">反論や疑問を先回りして潰す</p>
-</div>
-<!-- Item 5 -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 1040px; top: 240px; width: 216px; height: 360px; background-color: #ffffff; border-top: 4px solid #000000; box-shadow: 0 4px 12px rgba(0,0,0,0.06); padding: 24px 20px; box-sizing: border-box; z-index: 10;">
-<p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 36px; color: #000000; margin: 0 0 16px 0; line-height: 1;">5</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 16px; color: #000000; margin: 0 0 12px 0; line-height: 1.4;">相手が納得<br/>しやすい材料</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 13px; color: #555555; margin: 0; line-height: 1.6;">どんな根拠・形式が効果的かを見極める</p>
-</div>
-<!-- === STANDARDIZED FOOTER === -->
-<div style="position: absolute; left: 0; top: 660px; width: 1280px; height: 60px; background-color: #ffffff; border-top: 1px solid rgba(0,0,0,0.08); z-index: 50;"></div>
-<div style="position: absolute; left: 40px; top: 680px; z-index: 55;">
-<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 1.5px;">LOGICAL THINKING TRAINING</p>
-</div>
-<div style="position: absolute; right: 40px; top: 680px; z-index: 55;">
-<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 0.5px;">40 / 47</p>
-</div>
-<!-- === END FOOTER === -->
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第08章 問題解決におけるコミュニケーション" data-header-title="3. 受け手の理解" data-header-subtitle="相手の知識・理解力・興味関心で、伝える設計は変わる" data-footer="standard" data-footer-page="61">
+  <div class="stage">
+    <p class="kicker">伝えるとは、自分の頭の中をそのまま出すことではない。相手側に残る誤解可能性を減らすように、設計し直すことだ。</p>
+    <div class="map">
+      <div class="root"><p>受け手視点で設計する</p></div>
+      <div class="line-v"></div>
+      <div class="line-h"></div>
+      <div class="node-line" style="left:212px;"></div>
+      <div class="node-line" style="left:559px;"></div>
+      <div class="node-line" style="left:906px;"></div>
+      <div class="cards">
+        <section class="card">
+          <p class="card__label">Knowledge / Information</p>
+          <p class="card__title">相手の持っている知識・情報</p>
+          <p class="card__text">何を知っていて、何を知らないか。同じ言葉でも前提が違えば、最初の理解からずれる。</p>
+        </section>
+        <section class="card">
+          <p class="card__label">Capacity</p>
+          <p class="card__title">相手の理解力</p>
+          <p class="card__text">どこまで一気に追えるか。論理の段数、具体例の量、情報量の密度は相手に合わせて調整する。</p>
+        </section>
+        <section class="card">
+          <p class="card__label">Interest</p>
+          <p class="card__title">相手の興味関心</p>
+          <p class="card__text">何に反応し、何を評価し、何を怖がるか。相手が先に知りたいことから並べる必要がある。</p>
+        </section>
+      </div>
+    </div>
+    <div class="summary"><p>同じ内容でも、誰に伝えるかで構造は変わる。相手の頭の中を先にモデル化してから並べる。</p></div>
+  </div>
 </div>
 </body>
 </html>

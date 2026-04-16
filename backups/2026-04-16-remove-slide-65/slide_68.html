@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>4-2. 結論：曖昧性を排除する</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
+<link href="./slides.css" rel="stylesheet"/>
+<script defer src="./slides.js"></script>
+<style>
+.stage{position:absolute;left:80px;top:160px;width:1120px;display:flex;flex-direction:column;gap:18px}.kicker{margin:0;color:#5a4970;font-size:15px;font-weight:900;line-height:1.55}.table{border:1px solid rgba(0,0,0,.12);border-radius:8px;background:#fff;overflow:hidden}.row{display:grid;grid-template-columns:1fr 48px 1.1fr;border-top:1px solid rgba(0,0,0,.08)}.row:first-child{border-top:none}.cell{padding:18px 20px}.cell--head{background:rgba(0,0,0,.03);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.cell p{margin:0;font-size:16px;font-weight:900;line-height:1.62}.cell--muted p{color:rgba(0,0,0,.52)}.arrow{display:flex;align-items:center;justify-content:center;font-family:"Space Grotesk",sans-serif;font-size:28px;font-weight:900;color:rgba(0,0,0,.34)}.note{padding-top:14px;border-top:1px solid rgba(0,0,0,.1)}.note p{margin:0;font-size:17px;font-weight:900;line-height:1.65}
+</style>
+</head>
+<body>
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第08章 問題解決におけるコミュニケーション" data-header-title="4-2. 結論：曖昧性を排除する" data-header-subtitle="結論は、相手がその場で判断できる粒度で置く" data-footer="standard" data-footer-page="67">
+  <div class="stage">
+    <p class="kicker">結論が曖昧だと、相手は理解したつもりでも違うものを持ち帰る。まず、解釈の余地を減らす。</p>
+    <div class="table">
+      <div class="row">
+        <div class="cell cell--head">Ambiguous</div>
+        <div class="arrow"></div>
+        <div class="cell cell--head">Decidable</div>
+      </div>
+      <div class="row">
+        <div class="cell cell--muted"><p>この施策はやったほうがいいと思います</p></div>
+        <div class="arrow">→</div>
+        <div class="cell"><p>今期は施策Bを優先して着手する。施策Aは保留にする。</p></div>
+      </div>
+      <div class="row">
+        <div class="cell cell--muted"><p>もう少し慎重に進めるべきです</p></div>
+        <div class="arrow">→</div>
+        <div class="cell"><p>今月は本実装に進まず、10件のユーザー検証を先に行う。</p></div>
+      </div>
+      <div class="row">
+        <div class="cell cell--muted"><p>価格は高めでも良いかもしれません</p></div>
+        <div class="arrow">→</div>
+        <div class="cell"><p>初期価格は競合比110%で出し、継続率が基準未達なら翌月見直す。</p></div>
+      </div>
+    </div>
+    <div class="note"><p>結論は「何となくそう思う」ではなく、「だから何をどうするのか」が決まる形で置く。</p></div>
+  </div>
+</div>
+</body>
+</html>

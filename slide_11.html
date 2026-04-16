@@ -3,26 +3,58 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>見えている要素とつながりで差が出る</title>
+<title>ワーク: 問題解決の体験（ケーススタディ）</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
 <style>
-
-.logic-wrap{position:absolute;left:80px;top:198px;width:1120px;display:flex;flex-direction:column;gap:24px;}
-.logic-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;}
-.logic-card{min-height:280px;padding:24px 22px;border:1px solid rgba(0,0,0,0.1);border-radius:8px;background:#fff;display:flex;flex-direction:column;}
-.logic-num{margin:0 0 16px;color:rgba(0,0,0,0.28);font-family:"Space Grotesk",sans-serif;font-size:14px;font-weight:900;letter-spacing:1.6px;}
-.logic-head{margin:0 0 14px;font-size:26px;font-weight:900;line-height:1.35;}
-.logic-copy{margin:0;font-size:16px;line-height:1.8;color:rgba(0,0,0,0.68);}
-.logic-conclusion{padding:18px 22px;border-radius:8px;background:rgba(0,0,0,0.04);}
-.logic-conclusion p{font-size:20px;font-weight:900;line-height:1.7;}
-
+.work-wrap{position:absolute;left:80px;top:188px;width:1120px;display:grid;grid-template-columns:1.05fr .95fr;gap:24px}
+.work-card{min-height:314px;padding:28px 24px 24px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff}
+.work-card--task{display:flex;flex-direction:column}
+.work-card--process{display:flex;flex-direction:column}
+.work-card__eyebrow{margin:0 0 var(--space-stack-lead-title);color:rgba(0,0,0,.34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+.work-card__head{margin:0 0 var(--space-stack-title-body);font-size:24px;font-weight:900;line-height:1.4}
+.work-card__body{padding:0;background:transparent}
+.work-card--task .work-card__body{margin-top:auto;margin-bottom:auto}
+.work-card__body p{margin:0;font-size:16px;line-height:1.85}
+.work-card__prompt{font-weight:900;font-style:italic}
+.work-card__body p + p{margin-top:var(--space-stack-lead-title)}
+.work-card__body ol{margin:12px 0 0 1.4em;padding:0;font-size:16px;line-height:1.85}
+.work-card__body li + li{margin-top:4px}
+.work-steps{display:flex;flex-direction:column;gap:18px}
+.work-card--process .work-steps{margin-top:auto;margin-bottom:auto}
+.work-step{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:center}
+.work-step__num{width:34px;height:34px;border-radius:50%;background:#1a1a1a;color:#fff;font-family:"Space Grotesk",sans-serif;font-size:14px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.work-step__copy{margin:0;font-size:16px;font-weight:700;line-height:1.55}
+.work-note{position:absolute;left:80px;top:586px;width:1120px;padding:14px 18px;border-radius:8px;background:rgba(0,0,0,.04)}
+.work-note p{margin:0;font-size:14px;line-height:1.7;color:rgba(0,0,0,.66)}
 </style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="ワーク" data-header-title="見えている要素とつながりで差が出る" data-header-subtitle="構成要素を見るか、価値が生まれる条件を見るか" data-footer="standard" data-footer-page="10">
-<div class="logic-wrap"><div class="logic-flow"><section class="logic-card"><p class="logic-num">01</p><p class="logic-head">要素しか見えていない</p><p class="logic-copy">バンズ、肉、チーズのように部品を並べても、何を改善すれば価値が上がるかは見えない。</p></section><section class="logic-card"><p class="logic-num">02</p><p class="logic-head">つながりまで見えている</p><p class="logic-copy">誰が、どの瞬間に、何をもって美味しいと感じるのかを置くと、評価基準と制約が見えてくる。</p></section><section class="logic-card"><p class="logic-num">03</p><p class="logic-head">だから打ち手が見える</p><p class="logic-copy">視覚を上げるのか、食感を変えるのか、提供体験を変えるのかという打ち手に接続できる。</p></section></div><div class="logic-conclusion"><p>差は「知識量」より、何を見て、どうつないでいるかに出る。</p></div></div>
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第01章 ワーク" data-header-title="ワーク: 問題解決の体験（ケーススタディ）" data-header-subtitle="問題解決は基本的に最適解（ToBe）がある。最適解と自分の解（AsIs）の差分を知る" data-footer="standard" data-footer-page="11">
+<div class="work-wrap">
+<section class="work-card work-card--task">
+<p class="work-card__eyebrow">Task</p>
+<p class="work-card__head">お題</p>
+<div class="work-card__body">
+<p class="work-card__prompt">「美味しいハンバーガー」をつくるにはどうすべきか？</p>
+<ol>
+<li>できる限り上段から分解して考えてください</li>
+<li>5分で考えてください</li>
+</ol>
+</div>
+</section>
+<section class="work-card work-card--process">
+<p class="work-card__eyebrow">Process</p>
+<p class="work-card__head">進め方</p>
+<div class="work-steps">
+<div class="work-step"><div class="work-step__num">1</div><p class="work-step__copy">個人ワークとして5分間で考える</p></div>
+<div class="work-step"><div class="work-step__num">2</div><p class="work-step__copy">頭の中だけで済ませず、メモに書き出す</p></div>
+<div class="work-step"><div class="work-step__num">3</div><p class="work-step__copy">正解探しではなく、今の分解の癖を観察する</p></div>
+</div>
+</section>
+</div>
+<div class="work-note"><p>このワークの目的は、研修前の自分がどのように問いを捉え、どう分解しようとするかを可視化すること。</p></div>
 </div>
 </body>
 </html>

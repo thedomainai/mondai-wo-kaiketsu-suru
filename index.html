@@ -122,6 +122,35 @@
     border-radius: 4px;
     display: block;
   }
+  .nav-btn {
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    z-index: 90;
+    border: none;
+    background: transparent;
+    color: rgba(255,255,255,0);
+    font-size: 32px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .nav-btn--prev { left: 0; border-radius: 4px 0 0 4px; }
+  .nav-btn--next { right: 0; border-radius: 0 4px 4px 0; }
+  .iframe-wrapper:hover .nav-btn {
+    color: rgba(255,255,255,0.5);
+    background: rgba(0,0,0,0.15);
+  }
+  .nav-btn:hover {
+    color: rgba(255,255,255,0.9) !important;
+    background: rgba(0,0,0,0.35) !important;
+  }
+  .nav-btn:active { background: rgba(0,0,0,0.5) !important; }
+  .nav-btn:disabled { opacity: 0; cursor: default; pointer-events: none; }
   .touch-overlay {
     position: absolute;
     inset: 0;
@@ -237,10 +266,10 @@
 <body>
 
 <header>
-  <h1 id="deckTitle">問題を解決する — 全74スライド</h1>
+  <h1 id="deckTitle">問題を解決する — 全73スライド</h1>
   <div class="controls">
     <button id="prevBtn" onclick="go(-1)">← Prev</button>
-    <span id="counter">1 / 74</span>
+    <span id="counter">1 / 73</span>
     <button id="nextBtn" onclick="go(1)">Next →</button>
   </div>
 </header>
@@ -250,6 +279,8 @@
   <div class="viewer">
     <div class="iframe-wrapper" id="iframeWrapper">
       <iframe id="slideFrame" src="slide_01.html"></iframe>
+      <button class="nav-btn nav-btn--prev" id="navPrev" onclick="go(-1)">&#8249;</button>
+      <button class="nav-btn nav-btn--next" id="navNext" onclick="go(1)">&#8250;</button>
       <div class="touch-overlay" id="touchOverlay"></div>
     </div>
   </div>
@@ -258,7 +289,7 @@
 <div class="mobile-bar">
   <button id="mPrevBtn" onclick="go(-1)">←</button>
   <div class="counter">
-    <div id="mCounter" style="font-weight:600;font-size:15px;color:#fff;">1 / 74</div>
+    <div id="mCounter" style="font-weight:600;font-size:15px;color:#fff;">1 / 73</div>
     <div id="mTitle" style="font-size:11px;color:#666;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:180px;"></div>
   </div>
   <button id="mNextBtn" onclick="go(1)">→</button>
@@ -279,78 +310,77 @@ let current = 1;
 const slides = [
   { title: "問題を解決する", type: "normal", file: "slide_01.html" },
   { title: "中林 佑太", type: "normal", file: "slide_02.html" },
-  { title: "仕事で大事にしていること", type: "normal", file: "slide_03.html" },
+  { title: "仕事において大事にしていること", type: "normal", file: "slide_03.html" },
   { title: "苦手なこと", type: "normal", file: "slide_04.html" },
-  { title: "アジェンダ", type: "normal", file: "slide_05.html" },
-  { title: "━ Ch01 アジェンダ", type: "chapter-agenda", file: "slide_06.html" },
-  { title: "第01章 ワーク", type: "chapter-title", file: "slide_07.html" },
-  { title: "ワーク：問題解決の体験", type: "normal", file: "slide_08.html" },
-  { title: "どのように考えましたか？", type: "normal", file: "slide_09.html" },
-  { title: "分解の差はどこに出るか", type: "normal", file: "slide_10.html" },
-  { title: "見えている要素とつながりで差が出る", type: "normal", file: "slide_11.html" },
-  { title: "━ Ch02 アジェンダ", type: "chapter-agenda", file: "slide_12.html" },
-  { title: "第02章 前提・背景", type: "chapter-title", file: "slide_13.html" },
-  { title: "問題解決能力が高いとは何か", type: "normal", file: "slide_14.html" },
-  { title: "高い問題解決能力 = 高い問題解決期待値", type: "normal", file: "slide_15.html" },
-  { title: "結果と行動を切り離す", type: "normal", file: "slide_16.html" },
-  { title: "再現性とは「正しく間違えること」", type: "normal", file: "slide_17.html" },
-  { title: "今日のテーマ", type: "normal", file: "slide_18.html" },
-  { title: "━ Ch03 アジェンダ", type: "chapter-agenda", file: "slide_19.html" },
-  { title: "第03章 問題解決の概要", type: "chapter-title", file: "slide_20.html" },
-  { title: "問題解決とは論点に対して答えを出すこと", type: "normal", file: "slide_21.html" },
-  { title: "7ステップのフレームワーク", type: "normal", file: "slide_22.html" },
-  { title: "実務では役割ごとに重心が変わる", type: "normal", file: "slide_23.html" },
-  { title: "アインシュタインの言葉", type: "normal", file: "slide_24.html" },
-  { title: "メタ認知：プロセスを回す", type: "normal", file: "slide_25.html" },
-  { title: "問題解決の本質", type: "normal", file: "slide_26.html" },
-  { title: "━ Ch04 アジェンダ", type: "chapter-agenda", file: "slide_27.html" },
-  { title: "第04章 論点を定義する", type: "chapter-title", file: "slide_28.html" },
-  { title: "論点とは", type: "normal", file: "slide_29.html" },
-  { title: "論点には必ず「べき」を含める", type: "normal", file: "slide_30.html" },
-  { title: "実践ルール", type: "normal", file: "slide_31.html" },
-  { title: "原則3：モデル（式）で考える", type: "normal", file: "slide_32.html" },
-  { title: "第05章 論点を分解する", type: "chapter-title", file: "slide_33.html" },
-  { title: "分解の5原則：概要", type: "normal", file: "slide_34.html" },
-  { title: "原則1：ツリー状に分解する", type: "normal", file: "slide_35.html" },
-  { title: "原則2：MECEに分解する", type: "normal", file: "slide_36.html" },
-  { title: "原則3：モデル（式）で考える", type: "normal", file: "slide_37.html" },
-  { title: "原則4：5分以上1つの論点を考えない", type: "normal", file: "slide_38.html" },
-  { title: "原則5：トップダウンとボトムアップを行き来する", type: "normal", file: "slide_39.html" },
-  { title: "比較の観点", type: "normal", file: "slide_40.html" },
-  { title: "ダメな分解 vs 良い分解", type: "normal", file: "slide_41.html" },
-  { title: "━ Ch06 アジェンダ", type: "chapter-agenda", file: "slide_42.html" },
-  { title: "第06章 仮説を構築する", type: "chapter-title", file: "slide_43.html" },
-  { title: "仮説構築の目的", type: "normal", file: "slide_44.html" },
-  { title: "良い仮説の条件", type: "normal", file: "slide_45.html" },
-  { title: "仮説の作り方", type: "normal", file: "slide_46.html" },
-  { title: "仮説を作る技法", type: "normal", file: "slide_47.html" },
-  { title: "仮説思考の罠：知見がないときどうするか", type: "normal", file: "slide_48.html" },
-  { title: "Deep Dive：情報の海に潜る", type: "normal", file: "slide_49.html" },
-  { title: "仮の答えを出すことから逃げない", type: "normal", file: "slide_50.html" },
-  { title: "━ Ch07 アジェンダ", type: "chapter-agenda", file: "slide_51.html" },
-  { title: "第07章 論点と仮説を検証する", type: "chapter-title", file: "slide_52.html" },
+  { title: "Q. なぜロジカル・シンキング講座が用意されているか", type: "normal", file: "slide_05.html" },
+  { title: "A. 最も普遍的で大切なスキルだと認識されているから", type: "normal", file: "slide_06.html" },
+  { title: "成果を出す上で重要な要素", type: "normal", file: "slide_07.html" },
+  { title: "アジェンダ", type: "normal", file: "slide_08.html" },
+  { title: "アジェンダ｜第01章 ワーク", type: "chapter-agenda", file: "slide_09.html" },
+  { title: "第01章 ワーク", type: "chapter-title", file: "slide_10.html" },
+  { title: "ワーク: 問題解決の体験（ケーススタディ）", type: "normal", file: "slide_11.html" },
+  { title: "どのように考えましたか？", type: "normal", file: "slide_12.html" },
+  { title: "思考の差はどこに現れるか", type: "normal", file: "slide_13.html" },
+  { title: "見えている要素とつながりで差が出る", type: "normal", file: "slide_14.html" },
+  { title: "アジェンダ｜第02章 前提・背景", type: "chapter-agenda", file: "slide_15.html" },
+  { title: "第02章 前提・背景", type: "chapter-title", file: "slide_16.html" },
+  { title: "問題解決能力が高いとは何か", type: "normal", file: "slide_17.html" },
+  { title: "高い問題解決能力 = 高い問題解決期待値", type: "normal", file: "slide_18.html" },
+  { title: "結果と行動を切り離す", type: "normal", file: "slide_19.html" },
+  { title: "再現性とは「正しく間違えること」", type: "normal", file: "slide_20.html" },
+  { title: "研修のテーマ: 再現性高く問題を解決する", type: "normal", file: "slide_21.html" },
+  { title: "アジェンダ｜第03章 問題解決の概要", type: "chapter-agenda", file: "slide_22.html" },
+  { title: "第03章 問題解決の概要", type: "chapter-title", file: "slide_23.html" },
+  { title: "問題解決とは論点に対して答えを出すこと", type: "normal", file: "slide_24.html" },
+  { title: "7ステップのフレームワーク", type: "normal", file: "slide_25.html" },
+  { title: "実務では役割ごとに重心が変わる", type: "normal", file: "slide_26.html" },
+  { title: "アインシュタインの言葉", type: "normal", file: "slide_27.html" },
+  { title: "問題解決のプロセスを回す際に重要な点", type: "normal", file: "slide_28.html" },
+  { title: "アジェンダ｜第04章 論点を定義する", type: "chapter-agenda", file: "slide_29.html" },
+  { title: "第04章 論点を定義する", type: "chapter-title", file: "slide_30.html" },
+  { title: "問題解決の全工程で最も重要なステップ", type: "normal", file: "slide_31.html" },
+  { title: "論点定義における重要な3ポイント", type: "normal", file: "slide_32.html" },
+  { title: "ポイント③: 論点の文末には必ず「べき」を入れる", type: "normal", file: "slide_33.html" },
+  { title: "論点定義のまとめ", type: "normal", file: "slide_34.html" },
+  { title: "第05章 論点を分解する", type: "chapter-title", file: "slide_35.html" },
+  { title: "論点分解における重要な5つのポイント", type: "normal", file: "slide_36.html" },
+  { title: "原則1：ツリー状に分解する", type: "normal", file: "slide_37.html" },
+  { title: "原則2：MECEに分解する", type: "normal", file: "slide_38.html" },
+  { title: "原則3：モデル（式）で考える", type: "normal", file: "slide_39.html" },
+  { title: "原則4：5分以上1つの論点を考えない", type: "normal", file: "slide_40.html" },
+  { title: "原則5：トップダウンとボトムアップを行き来する", type: "normal", file: "slide_41.html" },
+  { title: "第06章 仮説を構築する", type: "chapter-title", file: "slide_42.html" },
+  { title: "仮説構築の目的", type: "normal", file: "slide_43.html" },
+  { title: "良い仮説とは", type: "normal", file: "slide_44.html" },
+  { title: "仮説の基本手順", type: "normal", file: "slide_45.html" },
+  { title: "仮説生成の技法", type: "normal", file: "slide_46.html" },
+  { title: "知見がないとき、どう進めるか", type: "normal", file: "slide_47.html" },
+  { title: "Deep Dive：情報の海に潜る", type: "normal", file: "slide_48.html" },
+  { title: "仮の答えを出すことから逃げない", type: "normal", file: "slide_49.html" },
+  { title: "アジェンダ｜第07章 論点と仮説を検証する", type: "chapter-agenda", file: "slide_50.html" },
+  { title: "第07章 論点と仮説を検証する", type: "chapter-title", file: "slide_51.html" },
+  { title: "検証を設計する", type: "normal", file: "slide_52.html" },
   { title: "何を先に検証するか", type: "normal", file: "slide_53.html" },
-  { title: "検証可能な形に変換する", type: "normal", file: "slide_54.html" },
-  { title: "検証手段を選ぶ", type: "normal", file: "slide_55.html" },
-  { title: "複数案のトレードオフを評価する", type: "normal", file: "slide_56.html" },
-  { title: "検証結果から次の行動を決める", type: "normal", file: "slide_57.html" },
-  { title: "━ Ch08 アジェンダ", type: "chapter-agenda", file: "slide_58.html" },
-  { title: "第08章 問題解決におけるコミュニケーション", type: "chapter-title", file: "slide_59.html" },
-  { title: "コミュニケーションは誤解可能性を排除するゲーム", type: "normal", file: "slide_60.html" },
-  { title: "受け手視点で伝達を設計する", type: "normal", file: "slide_61.html" },
-  { title: "意思決定構造を押さえる", type: "normal", file: "slide_62.html" },
-  { title: "誤解ポイントを先回りして潰す", type: "normal", file: "slide_63.html" },
-  { title: "解を伝える基本構造：5要素", type: "normal", file: "slide_64.html" },
-  { title: "1. 結論：曖昧性を排除する", type: "normal", file: "slide_65.html" },
-  { title: "2. 根拠：センターピンに接続する", type: "normal", file: "slide_66.html" },
-  { title: "3. ネクストアクション + 4. 残論点", type: "normal", file: "slide_67.html" },
-  { title: "5. 情報確度の明示", type: "normal", file: "slide_68.html" },
-  { title: "ピラミッドストラクチャー", type: "normal", file: "slide_69.html" },
-  { title: "━ Ch09 アジェンダ", type: "chapter-agenda", file: "slide_70.html" },
-  { title: "まとめ", type: "normal", file: "slide_71.html" },
-  { title: "理論的には何事も上手くいきます", type: "normal", file: "slide_72.html" },
-  { title: "問題を解決しましょう", type: "normal", file: "slide_73.html" },
-  { title: "Q&A", type: "normal", file: "slide_74.html" },
+  { title: "検証結果を読む", type: "normal", file: "slide_54.html" },
+  { title: "検証結果から次の行動を決める", type: "normal", file: "slide_55.html" },
+  { title: "仮説検証の全体像", type: "normal", file: "slide_56.html" },
+  { title: "アジェンダ｜第08章 問題解決におけるコミュニケーション", type: "chapter-agenda", file: "slide_57.html" },
+  { title: "第08章 問題解決におけるコミュニケーション", type: "chapter-title", file: "slide_58.html" },
+  { title: "1. コミュニケーションは誤解を排除するゲーム", type: "normal", file: "slide_59.html" },
+  { title: "2. 誤解を排除するための要素", type: "normal", file: "slide_60.html" },
+  { title: "3. 受け手の理解", type: "normal", file: "slide_61.html" },
+  { title: "3-1. 意思決定構造を押さえる", type: "normal", file: "slide_62.html" },
+  { title: "4. 内容設計", type: "normal", file: "slide_63.html" },
+  { title: "4-1. 結論：曖昧性を排除する", type: "normal", file: "slide_64.html" },
+  { title: "4-2. 根拠：センターピンに接続する", type: "normal", file: "slide_65.html" },
+  { title: "4-3. ネクストアクションと残論点", type: "normal", file: "slide_66.html" },
+  { title: "4-4. 補足：情報確度を明示する", type: "normal", file: "slide_67.html" },
+  { title: "5. Tips: 誤解ポイントを先回りして潰す", type: "normal", file: "slide_68.html" },
+  { title: "アジェンダ｜第09章 まとめ", type: "chapter-agenda", file: "slide_69.html" },
+  { title: "まとめ", type: "normal", file: "slide_70.html" },
+  { title: "理論的には何事も上手くいきます", type: "normal", file: "slide_71.html" },
+  { title: "問題を解決しましょう", type: "normal", file: "slide_72.html" },
+  { title: "Q&A", type: "normal", file: "slide_73.html" },
 ];
 // END GENERATED SLIDES
 const TOTAL = slides.length;
@@ -386,6 +416,8 @@ function goTo(n) {
   document.getElementById('counter').textContent = `${current} / ${TOTAL}`;
   document.getElementById('prevBtn').disabled = current === 1;
   document.getElementById('nextBtn').disabled = current === TOTAL;
+  document.getElementById('navPrev').disabled = current === 1;
+  document.getElementById('navNext').disabled = current === TOTAL;
   document.querySelectorAll('.sidebar button').forEach(b => b.classList.remove('active'));
   const sbActive = document.getElementById(`sb-${current}`);
   if (sbActive) { sbActive.classList.add('active'); sbActive.scrollIntoView({ block: 'nearest' }); }

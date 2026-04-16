@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>4. 内容設計</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
+<link href="./slides.css" rel="stylesheet"/>
+<script defer src="./slides.js"></script>
+<style>
+.stage{position:absolute;left:80px;top:156px;width:1120px;display:flex;flex-direction:column;gap:14px}
+.kicker{margin:0;color:#5a4970;font-size:15px;font-weight:900;line-height:1.55}
+.tier{display:grid;gap:16px}
+.tier--context{grid-template-columns:repeat(2,minmax(0,1fr))}
+.tier--core{grid-template-columns:repeat(3,minmax(0,1fr))}
+.tier--tail{grid-template-columns:repeat(2,minmax(0,1fr))}
+.card{padding:16px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff;display:grid;grid-template-rows:auto auto 1fr}
+.card--context{min-height:0}
+.card--core{min-height:0}
+.card--strong{border-width:2px;border-color:rgba(0,0,0,.82);box-shadow:0 10px 26px rgba(0,0,0,.06)}
+.card--tail{min-height:0;background:rgba(255,255,255,.84)}
+.card__label{margin:0 0 var(--space-stack-lead-title);color:rgba(0,0,0,.34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+.card__title{margin:0 0 var(--space-stack-lead-title);font-size:20px;font-weight:900;line-height:1.45}
+.card__text{margin:0;color:rgba(0,0,0,.72);font-size:14px;line-height:1.72}
+.summary{padding:12px 22px 0;border-top:1px solid rgba(0,0,0,.1)}
+.summary p{margin:0;font-size:16px;font-weight:900;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第08章 問題解決におけるコミュニケーション" data-header-title="4. 内容設計" data-header-subtitle="メッセージのゴールから補足まで、相手が誤解しにくい順に置く" data-footer="standard" data-footer-page="65">
+  <div class="stage">
+    <p class="kicker">内容設計とは、言いたいことを並べることではない。相手が理解し、判断し、動ける順にメッセージを設計することである。</p>
+    <div class="tier tier--context">
+      <section class="card card--context">
+        <p class="card__label">Goal</p>
+        <p class="card__title">メッセージのゴール</p>
+        <p class="card__text">この話で相手に何を理解してほしいか、何を決めてほしいかを最初に定める。</p>
+      </section>
+      <section class="card card--context">
+        <p class="card__label">Context</p>
+        <p class="card__title">前提・背景</p>
+        <p class="card__text">どの前提で聞くべき話かをそろえる。前提がずれると、同じ結論でも意味が変わる。</p>
+      </section>
+    </div>
+    <div class="tier tier--core">
+      <section class="card card--core card--strong">
+        <p class="card__label">Conclusion</p>
+        <p class="card__title">結論</p>
+        <p class="card__text">最初に何をどうするかを置く。相手がその場で判断できる粒度まで寄せる。</p>
+      </section>
+      <section class="card card--core">
+        <p class="card__label">Reason</p>
+        <p class="card__title">根拠</p>
+        <p class="card__text">なぜそう言えるのかを、相手の判断軸に接続する順で並べる。</p>
+      </section>
+      <section class="card card--core">
+        <p class="card__label">Action</p>
+        <p class="card__title">ネクストアクション</p>
+        <p class="card__text">誰が何をいつまでにやるかを落とし切る。聞いた後に止まらない形にする。</p>
+      </section>
+    </div>
+    <div class="tier tier--tail">
+      <section class="card card--tail">
+        <p class="card__label">Open Issues</p>
+        <p class="card__title">残論点</p>
+        <p class="card__text">まだ決め切れていない論点を切り分ける。未解決事項を本文の結論と混ぜない。</p>
+      </section>
+      <section class="card card--tail">
+        <p class="card__label">Confidence</p>
+        <p class="card__title">情報確度</p>
+        <p class="card__text">確定情報と仮説を分けて置く。どこまで言い切れるかを明示し、誤解を防ぐ。</p>
+      </section>
+    </div>
+    <div class="summary"><p>内容設計の要点は、相手が迷いやすい場所を減らしながら「理解 → 判断 → 行動」へ自然につなぐことにある。</p></div>
+  </div>
+</div>
+</body>
+</html>

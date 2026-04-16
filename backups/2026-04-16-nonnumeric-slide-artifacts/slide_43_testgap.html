@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>仮説構築の目的</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
+<link href="./slides.css" rel="stylesheet"/>
+<script defer src="./slides.js"></script>
+<style>
+.stage{position:absolute;left:80px;top:164px;width:1120px;--kicker-panel-gap:96px;--panel-label-title-gap:calc(var(--space-stack-lead-title) + 2px);--panel-title-rows-gap:calc(var(--space-stack-title-body) + 4px)}.kicker{margin:0 0 var(--kicker-panel-gap);color:#5a4970;font-size:15px;font-weight:900;line-height:1.55}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}.panel{min-height:332px;padding:26px;border:1px solid rgba(0,0,0,.12);border-radius:8px;background:#fff}.panel--strong{border-width:2px;border-color:rgba(0,0,0,.82)}.panel__label{margin:0 0 var(--panel-label-title-gap);color:rgba(0,0,0,.34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.panel__title{margin:0 0 var(--panel-title-rows-gap);font-size:24px;font-weight:900;line-height:1.35}.rows{display:grid;gap:14px}.row{display:grid;grid-template-columns:102px 1fr;gap:16px;padding-top:14px;border-top:1px solid rgba(0,0,0,.08)}.row:first-child{padding-top:0;border-top:none}.row__key{color:rgba(0,0,0,.4);font-size:14px;font-weight:700;line-height:1.5}.row__value{font-size:16px;font-weight:900;line-height:1.65}.summary{margin-top:16px;padding-top:16px;border-top:1px solid rgba(0,0,0,.1)}.summary p{margin:0;font-size:18px;font-weight:900;line-height:1.65}
+</style>
+</head>
+<body>
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第06章 仮説を構築する" data-header-title="仮説構築の目的" data-header-subtitle="正しい答えを当てるより、検証できる基準点を置く" data-footer="standard" data-footer-page="43">
+  <div class="stage">
+    <p class="kicker">仮説は、答えを決め打ちするためではなく、何を確かめれば前に進めるかを明確にするために置く。</p>
+    <div class="grid">
+      <section class="panel">
+        <p class="panel__label">Without Hypothesis</p>
+        <p class="panel__title">仮説がないと、検証はただの情報収集になる</p>
+        <div class="rows">
+          <div class="row"><p class="row__key">起きること</p><p class="row__value">何を見ればよいかが定まらず、広く浅く集めるだけになる</p></div>
+          <div class="row"><p class="row__key">困ること</p><p class="row__value">結果が出ても、何が示唆なのか解釈できない</p></div>
+          <div class="row"><p class="row__key">その先</p><p class="row__value">次に何を考えるべきかが決まらず、議論が漂う</p></div>
+        </div>
+      </section>
+      <section class="panel panel--strong">
+        <p class="panel__label">With Hypothesis</p>
+        <p class="panel__title">仮説があると、検証結果が次の行動を教えてくれる</p>
+        <div class="rows">
+          <div class="row"><p class="row__key">見えるもの</p><p class="row__value">どの前提が効いているか、どこが不確実かが見える</p></div>
+          <div class="row"><p class="row__key">確かめ方</p><p class="row__value">当たり外れではなく、どの条件を潰すかで検証を設計できる</p></div>
+          <div class="row"><p class="row__key">その先</p><p class="row__value">外れた理由がそのまま論点の更新や打ち手の見直しにつながる</p></div>
+        </div>
+      </section>
+    </div>
+    <div class="summary">
+      <p>仮説は、未来を言い当てるための予言ではない。軌道修正のための基準点である。</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

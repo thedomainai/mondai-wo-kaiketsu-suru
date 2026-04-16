@@ -1,145 +1,30 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>良い仮説の条件 - 再現性のある問題解決フレームワーク</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&amp;family=Space+Grotesk:wght@700&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<title>仮説の基本手順</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
+<link href="./slides.css" rel="stylesheet"/>
+<script defer src="./slides.js"></script>
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        font-family: 'Noto Sans JP', sans-serif;
-        background-color: #ffffff;
-    }
-    .slide-container {
-        width: 1280px;
-        height: 720px;
-        position: relative;
-        overflow: hidden;
-        background: white;
-    }
-    p {
-        margin: 0;
-    }
+.stage{position:absolute;left:80px;top:160px;width:1120px;display:flex;flex-direction:column;gap:18px}.kicker{margin:0;color:#5a4970;font-size:15px;font-weight:900;line-height:1.55}.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.step{min-height:250px;padding:22px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff;display:flex;flex-direction:column}.step__num{margin:0 0 10px;color:rgba(0,0,0,.28);font-family:"Space Grotesk",sans-serif;font-size:14px;font-weight:900;letter-spacing:2px}.step__title{margin:0 0 12px;font-size:21px;font-weight:900;line-height:1.45}.step__text{margin:0;color:rgba(0,0,0,.72);font-size:14px;line-height:1.72}.template{padding:18px 22px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff}.template p{margin:0;font-size:16px;font-weight:900;line-height:1.8}
 </style>
 </head>
 <body>
-<div class="slide-container">
-<!-- === STANDARDIZED HEADER === -->
-<div style="position: absolute; left: 0; top: 0; width: 1280px; height: 148px; background-color: #ffffff; z-index: 50;"></div>
-<div style="position: absolute; left: 40px; top: 16px; z-index: 55;">
-<p style="margin: 0; padding: 5px 18px; border: 2px solid #000; border-radius: 9999px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; color: #000; letter-spacing: 1px; background: #ffffff; display: inline-block;">PROBLEM SOLVING</p>
-</div>
-<div style="position: absolute; right: 40px; top: 22px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #999; letter-spacing: 0.5px;">第5章 仮説を構築する</p>
-</div>
-<div style="position: absolute; left: 80px; top: 52px; width: 1120px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 32px; color: #000; letter-spacing: 1px; line-height: 1.2;">知見がないときどうするか</p>
-</div>
-<div style="position: absolute; left: 80px; top: 100px; width: 1120px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #888; line-height: 1.4;">知見がない ＝ 仮説が浅くなるリスク</p>
-</div>
-<!-- === END HEADER === -->
-
-<!-- Background Elements -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 0; top: 0; width: 1280px; height: 720px; background-image: radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px); background-size: 20px 20px; opacity: 0.4; z-index: 1;"></div>
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 640px; top: 0; width: 640px; height: 720px; background-color: #ececec; clip-path: polygon(20px 0, 100% 0, 100% 100%, 0 100%, 0 20px); z-index: 1;"></div>
-<!-- Left Panel Content -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 120px; width: 500px; height: 550px; z-index: 10;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 38px; line-height: 1.2; color: #000000; margin-bottom: 16px; letter-spacing: 1px;">良い仮説の条件</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 20px; line-height: 1.6; color: #000000; margin-bottom: 24px; padding-bottom: 8px; border-bottom: 2px solid #000;">4つの必須条件</p>
-<div style="display: flex; margin-bottom: 24px; align-items: flex-start;">
-<div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; color: #000; margin-right: 12px; min-width: 24px; text-align: right; line-height: 1.2;">1.</div>
-<div>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 18px; color: #000; margin-bottom: 8px; line-height: 1.2;">ベストエフォート</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; line-height: 1.6; color: #333;">手持ち情報だけで仮の答えを出す。「わからない」は知的怠惰。</p>
-</div>
-</div>
-<div style="display: flex; margin-bottom: 24px; align-items: flex-start;">
-<div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; color: #000; margin-right: 12px; min-width: 24px; text-align: right; line-height: 1.2;">2.</div>
-<div>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 18px; color: #000; margin-bottom: 8px; line-height: 1.2;">主要前提を明示</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; line-height: 1.6; color: #333;">どの市場か、誰が決めるか、責任はどこか。</p>
-</div>
-</div>
-<div style="display: flex; margin-bottom: 24px; align-items: flex-start;">
-<div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; color: #000; margin-right: 12px; min-width: 24px; text-align: right; line-height: 1.2;">3.</div>
-<div>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 18px; color: #000; margin-bottom: 8px; line-height: 1.2;">定量的・具体的</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; line-height: 1.6; color: #333;">曖昧＝検証不可能。</p>
-</div>
-</div>
-<div style="display: flex; align-items: flex-start;">
-<div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; color: #000; margin-right: 12px; min-width: 24px; text-align: right; line-height: 1.2;">4.</div>
-<div>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 18px; color: #000; margin-bottom: 8px; line-height: 1.2;">検証可能</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; line-height: 1.6; color: #333;">観測項目・比較対象・基準を含む。</p>
-</div>
-</div>
-</div>
-<!-- Right Panel Content -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 700px; top: 120px; width: 500px; height: 550px; z-index: 10;">
-<p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; color: rgba(0,0,0,0.5); letter-spacing: 2px; margin-bottom: 12px;">CLARITY &amp; PRECISION</p>
-<!-- Ambiguity Section -->
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 24px; line-height: 1.2; color: #000000; margin-bottom: 16px; border-bottom: 2px solid #000000; padding-bottom: 8px; display: inline-block;">曖昧性のサイン</p>
-<div style="background-color: #fff; padding: 12px; border-left: 6px solid #e53e3e; margin-bottom: 24px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 18px; color: #000; text-align: center;">
-            「良い」「高い」「早い」 <i class="fas fa-arrow-right" style="margin: 0 12px; color: #a0aec0;"></i> <span style="color: #e53e3e; font-weight: 900; font-size: 22px;">×</span>
-</p>
-</div>
-<!-- Comparison Table -->
-<div style="background-color: #ffffff; border: 1px solid #ddd; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden;">
-<div style="display: flex; background-color: #000;">
-<div style="flex: 1; padding: 12px 10px; border-right: 1px solid #444;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #fff; text-align: center;">
-<span style="color: #fc8181; margin-right: 6px;">×</span> 曖昧
-                </p>
-</div>
-<div style="flex: 1; padding: 12px 10px;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #fff; text-align: center;">
-<span style="color: #68d391; margin-right: 6px;">○</span> 具体的
-                </p>
-</div>
-</div>
-<div style="display: flex; border-bottom: 1px solid #eee;">
-<div style="flex: 1; padding: 16px 8px; border-right: 1px solid #eee; background-color: #fffaf0;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000; text-align: center;">効果がある</p>
-</div>
-<div style="flex: 1; padding: 16px 8px; background-color: #f0fff4; display: flex; align-items: center; justify-content: center;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000; text-align: center;">CVRが2%<i class="fas fa-arrow-right" style="margin: 0 4px; font-size: 12px; color: #718096;"></i>3%に上がる</p>
-</div>
-</div>
-<div style="display: flex; border-bottom: 1px solid #eee;">
-<div style="flex: 1; padding: 16px 8px; border-right: 1px solid #eee; background-color: #fffaf0;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000; text-align: center;">体験が良くなる</p>
-</div>
-<div style="flex: 1; padding: 16px 8px; background-color: #f0fff4; display: flex; align-items: center; justify-content: center;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000; text-align: center;">完了時間が4分<i class="fas fa-arrow-right" style="margin: 0 4px; font-size: 12px; color: #718096;"></i>2分以下</p>
-</div>
-</div>
-<div style="display: flex;">
-<div style="flex: 1; padding: 16px 8px; border-right: 1px solid #eee; background-color: #fffaf0;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000; text-align: center;">コストが高い</p>
-</div>
-<div style="flex: 1; padding: 16px 8px; background-color: #f0fff4; display: flex; align-items: center; justify-content: center;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000; text-align: center;">競合比+20%以上</p>
-</div>
-</div>
-</div>
-</div>
-<!-- === STANDARDIZED FOOTER === -->
-<div style="position: absolute; left: 0; top: 660px; width: 1280px; height: 60px; background-color: #ffffff; border-top: 1px solid rgba(0,0,0,0.08); z-index: 50;"></div>
-<div style="position: absolute; left: 40px; top: 680px; z-index: 55;">
-<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 1.5px;">LOGICAL THINKING TRAINING</p>
-</div>
-<div style="position: absolute; right: 40px; top: 680px; z-index: 55;">
-<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 0.5px;">27 / 47</p>
-</div>
-<!-- === END FOOTER === -->
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第06章 仮説を構築する" data-header-title="仮説の基本手順" data-header-subtitle="論点に対する仮の答えを、前提と検証方法まで含めて置く" data-footer="standard" data-footer-page="45">
+  <div class="stage">
+    <p class="kicker">いきなり「答え」だけを置くと弱い。論点、根拠、前提、確かめ方まで一続きで置くと、仮説は一気に使えるものになる。</p>
+    <div class="flow">
+      <section class="step"><p class="step__num">01</p><p class="step__title">論点に対する仮の答えを置く</p><p class="step__text">まずは「結局どうだと思うのか」を逃げずに言語化する。曖昧な方向性ではなく、Yes / No や優先順位の形まで寄せる。</p></section>
+      <section class="step"><p class="step__num">02</p><p class="step__title">なぜそう思うかを書く</p><p class="step__text">過去事例、構造理解、直感、観察のどれでもよいので、仮の答えを支える根拠を置く。</p></section>
+      <section class="step"><p class="step__num">03</p><p class="step__title">成立条件を切り出す</p><p class="step__text">どの前提が崩れるとこの仮説が壊れるのかを明示すると、検証ポイントがはっきりする。</p></section>
+      <section class="step"><p class="step__num">04</p><p class="step__title">検証方法を決める</p><p class="step__text">データ、現場観察、インタビュー、実験のどれで確かめるかを決め、次の行動に変える。</p></section>
+    </div>
+    <div class="template">
+      <p>論点: 何が本当にボトルネックか / 仮説: 新規獲得ではなく初回継続率が主因 / 根拠: 流入は足りているが2回目利用で落ちる / 主要前提: 初回体験が価値実感に届いていない / 検証方法: 初回利用者インタビューと行動ログで離脱点を特定する</p>
+    </div>
+  </div>
 </div>
 </body>
 </html>

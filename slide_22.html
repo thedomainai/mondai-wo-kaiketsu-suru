@@ -1,172 +1,75 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>7ステップのフレームワーク</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&amp;family=Space+Grotesk:wght@700&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        font-family: 'Noto Sans JP', sans-serif;
-        background-color: #ffffff;
-    }
-    .slide-container {
-        width: 1280px;
-        height: 720px;
-        position: relative;
-        overflow: hidden;
-        background-color: #ffffff;
-    }
-</style>
+<title>アジェンダ｜第03章 問題解決の概要</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
+<link href="./slides.css" rel="stylesheet"/>
+<script defer src="./slides.js"></script>
 </head>
 <body>
-<div class="slide-container">
-<!-- === STANDARDIZED HEADER === -->
-<div style="position: absolute; left: 0; top: 0; width: 1280px; height: 148px; background-color: #ffffff; z-index: 50;"></div>
-<div style="position: absolute; left: 40px; top: 16px; z-index: 55;">
-<p style="margin: 0; padding: 5px 18px; border: 2px solid #000; border-radius: 9999px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; color: #000; letter-spacing: 1px; background: #ffffff; display: inline-block;">PROBLEM SOLVING</p>
-</div>
-<div style="position: absolute; right: 40px; top: 22px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #999; letter-spacing: 0.5px;">第3章 論点を定義する</p>
-</div>
-<div style="position: absolute; left: 80px; top: 52px; width: 1120px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 32px; color: #000; letter-spacing: 1px; line-height: 1.2;">論点には必ず「べき」を含める</p>
-</div>
-<div style="position: absolute; left: 80px; top: 100px; width: 1120px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #888; line-height: 1.4;">行動を伴わない問い ＝ 自己満足・無意味</p>
-</div>
-<!-- === END HEADER === -->
+<div class="slide-container slide-theme-mist" data-background="grain" data-grain-opacity="0.5" data-vignette="true" data-slide-kind="agenda">
 
-<!-- Background Dot Pattern (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 0px; top: 0px; width: 1280px; height: 720px; background-image: radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px); background-size: 20px 20px; opacity: 0.4; z-index: 1;"></div>
-<!-- Section Title and Subtitle (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 100px; width: 1120px; z-index: 10;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 38px; color: #000000; line-height: 1.1; margin: 0 0 12px 0; letter-spacing: 1px;">7ステップのフレームワーク</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #333333; line-height: 1.5; margin: 0;">問題解決には再現性のあるプロセスがある。以下の7ステップを意識的に回すことで、期待値が高まる。</p>
-</div>
+  <!-- SVG noise filter + texture layer -->
+<!-- Full-slide noise grain overlay -->
+<!-- Subtle vignette -->
+<!-- Left: chapter label -->
+  <div class="agenda-panel">
+    <p class="agenda-panel__eyebrow">Agenda</p>
+    <h1 class="agenda-panel__title agenda-panel__title--spaced">アジェンダ</h1>
+  </div>
 
-<!-- Timeline Axis (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 80px; top: 295px; width: 1120px; height: 3px; background-color: #000000; z-index: 2;"></div>
+  <!-- Right: list -->
+  <div class="agenda-panel__list-wrap">
+    <div class="agenda-panel__list">
+                                                                                                                                                                                          <div class="agenda-panel__row">
+        <span class="agenda-panel__index">01</span>
+        <span class="agenda-panel__item">ワーク</span>
+      </div>
 
-<!-- Step 1 -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 104px; top: 271px; width: 50px; height: 50px; background-color: #000000; border-radius: 50%; z-index: 5; display: flex; align-items: center; justify-content: center;">
-<p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; color: #ffffff; margin: 0; text-align: center; line-height: 50px;">1</p>
-</div>
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 64px; top: 334px; width: 130px; z-index: 10;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; text-align: center; margin: 0 0 6px 0;">目的・制約の<br/>合意</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 11px; color: #666666; text-align: center; margin: 0; line-height: 1.5;">何のために<br/>どの制約下で<br/>解くのかを揃える</p>
-</div>
-<!-- Step 2 -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 264px; top: 271px; width: 50px; height: 50px; background-color: #000000; border-radius: 50%; z-index: 5; display: flex; align-items: center; justify-content: center;">
-<p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; color: #ffffff; margin: 0; text-align: center; line-height: 50px;">2</p>
-</div>
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 224px; top: 334px; width: 130px; z-index: 10;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; text-align: center; margin: 0 0 6px 0;">論点定義</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 11px; color: #666666; text-align: center; margin: 0; line-height: 1.5;">何を決めるべきか<br/>正しい問いを<br/>立てる</p>
-</div>
+      <div class="agenda-panel__row">
+        <span class="agenda-panel__index">02</span>
+        <span class="agenda-panel__item">前提・背景</span>
+      </div>
 
-<!-- Arrow 2→3 -->
-<div data-object="true" data-object-type="icon" style="position: absolute; left: 336px; top: 284px; z-index: 6;">
-<i class="fas fa-chevron-right" style="color: #000000; font-size: 14px;"></i>
-</div>
+      <div class="agenda-panel__row agenda-panel__row--active">
+        <span class="agenda-panel__index agenda-panel__index--active">03</span>
+        <span class="agenda-panel__item agenda-panel__item--active">問題解決の概要</span>
+      </div>
 
-<!-- Step 3 -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 424px; top: 271px; width: 50px; height: 50px; background-color: #000000; border-radius: 50%; z-index: 5; display: flex; align-items: center; justify-content: center;">
-<p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; color: #ffffff; margin: 0; text-align: center; line-height: 50px;">3</p>
-</div>
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 384px; top: 334px; width: 130px; z-index: 10;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; text-align: center; margin: 0 0 6px 0;">論点分解</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 11px; color: #666666; text-align: center; margin: 0; line-height: 1.5;">問いの全体像を<br/>ツリー状に<br/>捉える</p>
-</div>
+      <div class="agenda-panel__row">
+        <span class="agenda-panel__index">04</span>
+        <span class="agenda-panel__item agenda-panel__item--soft">論点を定義する</span>
+      </div>
 
-<!-- Arrow 3→4 -->
-<div data-object="true" data-object-type="icon" style="position: absolute; left: 496px; top: 284px; z-index: 6;">
-<i class="fas fa-chevron-right" style="color: #000000; font-size: 14px;"></i>
-</div>
+      <div class="agenda-panel__row">
+        <span class="agenda-panel__index">05</span>
+        <span class="agenda-panel__item agenda-panel__item--soft">論点を分解する</span>
+      </div>
 
-<!-- Step 4 -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 584px; top: 271px; width: 50px; height: 50px; background-color: #000000; border-radius: 50%; z-index: 5; display: flex; align-items: center; justify-content: center;">
-<p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; color: #ffffff; margin: 0; text-align: center; line-height: 50px;">4</p>
-</div>
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 544px; top: 334px; width: 130px; z-index: 10;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; text-align: center; margin: 0 0 6px 0;">仮説構築</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 11px; color: #666666; text-align: center; margin: 0; line-height: 1.5;">各論点に<br/>ベストエフォートの<br/>答えを仮置き</p>
-</div>
+      <div class="agenda-panel__row">
+        <span class="agenda-panel__index">06</span>
+        <span class="agenda-panel__item agenda-panel__item--soft">仮説を構築する</span>
+      </div>
 
-<!-- Arrow 4→5 -->
-<div data-object="true" data-object-type="icon" style="position: absolute; left: 656px; top: 284px; z-index: 6;">
-<i class="fas fa-chevron-right" style="color: #000000; font-size: 14px;"></i>
-</div>
+      <div class="agenda-panel__row">
+        <span class="agenda-panel__index">07</span>
+        <span class="agenda-panel__item agenda-panel__item--soft">論点と仮説を検証する</span>
+      </div>
 
-<!-- Step 5 -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 744px; top: 271px; width: 50px; height: 50px; background-color: #000000; border-radius: 50%; z-index: 5; display: flex; align-items: center; justify-content: center;">
-<p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; color: #ffffff; margin: 0; text-align: center; line-height: 50px;">5</p>
-</div>
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 704px; top: 334px; width: 130px; z-index: 10;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; text-align: center; margin: 0 0 6px 0;">仮説検証</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 11px; color: #666666; text-align: center; margin: 0; line-height: 1.5;">トレードオフを<br/>評価し仮説の<br/>正否を確かめる</p>
-</div>
+      <div class="agenda-panel__row">
+        <span class="agenda-panel__index">08</span>
+        <span class="agenda-panel__item agenda-panel__item--soft">問題解決におけるコミュニケーション</span>
+      </div>
 
-<!-- Arrow 5→6 -->
-<div data-object="true" data-object-type="icon" style="position: absolute; left: 816px; top: 284px; z-index: 6;">
-<i class="fas fa-chevron-right" style="color: #000000; font-size: 14px;"></i>
-</div>
+      <div class="agenda-panel__row agenda-panel__row--last">
+        <span class="agenda-panel__index">09</span>
+        <span class="agenda-panel__item agenda-panel__item--soft">まとめ</span>
+      </div>
+    </div>
+  </div>
 
-<!-- Step 6 -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 904px; top: 271px; width: 50px; height: 50px; background-color: #000000; border-radius: 50%; z-index: 5; display: flex; align-items: center; justify-content: center;">
-<p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; color: #ffffff; margin: 0; text-align: center; line-height: 50px;">6</p>
-</div>
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 864px; top: 334px; width: 130px; z-index: 10;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; text-align: center; margin: 0 0 6px 0;">解の伝達</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 11px; color: #666666; text-align: center; margin: 0; line-height: 1.5;">結論・行動・<br/>残論点を明示して<br/>伝える</p>
-</div>
-
-<!-- Arrow 6→7 -->
-<div data-object="true" data-object-type="icon" style="position: absolute; left: 976px; top: 284px; z-index: 6;">
-<i class="fas fa-chevron-right" style="color: #000000; font-size: 14px;"></i>
-</div>
-
-<!-- Step 7 -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 1064px; top: 271px; width: 50px; height: 50px; background-color: #000000; border-radius: 50%; z-index: 5; display: flex; align-items: center; justify-content: center;">
-<p style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; color: #ffffff; margin: 0; text-align: center; line-height: 50px;">7</p>
-</div>
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 1024px; top: 334px; width: 130px; z-index: 10;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; text-align: center; margin: 0 0 6px 0;">評価・学習</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 11px; color: #666666; text-align: center; margin: 0; line-height: 1.5;">結果を観察し<br/>プロセスと仮説の<br/>良し悪しを学習</p>
-</div>
-
-<!-- Feedback Loop Arrow (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 120px; top: 500px; width: 1040px; height: 60px; border: 2px dashed #999999; border-top: none; border-radius: 0 0 30px 30px; z-index: 3;"></div>
-<!-- Feedback Loop Arrow Head -->
-<div data-object="true" data-object-type="icon" style="position: absolute; left: 112px; top: 492px; z-index: 6;">
-<i class="fas fa-chevron-up" style="color: #999999; font-size: 14px;"></i>
-</div>
-<!-- Feedback Loop Label (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 480px; top: 545px; width: 320px; z-index: 10;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 13px; color: #999999; text-align: center; margin: 0;">このサイクルを何度も行き来する</p>
-</div>
-
-<!-- Key Message Box (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 80px; top: 610px; width: 1120px; height: 70px; background-color: #f5f5f5; border-left: 4px solid #000000; z-index: 3;"></div>
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 104px; top: 620px; width: 1080px; z-index: 10;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #000000; margin: 0 0 4px 0;">問題解決とは行動を決めること</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 13px; color: #333333; margin: 0;">論点（問い）に解を出す＝行動を見つけること。正しい行動が決まれば勝ち確。</p>
-</div>
-
-<!-- === STANDARDIZED FOOTER === -->
-<div style="position: absolute; left: 0; top: 660px; width: 1280px; height: 60px; background-color: #ffffff; border-top: 1px solid rgba(0,0,0,0.08); z-index: 50;"></div>
-<div style="position: absolute; left: 40px; top: 680px; z-index: 55;">
-<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 1.5px;">LOGICAL THINKING TRAINING</p>
-</div>
-<div style="position: absolute; right: 40px; top: 680px; z-index: 55;">
-<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 0.5px;">11 / 47</p>
-</div>
-<!-- === END FOOTER === -->
 </div>
 </body>
 </html>

@@ -1,98 +1,22 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>仮説を作る技法 - 再現性のある問題解決フレームワーク</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&amp;family=Space+Grotesk:wght@700&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        font-family: 'Noto Sans JP', sans-serif;
-        background-color: #ffffff;
-    }
-    .slide-container {
-        width: 1280px;
-        height: 720px;
-        position: relative;
-        overflow: hidden;
-        background-color: #ffffff;
-    }
-</style>
+<title>知見がないとき、どう進めるか</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
+<link href="./slides.css" rel="stylesheet"/>
+<script defer src="./slides.js"></script>
 </head>
 <body>
-<div class="slide-container">
-<!-- === STANDARDIZED HEADER === -->
-<div style="position: absolute; left: 0; top: 0; width: 1280px; height: 148px; background-color: #ffffff; z-index: 50;"></div>
-<div style="position: absolute; left: 40px; top: 16px; z-index: 55;">
-<p style="margin: 0; padding: 5px 18px; border: 2px solid #000; border-radius: 9999px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; color: #000; letter-spacing: 1px; background: #ffffff; display: inline-block;">PROBLEM SOLVING</p>
-</div>
-<div style="position: absolute; right: 40px; top: 22px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 12px; color: #999; letter-spacing: 0.5px;">第5章 仮説を構築する</p>
-</div>
-<div style="position: absolute; left: 80px; top: 52px; width: 1120px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 32px; color: #000; letter-spacing: 1px; line-height: 1.2;">仮の答えを出すことから逃げない</p>
-</div>
-<div style="position: absolute; left: 80px; top: 100px; width: 1120px; z-index: 55;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #888; line-height: 1.4;">仮の答えを出す規律を持つ</p>
-</div>
-<!-- === END HEADER === -->
-
-<!-- Background Dot Pattern (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 0px; top: 0px; width: 1280px; height: 720px; background-image: radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px); background-size: 20px 20px; opacity: 0.4; z-index: 1;"></div>
-<!-- Section Title and Subtitle (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 90px; width: 1120px; height: 80px; z-index: 10;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 36px; color: #000000; line-height: 1.1; margin: 0 0 12px 0; letter-spacing: 1px;">仮説を作る技法</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #333333; line-height: 1.5; margin: 0;">2つのアプローチ</p>
-</div>
-<!-- Table Header Background (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 80px; top: 190px; width: 1120px; height: 44px; background-color: #000000; z-index: 1;"></div>
-<!-- Table Row 1 Background (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 80px; top: 234px; width: 1120px; height: 100px; background-color: #f5f5f5; z-index: 1;"></div>
-<!-- Table Row 2 Background (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 80px; top: 334px; width: 1120px; height: 90px; background-color: #ffffff; z-index: 1;"></div>
-<!-- Table Content (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 190px; width: 1120px; height: 234px; z-index: 10;">
-<!-- Header Text -->
-<div style="display: flex; align-items: center; height: 44px; padding: 0 16px;">
-<div style="width: 280px;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #ffffff; margin: 0;">アプローチ</p></div>
-<div style="width: 400px;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #ffffff; margin: 0;">特徴</p></div>
-<div style="flex: 1;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #ffffff; margin: 0;">向いている場面</p></div>
-</div>
-<!-- Row 1 -->
-<div style="display: flex; align-items: center; height: 100px; padding: 0 16px;">
-<div style="width: 280px;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; margin: 0;">アナリティカル思考<br/><span style="font-size: 13px; font-weight: 400;">（分析的）</span></p></div>
-<div style="width: 400px;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #333333; margin: 0; line-height: 1.6;">・網羅性が高い<br/>・ロジカルに選択肢を列挙・比較</p></div>
-<div style="flex: 1;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #333333; margin: 0; line-height: 1.6;">・選択肢の評価<br/>・定量分析<br/>・意思決定の正当化</p></div>
-</div>
-<!-- Row 2 -->
-<div style="display: flex; align-items: center; height: 90px; padding: 0 16px;">
-<div style="width: 280px;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #000000; margin: 0;">コンセプチュアル思考<br/><span style="font-size: 13px; font-weight: 400;">（概念的）</span></p></div>
-<div style="width: 400px;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #333333; margin: 0; line-height: 1.6;">・斬新な切り口<br/>・直感・アナロジー</p></div>
-<div style="flex: 1;"><p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #333333; margin: 0; line-height: 1.6;">・新アプローチ発見<br/>・既存枠組みを超える</p></div>
-</div>
-</div>
-<!-- Additional Section Background (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 80px; top: 454px; width: 1120px; height: 120px; border-left: 6px solid #000000; background-color: rgba(236,236,236,0.5); z-index: 1;"></div>
-<!-- Additional Section (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 104px; top: 464px; width: 1080px; height: 100px; z-index: 10;">
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #000000; margin: 0 0 10px 0;">使い分けの原則</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 15px; color: #333333; margin: 0 0 6px 0; line-height: 1.5;">・アナリティカルのみ → 正しいが面白くない<br/>・コンセプチュアルのみ → 面白いが穴だらけ</p>
-<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 15px; color: #000000; margin: 0;">・両者を意識的に使い分ける</p>
-</div>
-<!-- === STANDARDIZED FOOTER === -->
-<div style="position: absolute; left: 0; top: 660px; width: 1280px; height: 60px; background-color: #ffffff; border-top: 1px solid rgba(0,0,0,0.08); z-index: 50;"></div>
-<div style="position: absolute; left: 40px; top: 680px; z-index: 55;">
-<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 1.5px;">LOGICAL THINKING TRAINING</p>
-</div>
-<div style="position: absolute; right: 40px; top: 680px; z-index: 55;">
-<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 11px; color: #bbb; letter-spacing: 0.5px;">29 / 47</p>
-</div>
-<!-- === END FOOTER === -->
+<div class="slide-container slide-theme-paper slide-center-title" data-slide-kind="center-title" data-footer="standard" data-footer-page="47">
+  <div class="content">
+    <div class="inner">
+      <p class="chapter">HYPOTHESIS</p>
+      <p class="title">知見がないとき、どう進めるか</p>
+      <p class="subtitle">浅い答えを急がず、探索で種を拾い、仮置きで前に進める</p>
+    </div>
+  </div>
 </div>
 </body>
 </html>

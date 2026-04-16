@@ -32,9 +32,28 @@ python3 tools/slide_governance.py qa --report docs/ai-slide-system/qa-report.md
 - `data-slide-kind` の一致
 - kind ごとの required attrs / markers
 - page number drift
+- slide title drift
 - agenda drift
 - asset existence
 - stale `TOTAL_SLIDES`
+
+## Vertical rhythm drift の spot check
+
+deterministic QA 本体では完全検証しきれないが、semantic spacing drift は最低限ここまで確認する。
+
+```bash
+rg -n "(eyebrow|kicker|label|num|index|focus|head|title)[^\\n]*margin-bottom:[0-9]+px|margin:0 0 [0-9]+px[^\\n]*(eyebrow|kicker|label|num|index|focus|head|title)" slide_*.html slides.css
+```
+
+結果が空でない場合は、`slides.css` token か parent `gap / row-gap` へ寄せる。  
+lead-in に対する `padding-bottom` も drift とみなす。
+
+optical gap の指定がある場合は、追加でこれを確認する。
+
+- child text の `margin-bottom` で距離を持っていないか
+- parent stack が `gap / row-gap` を持っているか
+- 補正が必要なら local custom property (`--stack-optical-comp`) に閉じているか
+- 最終値は screenshot で確認されているか
 
 ## Section-first の扱い
 
@@ -47,6 +66,7 @@ python3 tools/slide_governance.py qa --report docs/ai-slide-system/qa-report.md
 ```bash
 python3 tools/slide_governance.py sync
 python3 tools/slide_governance.py sync-slide-kinds
+python3 tools/slide_governance.py sync-titles
 python3 tools/slide_governance.py sync-agendas
 ```
 

@@ -30,9 +30,9 @@ def make_header(bg: str, pill_bg: str, pill_text: str, chapter: str, title: str,
 <div style="position: absolute; right: 80px; top: var(--header-pill-top); z-index: 55;">
 <p style="margin: 0; padding: 3px 12px; border: 2px solid #000; border-radius: 9999px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: var(--font-size-header-pill); color: #000; letter-spacing: 0.8px; background: {pill_bg}; display: inline-block; white-space: nowrap;">{pill_text}</p>
 </div>
-<div style="position: absolute; left: 80px; top: var(--header-text-top); width: 960px; z-index: 55; display: flex; flex-direction: column; align-items: flex-start; gap: var(--header-text-gap);">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: var(--font-size-header-chapter); color: #999; letter-spacing: 0.5px; white-space: nowrap;">{chapter}</p>
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: var(--font-size-header-title); color: #000; letter-spacing: var(--letter-spacing-header-title); line-height: var(--line-height-header-title); white-space: nowrap;">{title}</p>
+<div style="position: absolute; left: 80px; top: var(--header-text-top); width: 960px; z-index: 55;">
+<p style="margin: 0 0 var(--space-stack-lead-title); font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: var(--font-size-header-chapter); color: #999; letter-spacing: 0.5px; white-space: nowrap;">{chapter}</p>
+<p style="margin: 0 0 var(--space-stack-title-body); font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: var(--font-size-header-title); color: #000; letter-spacing: var(--letter-spacing-header-title); line-height: var(--line-height-header-title); white-space: nowrap;">{title}</p>
 <p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: var(--font-size-header-subtitle); color: #888; line-height: var(--line-height-header-subtitle); white-space: nowrap;">{subtitle}</p>
 </div>
 <!-- === END HEADER === -->"""

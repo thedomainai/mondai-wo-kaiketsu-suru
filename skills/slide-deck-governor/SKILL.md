@@ -38,5 +38,14 @@ header/footer を手書き DOM で増やさず、`data-header-*` と `data-foote
 5. custom kind を無秩序に増やさない  
 custom は `cover / intro / summary / closing / cta / qa` に閉じる。分類不能な custom は作らない。
 
-6. 変更後は QA を通す  
-少なくとも `python3 tools/slide_governance.py qa` を走らせる。
+6. 変更後は sync と QA を通す  
+少なくとも `python3 tools/slide_governance.py sync` で title / agenda / index / page metadata を同期し、`python3 tools/slide_governance.py qa` を走らせる。
+
+7. 削除や差し替えの前に page と title を照合する  
+`P65` のような依頼は filename と同一視しない。削除・差し替え・移動の前に `python3 tools/slide_governance.py resolve-slide --page P65 --title "..."` を実行し、page label と title が同じ slide を指していることを確認する。
+
+8. 同種要素は deck 横断で比較する  
+`eyebrow / kicker / label / num / index -> title / head -> body / copy / text` のような semantic stack は、対象 slide 単体ではなく deck 全体の同種要素を見てから揃える。1 枚だけを局所最適化しない。
+
+9. 視覚距離の指定は optical gap として扱う  
+「48px 空ける」のような依頼は raw `margin-bottom` の値ではなく、文字同士の見た目距離の指定とみなす。親 stack の `gap / row-gap` を責任者にし、必要なら local compensation を持つ。

@@ -1,4 +1,68 @@
 <!DOCTYPE html>
-<html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>第05章 論点を分解する</title><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/><link href="./slides.css" rel="stylesheet"/><script defer src="./slides.js"></script></head><body>
-<div class="slide-container slide-theme-mist" data-slide-kind="divider" data-background="halftone" data-divider-brand="ロジカル・シンキング研修" data-divider-index="05" data-divider-kicker="Chapter 05" data-divider-title="論点を分解する" data-divider-subtitle="大論点を小論点にほどく"></div></body>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ポイント③: 論点の文末には必ず「べき」を入れる</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
+<link href="./slides.css" rel="stylesheet"/>
+<script defer src="./slides.js"></script>
+<style>
+.beki-stage{position:absolute;left:80px;top:164px;width:1096px;height:472px;display:grid;grid-template-rows:auto minmax(0,1fr) auto;row-gap:18px}
+.beki-premise{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:20px;align-items:center;padding:14px 22px;border-radius:8px;background:rgba(0,0,0,.04)}
+.beki-premise__label{margin:0;padding:6px 14px;border-radius:6px;background:var(--soft-black);color:#fff;font-family:"Space Grotesk",sans-serif;font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase;white-space:nowrap}
+.beki-premise__text{margin:0;font-size:16px;font-weight:900;line-height:1.58}
+.beki-grid{display:grid;grid-template-columns:minmax(0,1fr) 36px minmax(0,1fr);column-gap:12px;align-items:stretch}
+.beki-col{display:grid;grid-template-rows:auto repeat(4,minmax(0,1fr));row-gap:0}
+.beki-col--good{border:2px solid var(--soft-black);border-radius:8px;overflow:hidden;background:#fff}
+.beki-col__head{padding:11px 18px;border-radius:8px 8px 0 0;font-size:14px;font-weight:900;line-height:1.45;text-align:center}
+.beki-col__head--bad{background:rgba(0,0,0,.06);color:rgba(0,0,0,.56)}
+.beki-col__head--good{background:var(--soft-black);color:#fff}
+.beki-cell{display:flex;align-items:center;padding:10px 18px;font-size:14.5px;line-height:1.6;border-bottom:1px solid rgba(0,0,0,.06)}
+.beki-cell--bad{color:rgba(0,0,0,.6);background:rgba(0,0,0,.015)}
+.beki-cell--good{font-weight:700;color:var(--soft-black);background:#fff;border-left:none;border-right:none}
+.beki-col--good .beki-cell--good:last-child{border-bottom:none}
+.beki-arrow-col{display:flex;flex-direction:column;justify-content:center;align-items:center;padding-top:34px}
+.beki-arrow{display:flex;align-items:center;justify-content:center;width:32px;height:32px}
+.beki-arrow__head{width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:12px solid rgba(0,0,0,.25)}
+.beki-footer{padding:12px 18px;border-top:1px solid rgba(0,0,0,.1)}
+.beki-footer p{margin:0;font-size:15px;font-weight:900;line-height:1.68}
+</style>
+</head>
+<body>
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第04章 論点を定義する" data-header-title="ポイント③: 論点の文末には必ず「べき」を入れる" data-header-subtitle="行動を決める問いになっているかの判定基準は「べき」があるかないか" data-footer="standard" data-footer-page="33">
+<div class="beki-stage">
+  <div class="beki-premise">
+    <p class="beki-premise__label">Principle</p>
+    <p class="beki-premise__text">問いの目的は、次に取るべき行動を決めること。行動に結びつかない問いは、分かった気になって終わる。</p>
+  </div>
+
+  <div class="beki-grid">
+    <div class="beki-col">
+      <div class="beki-col__head beki-col__head--bad">なんちゃって論点</div>
+      <div class="beki-cell beki-cell--bad">A社は買収対象として魅力的なのか？</div>
+      <div class="beki-cell beki-cell--bad">新製品のターゲット顧客セグメントは誰か？</div>
+      <div class="beki-cell beki-cell--bad">どのようにすれば売上は伸びるか？</div>
+      <div class="beki-cell beki-cell--bad">市場はどのくらい伸びてきたのか？</div>
+    </div>
+
+    <div class="beki-arrow-col">
+      <div class="beki-arrow"><div class="beki-arrow__head"></div></div>
+    </div>
+
+    <div class="beki-col beki-col--good">
+      <div class="beki-col__head beki-col__head--good">問題を解決する論点</div>
+      <div class="beki-cell beki-cell--good">A社を買収するべきか？</div>
+      <div class="beki-cell beki-cell--good">新製品はどの顧客セグメントを狙うべきか？</div>
+      <div class="beki-cell beki-cell--good">売上を伸ばすためには何をするべきか？</div>
+      <div class="beki-cell beki-cell--good">市場はどのくらい伸びると想定するべきか？</div>
+    </div>
+  </div>
+
+  <div class="beki-footer">
+    <p>苦しくても「べき」を入れる。この規律に例外はない。問いに「べき」がなければ、その問いは意思決定につながっていない。</p>
+  </div>
+</div>
+</div>
+</body>
 </html>

@@ -3,24 +3,45 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>アインシュタインの言葉</title>
+<title>問題解決とは論点に対して答えを出すこと</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
 <style>
-
-.quote-wrap{position:absolute;left:140px;top:190px;width:1000px;display:flex;flex-direction:column;align-items:center;text-align:center;}
-.quote-mark{margin:0;color:rgba(0,0,0,0.12);font-family:"Space Grotesk",sans-serif;font-size:140px;font-weight:900;line-height:0.8;}
-.quote-body{margin:0 0 18px;font-size:40px;font-weight:900;line-height:1.45;letter-spacing:0.5px;}
-.quote-note{margin:0 0 28px;font-size:16px;color:rgba(0,0,0,0.46);line-height:1.6;}
-.quote-bar{width:100%;padding:20px 24px;border-radius:8px;background:rgba(0,0,0,0.04);}
-.quote-bar p{margin:0;font-size:20px;font-weight:900;line-height:1.8;}
-
+.logic-stage{position:absolute;left:250px;top:150px;bottom:88px;width:700px;display:flex;align-items:center}
+.logic-chain{display:grid;grid-template-columns:1fr;grid-template-rows:auto 34px auto 34px auto;align-items:stretch}
+.logic-card{min-height:104px;padding:18px 20px 16px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff;display:grid;grid-template-rows:auto auto 1fr;align-content:start}
+.logic-card__label{margin:0;color:rgba(0,0,0,.34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+.logic-card__title{margin:10px 0 0;font-size:13px;font-weight:900;line-height:1.5;color:rgba(0,0,0,.72)}
+.logic-card__statement{margin:14px 0 0;font-size:22px;font-weight:900;line-height:1.45}
+.logic-card--conclusion{border:2px solid rgba(0,0,0,.82)}
+.logic-card--conclusion .logic-card__statement{font-size:24px}
+.logic-arrow{display:flex;align-items:center;justify-content:center}
+.logic-arrow::before{content:"";width:34px;height:16px;clip-path:polygon(0 0,100% 0,50% 100%);background:#1a1a1a}
 </style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第03章 問題解決の概要" data-header-title="アインシュタインの言葉" data-header-subtitle="答えの前に、問いの置き方に時間を使う" data-footer="standard" data-footer-page="23">
-<div class="quote-wrap"><p class="quote-mark">“</p><p class="quote-body">もし1時間で問題を解くなら、55分を問題の理解に使い、5分を解決に使う。</p><p class="quote-note">アインシュタインに帰属するとされる有名な言葉</p><div class="quote-bar"><p>言いたいことは、解答の巧拙より先に、何を問うかが勝負を決めるということである。</p></div></div>
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第03章 問題解決の概要" data-header-title="問題解決とは論点に対して答えを出すこと" data-header-subtitle="論点に答えることは、次の行動を決めることに等しい" data-footer="standard" data-footer-page="24">
+<main class="logic-stage">
+<section class="logic-chain" aria-label="problem-solving-syllogism">
+<article class="logic-card">
+<p class="logic-card__label">Premise 01</p>
+<p class="logic-card__title">問題解決の定義</p>
+<p class="logic-card__statement">問題解決とは、論点に対して答えを出すことである</p>
+</article>
+<div class="logic-arrow" aria-hidden="true"></div>
+<article class="logic-card">
+<p class="logic-card__label">Premise 02</p>
+<p class="logic-card__title">論点の定義</p>
+<p class="logic-card__statement">論点は、行動を起こすための問いである</p>
+</article>
+<div class="logic-arrow" aria-hidden="true"></div>
+<article class="logic-card logic-card--conclusion">
+<p class="logic-card__label">Conclusion</p>
+<p class="logic-card__title">導かれる結論</p>
+<p class="logic-card__statement">問題解決とは、次に取るべき行動を決めることである</p>
+</article>
 </div>
+</main>
 </body>
 </html>

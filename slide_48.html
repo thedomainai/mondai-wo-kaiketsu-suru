@@ -1,75 +1,41 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>仮説思考の罠：知見がないときどうするか</title>
-<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700;900&amp;display=swap" rel="stylesheet"/>
+<title>Deep Dive：情報の海に潜る</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
+<link href="./slides.css" rel="stylesheet"/>
+<script defer src="./slides.js"></script>
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #ffffff;
-    }
-    .slide-container {
-        width: 1280px;
-        height: 720px;
-        position: relative;
-        overflow: hidden;
-        background-color: #ffffff;
-        font-family: 'Noto Sans JP', sans-serif;
-    }
+.stage{position:absolute;left:80px;top:164px;width:1120px;display:flex;flex-direction:column;gap:18px}.kicker{margin:0;color:#5a4970;font-size:15px;font-weight:900;line-height:1.55}.grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px}.panel{min-height:330px;padding:24px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff}.panel__title{margin:0 0 16px;font-size:24px;font-weight:900;line-height:1.4}.items{display:grid;gap:12px}.item{padding-top:12px;border-top:1px solid rgba(0,0,0,.08)}.item:first-child{padding-top:0;border-top:none}.item p{margin:0}.item__head{margin-bottom:4px;font-size:16px;font-weight:900;line-height:1.55}.item__text{color:rgba(0,0,0,.7);font-size:14px;line-height:1.72}.rule{margin-top:16px;padding:14px 18px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff}.rule p{margin:0;font-size:17px;font-weight:900;line-height:1.65}
 </style>
 </head>
 <body>
-<div class="slide-container">
-<!-- Background Dot Pattern (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 0px; top: 0px; width: 1280px; height: 720px; background-image: radial-gradient(circle, rgba(236,236,236,0.5) 1px, transparent 1px); background-size: 20px 20px; z-index: 1;"></div>
-<!-- Gray Banner (Shape) -->
-<div data-object="true" data-object-type="shape" style="position: absolute; left: 60px; top: 0px; width: 1220px; height: 280px; background-color: #ececec; clip-path: polygon(0 0, 100% 0, 100% 100%, 25% 100%); z-index: 1;"></div>
-<!-- Company Pill (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 32px; width: 240px; height: 40px; z-index: 10; display: flex; align-items: center;">
-<p style="margin: 0; padding: 6px 24px; border: 2px solid #000000; border-radius: 9999px; font-size: 14px; font-weight: 700; color: #000000; letter-spacing: 1px; background-color: #ffffff;">PROBLEM SOLVING</p>
-</div>
-<!-- Section Title (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 180px; width: 1120px; height: 100px; z-index: 10;">
-<p style="margin: 0; font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 38px; color: #000000; line-height: 1.1; letter-spacing: 2px;">仮説思考の罠</p>
-<p style="margin: 8px 0 0 0; font-size: 20px; font-weight: 700; color: #333333;">知見がないときどうするか</p>
-</div>
-<!-- Body Content (Textbox) -->
-<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 320px; width: 1000px; height: 350px; z-index: 10;">
-<div style="background-color: #ececec; padding: 12px 24px; border-left: 8px solid #000000; margin-bottom: 24px; border-radius: 8px;">
-<p style="margin: 0; font-size: 18px; font-weight: 900; color: #000000;">
-知見がない ＝ 仮説が浅くなるリスク
-</p>
-</div>
-<p style="margin: 0 0 14px 0; font-size: 18px; font-weight: 600; color: #666666; line-height: 1.5;">
-<span style="color: #000000; font-size: 17px; font-weight: 900; margin-right: 8px;">×</span> 浅い仮説を無理やり出す
-</p>
-<p style="margin: 0 0 12px 0; font-size: 18px; font-weight: 700; color: #000000; line-height: 1.5;">
-<span style="color: #000000; font-size: 17px; font-weight: 900; margin-right: 8px;">○</span> 論点のレベルを上げる
-</p>
-<div style="padding-left: 40px; margin-top: 12px;">
-<p style="margin: 0 0 12px 0; font-size: 18px; font-weight: 700; color: #333333;">
-「筋のいい仮説を構築するには何をするべきか？」
-</p>
-<p style="margin: 0 0 8px 20px; font-size: 18px; font-weight: 600; color: #555555; display: flex; align-items: center;">
-<span style="display: inline-block; width: 6px; height: 6px; background-color: #000000; border-radius: 50%; margin-right: 12px;"></span>
-詳しい人に聞く
-</p>
-<p style="margin: 0 0 0 20px; font-size: 18px; font-weight: 600; color: #555555; display: flex; align-items: center;">
-<span style="display: inline-block; width: 6px; height: 6px; background-color: #000000; border-radius: 50%; margin-right: 12px;"></span>
-事例を調べる
-</p>
-</div>
-</div>
-<!-- Navigation Arrow (Icon) -->
-<div data-object="true" data-object-type="icon" style="position: absolute; left: 1192px; top: 640px; width: 48px; height: 48px; background-color: #000000; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 6px rgba(0,0,0,0.2); z-index: 10;">
-<i class="fas fa-chevron-right" style="color: #ffffff; font-size: 20px;"></i>
-</div>
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第06章 仮説を構築する" data-header-title="Deep Dive：情報の海に潜る" data-header-subtitle="知見がないときは、広く浴びてから仮の筋をつかみにいく" data-footer="standard" data-footer-page="48">
+  <div class="stage">
+    <p class="kicker">知見がないまま机上でこねても限界がある。まずは情報の海に潜り、感じた違和感や共通項から仮説の種を拾う。</p>
+    <div class="grid">
+      <section class="panel">
+        <p class="panel__title">潜るときに見るもの</p>
+        <div class="items">
+          <div class="item"><p class="item__head">論点は片隅に置く</p><p class="item__text">最初から正解を探しにいかず、まず何が起きているかを浴びる。</p></div>
+          <div class="item"><p class="item__head">素朴な感情を拾う</p><p class="item__text">面白い、変だ、うまくいっていない、といった違和感は仮説の起点になる。</p></div>
+          <div class="item"><p class="item__head">似ているものを横に並べる</p><p class="item__text">成功例、失敗例、競合、他業界を並べると、構造の差が見えやすくなる。</p></div>
+          <div class="item"><p class="item__head">予想外の接続点を探す</p><p class="item__text">一見関係ない事実同士がつながる瞬間に、仮説の骨格が生まれる。</p></div>
+        </div>
+      </section>
+      <section class="panel">
+        <p class="panel__title">制御を失わないためのルール</p>
+        <div class="items">
+          <div class="item"><p class="item__head">時間を切る</p><p class="item__text">無限に潜らない。今日は何を拾うかを決めて潜る。</p></div>
+          <div class="item"><p class="item__head">戻る場所を持つ</p><p class="item__text">論点、仮説、前提のどれに効く情報なのかを都度メモしておく。</p></div>
+          <div class="item"><p class="item__head">途中でも仮の答えを置く</p><p class="item__text">情報が揃い切るのを待たず、いま言える筋を一度まとめる。</p></div>
+        </div>
+      </section>
+    </div>
+    <div class="rule"><p>Deep Dive は「調べ続ける」ことではない。仮説の種を拾い、次の一手に変えるための探索である。</p></div>
+  </div>
 </div>
 </body>
 </html>

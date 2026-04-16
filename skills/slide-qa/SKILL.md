@@ -42,7 +42,7 @@ python3 tools/slide_governance.py qa --report docs/ai-slide-system/qa-report.md
 deterministic QA 本体では完全検証しきれないが、semantic spacing drift は最低限ここまで確認する。
 
 ```bash
-rg -n "(eyebrow|kicker|label|num|index|focus|head|title)[^\\n]*margin-bottom:[0-9]+px|margin:0 0 [0-9]+px[^\\n]*(eyebrow|kicker|label|num|index|focus|head|title)" slide_*.html slides.css
+rg -n "(eyebrow|kicker|label|num|index|focus|head|title)[^\\n]*margin-bottom:[0-9]+px|margin:0 0 [0-9]+px[^\\n]*(eyebrow|kicker|label|num|index|focus|head|title)" slides/slide_*.html slides/slides.css
 ```
 
 結果が空でない場合は、`slides.css` token か parent `gap / row-gap` へ寄せる。  

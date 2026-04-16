@@ -1,0 +1,8 @@
+# Build artifacts
+*.pdf
+
+# OS files
+.DS_Store
+
+# Temporary files
+tmp/

@@ -41,6 +41,7 @@ kinds:
       - slides.js
     allowed_backgrounds:
       - halftone
+      - grain
       - none
   agenda:
     runtime_shape: agenda
@@ -123,7 +124,6 @@ kinds:
       - data-slide-kind
     required_markers:
       - CLOSING MESSAGE
-      - LOGICAL THINKING TRAINING
       - slides.css
       - slides.js
     allowed_backgrounds:
@@ -135,7 +135,6 @@ kinds:
       - data-slide-kind
     required_markers:
       - ACTION
-      - LOGICAL THINKING TRAINING
       - slides.css
       - slides.js
     allowed_backgrounds:
@@ -151,6 +150,7 @@ kinds:
       - slides.js
     allowed_backgrounds:
       - none
+      - halftone
     preferred_layout:
       wrapper: main.content-stage
       notes:

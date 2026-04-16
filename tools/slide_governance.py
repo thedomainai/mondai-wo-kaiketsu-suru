@@ -15,6 +15,7 @@ import yaml
 
 
 ROOT = Path(__file__).resolve().parents[1]
+SLIDES_DIR = ROOT / "slides"
 INDEX_PATH = ROOT / "index.html"
 DOCS_DIR = ROOT / "docs" / "ai-slide-system"
 MANIFEST_PATH = DOCS_DIR / "deck-manifest.yaml"
@@ -289,7 +290,7 @@ def normalize_markup_text(text: str) -> str:
     return normalize_title(HTML_TAG_RE.sub(" ", text))
 
 
-def discover_slide_paths(root: Path = ROOT) -> list[Path]:
+def discover_slide_paths(root: Path = SLIDES_DIR) -> list[Path]:
     slide_paths = sorted(root.glob(SLIDE_GLOB), key=slide_sort_key)
     invalid = [path.name for path in slide_paths if not SLIDE_NAME_RE.fullmatch(path.name)]
     if invalid:
@@ -312,7 +313,7 @@ def slide_sort_key(slide_path: Path) -> int:
     return int(match.group(1)) if match else 10**9
 
 
-def numeric_slide_files(root: Path = ROOT) -> list[Path]:
+def numeric_slide_files(root: Path = SLIDES_DIR) -> list[Path]:
     return sorted(
         (path for path in root.glob(SLIDE_GLOB) if NUMERIC_SLIDE_NAME_RE.fullmatch(path.name)),
         key=slide_sort_key,
@@ -1006,7 +1007,7 @@ def ensure_attr(tag: str, attr: str, value: str) -> str:
     return f'{tag} {attr}="{value}"'
 
 
-def sync_slide_kinds(root: Path = ROOT, manifest: dict[str, Any] | None = None) -> int:
+def sync_slide_kinds(root: Path = SLIDES_DIR, manifest: dict[str, Any] | None = None) -> int:
     manifest = manifest or load_yaml(MANIFEST_PATH)
     updated = 0
     for slide in manifest["slides"]:
@@ -1023,7 +1024,7 @@ def sync_slide_kinds(root: Path = ROOT, manifest: dict[str, Any] | None = None) 
     return updated
 
 
-def sync_agenda_slides(root: Path = ROOT, manifest: dict[str, Any] | None = None) -> int:
+def sync_agenda_slides(root: Path = SLIDES_DIR, manifest: dict[str, Any] | None = None) -> int:
     manifest = manifest or load_yaml(MANIFEST_PATH)
     updated = 0
     for slide in manifest["slides"]:
@@ -1042,7 +1043,7 @@ def sync_agenda_slides(root: Path = ROOT, manifest: dict[str, Any] | None = None
     return updated
 
 
-def sync_slide_titles(root: Path = ROOT, manifest: dict[str, Any] | None = None) -> int:
+def sync_slide_titles(root: Path = SLIDES_DIR, manifest: dict[str, Any] | None = None) -> int:
     manifest = manifest or load_yaml(MANIFEST_PATH)
     updated = 0
     for slide in manifest["slides"]:
@@ -1063,7 +1064,7 @@ def render_index_slides(manifest: dict[str, Any]) -> str:
     for slide in manifest["slides"]:
         title = json.dumps(slide["index_title"], ensure_ascii=False)
         slide_type = json.dumps(slide["index_type"], ensure_ascii=False)
-        slide_file = json.dumps(slide["file"], ensure_ascii=False)
+        slide_file = json.dumps("slides/" + slide["file"], ensure_ascii=False)
         lines.append(
             f"  {{ title: {title}, type: {slide_type}, file: {slide_file} }},"
         )
@@ -1092,7 +1093,7 @@ def sync_index_html(root: Path = ROOT, manifest: dict[str, Any] | None = None) -
     return False
 
 
-def sync_footer_page_numbers(root: Path = ROOT, manifest: dict[str, Any] | None = None) -> int:
+def sync_footer_page_numbers(root: Path = SLIDES_DIR, manifest: dict[str, Any] | None = None) -> int:
     manifest = manifest or load_yaml(MANIFEST_PATH)
     updated_count = 0
     footer_visible_kinds = {"content", "intro", "center-title", "summary"}
@@ -1397,22 +1398,23 @@ def audit_deck(root: Path = ROOT) -> list[Finding]:
     manifest = load_yaml(MANIFEST_PATH)
     kind_specs = load_kind_specs()
     legacy_map = load_legacy_map()
+    slides_dir = root / "slides"
     findings: list[Finding] = []
-    findings.extend(validate_inventory(root, manifest))
+    findings.extend(validate_inventory(slides_dir, manifest))
     findings.extend(validate_index_html(root, manifest))
 
     for slide in manifest["slides"]:
-        path = root / slide["file"]
+        path = slides_dir / slide["file"]
         text = read_text(path)
         kind_spec = kind_specs[slide["kind"]]
-        findings.extend(validate_kind_contract(slide, text, kind_spec, root))
+        findings.extend(validate_kind_contract(slide, text, kind_spec, slides_dir))
         findings.extend(validate_slide_title(slide, text))
         findings.extend(validate_page_number(slide, text))
         findings.extend(validate_agenda_source(slide, text))
         findings.extend(validate_vertical_rhythm_tokens(slide["file"], text))
 
-    findings.extend(validate_vertical_rhythm_tokens("slides.css", read_text(root / "slides.css")))
-    findings.extend(validate_stale_totals(root, manifest, legacy_map))
+    findings.extend(validate_vertical_rhythm_tokens("slides.css", read_text(slides_dir / "slides.css")))
+    findings.extend(validate_stale_totals(root / "scripts", manifest, legacy_map))
     return findings
 
 
@@ -1451,11 +1453,12 @@ def write_manifest_bundle(root: Path = ROOT) -> None:
 def sync_repo(root: Path = ROOT) -> None:
     write_manifest_bundle(root)
     manifest = load_yaml(MANIFEST_PATH)
-    sync_slide_kinds(root, manifest)
-    sync_slide_titles(root, manifest)
-    sync_agenda_slides(root, manifest)
+    slides_dir = root / "slides"
+    sync_slide_kinds(slides_dir, manifest)
+    sync_slide_titles(slides_dir, manifest)
+    sync_agenda_slides(slides_dir, manifest)
     sync_index_html(root, manifest)
-    sync_footer_page_numbers(root, manifest)
+    sync_footer_page_numbers(slides_dir, manifest)
 
 
 def write_qa_report(root: Path = ROOT, report_path: Path = DEFAULT_QA_REPORT_PATH) -> list[Finding]:

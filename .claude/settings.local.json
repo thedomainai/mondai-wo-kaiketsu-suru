@@ -4,7 +4,17 @@
       "Bash(ls:*)",
       "Bash(python3:*)",
       "Bash(lsof:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(file:*)",
+      "Bash(for f in /tmp/slides/slide_*.html)",
+      "Bash(do)",
+      "Bash(if grep -q \"<style>\" \"$f\":*)",
+      "Bash(then)",
+      "Bash(fi)",
+      "Bash(done)",
+      "Bash({ echo \"=== FONT SIZES FROM slides.css ===\" grep -o 'font-size:[^;]*' ../slides.css)",
+      "Bash(kill:*)",
+      "Bash(grep:*)"
     ]
   }
 }

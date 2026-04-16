@@ -12,23 +12,23 @@
 </style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第07章 論点と仮説を検証する" data-header-title="何を先に検証するか" data-header-subtitle="設計した検証案の中から、全体を左右する不確実性に先に当てる" data-footer="standard" data-footer-page="53">
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第07章 論点と仮説を検証する" data-header-title="何を先に検証するか" data-header-subtitle="外れたときの影響と、検証価値の高いものから当てる" data-footer="standard" data-footer-page="53">
   <div class="stage">
-    <p class="kicker">検証案が複数あるなら、全部を同時には当てられない。だからこそ、外したときの影響が大きく、まだ確信が持てない仮説から先に確かめる。</p>
+    <p class="kicker">検証案が複数あるなら、全部を同時には当てられない。だからこそ、外れたときの影響が大きく、かつ追加の検証で判断が更新されるものから先に確かめる。</p>
     <div class="matrix-wrap">
       <div class="axis-note">
-        <p>優先順位は、<br/>「重要か」と<br/>「まだ怪しいか」で決める<span>気になる順ではなく、外すと痛い順に検証資源を配る。</span></p>
+        <p>優先順位は、<br/>「外れると痛いか」と<br/>「確かめる価値があるか」で決める<span>検証価値とは、追加の証拠で判断がどれだけ更新されるかのこと。</span></p>
       </div>
       <div class="matrix">
-        <p class="y-axis">BUSINESS IMPACT</p>
-        <p class="x-axis">UNCERTAINTY</p>
-        <div class="quad quad--other tl"><p class="quad__label">High Impact / Low Uncertainty</p><p class="quad__title">重要だが、ほぼ見えている</p><p class="quad__text">軽く確認すればよい。ここに時間を使いすぎない。</p></div>
-        <div class="quad quad--focus"><p class="quad__label">Center Pin</p><p class="quad__title">重要で、まだ怪しい</p><p class="quad__text">ここを外すと全体が崩れる。最初に検証して次の論点を決める。</p></div>
-        <div class="quad quad--other bl"><p class="quad__label">Low Impact / Low Uncertainty</p><p class="quad__title">後回しでよい</p><p class="quad__text">確認しても意思決定をほとんど動かさない。</p></div>
-        <div class="quad quad--other br"><p class="quad__label">Low Impact / High Uncertainty</p><p class="quad__title">面白いが、今は脇に置く</p><p class="quad__text">不確実でも、全体を左右しないなら優先度は上げない。</p></div>
+        <p class="y-axis">外れたときの影響</p>
+        <p class="x-axis">検証価値</p>
+        <div class="quad quad--other tl"><p class="quad__label">High Impact / Low Validation Value</p><p class="quad__title">重要だが、今これ以上は分かりにくい</p><p class="quad__text">追加で見ても判断はあまり動かない。前提を明示して進める。</p></div>
+        <div class="quad quad--focus"><p class="quad__label">Center Pin</p><p class="quad__title">重要で、確かめる価値が高い</p><p class="quad__text">ここを押さえると結論が固まる。最初に検証する。</p></div>
+        <div class="quad quad--other bl"><p class="quad__label">Low Impact / Low Validation Value</p><p class="quad__title">後回しでよい</p><p class="quad__text">追加で見ても全体の判断はほとんど動かない。優先度は低い。</p></div>
+        <div class="quad quad--other br"><p class="quad__label">Low Impact / High Validation Value</p><p class="quad__title">今すぐの優先度は高くない</p><p class="quad__text">追加で分かることはあるが、直近の意思決定を大きくは左右しない。</p></div>
       </div>
     </div>
-    <div class="summary"><p>検証は「気になること」ではなく、「全体を左右する不確実性」から潰す。</p></div>
+    <div class="summary"><p>先に当てるべきなのは、「外れると痛く、確かめることで判断が動く」仮説である。</p></div>
   </div>
 </div>
 </body>

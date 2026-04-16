@@ -1,44 +1,7 @@
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>4-1. 結論：曖昧性を排除する</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
-<link href="./slides.css" rel="stylesheet"/>
-<script defer src="./slides.js"></script>
+<html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>6. Tips</title><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/><link href="./slides.css" rel="stylesheet"/><script defer src="./slides.js"></script>
 <style>
-.stage{position:absolute;left:80px;top:160px;width:1120px;display:flex;flex-direction:column;gap:18px}.kicker{margin:0;color:#5a4970;font-size:15px;font-weight:900;line-height:1.55}.table{border:1px solid rgba(0,0,0,.12);border-radius:8px;background:#fff;overflow:hidden}.row{display:grid;grid-template-columns:1fr 48px 1.1fr;border-top:1px solid rgba(0,0,0,.08)}.row:first-child{border-top:none}.cell{padding:18px 20px}.cell--head{background:rgba(0,0,0,.03);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.cell p{margin:0;font-size:16px;font-weight:900;line-height:1.62}.cell--muted p{color:rgba(0,0,0,.52)}.arrow{display:flex;align-items:center;justify-content:center;font-family:"Space Grotesk",sans-serif;font-size:28px;font-weight:900;color:rgba(0,0,0,.34)}.note{padding-top:14px;border-top:1px solid rgba(0,0,0,.1)}.note p{margin:0;font-size:17px;font-weight:900;line-height:1.65}
-</style>
-</head>
-<body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第08章 問題解決におけるコミュニケーション" data-header-title="4-1. 結論：曖昧性を排除する" data-header-subtitle="結論は、相手がその場で判断できる粒度で置く" data-footer="standard" data-footer-page="64">
-  <div class="stage">
-    <p class="kicker">結論が曖昧だと、相手は理解したつもりでも違うものを持ち帰る。まず、解釈の余地を減らす。</p>
-    <div class="table">
-      <div class="row">
-        <div class="cell cell--head">Ambiguous</div>
-        <div class="arrow"></div>
-        <div class="cell cell--head">Decidable</div>
-      </div>
-      <div class="row">
-        <div class="cell cell--muted"><p>この施策はやったほうがいいと思います</p></div>
-        <div class="arrow">→</div>
-        <div class="cell"><p>今期は施策Bを優先して着手する。施策Aは保留にする。</p></div>
-      </div>
-      <div class="row">
-        <div class="cell cell--muted"><p>もう少し慎重に進めるべきです</p></div>
-        <div class="arrow">→</div>
-        <div class="cell"><p>今月は本実装に進まず、10件のユーザー検証を先に行う。</p></div>
-      </div>
-      <div class="row">
-        <div class="cell cell--muted"><p>価格は高めでも良いかもしれません</p></div>
-        <div class="arrow">→</div>
-        <div class="cell"><p>初期価格は競合比110%で出し、継続率が基準未達なら翌月見直す。</p></div>
-      </div>
-    </div>
-    <div class="note"><p>結論は「何となくそう思う」ではなく、「だから何をどうするのか」が決まる形で置く。</p></div>
-  </div>
-</div>
-</body>
+.layers-wrap{position:absolute;left:80px;top:178px;width:1120px;display:flex;flex-direction:column;gap:22px}.layers-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}.layer-card{min-height:356px;padding:22px 20px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff;display:grid;grid-template-rows:auto auto 1fr auto;row-gap:16px}.layer-card__eyebrow{margin:0;color:rgba(0,0,0,.34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.layer-card__head{margin:0;font-size:25px;font-weight:900;line-height:1.42}.layer-card__body{display:flex;flex-direction:column;gap:16px;font-size:15px;line-height:1.75;color:rgba(0,0,0,.7)}.layer-card__body p{margin:0}.layer-card__foot{min-height:58px;margin:0;padding-top:16px;border-top:1px solid rgba(0,0,0,.08);font-size:14px;font-weight:700;line-height:1.7;color:rgba(0,0,0,.62)}.layers-summary{padding:18px 22px;border-top:1px solid rgba(0,0,0,.1)}.layers-summary p{margin:0;font-size:18px;font-weight:900;line-height:1.8}
+</style></head><body>
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第08章 問題解決におけるコミュニケーション" data-header-title="6. Tips" data-header-subtitle="誤解は『表現』『論理』『判断』の3層で起きる" data-footer="standard" data-footer-page="64"><div class="layers-wrap"><div class="layers-grid"><section class="layer-card"><p class="layer-card__eyebrow">表現</p><p class="layer-card__head">同じ言葉でも、相手の頭の中の像はずれる</p><div class="layer-card__body"><p><strong>典型的なズレ</strong><br/>抽象語の放置 / 同じ言葉でも頭に浮かぶ情景が違う</p><p><strong>先回り</strong><br/>定義する、数値化する、具体例を置く</p></div><p class="layer-card__foot">相手が同じものを見ている状態を先につくる。</p></section><section class="layer-card"><p class="layer-card__eyebrow">論理</p><p class="layer-card__head">結論までの階段が抜けると、相手は追えない</p><div class="layer-card__body"><p><strong>典型的なズレ</strong><br/>前提共有の不足 / 中間ステップの省略 / 論理の飛躍</p><p><strong>先回り</strong><br/>前提を明示する、なぜそう言えるかを階段状に置く</p></div><p class="layer-card__foot">相手が「なるほど、そうつながるのか」と追える形にする。</p></section><section class="layer-card"><p class="layer-card__eyebrow">判断</p><p class="layer-card__head">判断材料が足りないと、納得しても決められない</p><div class="layer-card__body"><p><strong>典型的なズレ</strong><br/>相手が本当に気にする論点に答えていない / 反論や懸念が未処理</p><p><strong>先回り</strong><br/>懸念、反論、トレードオフ、残論点を先に出す</p></div><p class="layer-card__foot">相手が「この条件なら判断できる」と思える材料を先に揃える。</p></section></div><div class="layers-summary"><p>相手目線で読み直すときは、表現が同じ像を結ぶか、論理が追えるか、判断に必要な材料が足りているかを順に確認する。</p></div></div></div></body>
 </html>

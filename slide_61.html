@@ -3,44 +3,55 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>3. 受け手の理解</title>
+<title>3. 誤解を排除するための要素</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
 <style>
-.stage{position:absolute;left:80px;top:156px;width:1120px;display:flex;flex-direction:column;gap:18px}.kicker{margin:0;color:#5a4970;font-size:15px;font-weight:900;line-height:1.55}.map{position:relative;height:392px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff}.root{position:absolute;left:50%;top:26px;transform:translateX(-50%);width:300px;padding:18px 20px;border:2px solid rgba(0,0,0,.82);border-radius:8px;background:#fff;text-align:center}.root p{margin:0;font-size:24px;font-weight:900;line-height:1.45}.line-v{position:absolute;left:50%;top:102px;width:2px;height:38px;background:rgba(0,0,0,.2);transform:translateX(-50%)}.line-h{position:absolute;left:190px;top:140px;width:740px;height:2px;background:rgba(0,0,0,.2)}.node-line{position:absolute;top:140px;width:2px;height:36px;background:rgba(0,0,0,.2)}.cards{position:absolute;left:28px;right:28px;top:176px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.card{min-height:180px;padding:22px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff}.card__label{margin:0 0 10px;color:rgba(0,0,0,.34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.card__title{margin:0 0 10px;font-size:22px;font-weight:900;line-height:1.45}.card__text{margin:0;color:rgba(0,0,0,.72);font-size:14px;line-height:1.72}.summary{padding-top:14px;border-top:1px solid rgba(0,0,0,.1)}.summary p{margin:0;font-size:17px;font-weight:900;line-height:1.65}
+.stage{position:absolute;left:80px;top:156px;width:1120px;display:flex;flex-direction:column;gap:22px}
+.lead{margin:0;font-size:17px;font-weight:700;line-height:1.85;color:#4a3f2f}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.pillar{padding:24px 24px 22px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff;display:flex;flex-direction:column;gap:16px}
+.pillar__num{margin:0;font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;color:rgba(0,0,0,.34)}
+.pillar__title{margin:0;font-size:28px;font-weight:900;line-height:1.35;color:var(--soft-black)}
+.pillar__text{margin:0;font-size:14px;line-height:1.8;color:rgba(0,0,0,.72)}
+.pill-list{display:flex;flex-wrap:wrap;gap:8px}
+.pill{padding:8px 12px;border:1px solid rgba(0,0,0,.1);border-radius:999px;background:#faf8f4;font-size:13px;font-weight:700;line-height:1.4;color:#4d4339}
+.summary{padding-top:18px;border-top:1px solid rgba(0,0,0,.1)}
+.summary p{margin:0;font-size:17px;font-weight:900;line-height:1.7;color:var(--soft-black)}
 </style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第08章 問題解決におけるコミュニケーション" data-header-title="3. 受け手の理解" data-header-subtitle="相手の知識・理解力・興味関心で、伝える設計は変わる" data-footer="standard" data-footer-page="61">
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第08章 問題解決におけるコミュニケーション" data-header-title="3. 誤解を排除するための要素" data-header-subtitle="誤解は『誰に伝えるか』と『何をどう並べるか』の両方で減らす" data-footer="standard" data-footer-page="61">
   <div class="stage">
-    <p class="kicker">伝えるとは、自分の頭の中をそのまま出すことではない。相手側に残る誤解可能性を減らすように、設計し直すことだ。</p>
-    <div class="map">
-      <div class="root"><p>受け手視点で設計する</p></div>
-      <div class="line-v"></div>
-      <div class="line-h"></div>
-      <div class="node-line" style="left:212px;"></div>
-      <div class="node-line" style="left:559px;"></div>
-      <div class="node-line" style="left:906px;"></div>
-      <div class="cards">
-        <section class="card">
-          <p class="card__label">Knowledge / Information</p>
-          <p class="card__title">相手の持っている知識・情報</p>
-          <p class="card__text">何を知っていて、何を知らないか。同じ言葉でも前提が違えば、最初の理解からずれる。</p>
-        </section>
-        <section class="card">
-          <p class="card__label">Capacity</p>
-          <p class="card__title">相手の理解力</p>
-          <p class="card__text">どこまで一気に追えるか。論理の段数、具体例の量、情報量の密度は相手に合わせて調整する。</p>
-        </section>
-        <section class="card">
-          <p class="card__label">Interest</p>
-          <p class="card__title">相手の興味関心</p>
-          <p class="card__text">何に反応し、何を評価し、何を怖がるか。相手が先に知りたいことから並べる必要がある。</p>
-        </section>
-      </div>
+    <p class="lead">誤解を減らすには、相手に合わせるだけでも、内容を整えるだけでも足りない。<strong>受け手の理解</strong>と<strong>内容の設計</strong>の2つを分けて考えると、どこで伝達が崩れているかが見えやすくなる。</p>
+    <div class="grid">
+      <section class="pillar">
+        <p class="pillar__num">01</p>
+        <h2 class="pillar__title">受け手の理解</h2>
+        <p class="pillar__text">相手の知識量、理解力、関心、意思決定のしかたを読む。相手の頭の中を外すと、正しい内容でも別の意味で受け取られる。</p>
+        <div class="pill-list">
+          <span class="pill">知識</span>
+          <span class="pill">理解力</span>
+          <span class="pill">興味関心</span>
+          <span class="pill">意思決定構造</span>
+        </div>
+      </section>
+      <section class="pillar">
+        <p class="pillar__num">02</p>
+        <h2 class="pillar__title">内容の設計</h2>
+        <p class="pillar__text">相手が理解し、判断し、動ける順番で情報を並べる。内容の設計が粗いと、納得はしても決められない、あるいは動けない状態が残る。</p>
+        <div class="pill-list">
+          <span class="pill">ゴール</span>
+          <span class="pill">前提・背景</span>
+          <span class="pill">結論</span>
+          <span class="pill">根拠</span>
+          <span class="pill">ネクストアクション</span>
+          <span class="pill">補足</span>
+        </div>
+      </section>
     </div>
-    <div class="summary"><p>同じ内容でも、誰に伝えるかで構造は変わる。相手の頭の中を先にモデル化してから並べる。</p></div>
+    <div class="summary"><p>つまり、誤解を排除するとは「相手を読むこと」と「内容を組むこと」を両立させることである。</p></div>
   </div>
 </div>
 </body>

@@ -1,5 +1,5 @@
 deck:
-  total_slides: 73
+  total_slides: 69
   runtime_shapes:
   - agenda
   - center-title
@@ -412,63 +412,32 @@ slides:
     page_label: '64'
     legacy_exceptions: []
   slide_65.html:
-    canonical_kind: content
-    runtime_shape: content
-    section_id: section-08
-    page_label: '65'
-    legacy_exceptions: []
-  slide_66.html:
-    canonical_kind: content
-    runtime_shape: content
-    section_id: section-08
-    page_label: '66'
-    legacy_exceptions: []
-  slide_67.html:
-    canonical_kind: content
-    runtime_shape: content
-    section_id: section-08
-    page_label: '67'
-    legacy_exceptions: []
-  slide_68.html:
-    canonical_kind: content
-    runtime_shape: content
-    section_id: section-08
-    page_label: '68'
-    legacy_exceptions: []
-  slide_69.html:
     canonical_kind: agenda
     runtime_shape: agenda
     section_id: section-09
-    page_label: '69'
+    page_label: '65'
     legacy_exceptions: []
-  slide_70.html:
+  slide_66.html:
     canonical_kind: summary
     runtime_shape: custom
     section_id: section-09
-    page_label: '70'
-    legacy_exceptions:
-    - summary-agenda-without-divider
-  slide_71.html:
+    page_label: '66'
+    legacy_exceptions: []
+  slide_67.html:
     canonical_kind: closing
     runtime_shape: custom
     section_id: section-09
-    page_label: '71'
-    legacy_exceptions:
-    - manual-header-reimplementation
-    - manual-footer-reimplementation
-  slide_72.html:
+    page_label: '67'
+    legacy_exceptions: []
+  slide_68.html:
     canonical_kind: cta
     runtime_shape: custom
     section_id: section-09
-    page_label: '72'
-    legacy_exceptions:
-    - manual-closing-layout
-    - manual-footer-reimplementation
-  slide_73.html:
+    page_label: '68'
+    legacy_exceptions: []
+  slide_69.html:
     canonical_kind: qa
     runtime_shape: custom
     section_id: section-09
-    page_label: '73'
-    legacy_exceptions:
-    - manual-cta-layout
-    - manual-footer-reimplementation
+    page_label: '69'
+    legacy_exceptions: []

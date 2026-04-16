@@ -8,38 +8,37 @@
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
 <style>
-.stage{position:absolute;left:80px;top:160px;width:1120px;display:flex;flex-direction:column;gap:18px}.kicker{margin:0;color:#5a4970;font-size:15px;font-weight:900;line-height:1.55}.layout{display:grid;grid-template-columns:1.02fr .98fr;gap:20px;align-items:stretch}.panel{min-height:378px;padding:22px;border:1px solid rgba(0,0,0,.12);border-radius:8px;background:#fff}.panel--strong{border-width:2px;border-color:rgba(0,0,0,.82)}.panel__label{margin:0 0 10px;color:rgba(0,0,0,.34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.panel__title{margin:0 0 18px;font-size:24px;font-weight:900;line-height:1.4}.checks{display:grid;gap:12px}.check{padding:14px 16px;border:1px solid rgba(0,0,0,.08);border-radius:8px;background:rgba(0,0,0,.03)}.check p{margin:0}.check__head{margin-bottom:4px;font-size:17px;font-weight:900;line-height:1.45}.check__text{color:rgba(0,0,0,.72);font-size:14px;line-height:1.7}.example{display:grid;gap:12px}.example__box{padding:16px 18px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff}.example__box--strong{border-width:2px;border-color:rgba(0,0,0,.82)}.example__label{margin:0 0 8px;color:rgba(0,0,0,.34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.example__text{margin:0;font-size:18px;font-weight:900;line-height:1.55}.points{display:grid;gap:10px;margin-top:14px;padding-top:14px;border-top:1px solid rgba(0,0,0,.08)}.points p{margin:0;font-size:15px;font-weight:900;line-height:1.6}.points span{display:block;color:rgba(0,0,0,.68);font-size:13px;font-weight:400;line-height:1.6}.summary{padding:15px 18px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff}.summary p{margin:0;font-size:17px;font-weight:900;line-height:1.65}
+.stage{position:absolute;left:80px;top:160px;width:1120px;display:flex;flex-direction:column;gap:18px}.kicker{margin:0;color:#5a4970;font-size:15px;font-weight:900;line-height:1.55}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.card{min-height:276px;padding:22px;border:1px solid rgba(0,0,0,.12);border-radius:8px;background:#fff}.card--strong{border-width:2px;border-color:rgba(0,0,0,.82)}.card__num{margin:0 0 8px;color:rgba(0,0,0,.28);font-family:"Space Grotesk",sans-serif;font-size:14px;font-weight:900;letter-spacing:2px}.card__title{margin:0 0 16px;font-size:24px;font-weight:900;line-height:1.4}.points{display:grid;gap:10px}.points p{margin:0;font-size:15px;font-weight:900;line-height:1.6}.points span{display:block;color:rgba(0,0,0,.68);font-size:13px;font-weight:400;line-height:1.6}.example{display:grid;grid-template-columns:1fr 1.18fr .92fr;gap:14px;align-items:stretch}.example__box{padding:16px 18px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff}.example__box--strong{border-width:2px;border-color:rgba(0,0,0,.82)}.example__label{margin:0 0 8px;color:rgba(0,0,0,.34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.example__text{margin:0;font-size:17px;font-weight:900;line-height:1.55}
 </style>
 </head>
 <body>
 <div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第06章 仮説を構築する" data-header-title="良い仮説とは" data-header-subtitle="雑な思いつきではなく、検証に耐える形まで置く" data-footer="standard" data-footer-page="44">
   <div class="stage">
-    <p class="kicker">良い仮説かどうかは、まず「検証可能であるか」で見る。正しそうに見えても、確かめられないなら実務では使えない。</p>
-    <div class="layout">
-      <section class="panel">
-        <p class="panel__label">Condition</p>
-        <p class="panel__title">良い仮説は、検証に乗る形になっている</p>
-        <div class="checks">
-          <div class="check"><p class="check__head">データが取得可能か</p><p class="check__text">必要なデータ、観察、インタビュー対象、実験環境が現実的に手に入るか。</p></div>
-          <div class="check"><p class="check__head">具体的か</p><p class="check__text">「良い」「高い」「人気」のような抽象語に逃げず、比較対象や判定基準まで落ちているか。</p></div>
-          <div class="check"><p class="check__head">検証の実現性があるか</p><p class="check__text">時間、コスト、体制の制約の中で、本当に回せる確かめ方になっているか。</p></div>
+    <p class="kicker">良い仮説は、当たりそうに見える仮説ではない。判定ができて、すぐ確かめに行ける仮説である。</p>
+    <div class="grid">
+      <section class="card">
+        <p class="card__num">01</p>
+        <p class="card__title">判定基準が具体的かつ簡潔である</p>
+        <div class="points">
+          <p>誰について、何をもってそう言うのかが一文で追える<span>主語と判定基準が曖昧だと、議論も検証もぶれる。</span></p>
+          <p>抽象語ではなく、比較対象や基準に落ちている<span>「人気」「高い」「良い」ではなく、何を見れば判定できるかが分かる。</span></p>
+          <p>長く説明しなくても要点が伝わる<span>仮説そのものが簡潔であるほど、検証の起点として使いやすい。</span></p>
         </div>
       </section>
-      <section class="panel panel--strong">
-        <p class="panel__label">Example</p>
-        <p class="panel__title">曖昧な答えを、検証可能な仮説に変える</p>
-        <div class="example">
-          <div class="example__box"><p class="example__label">Bad</p><p class="example__text">若者に人気がある商品だと思う</p></div>
-          <div class="example__box example__box--strong"><p class="example__label">Better</p><p class="example__text">20代の購入比率が全体平均より明確に高く、その理由を説明できる</p></div>
-        </div>
+      <section class="card card--strong">
+        <p class="card__num">02</p>
+        <p class="card__title">検証が具体的かつ容易である</p>
         <div class="points">
-          <p>誰を見るかが明確<span>「若者」ではなく、どの層を指すかが定まっている。</span></p>
-          <p>何をもって人気というかが明確<span>購買比率で判定できるので、調べる対象が決まる。</span></p>
-          <p>なぜそう言えるかまで見にいける<span>理由を確かめる前提なので、外れても次の学びになる。</span></p>
+          <p>必要なデータや観察対象が取れる<span>手に入らない情報に依存している時点で、実務上は使いにくい。</span></p>
+          <p>どう確かめるかが具体的である<span>データ、観察、インタビュー、実験のどれで見るかが決まっている。</span></p>
+          <p>時間・コスト・体制の中で回せる<span>検証の実現性がない仮説は、正しくても前に進めない。</span></p>
         </div>
       </section>
     </div>
-    <div class="summary"><p>良い仮説とは、正しいかどうか以前に、データが取れて、具体的で、現実に検証できる仮の答えである。</p></div>
+    <div class="example">
+      <div class="example__box"><p class="example__label">Bad</p><p class="example__text">若者に人気がある商品だと思う</p></div>
+      <div class="example__box example__box--strong"><p class="example__label">Better</p><p class="example__text">20代の購入比率が全体平均より明確に高い</p></div>
+    </div>
   </div>
 </div>
 </body>

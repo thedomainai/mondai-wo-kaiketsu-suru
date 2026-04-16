@@ -13,7 +13,7 @@ deck:
     cover_file: slide_01.html
     first_labeled_file: slide_01.html
     label_format: zero-padded-2
-    max_label: '73'
+    max_label: '69'
   agenda_source: manifest.slides[].agenda
   allowed_slide_kinds:
   - cover
@@ -27,14 +27,14 @@ deck:
   - cta
   - qa
 counts:
-  total_slides: 73
+  total_slides: 69
   by_kind:
     cover: 1
     intro: 6
     agenda: 8
     divider: 8
     center-title: 3
-    content: 43
+    content: 39
     summary: 1
     closing: 1
     cta: 1
@@ -144,21 +144,17 @@ chapters:
   - slide_62.html
   - slide_63.html
   - slide_64.html
+- id: section-09
+  number: 9
+  title: まとめ
+  agenda_file: slide_65.html
+  divider_file: null
+  slide_files:
   - slide_65.html
   - slide_66.html
   - slide_67.html
   - slide_68.html
-- id: section-09
-  number: 9
-  title: まとめ
-  agenda_file: slide_69.html
-  divider_file: null
-  slide_files:
   - slide_69.html
-  - slide_70.html
-  - slide_71.html
-  - slide_72.html
-  - slide_73.html
 agendas:
 - file: slide_08.html
   mode: timed-overview
@@ -440,7 +436,7 @@ agendas:
     label: まとめ
     state: soft
     duration: null
-- file: slide_69.html
+- file: slide_65.html
   mode: progress
   active_item: 09
   items:
@@ -1429,8 +1425,8 @@ slides:
   page_label: '60'
   kind: content
   runtime_shape: content
-  title: 2. 誤解を排除するための要素
-  index_title: 2. 誤解を排除するための要素
+  title: 2. 誤解がなぜいけないか
+  index_title: 2. 誤解がなぜいけないか
   section_id: section-08
   section_number: 8
   section_title: 問題解決におけるコミュニケーション
@@ -1440,8 +1436,8 @@ slides:
   page_label: '61'
   kind: content
   runtime_shape: content
-  title: 3. 受け手の理解
-  index_title: 3. 受け手の理解
+  title: 3. 誤解を排除するための要素
+  index_title: 3. 誤解を排除するための要素
   section_id: section-08
   section_number: 8
   section_title: 問題解決におけるコミュニケーション
@@ -1451,8 +1447,8 @@ slides:
   page_label: '62'
   kind: content
   runtime_shape: content
-  title: 3-1. 意思決定構造を押さえる
-  index_title: 3-1. 意思決定構造を押さえる
+  title: 4. 受け手の理解
+  index_title: 4. 受け手の理解
   section_id: section-08
   section_number: 8
   section_title: 問題解決におけるコミュニケーション
@@ -1462,8 +1458,8 @@ slides:
   page_label: '63'
   kind: content
   runtime_shape: content
-  title: 4. 内容設計
-  index_title: 4. 内容設計
+  title: 5. 内容設計
+  index_title: 5. 内容設計
   section_id: section-08
   section_number: 8
   section_title: 問題解決におけるコミュニケーション
@@ -1473,8 +1469,8 @@ slides:
   page_label: '64'
   kind: content
   runtime_shape: content
-  title: 4-1. 結論：曖昧性を排除する
-  index_title: 4-1. 結論：曖昧性を排除する
+  title: 6. Tips
+  index_title: 6. Tips
   section_id: section-08
   section_number: 8
   section_title: 問題解決におけるコミュニケーション
@@ -1482,50 +1478,6 @@ slides:
 - order: 65
   file: slide_65.html
   page_label: '65'
-  kind: content
-  runtime_shape: content
-  title: 4-2. 根拠：センターピンに接続する
-  index_title: 4-2. 根拠：センターピンに接続する
-  section_id: section-08
-  section_number: 8
-  section_title: 問題解決におけるコミュニケーション
-  index_type: normal
-- order: 66
-  file: slide_66.html
-  page_label: '66'
-  kind: content
-  runtime_shape: content
-  title: 4-3. ネクストアクションと残論点
-  index_title: 4-3. ネクストアクションと残論点
-  section_id: section-08
-  section_number: 8
-  section_title: 問題解決におけるコミュニケーション
-  index_type: normal
-- order: 67
-  file: slide_67.html
-  page_label: '67'
-  kind: content
-  runtime_shape: content
-  title: 4-4. 補足：情報確度を明示する
-  index_title: 4-4. 補足：情報確度を明示する
-  section_id: section-08
-  section_number: 8
-  section_title: 問題解決におけるコミュニケーション
-  index_type: normal
-- order: 68
-  file: slide_68.html
-  page_label: '68'
-  kind: content
-  runtime_shape: content
-  title: '5. Tips: 誤解ポイントを先回りして潰す'
-  index_title: '5. Tips: 誤解ポイントを先回りして潰す'
-  section_id: section-08
-  section_number: 8
-  section_title: 問題解決におけるコミュニケーション
-  index_type: normal
-- order: 69
-  file: slide_69.html
-  page_label: '69'
   kind: agenda
   runtime_shape: agenda
   title: アジェンダ
@@ -1574,9 +1526,9 @@ slides:
       label: まとめ
       state: active
       duration: null
-- order: 70
-  file: slide_70.html
-  page_label: '70'
+- order: 66
+  file: slide_66.html
+  page_label: '66'
   kind: summary
   runtime_shape: custom
   title: まとめ
@@ -1585,11 +1537,9 @@ slides:
   section_number: 9
   section_title: まとめ
   index_type: normal
-  legacy_exceptions:
-  - summary-agenda-without-divider
-- order: 71
-  file: slide_71.html
-  page_label: '71'
+- order: 67
+  file: slide_67.html
+  page_label: '67'
   kind: closing
   runtime_shape: custom
   title: 理論的には何事も上手くいきます
@@ -1598,12 +1548,9 @@ slides:
   section_number: 9
   section_title: まとめ
   index_type: normal
-  legacy_exceptions:
-  - manual-header-reimplementation
-  - manual-footer-reimplementation
-- order: 72
-  file: slide_72.html
-  page_label: '72'
+- order: 68
+  file: slide_68.html
+  page_label: '68'
   kind: cta
   runtime_shape: custom
   title: 問題を解決しましょう
@@ -1612,12 +1559,9 @@ slides:
   section_number: 9
   section_title: まとめ
   index_type: normal
-  legacy_exceptions:
-  - manual-closing-layout
-  - manual-footer-reimplementation
-- order: 73
-  file: slide_73.html
-  page_label: '73'
+- order: 69
+  file: slide_69.html
+  page_label: '69'
   kind: qa
   runtime_shape: custom
   title: Q&A
@@ -1626,6 +1570,3 @@ slides:
   section_number: 9
   section_title: まとめ
   index_type: normal
-  legacy_exceptions:
-  - manual-cta-layout
-  - manual-footer-reimplementation

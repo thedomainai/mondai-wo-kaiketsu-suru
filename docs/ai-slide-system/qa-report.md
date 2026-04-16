@@ -1,8 +1,8 @@
 # AI Slide System QA Report
 
 - Deck: `問題を解決する`
-- Total slides: `73`
-- Findings: `82`
+- Total slides: `72`
+- Findings: `73`
 
 ## Inventory
 
@@ -11,7 +11,7 @@
 - `agenda`: `8`
 - `divider`: `8`
 - `center-title`: `3`
-- `content`: `43`
+- `content`: `42`
 - `summary`: `1`
 - `closing`: `1`
 - `cta`: `1`
@@ -49,9 +49,8 @@
 - **WARNING** `raw-vertical-rhythm-spacing` `slide_40.html`: Selector `.five-card__eyebrow` uses raw px in `margin: 0 0 8px`; use `--space-stack-*`.
 - **WARNING** `raw-vertical-rhythm-spacing` `slide_40.html`: Selector `.five-card__head` uses raw px in `margin: 0 0 8px`; use `--space-stack-*`.
 - **WARNING** `raw-vertical-rhythm-spacing` `slide_43.html`: Selector `.kicker` uses raw px in `margin: 0 0 24px`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_44.html`: Selector `.panel__label` uses raw px in `margin: 0 0 10px`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_44.html`: Selector `.panel__title` uses raw px in `margin: 0 0 18px`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_44.html`: Selector `.check__head` uses raw px in `margin-bottom: 4px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_44.html`: Selector `.card__num` uses raw px in `margin: 0 0 8px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_44.html`: Selector `.card__title` uses raw px in `margin: 0 0 16px`; use `--space-stack-*`.
 - **WARNING** `raw-vertical-rhythm-spacing` `slide_44.html`: Selector `.example__label` uses raw px in `margin: 0 0 8px`; use `--space-stack-*`.
 - **WARNING** `raw-vertical-rhythm-spacing` `slide_45.html`: Selector `.step__num` uses raw px in `margin: 0 0 10px`; use `--space-stack-*`.
 - **WARNING** `raw-vertical-rhythm-spacing` `slide_45.html`: Selector `.step__title` uses raw px in `margin: 0 0 12px`; use `--space-stack-*`.
@@ -65,39 +64,31 @@
 - **WARNING** `raw-vertical-rhythm-spacing` `slide_52.html`: Selector `.panel__label` uses raw px in `margin: 0 0 6px`; use `--space-stack-*`.
 - **WARNING** `raw-vertical-rhythm-spacing` `slide_53.html`: Selector `.quad__label` uses raw px in `margin-bottom: 8px`; use `--space-stack-*`.
 - **WARNING** `raw-vertical-rhythm-spacing` `slide_53.html`: Selector `.quad__text` uses raw px in `margin-top: 6px`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_54.html`: Selector `.step__label` uses raw px in `margin: 0 0 8px`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_54.html`: Selector `.step__body` uses raw px in `margin: 8px 0 0`; use `--space-stack-*`.
 - **WARNING** `raw-vertical-rhythm-spacing` `slide_54.html`: Selector `.panel__title` uses raw px in `margin: 0 0 12px`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_56.html`: Selector `.card__title` uses raw px in `margin: 12px 0 0`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_56.html`: Selector `.card__body` uses raw px in `margin: 10px 0 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_56.html`: Selector `.card__title` uses raw px in `margin: 18px 0 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_56.html`: Selector `.card__body` uses raw px in `margin: 16px 0 0`; use `--space-stack-*`.
 - **WARNING** `raw-vertical-rhythm-spacing` `slide_56.html`: Selector `.bridge__label` uses raw px in `margin: 0 0 6px`; use `--space-stack-*`.
 - **WARNING** `raw-vertical-rhythm-spacing` `slide_56.html`: Selector `.bridge__text` uses raw px in `margin: 6px 0 0`; use `--space-stack-*`.
 - **WARNING** `raw-vertical-rhythm-spacing` `slide_59.html`: Selector `.card__head` uses raw px in `margin: 34px 0 0`; use `--space-stack-*`.
 - **WARNING** `raw-vertical-rhythm-spacing` `slide_59.html`: Selector `.card__body` uses raw px in `margin: 32px 0 0`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_61.html`: Selector `.card__label` uses raw px in `margin: 0 0 10px`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_61.html`: Selector `.card__title` uses raw px in `margin: 0 0 10px`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_62.html`: Selector `.card__label` uses raw px in `margin: 0 0 8px`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_62.html`: Selector `.card__title` uses raw px in `margin: 0 0 8px`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_63.html`: Selector `.card__num` uses raw px in `margin: 0 0 8px`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_63.html`: Selector `.card__title` uses raw px in `margin: 0 0 8px`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_65.html`: Selector `.card__label` uses raw px in `margin: 0 0 8px`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_65.html`: Selector `.card__title` uses raw px in `margin: 0 0 14px`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_67.html`: Selector `.card__label` uses raw px in `margin: 0 0 8px`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_67.html`: Selector `.card__title` uses raw px in `margin: 0 0 10px`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_70.html`: Inline text style uses raw px in `margin: 0 0 10px 0`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_70.html`: Inline text style uses raw px in `margin: 0 0 8px 0`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_70.html`: Inline text style uses raw px in `margin: 0 0 6px 0`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_70.html`: Inline text style uses raw px in `margin: 0 0 8px 0`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_70.html`: Inline text style uses raw px in `margin: 0 0 6px 0`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_70.html`: Inline text style uses raw px in `margin: 0 0 8px 0`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_70.html`: Inline text style uses raw px in `margin: 0 0 6px 0`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_70.html`: Inline text style uses raw px in `margin: 0 0 8px 0`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_70.html`: Inline text style uses raw px in `margin: 0 0 6px 0`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_70.html`: Inline text style uses raw px in `margin: 0 0 8px 0`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_70.html`: Inline text style uses raw px in `margin: 0 0 6px 0`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_70.html`: Inline text style uses raw px in `margin: 0 0 8px 0`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_70.html`: Inline text style uses raw px in `margin: 0 0 6px 0`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_72.html`: Inline text style uses raw px in `margin: 0 0 28px 0`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_72.html`: Inline text style uses raw px in `margin: 0 0 36px 0`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_73.html`: Inline text style uses raw px in `margin: 0 0 28px 0`; use `--space-stack-*`.
-- **WARNING** `raw-vertical-rhythm-spacing` `slide_73.html`: Inline text style uses raw px in `margin: 0 0 36px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_60.html`: Selector `.card__label` uses raw px in `margin: 0 0 10px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_60.html`: Selector `.card__title` uses raw px in `margin: 0 0 12px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_62.html`: Selector `.card__label` uses raw px in `margin: 0 0 10px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_62.html`: Selector `.card__title` uses raw px in `margin: 0 0 10px`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_66.html`: Inline text style uses raw px in `margin: 0 0 10px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_66.html`: Inline text style uses raw px in `margin: 0 0 8px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_66.html`: Inline text style uses raw px in `margin: 0 0 6px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_66.html`: Inline text style uses raw px in `margin: 0 0 8px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_66.html`: Inline text style uses raw px in `margin: 0 0 6px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_66.html`: Inline text style uses raw px in `margin: 0 0 8px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_66.html`: Inline text style uses raw px in `margin: 0 0 6px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_66.html`: Inline text style uses raw px in `margin: 0 0 8px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_66.html`: Inline text style uses raw px in `margin: 0 0 6px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_66.html`: Inline text style uses raw px in `margin: 0 0 8px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_66.html`: Inline text style uses raw px in `margin: 0 0 6px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_66.html`: Inline text style uses raw px in `margin: 0 0 8px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_66.html`: Inline text style uses raw px in `margin: 0 0 6px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_68.html`: Inline text style uses raw px in `margin: 0 0 28px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_68.html`: Inline text style uses raw px in `margin: 0 0 36px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_69.html`: Inline text style uses raw px in `margin: 0 0 28px 0`; use `--space-stack-*`.
+- **WARNING** `raw-vertical-rhythm-spacing` `slide_69.html`: Inline text style uses raw px in `margin: 0 0 36px 0`; use `--space-stack-*`.

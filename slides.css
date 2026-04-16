@@ -309,7 +309,7 @@ body {
 }
 
 .slide-center-title .chapter {
-  margin: 0;
+  margin: 0 0 8px;
   color: rgba(0, 0, 0, 0.34);
   font-family: "Space Grotesk", sans-serif;
   font-size: var(--font-size-center-chapter);
@@ -319,7 +319,7 @@ body {
 }
 
 .slide-center-title .title {
-  margin: 0;
+  margin: 0 0 24px;
   color: var(--soft-black);
   font-size: var(--font-size-center-title);
   font-weight: 900;
@@ -622,4 +622,21 @@ body {
   font-size: 13px;
   line-height: 1.5;
   text-align: center;
+}
+
+.stack-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  row-gap: var(--stack-card-gap-head-body, var(--space-stack-title-body));
+}
+
+.stack-card__head {
+  display: grid;
+  align-content: start;
+  row-gap: var(--stack-card-gap-lead-title, var(--space-stack-lead-title));
+}
+
+.stack-card__body {
+  margin: 0;
+  align-self: start;
 }

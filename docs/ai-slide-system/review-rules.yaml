@@ -47,6 +47,10 @@ static_rules:
     severity: error
     scope: content
     description: content slide での header/footer 手書き DOM 再実装は禁止する。
+  - id: defined-ds-class-only
+    severity: warning
+    scope: slide
+    description: `ds-*` class は共有 CSS か slide ローカル CSS に定義されたものだけを使う。名前だけ先行して inline style で成立させない。
 
 semantic_rules:
   - id: bridge-slide-clarity
@@ -108,6 +112,18 @@ semantic_rules:
     description: 同一 row の parallel card は、対応する内部領域の開始位置と divider line を copy 量に依存させず揃える。`head / body / foot` や `label / text / note` は明示的な track、stretch、`min-height` で管理する。
     known_examples:
       - slide_66.html
+  - id: comparison-conclusion-archetype
+    severity: warning
+    scope: layout
+    description: comparison の下に conclusion を置く slide は、ad hoc nested grid ではなく `ds-comparison--cards` と `ds-compare-card` の `head / media / body` slot を使う。
+    known_examples:
+      - slide_13.html
+  - id: footer-safe-area-reserve
+    severity: warning
+    scope: layout
+    description: footer 直上に conclusion を dock する slide は `ds-stage--summary-reserve` で main stage の高さを予約し、`ds-summary-dock` に conclusion を分離する。
+    known_examples:
+      - slide_13.html
   - id: density-and-scan-order
     severity: warning
     scope: readability

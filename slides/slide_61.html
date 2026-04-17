@@ -3,54 +3,50 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>3. 誤解を排除するための要素</title>
+<title>何を先に検証するか</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
 <style>
-.stage{position:absolute;left:80px;top:156px;width:1120px;display:flex;flex-direction:column;gap:22px}
-.lead{margin:0;font-size:17px;font-weight:700;line-height:1.85;color:#4a3f2f}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.pillar{padding:24px 24px 22px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff;display:flex;flex-direction:column;gap:16px}
-.pillar__num{margin:0;font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;color:rgba(0,0,0,.34)}
-.pillar__title{margin:0;font-size:28px;font-weight:900;line-height:1.35;color:var(--soft-black)}
-.pillar__text{margin:0;font-size:14px;line-height:1.8;color:rgba(0,0,0,.72)}
-.pill-list{display:flex;flex-wrap:wrap;gap:8px}
-.pill{padding:8px 12px;border:1px solid rgba(0,0,0,.1);border-radius:999px;background:#faf8f4;font-size:13px;font-weight:700;line-height:1.4;color:#4d4339}
-.summary{padding-top:18px;border-top:1px solid rgba(0,0,0,.1)}
-.summary p{margin:0;font-size:17px;font-weight:900;line-height:1.7;color:var(--soft-black)}
+.stage{position:absolute;left:80px;top:160px;width:1120px;display:flex;flex-direction:column;gap:16px}.kicker{margin:0;color:var(--accent-purple);font-size:15px;font-weight:900;line-height:1.55}.matrix-wrap{display:grid;grid-template-columns:204px 1fr;gap:20px;align-items:stretch}.axis-note{min-height:392px;padding:20px 18px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white);display:flex;flex-direction:column;justify-content:center}.axis-note p{margin:0;font-size:15px;font-weight:900;line-height:1.7}.axis-note span{display:block;margin-top:10px;color:var(--ink-68);font-size:13px;font-weight:400;line-height:1.7}.matrix-shell{position:relative}.matrix{position:relative;height:392px;border:1px solid var(--ink-12);border-radius:8px;background:var(--surface-white)}.matrix::before,.matrix::after{content:"";position:absolute;background:var(--ink-14)}.matrix::before{left:50%;top:24px;bottom:24px;width:1px}.matrix::after{top:50%;left:24px;right:24px;height:1px}.matrix-grid{position:absolute;inset:24px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr))}.quad{padding:16px 18px}.quad p{margin:0}.quad__label{margin:0 0 10px;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:1.6px}.quad__title{font-size:19px;font-weight:900;line-height:1.48}.quad__text{margin-top:8px;color:var(--ink-68);font-size:14px;line-height:1.68}.tl,.bl{margin-right:24px}.tr,.br{margin-left:24px}.tl,.tr{margin-bottom:24px}.bl,.br{margin-top:24px}.tr{border:2px solid var(--ink-82);border-radius:8px}.y-axis{position:absolute;left:-34px;top:50%;z-index:2;transform:translateY(-50%) rotate(-90deg);transform-origin:center;color:rgba(0,0,0,.46);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;white-space:nowrap}.x-axis{position:absolute;left:50%;bottom:-28px;transform:translateX(-50%);color:rgba(0,0,0,.42);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;white-space:nowrap}.summary{padding-top:14px;border-top:1px solid var(--ink-10)}.summary p{margin:0;font-size:17px;font-weight:900;line-height:1.65}
 </style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第08章 問題解決におけるコミュニケーション" data-header-title="3. 誤解を排除するための要素" data-header-subtitle="誤解は『誰に伝えるか』と『何をどう並べるか』の両方で減らす" data-footer="standard" data-footer-page="61">
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第08章 論点と仮説を検証する" data-header-title="何を先に検証するか" data-header-subtitle="外れたときの影響と、検証価値の高いものから当てる" data-footer="standard" data-footer-page="61">
   <div class="stage">
-    <p class="lead">誤解を減らすには、相手に合わせるだけでも、内容を整えるだけでも足りない。<strong>受け手の理解</strong>と<strong>内容の設計</strong>の2つを分けて考えると、どこで伝達が崩れているかが見えやすくなる。</p>
-    <div class="grid">
-      <section class="pillar">
-        <p class="pillar__num">01</p>
-        <h2 class="pillar__title">受け手の理解</h2>
-        <p class="pillar__text">相手の知識量、理解力、関心を読む。相手の頭の中を外すと、正しい内容でも別の意味で受け取られる。</p>
-        <div class="pill-list">
-          <span class="pill">知識</span>
-          <span class="pill">理解力</span>
-          <span class="pill">興味関心</span>
+    <p class="kicker">検証案が複数あるなら、全部を同時には当てられない。だからこそ、外れたときの影響が大きく、かつ追加の検証で判断が更新されるものから先に確かめる。</p>
+    <div class="matrix-wrap">
+      <div class="axis-note">
+        <p>優先順位は、<br/>「外れると痛いか」<br/>「確かめると判断が動くか」<br/>で決める<span>後者が検証価値である。追加の証拠で意思決定が更新されるほど、先に確かめる意味がある。</span></p>
+      </div>
+      <div class="matrix-shell">
+        <div class="matrix">
+          <div class="matrix-grid">
+            <section class="quad tl">
+              <p class="quad__label">影響大 / 検証価値小</p>
+              <p class="quad__title">重要だが、前提を置いて進める</p>
+              <p class="quad__text">追加で見ても判断はあまり動かない。今は前提を明示して進める。</p>
+            </section>
+            <section class="quad tr">
+              <p class="quad__label">CENTER PIN</p>
+              <p class="quad__title">最初に検証する</p>
+              <p class="quad__text">ここを押さえると結論が固まる。先に当てるべき領域である。</p>
+            </section>
+            <section class="quad bl">
+              <p class="quad__label">影響小 / 検証価値小</p>
+              <p class="quad__title">後回しでよい</p>
+              <p class="quad__text">追加で見ても全体の判断はほとんど動かない。優先度は低い。</p>
+            </section>
+            <section class="quad br">
+              <p class="quad__label">影響小 / 検証価値大</p>
+              <p class="quad__title">直近では優先しない</p>
+              <p class="quad__text">学びはあるが、今の意思決定を大きくは左右しない。</p>
+            </section>
+          </div>
         </div>
-      </section>
-      <section class="pillar">
-        <p class="pillar__num">02</p>
-        <h2 class="pillar__title">内容の設計</h2>
-        <p class="pillar__text">相手が理解し、判断し、動ける順番で情報を並べる。内容の設計が粗いと、納得はしても決められない、あるいは動けない状態が残る。</p>
-        <div class="pill-list">
-          <span class="pill">ゴール</span>
-          <span class="pill">前提・背景</span>
-          <span class="pill">結論</span>
-          <span class="pill">根拠</span>
-          <span class="pill">ネクストアクション</span>
-          <span class="pill">補足</span>
-        </div>
-      </section>
+      </div>
     </div>
-    <div class="summary"><p>つまり、誤解を排除するとは「相手を読むこと」と「内容を組むこと」を両立させることである。</p></div>
+    <div class="summary"><p>先に当てるべきなのは、「外れると痛く、確かめることで判断が動く」仮説である。</p></div>
   </div>
 </div>
 </body>

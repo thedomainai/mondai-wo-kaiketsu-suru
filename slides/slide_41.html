@@ -3,110 +3,65 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>原則5：トップダウンとボトムアップを行き来する</title>
+<title>「べき」の徹底解説</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
 <style>
-.swing-layout{position:absolute;left:80px;top:186px;width:1120px;display:grid;grid-template-columns:332px 1fr;gap:28px;align-items:start}
-.swing-copy{display:flex;flex-direction:column;justify-content:center;gap:18px;min-height:404px}
-.swing-copy__eyebrow{margin:0;color:rgba(0,0,0,.34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
-.swing-copy__head{margin:0;font-size:34px;font-weight:900;line-height:1.42}
-.swing-copy__body{margin:0;font-size:15px;line-height:1.9;color:rgba(0,0,0,.68)}
-
-.swing-diagram{position:relative;height:404px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff;overflow:hidden}
-.swing-diagram svg{position:absolute;inset:0;width:100%;height:100%}
-.tree-node{position:absolute;width:164px;padding:14px 12px;border-radius:8px;background:#fff;border:1px solid rgba(0,0,0,.12);text-align:center;box-sizing:border-box}
-.tree-node strong{display:block;font-size:17px;font-weight:900;line-height:1.38}
-.tree-node span{display:block;margin-top:4px;font-size:12px;line-height:1.55;color:rgba(0,0,0,.62)}
-.tree-node--root{left:296px;top:34px;width:180px;border:2px solid rgba(0,0,0,.84);box-shadow:0 10px 24px rgba(0,0,0,.08)}
-.tree-node--mid-left{left:74px;top:152px}
-.tree-node--mid-center{left:306px;top:152px;border:2px solid rgba(0,0,0,.84);box-shadow:0 10px 20px rgba(0,0,0,.07)}
-.tree-node--mid-right{left:538px;top:152px}
-.tree-node--leaf-left{left:232px;top:286px}
-.tree-node--leaf-center{left:406px;top:286px;border:2px solid rgba(0,0,0,.84);background:rgba(0,0,0,.03)}
-.tree-node--leaf-right{left:580px;top:286px}
-.tree-node--muted{background:rgba(0,0,0,.028);border-color:rgba(0,0,0,.08)}
-.tree-node--muted strong,.tree-node--muted span{color:rgba(0,0,0,.36)}
-
-.swing-label{position:absolute;margin:0;font-family:"Space Grotesk",sans-serif;font-size:11px;font-weight:900;letter-spacing:1.8px;text-transform:uppercase;color:rgba(0,0,0,.3)}
-.swing-label--down{right:26px;top:114px;writing-mode:vertical-rl}
-.swing-label--up{left:26px;top:196px;writing-mode:vertical-rl}
-.swing-legend{position:absolute;left:28px;bottom:20px;margin:0;font-size:12px;font-weight:700;line-height:1.6;color:rgba(0,0,0,.5)}
+.action-stage{position:absolute;left:80px;top:50%;transform:translateY(-50%);width:1120px}
+.action-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch}
+.action-card{display:flex;flex-direction:column;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white);overflow:hidden}
+.action-card__num{padding:16px 20px 0;margin:0;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:13px;font-weight:900;letter-spacing:2px}
+.action-card__head{padding:8px 20px 0;margin:0;font-size:22px;font-weight:900;line-height:1.45}
+.action-card__do{padding:8px 20px 6px;margin:0}
+.action-card__do-text{margin:0;font-size:14px;line-height:1.65;color:var(--ink-68)}
+.action-card__fail{margin-top:auto;padding:14px 20px;margin-bottom:0;background:rgba(0,0,0,.03);border-top:1px solid rgba(0,0,0,.06)}
+.action-card__fail-label{margin:0 0 4px;font-family:"Space Grotesk",sans-serif;font-size:10px;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:var(--ink-30)}
+.action-card__fail-text{margin:0;font-size:13px;line-height:1.7;color:var(--ink-50)}
+.action-footer{padding:14px 20px;border-top:1px solid var(--ink-10)}
+.action-footer p{margin:0;font-size:16px;font-weight:900;line-height:1.72}
 </style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第05章 論点を分解する" data-header-title="原則5：トップダウンとボトムアップを行き来する" data-header-subtitle="構造から降りるだけでも、思いつきから積むだけでも、分解は弱くなる" data-footer="standard" data-footer-page="41">
-<div class="swing-layout">
-<section class="swing-copy">
-<p class="swing-copy__eyebrow">Round Trip</p>
-<p class="swing-copy__head">構造で降りて、<br/>具体で戻る</p>
-<p class="swing-copy__body">最初に上位の論点から枝を置き、全体の見取り図をつくる。途中で具体例や現場の違和感が見つかったら、下位から上位へ戻って問いの置き方を補正する。</p>
-</section>
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第05章 論点を定義する" data-header-title="「べき」の徹底解説" data-header-subtitle="行動に結びつかない問いは、問題を解決する論点になっていない" data-footer="standard" data-footer-page="41">
+<div class="action-stage">
+  <div class="action-grid">
+    <section class="action-card">
+      <p class="action-card__num">01</p>
+      <p class="action-card__head">なんちゃって論点</p>
+      <div class="action-card__do">
+        <p class="action-card__do-text">売上が低い原因は何か？<br/>採用がうまくいかない理由は？<br/>顧客満足度が低い要因は？<br/>コストが高い理由は？</p>
+      </div>
+      <div class="action-card__fail">
+        <p class="action-card__fail-label">特徴</p>
+        <p class="action-card__fail-text">原因を眺めて終わりやすく、次に何を変えるべきかが決まらない。</p>
+      </div>
+    </section>
 
-<section class="swing-diagram" aria-label="トップダウンとボトムアップを往復するツリー図">
-<svg viewBox="0 0 760 404" aria-hidden="true">
-  <defs>
-    <marker id="arrow-down" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(0,0,0,.68)"></path>
-    </marker>
-    <marker id="arrow-up" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(0,0,0,.42)"></path>
-    </marker>
-  </defs>
+    <section class="action-card">
+      <p class="action-card__num">02</p>
+      <p class="action-card__head">問題を解決する論点</p>
+      <div class="action-card__do">
+        <p class="action-card__do-text">売上を上げるために、どこを優先的に改善すべきか？<br/>採用充足率を上げるために、どの工程を改善すべきか？<br/>顧客満足度を上げるために、どの接点を改善すべきか？<br/>粗利を守るために、どの費目を下げるべきか？</p>
+      </div>
+      <div class="action-card__fail">
+        <p class="action-card__fail-label">Skip Risk</p>
+        <p class="action-card__fail-text">問いの目的は、次に取るべき行動を決めることだと分かる形になる。</p>
+      </div>
+    </section>
 
-  <path d="M 380 94 L 380 132" stroke="rgba(0,0,0,.14)" stroke-width="2" fill="none"></path>
-  <path d="M 150 152 L 610 152" stroke="rgba(0,0,0,.14)" stroke-width="2" fill="none"></path>
-  <path d="M 150 152 L 150 176" stroke="rgba(0,0,0,.14)" stroke-width="2" fill="none"></path>
-  <path d="M 380 152 L 380 176" stroke="rgba(0,0,0,.18)" stroke-width="2" fill="none"></path>
-  <path d="M 610 152 L 610 176" stroke="rgba(0,0,0,.14)" stroke-width="2" fill="none"></path>
-  <path d="M 380 220 L 380 258" stroke="rgba(0,0,0,.18)" stroke-width="2" fill="none"></path>
-  <path d="M 306 258 L 554 258" stroke="rgba(0,0,0,.14)" stroke-width="2" fill="none"></path>
-  <path d="M 306 258 L 306 286" stroke="rgba(0,0,0,.14)" stroke-width="2" fill="none"></path>
-  <path d="M 480 258 L 480 286" stroke="rgba(0,0,0,.22)" stroke-width="2" fill="none"></path>
-  <path d="M 554 258 L 554 286" stroke="rgba(0,0,0,.14)" stroke-width="2" fill="none"></path>
-
-  <path d="M 432 118 C 470 150, 490 204, 490 286" stroke="rgba(0,0,0,.7)" stroke-width="2.5" fill="none" marker-end="url(#arrow-down)"></path>
-  <path d="M 268 286 C 252 238, 280 184, 340 144" stroke="rgba(0,0,0,.4)" stroke-width="2.5" stroke-dasharray="7 7" fill="none" marker-end="url(#arrow-up)"></path>
-  <path d="M 340 144 C 350 118, 356 96, 362 84" stroke="rgba(0,0,0,.4)" stroke-width="2.5" stroke-dasharray="7 7" fill="none" marker-end="url(#arrow-up)"></path>
-  <circle cx="380" cy="152" r="5" fill="rgba(0,0,0,.78)"></circle>
-  <circle cx="480" cy="286" r="5" fill="rgba(0,0,0,.78)"></circle>
-</svg>
-
-<div class="tree-node tree-node--root">
-  <strong>売上が伸びない理由</strong>
-  <span>まず上位の問いを置く</span>
-</div>
-<div class="tree-node tree-node--mid-left tree-node--muted">
-  <strong>商品力</strong>
-  <span>価値訴求は十分か</span>
-</div>
-<div class="tree-node tree-node--mid-center">
-  <strong>集客</strong>
-  <span>どこで詰まっているか</span>
-</div>
-<div class="tree-node tree-node--mid-right tree-node--muted">
-  <strong>営業体制</strong>
-  <span>失注要因は何か</span>
-</div>
-<div class="tree-node tree-node--leaf-left tree-node--muted">
-  <strong>流入数</strong>
-  <span>媒体別で減っているか</span>
-</div>
-<div class="tree-node tree-node--leaf-center">
-  <strong>広告経由 CVR</strong>
-  <span>具体の違和感から戻る</span>
-</div>
-<div class="tree-node tree-node--leaf-right tree-node--muted">
-  <strong>再訪率</strong>
-  <span>比較で深掘る候補</span>
-</div>
-
-<p class="swing-label swing-label--down">Top Down</p>
-<p class="swing-label swing-label--up">Bottom Up</p>
-<p class="swing-legend">灰色は未探索の枝。太い輪郭と矢印が、いま往復している思考の経路。</p>
-</section>
-</div>
+    <section class="action-card">
+      <p class="action-card__num">03</p>
+      <p class="action-card__head">結論</p>
+      <div class="action-card__do">
+        <p class="action-card__do-text">苦しくても「べき」を入れる。そこまで言えて初めて、問いは行動に変わる。</p>
+      </div>
+      <div class="action-card__fail">
+        <p class="action-card__fail-label">Skip Risk</p>
+        <p class="action-card__fail-text">問いの目的は、次に取るべき行動を決めることである。</p>
+      </div>
+    </section>
+  </div>
 </div>
 </body>
 </html>

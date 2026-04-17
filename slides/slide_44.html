@@ -3,41 +3,52 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>良い仮説とは</title>
+<title>論点分解とは何か / なぜ重要か</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
 <style>
-.stage{position:absolute;left:80px;top:160px;width:1120px;display:flex;flex-direction:column;gap:18px}.kicker{margin:0;color:#5a4970;font-size:15px;font-weight:900;line-height:1.55}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.card{min-height:320px;padding:22px;border:1px solid rgba(0,0,0,.12);border-radius:8px;background:#fff}.card--strong{border-width:2px;border-color:rgba(0,0,0,.82)}.slide-container .card__num{margin:0 0 24px;color:rgba(0,0,0,.28);font-family:"Space Grotesk",sans-serif;font-size:14px;font-weight:900;letter-spacing:2px}.slide-container .card__title{margin:0 0 26px;font-size:24px;font-weight:900;line-height:1.4}.points{display:grid;gap:18px}.points p{margin:0;font-size:15px;font-weight:900;line-height:1.6}.points span{display:block;margin-top:6px;color:rgba(0,0,0,.68);font-size:13px;font-weight:400;line-height:1.6}.example{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:stretch}.example__box{padding:16px 18px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff}.example__box--strong{border-width:2px;border-color:rgba(0,0,0,.82)}.slide-container .example__label{margin:0 0 8px;color:rgba(0,0,0,.34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.slide-container .example__text{margin:0;font-size:17px;font-weight:900;line-height:1.55}
+.summary-stage{position:absolute;left:80px;top:176px;width:1120px;display:grid;grid-template-rows:auto auto auto;row-gap:22px}
+.summary-hero{padding:26px 30px 24px;border:1px solid var(--ink-08);border-radius:8px;background:var(--surface-white)}
+.summary-kicker{margin:0 0 14px;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+.summary-head{margin:0 0 14px;font-size:34px;font-weight:900;line-height:1.42;color:var(--soft-black)}
+.summary-copy{margin:0;font-size:16px;line-height:1.82;color:rgba(0,0,0,.66)}
+.summary-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.summary-card{padding:22px 22px 20px;border:1px solid var(--ink-08);border-radius:8px;background:var(--surface-white)}
+.summary-card__num{margin:0 0 12px;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:13px;font-weight:900;letter-spacing:2px}
+.summary-card__head{margin:0 0 10px;font-size:22px;font-weight:900;line-height:1.45;color:var(--soft-black)}
+.summary-card__body{margin:0;font-size:14px;line-height:1.78;color:rgba(0,0,0,.64)}
+.summary-bar{padding:16px 20px;border-top:1px solid var(--ink-10)}
+.summary-bar p{margin:0;font-size:18px;font-weight:900;line-height:1.68;color:var(--soft-black)}
 </style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第06章 仮説を構築する" data-header-title="良い仮説とは" data-header-subtitle="雑な思いつきではなく、検証に耐える形まで置く" data-footer="standard" data-footer-page="44">
-  <div class="stage">
-    <p class="kicker">良い仮説は、当たりそうに見える仮説ではない。判定ができて、すぐ確かめに行ける仮説である。</p>
-    <div class="grid">
-      <section class="card">
-        <p class="card__num">01</p>
-        <p class="card__title">判定基準が具体的かつ簡潔である</p>
-        <div class="points">
-          <p>誰について、何をもってそう言うのかが一文で追える<span>主語と判定基準が曖昧だと、議論も検証もぶれる。</span></p>
-          <p>抽象語ではなく、比較対象や基準に落ちている<span>「人気」「高い」「良い」ではなく、何を見れば判定できるかが分かる。</span></p>
-          <p>長く説明しなくても要点が伝わる<span>仮説そのものが簡潔であるほど、検証の起点として使いやすい。</span></p>
-        </div>
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第06章 論点を分解する" data-header-title="論点分解とは何か / なぜ重要か" data-header-subtitle="上位の問いを、答えを構成する下位論点へ構造的に展開する" data-footer="standard" data-footer-page="44">
+  <div class="summary-stage">
+    <section class="summary-hero">
+      <p class="summary-kicker">Decomposition</p>
+      <p class="summary-head">分解とは、<br/>答えを構成する論点へ降りること</p>
+      <p class="summary-copy">上位の問いを、答えを構成する下位論点へ構造的に展開する。これができないと、何を確かめ、どこを動かすべきかが見えない。論点分解は、思いつきを並べる作業ではなく構造化の工程である。</p>
+    </section>
+
+    <div class="summary-grid">
+      <section class="summary-card">
+        <p class="summary-card__num">01</p>
+        <p class="summary-card__head">全体像が見える</p>
+        <p class="summary-card__body">上位と下位の関係が見えると、どこで考えているかを見失わない。</p>
       </section>
-      <section class="card card--strong">
-        <p class="card__num">02</p>
-        <p class="card__title">検証が具体的かつ容易である</p>
-        <div class="points">
-          <p>必要なデータや観察対象が取れる<span>手に入らない情報に依存している時点で、実務上は使いにくい。</span></p>
-          <p>どう確かめるかが具体的である<span>データ、観察、インタビュー、実験のどれで見るかが決まっている。</span></p>
-          <p>時間・コスト・体制の中で回せる<span>検証の実現性がない仮説は、正しくても前に進めない。</span></p>
-        </div>
+
+      <section class="summary-card">
+        <p class="summary-card__num">02</p>
+        <p class="summary-card__head">ボトルネックが見える</p>
+        <p class="summary-card__body">どこが詰まりで、どの変数を動かせばよいかが見つけやすくなる。</p>
       </section>
-    </div>
-    <div class="example">
-      <div class="example__box"><p class="example__label">Bad</p><p class="example__text">若者に人気がある商品だと思う</p></div>
-      <div class="example__box example__box--strong"><p class="example__label">Better</p><p class="example__text">20代の購入比率が全体平均より明確に高い</p></div>
+
+      <section class="summary-card">
+        <p class="summary-card__num">03</p>
+        <p class="summary-card__head">検証単位まで落とせる</p>
+        <p class="summary-card__body">何を確かめれば前に進めるかが分かり、検証が実務に下りる。</p>
+      </section>
     </div>
   </div>
 </div>

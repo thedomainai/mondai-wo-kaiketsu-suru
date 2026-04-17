@@ -1,30 +1,84 @@
 <!DOCTYPE html>
+
 <html lang="ja">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>仮説の基本手順</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
+<title>原則1：ツリー状に分解する</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&amp;family=Space+Grotesk:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
 <style>
-.stage{position:absolute;left:80px;top:160px;width:1120px;display:flex;flex-direction:column;gap:18px}.kicker{margin:0;color:#5a4970;font-size:15px;font-weight:900;line-height:1.55}.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.step{min-height:250px;padding:22px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff;display:flex;flex-direction:column}.slide-container .step__num{margin:0 0 16px;color:rgba(0,0,0,.28);font-family:"Space Grotesk",sans-serif;font-size:14px;font-weight:900;letter-spacing:2px}.slide-container .step__title{margin:0 0 12px;font-size:21px;font-weight:900;line-height:1.45}.slide-container .step__text{margin:0;color:rgba(0,0,0,.72);font-size:14px;line-height:1.72}.template{padding:18px 22px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff}.template p{margin:0;font-size:16px;font-weight:900;line-height:1.8}
+.page-body-shift{
+  position: relative;
+  top: -24px;
+}
 </style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第06章 仮説を構築する" data-header-title="仮説の基本手順" data-header-subtitle="論点に対する仮の答えを、前提と検証方法まで含めて置く" data-footer="standard" data-footer-page="45">
-  <div class="stage">
-    <p class="kicker">いきなり「答え」だけを置くと弱い。論点、根拠、前提、確かめ方まで一続きで置くと、仮説は一気に使えるものになる。</p>
-    <div class="flow">
-      <section class="step"><p class="step__num">01</p><p class="step__title">論点に対する仮の答えを置く</p><p class="step__text">まずは「結局どうだと思うのか」を逃げずに言語化する。曖昧な方向性ではなく、Yes / No や優先順位の形まで寄せる。</p></section>
-      <section class="step"><p class="step__num">02</p><p class="step__title">なぜそう思うかを書く</p><p class="step__text">過去事例、構造理解、直感、観察のどれでもよいので、仮の答えを支える根拠を置く。</p></section>
-      <section class="step"><p class="step__num">03</p><p class="step__title">成立条件を切り出す</p><p class="step__text">どの前提が崩れるとこの仮説が壊れるのかを明示すると、検証ポイントがはっきりする。</p></section>
-      <section class="step"><p class="step__num">04</p><p class="step__title">検証方法を決める</p><p class="step__text">データ、現場観察、インタビュー、実験のどれで確かめるかを決め、次の行動に変える。</p></section>
-    </div>
-    <div class="template">
-      <p>論点: 何が本当にボトルネックか / 仮説: 新規獲得ではなく初回継続率が主因 / 根拠: 流入は足りているが2回目利用で落ちる / 主要前提: 初回体験が価値実感に届いていない / 検証方法: 初回利用者インタビューと行動ログで離脱点を特定する</p>
-    </div>
-  </div>
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第06章 論点を分解する" data-header-title="原則1：ツリー状に分解する" data-header-subtitle="論点はツリー構造で階層的に分解する" data-footer="standard" data-footer-page="45">
+<div class="page-body-shift">
+
+<!-- Background Dot Pattern (Shape) -->
+<!-- Tree Diagram Lines (Shapes) -->
+<!-- Root to H-line -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 639px; top: 236px; width: 2px; height: 25px; background-color: var(--soft-black); z-index: 5;"></div>
+<!-- H-line 1 -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 259px; top: 261px; width: 741px; height: 2px; background-color: var(--soft-black); z-index: 5;"></div>
+<!-- H-line to Child A -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 259px; top: 261px; width: 2px; height: 25px; background-color: var(--soft-black); z-index: 5;"></div>
+<!-- H-line to Child B -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 639px; top: 261px; width: 2px; height: 25px; background-color: var(--soft-black); z-index: 5;"></div>
+<!-- H-line to Child C -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 999px; top: 261px; width: 2px; height: 25px; background-color: var(--soft-black); z-index: 5;"></div>
+<!-- Child A to H-line 2 -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 259px; top: 326px; width: 2px; height: 25px; background-color: var(--soft-black); z-index: 5;"></div>
+<!-- H-line 2 -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 159px; top: 351px; width: 202px; height: 2px; background-color: var(--soft-black); z-index: 5;"></div>
+<!-- H-line 2 to A-1 -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 159px; top: 351px; width: 2px; height: 25px; background-color: var(--soft-black); z-index: 5;"></div>
+<!-- H-line 2 to A-2 -->
+<div data-object="true" data-object-type="shape" style="position: absolute; left: 359px; top: 351px; width: 2px; height: 25px; background-color: var(--soft-black); z-index: 5;"></div>
+<!-- Tree Diagram Nodes (Textboxes) -->
+<!-- Root Node -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 540px; top: 196px; width: 200px; height: 40px; background-color: var(--soft-black); border-radius: 8px; display: flex; align-items: center; justify-content: center; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: #ffffff; margin: 0; padding: 6px 16px;">大論点</p>
+</div>
+<!-- Child A -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 160px; top: 286px; width: 200px; height: 40px; background-color: #ececec; border: 2px solid var(--soft-black); border-radius: 8px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: var(--soft-black); margin: 0; padding: 6px 16px;">小論点A</p>
+</div>
+<!-- Child B -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 540px; top: 286px; width: 200px; height: 40px; background-color: #ececec; border: 2px solid var(--soft-black); border-radius: 8px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: var(--soft-black); margin: 0; padding: 6px 16px;">小論点B</p>
+</div>
+<!-- Child C -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 900px; top: 286px; width: 200px; height: 40px; background-color: #ececec; border: 2px solid var(--soft-black); border-radius: 8px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700; font-size: 14px; color: var(--soft-black); margin: 0; padding: 6px 16px;">小論点C</p>
+</div>
+<!-- A-1 -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 376px; width: 160px; height: 40px; background-color: #f8f8f8; border: 1px solid var(--soft-black); border-radius: 8px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: var(--soft-black); margin: 0; padding: 6px 16px;">検証項目1</p>
+</div>
+<!-- A-2 -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 280px; top: 376px; width: 160px; height: 40px; background-color: #f8f8f8; border: 1px solid var(--soft-black); border-radius: 8px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: var(--soft-black); margin: 0; padding: 6px 16px;">検証項目2</p>
+</div>
+<!-- Points Section (Textbox) -->
+<div data-object="true" data-object-type="textbox" style="position: absolute; left: 80px; top: 442px; width: 1120px; height: 112px; background-color: rgba(0,0,0,0.05); border-left: 4px solid var(--soft-black); padding: 10px 16px; box-sizing: border-box; z-index: 10;">
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 16px; color: var(--soft-black); margin: 0 0 8px 0;">ポイント</p>
+<div style="display: flex; align-items: flex-start; margin-bottom: 6px;">
+<span style="color: var(--soft-black); margin-right: 8px; font-size: 12px; margin-top: 3px;">●</span>
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #333333; line-height: 1.5; margin: 0;">上位の論点に対して、下位の論点が「答え」の構成要素になるように配置する</p>
+</div>
+<div style="display: flex; align-items: flex-start;">
+<span style="color: var(--soft-black); margin-right: 8px; font-size: 12px; margin-top: 3px;">●</span>
+<p style="font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 14px; color: #333333; line-height: 1.5; margin: 0;">親子関係が明確な階層構造を作る</p>
+</div>
+</div>
+
+</div>
 </div>
 </body>
 </html>

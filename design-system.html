@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Design System — Logical Thinking Training</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
+<style>
+/* ========== RESET & BASE ========== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Ink scale */
+  --ink-100: #1a1a1a;
+  --ink-82: rgba(0,0,0,.82);
+  --ink-68: rgba(0,0,0,.68);
+  --ink-50: rgba(0,0,0,.50);
+  --ink-34: rgba(0,0,0,.34);
+  --ink-18: rgba(0,0,0,.18);
+  --ink-08: rgba(0,0,0,.08);
+  --ink-04: rgba(0,0,0,.04);
+  /* Surface */
+  --surface-white: #fff;
+  --surface-mist: #f7f7f7;
+  --surface-card: #fff;
+  /* Accent */
+  --accent-purple: #5a4970;
+  --accent-red: #9e3434;
+  /* Typography */
+  --fs-11:11px; --fs-12:12px; --fs-13:13px; --fs-14:14px; --fs-15:15px;
+  --fs-16:16px; --fs-17:17px; --fs-18:18px; --fs-22:22px; --fs-24:24px;
+  --fs-30:30px; --fs-34:34px; --fs-36:36px; --fs-42:42px; --fs-48:48px;
+  --fs-52:52px; --fs-60:60px; --fs-160:160px;
+  /* Spacing */
+  --sp-4:4px; --sp-8:8px; --sp-12:12px; --sp-16:16px;
+  --sp-20:20px; --sp-24:24px; --sp-32:32px; --sp-48:48px;
+  /* Page chrome */
+  --nav-w: 260px;
+  --page-bg: #fafafa;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Noto Sans JP", system-ui, sans-serif;
+  background: var(--page-bg);
+  color: var(--ink-100);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ========== LAYOUT ========== */
+.page { display: flex; min-height: 100vh; }
+
+/* --- Side navigation --- */
+.nav {
+  position: fixed; top: 0; left: 0; bottom: 0;
+  width: var(--nav-w);
+  background: var(--ink-100);
+  color: rgba(255,255,255,.7);
+  overflow-y: auto;
+  z-index: 100;
+  display: flex; flex-direction: column;
+}
+.nav__brand {
+  padding: 32px 28px 24px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.nav__brand-pill {
+  display: inline-block;
+  padding: 3px 10px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 999px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 1.6px; text-transform: uppercase;
+  color: rgba(255,255,255,.5);
+  margin-bottom: 16px;
+}
+.nav__brand-title {
+  font-size: 15px; font-weight: 900; color: #fff;
+  line-height: 1.35;
+}
+.nav__brand-sub {
+  font-size: 11px; color: rgba(255,255,255,.4);
+  margin-top: 4px;
+}
+.nav__sections { padding: 20px 0; flex: 1; }
+.nav__group {
+  padding: 0 28px; margin-bottom: 4px;
+}
+.nav__group-label {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(255,255,255,.28);
+  padding: 16px 0 8px;
+}
+.nav__link {
+  display: block; padding: 7px 0;
+  font-size: 13px; color: rgba(255,255,255,.55);
+  text-decoration: none; transition: color .15s;
+}
+.nav__link:hover { color: #fff; }
+.nav__link--active { color: #fff; font-weight: 700; }
+.nav__footer {
+  padding: 20px 28px; border-top: 1px solid rgba(255,255,255,.06);
+  font-size: 11px; color: rgba(255,255,255,.25);
+}
+
+/* --- Main content --- */
+.main {
+  flex: 1; margin-left: var(--nav-w);
+  padding: 48px 56px 120px;
+  max-width: 1080px;
+}
+
+/* ========== HERO ========== */
+.hero {
+  padding: 56px 0 48px;
+  border-bottom: 1px solid var(--ink-08);
+  margin-bottom: 56px;
+}
+.hero__pill {
+  display: inline-block;
+  padding: 4px 14px;
+  border: 1px solid var(--ink-18);
+  border-radius: 999px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 1.6px; text-transform: uppercase;
+  color: var(--ink-34);
+  margin-bottom: 20px;
+}
+.hero__title {
+  font-size: 42px; font-weight: 900; letter-spacing: -.5px;
+  line-height: 1.15; margin-bottom: 12px;
+}
+.hero__sub {
+  font-size: 16px; color: var(--ink-50); line-height: 1.65;
+  max-width: 600px;
+}
+
+/* ========== SECTIONS ========== */
+.section { margin-bottom: 72px; scroll-margin-top: 32px; }
+.section__eyebrow {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--ink-34); margin-bottom: 8px;
+}
+.section__title {
+  font-size: 28px; font-weight: 900; line-height: 1.25;
+  margin-bottom: 8px;
+}
+.section__desc {
+  font-size: 14px; color: var(--ink-50); line-height: 1.65;
+  margin-bottom: 32px; max-width: 560px;
+}
+
+/* ========== COLOR SWATCHES ========== */
+.swatch-group {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 12px; margin-bottom: 28px;
+}
+.swatch {
+  border-radius: 10px; overflow: hidden;
+  border: 1px solid var(--ink-08);
+  background: #fff;
+}
+.swatch__color {
+  height: 72px; position: relative;
+}
+.swatch__meta {
+  padding: 10px 12px;
+}
+.swatch__name {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 12px; font-weight: 700; letter-spacing: .3px;
+  margin-bottom: 2px;
+}
+.swatch__value {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 11px; color: var(--ink-34);
+}
+
+/* ========== TOKEN TABLE ========== */
+.token-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 13px; margin-bottom: 28px;
+}
+.token-table th {
+  text-align: left; padding: 10px 16px 10px 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 1.2px; text-transform: uppercase;
+  color: var(--ink-34);
+  border-bottom: 2px solid var(--ink-100);
+}
+.token-table td {
+  padding: 10px 16px 10px 0;
+  border-bottom: 1px solid var(--ink-04);
+  vertical-align: middle;
+}
+.token-table tr:last-child td { border-bottom: none; }
+.token-table code {
+  font-family: "Space Grotesk", monospace;
+  font-size: 12px; font-weight: 600;
+  padding: 2px 7px; border-radius: 4px;
+  background: rgba(90,73,112,.06); color: var(--accent-purple);
+}
+.token-table .preview { display: inline-block; vertical-align: middle; }
+
+/* Type scale preview */
+.type-row { display: flex; align-items: baseline; gap: 20px; }
+.type-row__sample {
+  flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  color: var(--ink-82); font-weight: 700;
+}
+.type-row__px {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 12px; color: var(--ink-34); font-weight: 600;
+  min-width: 40px; text-align: right;
+}
+
+/* Spacing bar */
+.sp-bar {
+  height: 8px; border-radius: 4px;
+  background: var(--accent-purple); opacity: .7;
+}
+
+/* ========== COMPONENT GALLERY ========== */
+.gallery { display: grid; gap: 24px; align-items: stretch; }
+.gallery--2 { grid-template-columns: repeat(2, 1fr); }
+.gallery--3 { grid-template-columns: repeat(3, 1fr); }
+.gallery--4 { grid-template-columns: repeat(4, 1fr); }
+
+.specimen {
+  border: 1px solid var(--ink-08); border-radius: 12px;
+  overflow: hidden; background: #fff;
+  display: grid; grid-template-rows: 1fr auto;
+}
+.specimen__preview {
+  padding: 28px 24px; background: var(--surface-mist);
+  border-bottom: 1px solid var(--ink-04);
+  display: flex; align-items: flex-start; justify-content: center;
+}
+.specimen__info {
+  padding: 16px 20px;
+}
+.specimen__label {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 13px; font-weight: 700; margin-bottom: 4px;
+}
+.specimen__code {
+  font-family: "Space Grotesk", monospace;
+  font-size: 11px; color: var(--ink-34);
+}
+
+/* ========== LIVE COMPONENT RENDERS ========== */
+/* These replicate the actual ds-* classes for demonstration */
+.demo-card {
+  display: flex; flex-direction: column;
+  padding: 16px 18px; background: #fff;
+  border: 1px solid var(--ink-08); border-radius: 8px;
+  width: 100%;
+}
+.demo-card--strong {
+  border: 2px solid var(--ink-100); border-radius: 8px;
+}
+.demo-card--flat {
+  border: none;
+  background: var(--surface-mist); border-radius: 8px;
+}
+.demo-card--tint {
+  border-color: var(--ink-08);
+  background: rgba(90,73,112,.04);
+}
+
+.demo-panel {
+  padding: 22px 24px; background: #fff;
+  border: 1px solid var(--ink-08); border-radius: 8px;
+  width: 100%;
+}
+.demo-summary {
+  padding-top: 16px;
+  border-top: 1px solid var(--ink-08);
+  width: 100%;
+}
+.demo-summary p {
+  margin: 0; color: var(--ink-68);
+  font-size: 14px; line-height: 1.7;
+}
+.demo-summary--box {
+  padding: 16px 20px;
+  border: 1px solid var(--ink-08); border-radius: 8px;
+  background: var(--surface-white);
+}
+
+.demo-arrow {
+  display: flex; align-items: center; justify-content: center;
+}
+.demo-arrow::before { display: none; }
+.demo-arrow::after {
+  content: ""; display: block;
+  width: 0; height: 0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 10px solid var(--ink-34);
+}
+.demo-arrow--down { flex-direction: column; }
+.demo-arrow--down::after {
+  border-top: 10px solid var(--ink-34);
+  border-bottom: none;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+}
+
+.demo-badge {
+  display: inline-block; padding: 2px 10px;
+  border-radius: 999px; font-size: 11px;
+  font-weight: 700; letter-spacing: .5px;
+}
+.demo-badge--dark { background: var(--ink-100); color: #fff; }
+.demo-badge--light { background: var(--ink-08); color: var(--ink-68); }
+.demo-badge--accent { background: var(--accent-purple); color: #fff; }
+
+.demo-kicker {
+  color: var(--accent-purple); font-size: 15px;
+  font-weight: 900; line-height: 1.55;
+}
+.demo-eyebrow {
+  color: var(--ink-34);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 1.6px; text-transform: uppercase;
+}
+
+.demo-rows { display: flex; flex-direction: column; width: 100%; }
+.demo-row {
+  display: flex; align-items: baseline;
+  padding: 8px 0; border-bottom: 1px solid var(--ink-08);
+  font-size: 14px; line-height: 1.5;
+}
+.demo-row:last-child { border-bottom: none; }
+.demo-row__label {
+  flex-shrink: 0; width: 100px;
+  color: var(--ink-50); font-size: 13px; font-weight: 700;
+}
+.demo-row__value { flex: 1; color: var(--ink-68); font-size: 14px; }
+
+/* ========== SLIDE EMBED ========== */
+.slide-embed {
+  border: 1px solid var(--ink-08); border-radius: 12px;
+  overflow: hidden; background: #fff;
+  margin-bottom: 28px;
+}
+.slide-embed__frame {
+  position: relative; width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  overflow: hidden;
+}
+.slide-embed__frame iframe {
+  position: absolute; top: 0; left: 0;
+  width: 1280px; height: 720px;
+  transform-origin: top left;
+  border: none; pointer-events: none;
+}
+.slide-embed__caption {
+  padding: 14px 20px; border-top: 1px solid var(--ink-04);
+  font-size: 13px; color: var(--ink-50);
+  display: flex; align-items: center; gap: 8px;
+}
+.slide-embed__caption code {
+  font-family: "Space Grotesk", monospace;
+  font-size: 12px; font-weight: 600;
+  padding: 2px 7px; border-radius: 4px;
+  background: rgba(90,73,112,.06); color: var(--accent-purple);
+}
+
+/* ========== GOVERNANCE ========== */
+.rule-list { list-style: none; padding: 0; }
+.rule-list li {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--ink-04);
+  font-size: 14px; line-height: 1.65;
+  display: flex; gap: 12px;
+}
+.rule-list li:last-child { border-bottom: none; }
+.rule-num {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 13px; font-weight: 900;
+  color: var(--accent-purple);
+  min-width: 24px; flex-shrink: 0;
+}
+
+/* ========== SUBSECTION ========== */
+.subsection {
+  margin-bottom: 36px;
+}
+.subsection__title {
+  font-size: 16px; font-weight: 900;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--ink-08);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 900px) {
+  .nav { display: none; }
+  .main { margin-left: 0; padding: 32px 24px 80px; }
+  .gallery--2, .gallery--3, .gallery--4 { grid-template-columns: 1fr; }
+  .swatch-group { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ==================== NAVIGATION ==================== -->
+<nav class="nav">
+  <div class="nav__brand">
+    <div class="nav__brand-pill">Design System</div>
+    <div class="nav__brand-title">Logical Thinking<br/>Training</div>
+    <div class="nav__brand-sub">1280 &times; 720 Slide Deck</div>
+  </div>
+  <div class="nav__sections">
+    <div class="nav__group">
+      <div class="nav__group-label">Foundation</div>
+      <a class="nav__link" href="#color">Color</a>
+      <a class="nav__link" href="#typography">Typography</a>
+      <a class="nav__link" href="#spacing">Spacing</a>
+    </div>
+    <div class="nav__group">
+      <div class="nav__group-label">Layout</div>
+      <a class="nav__link" href="#geometry">Geometry</a>
+      <a class="nav__link" href="#stage">Stage</a>
+      <a class="nav__link" href="#grid">Grid</a>
+    </div>
+    <div class="nav__group">
+      <div class="nav__group-label">Components</div>
+      <a class="nav__link" href="#card">Card</a>
+      <a class="nav__link" href="#panel">Panel &amp; Rows</a>
+      <a class="nav__link" href="#kicker">Kicker</a>
+      <a class="nav__link" href="#summary">Summary</a>
+      <a class="nav__link" href="#badge">Badge</a>
+      <a class="nav__link" href="#arrow">Flow Arrow</a>
+    </div>
+    <div class="nav__group">
+      <div class="nav__group-label">Text</div>
+      <a class="nav__link" href="#text-classes">Type Classes</a>
+      <a class="nav__link" href="#utilities">Utilities</a>
+    </div>
+    <div class="nav__group">
+      <div class="nav__group-label">Reference</div>
+      <a class="nav__link" href="#examples">Live Examples</a>
+      <a class="nav__link" href="#governance">Governance</a>
+    </div>
+  </div>
+  <div class="nav__footer">69 slides &middot; slides.css 1084 lines</div>
+</nav>
+
+<!-- ==================== MAIN ==================== -->
+<main class="main">
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <div class="hero__pill">Problem Solving</div>
+  <h1 class="hero__title">Design System</h1>
+  <p class="hero__sub">ロジカル・シンキング研修スライドデッキの視覚的一貫性を担保するトークン・コンポーネント・ガバナンスルール。</p>
+</div>
+
+<!-- ===== COLOR ===== -->
+<section class="section" id="color">
+  <p class="section__eyebrow">Foundation</p>
+  <h2 class="section__title">Color</h2>
+  <p class="section__desc">7段階のインクスケール + 背景 + アクセント。全スライドのハードコード値はこのトークンに集約済み。</p>
+
+  <div class="subsection">
+    <h3 class="subsection__title">Ink Scale</h3>
+    <div class="swatch-group">
+      <div class="swatch">
+        <div class="swatch__color" style="background:#1a1a1a"></div>
+        <div class="swatch__meta"><div class="swatch__name">ink-100</div><div class="swatch__value">#1a1a1a</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:rgba(0,0,0,.82)"></div>
+        <div class="swatch__meta"><div class="swatch__name">ink-82</div><div class="swatch__value">rgba(0,0,0,.82)</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:rgba(0,0,0,.68)"></div>
+        <div class="swatch__meta"><div class="swatch__name">ink-68</div><div class="swatch__value">rgba(0,0,0,.68)</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:rgba(0,0,0,.50)"></div>
+        <div class="swatch__meta"><div class="swatch__name">ink-50</div><div class="swatch__value">rgba(0,0,0,.50)</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:rgba(0,0,0,.34)"></div>
+        <div class="swatch__meta"><div class="swatch__name">ink-34</div><div class="swatch__value">rgba(0,0,0,.34)</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:rgba(0,0,0,.18)"></div>
+        <div class="swatch__meta"><div class="swatch__name">ink-18</div><div class="swatch__value">rgba(0,0,0,.18)</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:rgba(0,0,0,.08);border-bottom:1px solid var(--ink-08)"></div>
+        <div class="swatch__meta"><div class="swatch__name">ink-08</div><div class="swatch__value">rgba(0,0,0,.08)</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:rgba(0,0,0,.04);border-bottom:1px solid var(--ink-08)"></div>
+        <div class="swatch__meta"><div class="swatch__name">ink-04</div><div class="swatch__value">rgba(0,0,0,.04)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3 class="subsection__title">Surface &amp; Accent</h3>
+    <div class="swatch-group">
+      <div class="swatch">
+        <div class="swatch__color" style="background:#fff;border-bottom:1px solid var(--ink-08)"></div>
+        <div class="swatch__meta"><div class="swatch__name">surface-white</div><div class="swatch__value">#ffffff</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:#f7f7f7;border-bottom:1px solid var(--ink-08)"></div>
+        <div class="swatch__meta"><div class="swatch__name">surface-mist</div><div class="swatch__value">#f7f7f7</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:#5a4970"></div>
+        <div class="swatch__meta"><div class="swatch__name">accent-purple</div><div class="swatch__value">#5a4970</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:#9e3434"></div>
+        <div class="swatch__meta"><div class="swatch__name">accent-red</div><div class="swatch__value">#9e3434</div></div>
+      </div>
+    </div>
+  </div>
+
+  <table class="token-table">
+    <thead><tr><th>Token</th><th>Value</th><th>Semantic Role</th></tr></thead>
+    <tbody>
+      <tr><td><code>--ink-100</code></td><td>#1a1a1a</td><td>Primary text</td></tr>
+      <tr><td><code>--ink-82</code></td><td>rgba(0,0,0,.82)</td><td>Strong emphasis</td></tr>
+      <tr><td><code>--ink-68</code></td><td>rgba(0,0,0,.68)</td><td>Secondary text / body</td></tr>
+      <tr><td><code>--ink-50</code></td><td>rgba(0,0,0,.50)</td><td>Muted text</td></tr>
+      <tr><td><code>--ink-34</code></td><td>rgba(0,0,0,.34)</td><td>Eyebrow / label / kicker</td></tr>
+      <tr><td><code>--ink-18</code></td><td>rgba(0,0,0,.18)</td><td>Disabled / placeholder</td></tr>
+      <tr><td><code>--ink-08</code></td><td>rgba(0,0,0,.08)</td><td>Border light</td></tr>
+      <tr><td><code>--ink-04</code></td><td>rgba(0,0,0,.04)</td><td>Border subtle / divider</td></tr>
+      <tr><td><code>--accent-purple</code></td><td>#5a4970</td><td>Accent (kicker, badges)</td></tr>
+      <tr><td><code>--accent-red</code></td><td>#9e3434</td><td>Negative / warning</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ===== TYPOGRAPHY ===== -->
+<section class="section" id="typography">
+  <p class="section__eyebrow">Foundation</p>
+  <h2 class="section__title">Typography</h2>
+  <p class="section__desc">Space Grotesk（英字・数字）+ Noto Sans JP（日本語）の 2 書体。18段階のサイズスケール。</p>
+
+  <div class="subsection">
+    <h3 class="subsection__title">Scale</h3>
+    <table class="token-table">
+      <thead><tr><th>Token</th><th>px</th><th>Usage</th><th style="width:50%">Preview</th></tr></thead>
+      <tbody>
+        <tr><td><code>--fs-11</code></td><td>11</td><td>Footer, small eyebrow</td><td><span style="font-size:11px;font-weight:700">The quick brown fox ロジカル</span></td></tr>
+        <tr><td><code>--fs-12</code></td><td>12</td><td>Eyebrow, labels</td><td><span style="font-size:12px;font-weight:700">The quick brown fox ロジカル</span></td></tr>
+        <tr><td><code>--fs-13</code></td><td>13</td><td>Body small, captions</td><td><span style="font-size:13px">The quick brown fox ロジカル</span></td></tr>
+        <tr><td><code>--fs-14</code></td><td>14</td><td>Body, row values</td><td><span style="font-size:14px">The quick brown fox ロジカル</span></td></tr>
+        <tr><td><code>--fs-15</code></td><td>15</td><td>Body default, card title</td><td><span style="font-size:15px">The quick brown fox ロジカル</span></td></tr>
+        <tr><td><code>--fs-16</code></td><td>16</td><td>Body large, panel title</td><td><span style="font-size:16px;font-weight:700">The quick brown fox ロジカル</span></td></tr>
+        <tr><td><code>--fs-17</code></td><td>17</td><td>Body emphasis</td><td><span style="font-size:17px;font-weight:700">The quick brown fox ロジカル</span></td></tr>
+        <tr><td><code>--fs-18</code></td><td>18</td><td>Subtitle</td><td><span style="font-size:18px">The quick brown fox ロジカル</span></td></tr>
+        <tr><td><code>--fs-22</code></td><td>22</td><td>Section subtitle</td><td><span style="font-size:22px;font-weight:700">The quick brown fox</span></td></tr>
+        <tr><td><code>--fs-24</code></td><td>24</td><td>Section title</td><td><span style="font-size:24px;font-weight:900">The quick brown fox</span></td></tr>
+        <tr><td><code>--fs-30</code></td><td>30</td><td>Title large</td><td><span style="font-size:30px;font-weight:900">Quick brown</span></td></tr>
+        <tr><td><code>--fs-34</code></td><td>34</td><td>Display</td><td><span style="font-size:34px;font-weight:900;font-family:'Space Grotesk'">Display</span></td></tr>
+        <tr><td><code>--fs-36</code></td><td>36</td><td>Header title</td><td><span style="font-size:36px;font-weight:900">ヘッダー</span></td></tr>
+        <tr><td><code>--fs-48</code></td><td>48</td><td>Center title</td><td><span style="font-size:48px;font-weight:900;line-height:1">Title</span></td></tr>
+        <tr><td><code>--fs-60</code></td><td>60</td><td>Cover / divider</td><td><span style="font-size:48px;font-weight:900;font-family:'Space Grotesk';line-height:1;color:var(--ink-34)">60</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="subsection">
+    <h3 class="subsection__title">Font Weights</h3>
+    <div style="display:flex;gap:40px;margin-bottom:16px">
+      <div>
+        <p style="font-size:28px;font-weight:400;margin-bottom:4px">Regular</p>
+        <p style="font-size:12px;color:var(--ink-34)">400 — Body, description</p>
+      </div>
+      <div>
+        <p style="font-size:28px;font-weight:700;margin-bottom:4px">Bold</p>
+        <p style="font-size:12px;color:var(--ink-34)">700 — Labels, emphasis</p>
+      </div>
+      <div>
+        <p style="font-size:28px;font-weight:900;margin-bottom:4px">Black</p>
+        <p style="font-size:12px;color:var(--ink-34)">900 — Titles, numbers</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SPACING ===== -->
+<section class="section" id="spacing">
+  <p class="section__eyebrow">Foundation</p>
+  <h2 class="section__title">Spacing</h2>
+  <p class="section__desc">4px ベースの 8 段スケール。margin, padding, gap すべてこの値域に載せる。</p>
+
+  <table class="token-table">
+    <thead><tr><th>Token</th><th>px</th><th>Usage</th><th style="width:40%">Visual</th></tr></thead>
+    <tbody>
+      <tr><td><code>--sp-4</code></td><td>4</td><td>Micro gap</td><td><div class="sp-bar" style="width:4px"></div></td></tr>
+      <tr><td><code>--sp-8</code></td><td>8</td><td>Tight gap</td><td><div class="sp-bar" style="width:8px"></div></td></tr>
+      <tr><td><code>--sp-12</code></td><td>12</td><td>Default gap, lead&rarr;title</td><td><div class="sp-bar" style="width:24px"></div></td></tr>
+      <tr><td><code>--sp-16</code></td><td>16</td><td>Section gap, title&rarr;body</td><td><div class="sp-bar" style="width:32px"></div></td></tr>
+      <tr><td><code>--sp-20</code></td><td>20</td><td>Stage gap default</td><td><div class="sp-bar" style="width:40px"></div></td></tr>
+      <tr><td><code>--sp-24</code></td><td>24</td><td>Loose gap</td><td><div class="sp-bar" style="width:48px"></div></td></tr>
+      <tr><td><code>--sp-32</code></td><td>32</td><td>Section separator</td><td><div class="sp-bar" style="width:64px"></div></td></tr>
+      <tr><td><code>--sp-48</code></td><td>48</td><td>Major section break</td><td><div class="sp-bar" style="width:96px"></div></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ===== GEOMETRY ===== -->
+<section class="section" id="geometry">
+  <p class="section__eyebrow">Layout</p>
+  <h2 class="section__title">Layout Geometry</h2>
+  <p class="section__desc">1280×720px キャンバス上の座標系。全レイアウトトークンの基盤。</p>
+
+  <!-- Diagram -->
+  <div style="margin-bottom:28px">
+    <svg viewBox="0 0 740 385" style="width:100%;max-width:680px;font-family:'Space Grotesk',sans-serif" xmlns="http://www.w3.org/2000/svg">
+      <!-- Canvas outline -->
+      <rect x="0" y="0" width="640" height="360" rx="4" fill="#fff" stroke="var(--ink-100)" stroke-width="1.5"/>
+
+      <!-- Header band -->
+      <rect x="0" y="0" width="640" height="78" rx="4" fill="var(--ink-100)" fill-opacity=".04"/>
+      <line x1="0" y1="78" x2="640" y2="78" stroke="var(--ink-18)" stroke-width="1" stroke-dasharray="4 3"/>
+
+      <!-- Footer band -->
+      <rect x="0" y="330" width="640" height="30" rx="0" fill="var(--ink-100)" fill-opacity=".04"/>
+      <line x1="0" y1="330" x2="640" y2="330" stroke="var(--ink-18)" stroke-width="1" stroke-dasharray="4 3"/>
+
+      <!-- Left margin -->
+      <rect x="0" y="0" width="40" height="360" fill="var(--accent-purple)" fill-opacity=".06"/>
+      <!-- Right margin -->
+      <rect x="600" y="0" width="40" height="360" fill="var(--accent-purple)" fill-opacity=".06"/>
+
+      <!-- Content area -->
+      <rect x="40" y="78" width="560" height="252" rx="2" fill="none" stroke="var(--accent-purple)" stroke-width="1" stroke-dasharray="6 4"/>
+
+      <!-- Dimension labels — horizontal -->
+      <!-- Full width -->
+      <line x1="0" y1="375" x2="640" y2="375" stroke="var(--ink-34)" stroke-width="0.75"/>
+      <line x1="0" y1="371" x2="0" y2="379" stroke="var(--ink-34)" stroke-width="0.75"/>
+      <line x1="640" y1="371" x2="640" y2="379" stroke="var(--ink-34)" stroke-width="0.75"/>
+      <text x="320" y="375" text-anchor="middle" dominant-baseline="hanging" font-size="9" fill="var(--ink-50)" dy="1">1280px</text>
+
+      <!-- Left margin -->
+      <line x1="0" y1="365" x2="40" y2="365" stroke="var(--accent-purple)" stroke-width="0.75"/>
+      <text x="20" y="365" text-anchor="middle" dominant-baseline="hanging" font-size="8" fill="var(--accent-purple)" dy="1">80</text>
+
+      <!-- Content width -->
+      <line x1="40" y1="365" x2="600" y2="365" stroke="var(--accent-purple)" stroke-width="0.75"/>
+      <line x1="40" y1="361" x2="40" y2="369" stroke="var(--accent-purple)" stroke-width="0.75"/>
+      <line x1="600" y1="361" x2="600" y2="369" stroke="var(--accent-purple)" stroke-width="0.75"/>
+      <text x="320" y="365" text-anchor="middle" dominant-baseline="hanging" font-size="8" fill="var(--accent-purple)" dy="1">1120px (--content-width)</text>
+
+      <!-- Right margin -->
+      <line x1="600" y1="365" x2="640" y2="365" stroke="var(--accent-purple)" stroke-width="0.75"/>
+      <text x="620" y="365" text-anchor="middle" dominant-baseline="hanging" font-size="8" fill="var(--accent-purple)" dy="1">80</text>
+
+      <!-- Dimension labels — vertical (right side) -->
+      <!-- Header height -->
+      <line x1="645" y1="0" x2="645" y2="78" stroke="var(--ink-34)" stroke-width="0.75"/>
+      <line x1="641" y1="0" x2="649" y2="0" stroke="var(--ink-34)" stroke-width="0.75"/>
+      <line x1="641" y1="78" x2="649" y2="78" stroke="var(--ink-34)" stroke-width="0.75"/>
+      <text x="649" y="39" dominant-baseline="central" font-size="8" fill="var(--ink-50)" dx="2">156px</text>
+
+      <!-- Stage height -->
+      <line x1="645" y1="78" x2="645" y2="330" stroke="var(--accent-purple)" stroke-width="0.75"/>
+      <line x1="641" y1="330" x2="649" y2="330" stroke="var(--accent-purple)" stroke-width="0.75"/>
+      <text x="649" y="204" dominant-baseline="central" font-size="8" fill="var(--accent-purple)" dx="2">504px (stage)</text>
+
+      <!-- Footer height -->
+      <line x1="645" y1="330" x2="645" y2="360" stroke="var(--ink-34)" stroke-width="0.75"/>
+      <line x1="641" y1="360" x2="649" y2="360" stroke="var(--ink-34)" stroke-width="0.75"/>
+      <text x="649" y="345" dominant-baseline="central" font-size="8" fill="var(--ink-50)" dx="2">60px</text>
+
+      <!-- Full height -->
+      <line x1="688" y1="0" x2="688" y2="360" stroke="var(--ink-34)" stroke-width="0.75"/>
+      <line x1="684" y1="0" x2="692" y2="0" stroke="var(--ink-34)" stroke-width="0.75"/>
+      <line x1="684" y1="360" x2="692" y2="360" stroke="var(--ink-34)" stroke-width="0.75"/>
+      <text x="692" y="180" dominant-baseline="central" font-size="9" fill="var(--ink-50)" dx="2">720px</text>
+
+      <!-- Zone labels -->
+      <text x="320" y="40" text-anchor="middle" dominant-baseline="central" font-size="10" fill="var(--ink-34)" font-weight="600">HEADER (156px)</text>
+      <text x="320" y="200" text-anchor="middle" dominant-baseline="central" font-size="11" fill="var(--accent-purple)" font-weight="600">STAGE (ds-stage)</text>
+      <text x="320" y="218" text-anchor="middle" dominant-baseline="central" font-size="8" fill="var(--ink-34)">content-left:80 → content-right:1200</text>
+      <text x="320" y="346" text-anchor="middle" dominant-baseline="central" font-size="10" fill="var(--ink-34)" font-weight="600">FOOTER (60px)</text>
+    </svg>
+  </div>
+
+  <!-- Token table -->
+  <table class="token-table">
+    <thead><tr><th>Token</th><th>Value</th><th>Role</th></tr></thead>
+    <tbody>
+      <tr><td><code>--content-left</code></td><td>80px</td><td>左マージン（Stage・Header・Footer 共通）</td></tr>
+      <tr><td><code>--content-width</code></td><td>1120px</td><td>コンテンツ幅（Header copy / Stage / Footer で共有）</td></tr>
+      <tr><td><code>--header-copy-width</code></td><td>1120px</td><td>Header copy 幅。既定では <code>--content-width</code> と同値</td></tr>
+      <tr><td><code>--content-right</code></td><td>1200px</td><td>右端座標（left + width）</td></tr>
+      <tr><td><code>--content-center</code></td><td>640px</td><td>キャンバス水平中央</td></tr>
+      <tr><td><code>--header-band-height</code></td><td>156px</td><td>ヘッダー帯の高さ（Stage の top デフォルト）</td></tr>
+    </tbody>
+  </table>
+
+  <div style="margin-top:24px;padding:24px;background:var(--surface-mist);border-radius:12px;font-family:'Space Grotesk',sans-serif;font-size:13px;color:var(--ink-50);line-height:1.8">
+    <strong style="color:var(--ink-100)">Canvas:</strong> 1280×720px (16:9) — PowerPoint 標準と一致<br/>
+    <strong style="color:var(--ink-100)">Margins:</strong> 左右各 80px — Header / Stage / Footer が同一の水平基線を共有
+  </div>
+</section>
+
+<!-- ===== STAGE ===== -->
+<section class="section" id="stage">
+  <p class="section__eyebrow">Layout</p>
+  <h2 class="section__title">Stage</h2>
+  <p class="section__desc">ヘッダー直下のコンテンツ領域。<code>--stage-top</code> と <code>--stage-gap</code> でスライドごとに微調整。</p>
+
+  <table class="token-table">
+    <thead><tr><th>Class</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td><code>.ds-stage</code></td><td>Main content area (absolute, left:80px, width:1120px). Override <code>--stage-top</code>, <code>--stage-gap</code>.</td></tr>
+      <tr><td><code>.ds-stage--pad</code></td><td>Add 20px vertical padding</td></tr>
+      <tr><td><code>.ds-stage--top</code></td><td>Vertical align: top (default)</td></tr>
+      <tr><td><code>.ds-stage--middle</code></td><td>Vertical align: center</td></tr>
+      <tr><td><code>.ds-stage--bottom</code></td><td>Vertical align: bottom</td></tr>
+      <tr><td><code>.ds-stage--center</code></td><td>Horizontal centering (combine with vertical align)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="subsection" style="margin-top:28px">
+    <h3 class="subsection__title">Vertical Alignment</h3>
+    <div class="gallery gallery--3">
+      <div class="specimen">
+        <div class="specimen__preview" style="padding:12px 16px;align-items:stretch">
+          <div style="width:100%;height:160px;border:1px dashed var(--ink-18);border-radius:6px;position:relative;display:flex;flex-direction:column;justify-content:flex-start;gap:6px;padding:10px 12px">
+            <div style="height:8px;width:60%;background:var(--ink-100);border-radius:3px"></div>
+            <div style="height:6px;width:80%;background:var(--ink-18);border-radius:3px"></div>
+            <div style="height:6px;width:70%;background:var(--ink-18);border-radius:3px"></div>
+          </div>
+        </div>
+        <div class="specimen__info">
+          <p class="specimen__label">Top (default)</p>
+          <p class="specimen__code">.ds-stage--top</p>
+        </div>
+      </div>
+      <div class="specimen">
+        <div class="specimen__preview" style="padding:12px 16px;align-items:stretch">
+          <div style="width:100%;height:160px;border:1px dashed var(--ink-18);border-radius:6px;position:relative;display:flex;flex-direction:column;justify-content:center;gap:6px;padding:10px 12px">
+            <div style="height:8px;width:60%;background:var(--ink-100);border-radius:3px"></div>
+            <div style="height:6px;width:80%;background:var(--ink-18);border-radius:3px"></div>
+            <div style="height:6px;width:70%;background:var(--ink-18);border-radius:3px"></div>
+          </div>
+        </div>
+        <div class="specimen__info">
+          <p class="specimen__label">Middle</p>
+          <p class="specimen__code">.ds-stage--middle</p>
+        </div>
+      </div>
+      <div class="specimen">
+        <div class="specimen__preview" style="padding:12px 16px;align-items:stretch">
+          <div style="width:100%;height:160px;border:1px dashed var(--ink-18);border-radius:6px;position:relative;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;padding:10px 12px">
+            <div style="height:8px;width:60%;background:var(--ink-100);border-radius:3px"></div>
+            <div style="height:6px;width:80%;background:var(--ink-18);border-radius:3px"></div>
+            <div style="height:6px;width:70%;background:var(--ink-18);border-radius:3px"></div>
+          </div>
+        </div>
+        <div class="specimen__info">
+          <p class="specimen__label">Bottom</p>
+          <p class="specimen__code">.ds-stage--bottom</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:24px;padding:24px;background:var(--surface-mist);border-radius:12px;font-family:'Space Grotesk',sans-serif;font-size:13px;color:var(--ink-50);line-height:1.8">
+    <strong style="color:var(--ink-100)">Usage:</strong><br/>
+    <code style="font-size:12px;background:rgba(90,73,112,.06);color:var(--accent-purple);padding:2px 7px;border-radius:4px">&lt;div class="ds-stage ds-stage--middle" style="--stage-top:164px;--stage-gap:var(--sp-20)"&gt;</code>
+  </div>
+</section>
+
+<!-- ===== GRID ===== -->
+<section class="section" id="grid">
+  <p class="section__eyebrow">Layout</p>
+  <h2 class="section__title">Grid</h2>
+  <p class="section__desc">2〜5 カラムの均等グリッド。<code>--ds-grid-gap</code> でギャップを個別調整可能。</p>
+
+  <div class="gallery--2 gallery" style="margin-bottom:24px">
+    <div class="specimen">
+      <div class="specimen__preview">
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;width:100%">
+          <div style="height:48px;background:var(--ink-08);border-radius:6px"></div>
+          <div style="height:48px;background:var(--ink-08);border-radius:6px"></div>
+        </div>
+      </div>
+      <div class="specimen__info">
+        <p class="specimen__label">2 Column</p>
+        <p class="specimen__code">.ds-grid .ds-grid--2</p>
+      </div>
+    </div>
+    <div class="specimen">
+      <div class="specimen__preview">
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;width:100%">
+          <div style="height:48px;background:var(--ink-08);border-radius:6px"></div>
+          <div style="height:48px;background:var(--ink-08);border-radius:6px"></div>
+          <div style="height:48px;background:var(--ink-08);border-radius:6px"></div>
+        </div>
+      </div>
+      <div class="specimen__info">
+        <p class="specimen__label">3 Column</p>
+        <p class="specimen__code">.ds-grid .ds-grid--3</p>
+      </div>
+    </div>
+  </div>
+  <div class="gallery--2 gallery">
+    <div class="specimen">
+      <div class="specimen__preview">
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;width:100%">
+          <div style="height:48px;background:var(--ink-08);border-radius:6px"></div>
+          <div style="height:48px;background:var(--ink-08);border-radius:6px"></div>
+          <div style="height:48px;background:var(--ink-08);border-radius:6px"></div>
+          <div style="height:48px;background:var(--ink-08);border-radius:6px"></div>
+        </div>
+      </div>
+      <div class="specimen__info">
+        <p class="specimen__label">4 Column</p>
+        <p class="specimen__code">.ds-grid .ds-grid--4</p>
+      </div>
+    </div>
+    <div class="specimen">
+      <div class="specimen__preview">
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;width:100%">
+          <div style="height:48px;background:var(--ink-08);border-radius:6px"></div>
+          <div style="height:48px;background:var(--ink-08);border-radius:6px"></div>
+          <div style="height:48px;background:var(--ink-08);border-radius:6px"></div>
+          <div style="height:48px;background:var(--ink-08);border-radius:6px"></div>
+          <div style="height:48px;background:var(--ink-08);border-radius:6px"></div>
+        </div>
+      </div>
+      <div class="specimen__info">
+        <p class="specimen__label">5 Column</p>
+        <p class="specimen__code">.ds-grid .ds-grid--5</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CARD ===== -->
+<section class="section" id="card">
+  <p class="section__eyebrow">Components</p>
+  <h2 class="section__title">Card</h2>
+  <p class="section__desc">情報のグルーピング。4 つのバリアントで強調度を使い分ける。</p>
+
+  <div class="gallery gallery--4">
+    <div class="specimen">
+      <div class="specimen__preview" style="padding:20px 16px">
+        <div class="demo-card">
+          <p class="demo-eyebrow" style="margin-bottom:10px">Eyebrow</p>
+          <p style="font-size:15px;font-weight:700;margin-bottom:8px">Default Card</p>
+          <p style="font-size:13px;color:var(--ink-68);line-height:1.6">Subtle border, clean look.</p>
+        </div>
+      </div>
+      <div class="specimen__info">
+        <p class="specimen__label">Default</p>
+        <p class="specimen__code">.ds-card</p>
+      </div>
+    </div>
+    <div class="specimen">
+      <div class="specimen__preview" style="padding:20px 16px">
+        <div class="demo-card demo-card--strong">
+          <p class="demo-eyebrow" style="margin-bottom:10px">Eyebrow</p>
+          <p style="font-size:15px;font-weight:700;margin-bottom:8px">Strong Card</p>
+          <p style="font-size:13px;color:var(--ink-68);line-height:1.6">Strong border for emphasis.</p>
+        </div>
+      </div>
+      <div class="specimen__info">
+        <p class="specimen__label">Strong</p>
+        <p class="specimen__code">.ds-card--strong</p>
+      </div>
+    </div>
+    <div class="specimen">
+      <div class="specimen__preview" style="padding:20px 16px">
+        <div class="demo-card demo-card--flat">
+          <p class="demo-eyebrow" style="margin-bottom:10px">Eyebrow</p>
+          <p style="font-size:15px;font-weight:700;margin-bottom:8px">Flat Card</p>
+          <p style="font-size:13px;color:var(--ink-68);line-height:1.6">Mist background, no shadow.</p>
+        </div>
+      </div>
+      <div class="specimen__info">
+        <p class="specimen__label">Flat</p>
+        <p class="specimen__code">.ds-card--flat</p>
+      </div>
+    </div>
+    <div class="specimen">
+      <div class="specimen__preview" style="padding:20px 16px">
+        <div class="demo-card demo-card--tint">
+          <p class="demo-eyebrow" style="margin-bottom:10px">Eyebrow</p>
+          <p style="font-size:15px;font-weight:700;margin-bottom:8px">Tint Card</p>
+          <p style="font-size:13px;color:var(--ink-68);line-height:1.6">Tinted fill, neutral full border.</p>
+        </div>
+      </div>
+      <div class="specimen__info">
+        <p class="specimen__label">Tint</p>
+        <p class="specimen__code">fill + neutral border</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="section__desc" style="margin-top:20px"><code>.ds-stack</code> を説明文や label/title/body の単純な縦積みに使う。子の margin は持たせず、親の <code>gap</code> に集約する。</p>
+</section>
+
+<!-- ===== PANEL & ROWS ===== -->
+<section class="section" id="panel">
+  <p class="section__eyebrow">Components</p>
+  <h2 class="section__title">Panel &amp; Rows</h2>
+  <p class="section__desc">内部 slot 構造を持つコンテナ。label → title → body(.ds-rows) の距離は親 gap が管理する。</p>
+
+  <!-- Slot structure diagram -->
+  <div style="margin-bottom:32px;padding:28px 32px;background:var(--surface-mist);border-radius:12px;font-family:'Space Grotesk',sans-serif;font-size:13px;line-height:1.8">
+    <strong style="color:var(--ink-100)">Slot structure:</strong>
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin-top:12px;color:var(--ink-68)">
+      <code style="font-size:12px;color:var(--accent-purple);background:rgba(90,73,112,.06);padding:1px 6px;border-radius:3px">.ds-panel__label</code><span>Eyebrow (Space Grotesk, 12px, uppercase)</span>
+      <span style="color:var(--ink-18);text-align:center">↕ gap</span><span style="color:var(--ink-34)">--panel-gap (default: --sp-16 = 16px)</span>
+      <code style="font-size:12px;color:var(--accent-purple);background:rgba(90,73,112,.06);padding:1px 6px;border-radius:3px">.ds-panel__title</code><span>Heading (16px, bold)</span>
+      <span style="color:var(--ink-18);text-align:center">↕ gap</span><span style="color:var(--ink-34)">same --panel-gap</span>
+      <code style="font-size:12px;color:var(--accent-purple);background:rgba(90,73,112,.06);padding:1px 6px;border-radius:3px">.ds-rows</code><span>Body area (flex:1, fills remaining space)</span>
+    </div>
+    <p style="margin-top:12px;color:var(--ink-34)"><code style="font-size:12px">.ds-panel > * { margin: 0 }</code> — 子の margin は殺す。距離は親 gap が持つ。</p>
+  </div>
+
+  <!-- Panel specimens -->
+  <div class="gallery gallery--2" style="margin-bottom:32px">
+    <div class="specimen">
+      <div class="specimen__preview" style="padding:20px 16px">
+        <div class="demo-panel" style="display:flex;flex-direction:column;gap:16px">
+          <p style="color:var(--ink-34);font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin:0">LABEL</p>
+          <p style="font-size:16px;font-weight:700;margin:0">Panel Title</p>
+          <div class="demo-rows">
+            <div class="demo-row"><span class="demo-row__label">Label A</span><span class="demo-row__value">Value description text</span></div>
+            <div class="demo-row"><span class="demo-row__label">Label B</span><span class="demo-row__value">Another value here</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="specimen__info">
+        <p class="specimen__label">Default</p>
+        <p class="specimen__code">.ds-panel</p>
+      </div>
+    </div>
+    <div class="specimen">
+      <div class="specimen__preview" style="padding:20px 16px">
+        <div class="demo-panel" style="display:flex;flex-direction:column;gap:16px;border:2px solid var(--ink-100)">
+          <p style="color:var(--ink-34);font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin:0">LABEL</p>
+          <p style="font-size:16px;font-weight:700;margin:0">Strong Panel</p>
+          <div class="demo-rows">
+            <div class="demo-row"><span class="demo-row__label">Label A</span><span class="demo-row__value">Value description text</span></div>
+            <div class="demo-row"><span class="demo-row__label">Label B</span><span class="demo-row__value">Another value here</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="specimen__info">
+        <p class="specimen__label">Strong</p>
+        <p class="specimen__code">.ds-panel--strong</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comparison layout -->
+  <div class="subsection">
+    <h3 class="subsection__title">Comparison Layout</h3>
+    <p class="section__desc" style="margin-bottom:20px">並列パネルの行高を CSS Subgrid で揃える。高い方にもう片方が追従する。</p>
+    <div style="margin-bottom:20px">
+      <svg viewBox="0 0 560 200" style="width:100%;max-width:560px;font-family:'Space Grotesk',sans-serif" xmlns="http://www.w3.org/2000/svg">
+        <!-- Left panel -->
+        <rect x="0" y="0" width="260" height="190" rx="6" fill="none" stroke="var(--ink-18)" stroke-width="1"/>
+        <!-- Right panel -->
+        <rect x="284" y="0" width="260" height="190" rx="6" fill="none" stroke="var(--ink-100)" stroke-width="2"/>
+
+        <!-- Row tracks (shared) -->
+        <line x1="0" y1="32" x2="544" y2="32" stroke="var(--accent-purple)" stroke-width="0.5" stroke-dasharray="4 3"/>
+        <line x1="0" y1="72" x2="544" y2="72" stroke="var(--accent-purple)" stroke-width="0.5" stroke-dasharray="4 3"/>
+        <line x1="0" y1="112" x2="544" y2="112" stroke="var(--accent-purple)" stroke-width="0.5" stroke-dasharray="4 3"/>
+        <line x1="0" y1="150" x2="544" y2="150" stroke="var(--accent-purple)" stroke-width="0.5" stroke-dasharray="4 3"/>
+
+        <!-- Left content -->
+        <text x="16" y="20" font-size="9" fill="var(--ink-34)" font-weight="700" letter-spacing="1">LABEL</text>
+        <text x="16" y="55" font-size="11" fill="var(--ink-100)" font-weight="700">Short title</text>
+        <rect x="16" y="80" width="60" height="6" rx="2" fill="var(--ink-18)"/>
+        <rect x="84" y="80" width="140" height="6" rx="2" fill="var(--ink-08)"/>
+        <rect x="16" y="120" width="60" height="6" rx="2" fill="var(--ink-18)"/>
+        <rect x="84" y="120" width="100" height="6" rx="2" fill="var(--ink-08)"/>
+        <rect x="16" y="158" width="60" height="6" rx="2" fill="var(--ink-18)"/>
+        <rect x="84" y="158" width="120" height="6" rx="2" fill="var(--ink-08)"/>
+
+        <!-- Right content (taller title) -->
+        <text x="300" y="20" font-size="9" fill="var(--ink-34)" font-weight="700" letter-spacing="1">LABEL</text>
+        <text x="300" y="50" font-size="11" fill="var(--ink-100)" font-weight="700">Longer title that</text>
+        <text x="300" y="63" font-size="11" fill="var(--ink-100)" font-weight="700">wraps to two lines</text>
+        <rect x="300" y="80" width="60" height="6" rx="2" fill="var(--ink-18)"/>
+        <rect x="368" y="80" width="150" height="6" rx="2" fill="var(--ink-08)"/>
+        <rect x="368" y="90" width="80" height="6" rx="2" fill="var(--ink-08)"/>
+        <rect x="300" y="120" width="60" height="6" rx="2" fill="var(--ink-18)"/>
+        <rect x="368" y="120" width="130" height="6" rx="2" fill="var(--ink-08)"/>
+        <rect x="300" y="158" width="60" height="6" rx="2" fill="var(--ink-18)"/>
+        <rect x="368" y="158" width="110" height="6" rx="2" fill="var(--ink-08)"/>
+
+        <!-- Row track labels -->
+        <text x="554" y="18" font-size="8" fill="var(--accent-purple)" text-anchor="end">row 1</text>
+        <text x="554" y="55" font-size="8" fill="var(--accent-purple)" text-anchor="end">row 2</text>
+        <text x="554" y="95" font-size="8" fill="var(--accent-purple)" text-anchor="end">row 3</text>
+        <text x="554" y="135" font-size="8" fill="var(--accent-purple)" text-anchor="end">row 4</text>
+        <text x="554" y="170" font-size="8" fill="var(--accent-purple)" text-anchor="end">row 5</text>
+      </svg>
+    </div>
+    <table class="token-table" style="margin-bottom:20px">
+      <thead><tr><th>Class / Variable</th><th>Role</th></tr></thead>
+      <tbody>
+        <tr><td><code>.ds-comparison</code></td><td>2 列 grid 親。行トラックを定義し、子パネルに共有する</td></tr>
+        <tr><td><code>--panel-slots</code></td><td>パネルが占有する行数 (default: 5 = label + title + 3 rows)</td></tr>
+        <tr><td><code>--row-count</code></td><td>.ds-rows が占有する行数 (default: 3)</td></tr>
+        <tr><td><code>--row-align</code></td><td>行内の垂直配置: <code>start</code> (default) or <code>center</code></td></tr>
+        <tr><td><code>.ds-row--center</code></td><td>個別の行を中央揃え</td></tr>
+        <tr><td><code>.ds-rows--center</code></td><td>全行を一括で中央揃え</td></tr>
+      </tbody>
+    </table>
+    <div style="padding:24px;background:var(--surface-mist);border-radius:12px;font-family:'Space Grotesk',sans-serif;font-size:13px;color:var(--ink-50);line-height:1.8">
+      <strong style="color:var(--ink-100)">Usage:</strong><br/>
+      <code style="font-size:12px;background:rgba(90,73,112,.06);color:var(--accent-purple);padding:2px 7px;border-radius:4px">&lt;div class="ds-comparison" style="grid-template-rows:repeat(5,auto)"&gt;</code><br/>
+      <code style="font-size:12px;background:rgba(90,73,112,.06);color:var(--accent-purple);padding:2px 7px;border-radius:4px;margin-left:16px">&lt;div class="ds-panel" style="--panel-slots:5"&gt;</code><br/>
+      <span style="margin-left:32px">label → title → <code style="font-size:12px">.ds-rows</code> style="--row-count:3"</span>
+    </div>
+  </div>
+
+  <!-- Row alignment -->
+  <div class="subsection" style="margin-top:28px">
+    <h3 class="subsection__title">Row Alignment</h3>
+    <p class="section__desc" style="margin-bottom:20px">行の高さが揃った上で、内容の垂直位置を制御する。</p>
+    <div class="gallery gallery--2">
+      <div class="specimen">
+        <div class="specimen__preview" style="padding:16px">
+          <div style="width:100%;display:flex;flex-direction:column;gap:0">
+            <div style="display:grid;grid-template-columns:80px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--ink-08);min-height:56px;align-items:start">
+              <span style="font-size:12px;font-weight:700;color:var(--ink-50)">Key</span>
+              <span style="font-size:13px;color:var(--ink-68)">Short text</span>
+            </div>
+            <div style="display:grid;grid-template-columns:80px 1fr;gap:12px;padding:10px 0;min-height:56px;align-items:start">
+              <span style="font-size:12px;font-weight:700;color:var(--ink-50)">Key</span>
+              <span style="font-size:13px;color:var(--ink-68)">Longer text that wraps to multiple lines for demo</span>
+            </div>
+          </div>
+        </div>
+        <div class="specimen__info">
+          <p class="specimen__label">Top (default)</p>
+          <p class="specimen__code">--row-align: start</p>
+        </div>
+      </div>
+      <div class="specimen">
+        <div class="specimen__preview" style="padding:16px">
+          <div style="width:100%;display:flex;flex-direction:column;gap:0">
+            <div style="display:grid;grid-template-columns:80px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--ink-08);min-height:56px;align-items:center">
+              <span style="font-size:12px;font-weight:700;color:var(--ink-50)">Key</span>
+              <span style="font-size:13px;color:var(--ink-68)">Short text</span>
+            </div>
+            <div style="display:grid;grid-template-columns:80px 1fr;gap:12px;padding:10px 0;min-height:56px;align-items:center">
+              <span style="font-size:12px;font-weight:700;color:var(--ink-50)">Key</span>
+              <span style="font-size:13px;color:var(--ink-68)">Longer text that wraps to multiple lines for demo</span>
+            </div>
+          </div>
+        </div>
+        <div class="specimen__info">
+          <p class="specimen__label">Center</p>
+          <p class="specimen__code">.ds-row--center</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KICKER ===== -->
+<section class="section" id="kicker">
+  <p class="section__eyebrow">Components</p>
+  <h2 class="section__title">Kicker</h2>
+  <p class="section__desc">コンテンツスライド上部のアクセントカラー文。スライドの主張を一文で要約する。</p>
+
+  <div class="gallery gallery--2">
+    <div class="specimen">
+      <div class="specimen__preview" style="align-items:flex-start;padding:24px">
+        <p class="demo-kicker">仮説づくりは、分析だけでも足りないし、ひらめきだけでも危うい。両方を行き来して精度を上げる。</p>
+      </div>
+      <div class="specimen__info">
+        <p class="specimen__label">Default (15px)</p>
+        <p class="specimen__code">.ds-kicker</p>
+      </div>
+    </div>
+    <div class="specimen">
+      <div class="specimen__preview" style="align-items:flex-start;padding:24px">
+        <p class="demo-kicker" style="font-size:14px;line-height:1.45">内容設計は、要素をばらばらに置くのではなく、上から順に役割の異なる3段で積む。</p>
+      </div>
+      <div class="specimen__info">
+        <p class="specimen__label">Small (14px)</p>
+        <p class="specimen__code">.ds-kicker .ds-kicker--sm</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SUMMARY ===== -->
+<section class="section" id="summary">
+  <p class="section__eyebrow">Components</p>
+  <h2 class="section__title">Summary</h2>
+  <p class="section__desc">スライド下部のまとめ・テイクアウェイ。上ボーダーまたはボックスで区切る。</p>
+
+  <div class="gallery gallery--3">
+    <div class="specimen">
+      <div class="specimen__preview" style="align-items:flex-end;padding:24px">
+        <div class="demo-summary"><p>分析で地に足をつけ、直感で前に跳ぶ。この往復が、強い仮説をつくる。</p></div>
+      </div>
+      <div class="specimen__info">
+        <p class="specimen__label">Default</p>
+        <p class="specimen__code">.ds-summary</p>
+      </div>
+    </div>
+    <div class="specimen">
+      <div class="specimen__preview" style="align-items:flex-end;padding:24px">
+        <div class="demo-summary demo-summary--box"><p>内容設計は、3段の役割が混ざらないように積む。</p></div>
+      </div>
+      <div class="specimen__info">
+        <p class="specimen__label">Box</p>
+        <p class="specimen__code">.ds-summary--box</p>
+      </div>
+    </div>
+    <div class="specimen">
+      <div class="specimen__preview" style="align-items:flex-end;padding:24px">
+        <div class="demo-summary demo-summary--box" style="border:1px solid var(--ink-08);background:rgba(90,73,112,.04);padding:16px 20px;border-radius:8px"><p>アクセントは塗りで扱い、辺の強調は使わない。</p></div>
+      </div>
+      <div class="specimen__info">
+        <p class="specimen__label">Tint</p>
+        <p class="specimen__code">.ds-summary--tint</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BADGE ===== -->
+<section class="section" id="badge">
+  <p class="section__eyebrow">Components</p>
+  <h2 class="section__title">Badge</h2>
+  <p class="section__desc">インラインのピルラベル。カテゴリやステータスの表示に使用。</p>
+
+  <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:24px 0">
+    <span class="demo-badge demo-badge--dark">Dark</span>
+    <span class="demo-badge demo-badge--light">Light</span>
+    <span class="demo-badge demo-badge--accent">Accent</span>
+    <span class="demo-badge" style="background:rgba(158,52,52,.08);color:var(--accent-red)">Warning</span>
+  </div>
+
+  <table class="token-table">
+    <thead><tr><th>Class</th><th>Background</th><th>Color</th></tr></thead>
+    <tbody>
+      <tr><td><code>.ds-badge--dark</code></td><td>ink-100</td><td>white</td></tr>
+      <tr><td><code>.ds-badge--light</code></td><td>ink-08</td><td>ink-68</td></tr>
+      <tr><td><code>.ds-badge--accent</code></td><td>accent-purple</td><td>white</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ===== FLOW ARROW ===== -->
+<section class="section" id="arrow">
+  <p class="section__eyebrow">Components</p>
+  <h2 class="section__title">Flow Arrow</h2>
+  <p class="section__desc">CSS 描画のコネクタ矢印。テキスト矢印（→）の代わりにフロー表現で使用。</p>
+
+  <div class="gallery gallery--2">
+    <div class="specimen">
+      <div class="specimen__preview" style="gap:16px;align-items:center">
+        <div style="padding:8px 16px;background:var(--ink-08);border-radius:6px;font-size:13px;font-weight:700">A</div>
+        <div class="demo-arrow"></div>
+        <div style="padding:8px 16px;background:var(--ink-08);border-radius:6px;font-size:13px;font-weight:700">B</div>
+        <div class="demo-arrow"></div>
+        <div style="padding:8px 16px;background:var(--ink-08);border-radius:6px;font-size:13px;font-weight:700">C</div>
+      </div>
+      <div class="specimen__info">
+        <p class="specimen__label">Horizontal</p>
+        <p class="specimen__code">.ds-flow-arrow</p>
+      </div>
+    </div>
+    <div class="specimen">
+      <div class="specimen__preview" style="flex-direction:column;gap:8px;align-items:center">
+        <div style="padding:8px 16px;background:var(--ink-08);border-radius:6px;font-size:13px;font-weight:700">Step 1</div>
+        <div class="demo-arrow demo-arrow--down"></div>
+        <div style="padding:8px 16px;background:var(--ink-08);border-radius:6px;font-size:13px;font-weight:700">Step 2</div>
+      </div>
+      <div class="specimen__info">
+        <p class="specimen__label">Vertical</p>
+        <p class="specimen__code">.ds-flow-arrow--down</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TEXT CLASSES ===== -->
+<section class="section" id="text-classes">
+  <p class="section__eyebrow">Text</p>
+  <h2 class="section__title">Type Classes</h2>
+  <p class="section__desc">コンテンツスライド内のテキスト要素。意味に応じたクラスを選択する。</p>
+
+  <table class="token-table">
+    <thead><tr><th>Class</th><th>Size</th><th>Role</th><th style="width:40%">Preview</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><code>.ds-eyebrow</code></td><td>12px</td><td>Small label</td>
+        <td><span class="demo-eyebrow">SECTION LABEL</span></td>
+      </tr>
+      <tr>
+        <td><code>.ds-title</code></td><td>24px</td><td>Section title</td>
+        <td><span style="font-size:24px;font-weight:900;line-height:1.25">タイトル Title</span></td>
+      </tr>
+      <tr>
+        <td><code>.ds-title--lg</code></td><td>30px</td><td>Large title</td>
+        <td><span style="font-size:30px;font-weight:900;line-height:1.25">大見出し</span></td>
+      </tr>
+      <tr>
+        <td><code>.ds-title-sm</code></td><td>15px</td><td>Card title</td>
+        <td><span style="font-size:15px;font-weight:700;line-height:1.5">カードタイトル</span></td>
+      </tr>
+      <tr>
+        <td><code>.ds-subtitle</code></td><td>18px</td><td>Subtitle / lead</td>
+        <td><span style="font-size:18px;color:var(--ink-50)">サブタイトル Subtitle</span></td>
+      </tr>
+      <tr>
+        <td><code>.ds-body</code></td><td>15px</td><td>Body default</td>
+        <td><span style="font-size:15px;color:var(--ink-68);line-height:1.7">本文テキスト Body text</span></td>
+      </tr>
+      <tr>
+        <td><code>.ds-body--sm</code></td><td>13px</td><td>Body small</td>
+        <td><span style="font-size:13px;color:var(--ink-50);line-height:1.7">補足テキスト Caption</span></td>
+      </tr>
+      <tr>
+        <td><code>.ds-kicker</code></td><td>15px</td><td>Accent statement</td>
+        <td><span class="demo-kicker">仮説を立てて検証する</span></td>
+      </tr>
+      <tr>
+        <td><code>.ds-number</code></td><td>34px</td><td>Large index</td>
+        <td><span style="font-family:'Space Grotesk';font-size:34px;font-weight:700;line-height:1">01</span></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ===== UTILITIES ===== -->
+<section class="section" id="utilities">
+  <p class="section__eyebrow">Text</p>
+  <h2 class="section__title">Utilities</h2>
+  <p class="section__desc">スペーシング・カラー・フォントウェイト・アラインメントのヘルパークラス。</p>
+
+  <div class="gallery gallery--2" style="margin-bottom:32px">
+    <div>
+      <h3 class="subsection__title">Spacing</h3>
+      <table class="token-table">
+        <thead><tr><th>Class</th><th>Property</th></tr></thead>
+        <tbody>
+          <tr><td><code>.ds-mt-{4|8|12|16|24}</code></td><td>margin-top</td></tr>
+          <tr><td><code>.ds-mb-{4|8|12|16|24}</code></td><td>margin-bottom</td></tr>
+          <tr><td><code>.ds-gap-{8|12|16|20|24}</code></td><td>gap</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h3 class="subsection__title">Color &amp; Weight</h3>
+      <table class="token-table">
+        <thead><tr><th>Class</th><th>Effect</th></tr></thead>
+        <tbody>
+          <tr><td><code>.ds-ink-{100|82|68|50|34}</code></td><td>Text color</td></tr>
+          <tr><td><code>.ds-accent</code></td><td style="color:var(--accent-purple);font-weight:700">accent-purple</td></tr>
+          <tr><td><code>.ds-bold</code> / <code>.ds-black</code></td><td>700 / 900</td></tr>
+          <tr><td><code>.ds-center</code> / <code>.ds-left</code></td><td>text-align</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LIVE EXAMPLES ===== -->
+<section class="section" id="examples">
+  <p class="section__eyebrow">Reference</p>
+  <h2 class="section__title">Live Examples</h2>
+  <p class="section__desc">実際のスライドでデザインシステムがどう適用されているかの実例。</p>
+
+  <div class="slide-embed">
+    <div class="slide-embed__frame" id="embed-46">
+      <iframe src="slides/slide_46.html" loading="lazy"></iframe>
+    </div>
+    <div class="slide-embed__caption">
+      <code>slide_46.html</code> ds-stage, ds-kicker, ds-summary, local cards
+    </div>
+  </div>
+
+  <div class="slide-embed">
+    <div class="slide-embed__frame" id="embed-63">
+      <iframe src="slides/slide_63.html" loading="lazy"></iframe>
+    </div>
+    <div class="slide-embed__caption">
+      <code>slide_63.html</code> ds-stage, ds-kicker--sm, ds-summary, row layout
+    </div>
+  </div>
+</section>
+
+<!-- ===== GOVERNANCE ===== -->
+<section class="section" id="governance">
+  <p class="section__eyebrow">Reference</p>
+  <h2 class="section__title">Governance Rules</h2>
+  <p class="section__desc">トークン・コンポーネントの運用ルール。一貫性を保つための制約。</p>
+
+  <ol class="rule-list">
+    <li><span class="rule-num">01</span>content slide は data-attribute + shared runtime で header/footer を出す。</li>
+    <li><span class="rule-num">02</span>新規作成 / 大幅改修は <code>ds-stage</code> + <code>ds-grid</code> で section-first layout を組む。</li>
+    <li><span class="rule-num">03</span>agenda は manifest source から row を導出する。</li>
+    <li><span class="rule-num">04</span>divider と center-title は既存 class/data contract を維持する。</li>
+    <li><span class="rule-num">05</span>summary / closing / cta / qa は custom kind だが、background / footer meta / visual family は shared token に揃える。</li>
+    <li><span class="rule-num">06</span><strong>ハードコード値の禁止</strong>: <code>color: rgba(0,0,0,.34)</code> ではなく <code>color: var(--ink-34)</code> を使う。</li>
+    <li><span class="rule-num">07</span><strong>スペーシングは親の gap に固定する。</strong>子の margin は使わない。不均一な距離が必要な場合はサブコンテナを挟む。</li>
+    <li><span class="rule-num">08</span><strong>optical gap 指示は受け入れない。</strong>スペーシングスケール上の値に丸める。中間値の需要が 3 枚以上で出現した場合はスケールを見直す。</li>
+    <li><span class="rule-num">09</span>新規コンポーネントは 3 枚以上で同じパターンが出現したら <code>ds-*</code> クラスに昇格させる。</li>
+    <li><span class="rule-num">10</span><strong>装飾 border-top / border-left の禁止。</strong>枠の一辺だけを太線・アクセント色で強調するパターンは使わない。強調したいときは、塗り・タイポ・バッジ・全周の細い枠で処理する。</li>
+  </ol>
+</section>
+
+</main>
+</div>
+
+<script>
+/* Scale iframes to fit their containers */
+function scaleEmbeds() {
+  document.querySelectorAll('.slide-embed__frame').forEach(frame => {
+    const iframe = frame.querySelector('iframe');
+    if (!iframe) return;
+    const containerW = frame.offsetWidth;
+    const scale = containerW / 1280;
+    iframe.style.transform = `scale(${scale})`;
+    frame.style.paddingBottom = `${(720 / 1280) * 100}%`;
+  });
+}
+window.addEventListener('load', scaleEmbeds);
+window.addEventListener('resize', scaleEmbeds);
+
+/* Active nav link on scroll */
+const sections = document.querySelectorAll('.section[id]');
+const navLinks = document.querySelectorAll('.nav__link');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(l => l.classList.remove('nav__link--active'));
+      const active = document.querySelector(`.nav__link[href="#${entry.target.id}"]`);
+      if (active) active.classList.add('nav__link--active');
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

@@ -250,6 +250,71 @@ class SlideGovernanceTests(unittest.TestCase):
         findings = slide_governance.validate_slide_title(slide, "<title>アジェンダ</title>")
         self.assertTrue(any(finding.code == "slide-title-drift" for finding in findings))
 
+    def test_undefined_ds_class_detection(self) -> None:
+        shared_defined_classes = {"ds-card", "ds-stage"}
+        bad_text = '<div class="ds-card ds-ghost"></div>'
+        findings = slide_governance.validate_defined_ds_classes(
+            "slide_01.html",
+            bad_text,
+            shared_defined_classes,
+        )
+        self.assertTrue(any(finding.code == "undefined-ds-class" for finding in findings))
+
+    def test_undefined_ds_class_ignores_local_style_definition(self) -> None:
+        shared_defined_classes = {"ds-card", "ds-stage"}
+        text = """
+        <style>
+          .ds-local-stack { display: flex; }
+        </style>
+        <div class="ds-card ds-local-stack"></div>
+        """
+        findings = slide_governance.validate_defined_ds_classes(
+            "slide_01.html",
+            text,
+            shared_defined_classes,
+        )
+        self.assertFalse(any(finding.code == "undefined-ds-class" for finding in findings))
+
+    def test_footer_safe_area_reserve_warns_when_conclusion_is_not_docked(self) -> None:
+        text = """
+        <div class="slide-container" data-footer="standard">
+          <main class="ds-stage">
+            <section class="ds-comparison"></section>
+            <section aria-label="結論"></section>
+          </main>
+        </div>
+        """
+        findings = slide_governance.validate_footer_safe_area_reserve("slide_13.html", text)
+        self.assertTrue(any(finding.code == "footer-safe-area-overlap-risk" for finding in findings))
+
+    def test_footer_safe_area_reserve_accepts_reserved_stage_and_summary_dock(self) -> None:
+        text = """
+        <div class="slide-container" data-footer="standard">
+          <main class="ds-stage ds-stage--summary-reserve">
+            <section class="ds-comparison ds-comparison--cards">
+              <article class="ds-compare-card"></article>
+            </section>
+          </main>
+          <section class="ds-summary-dock" aria-label="結論"></section>
+        </div>
+        """
+        findings = slide_governance.validate_footer_safe_area_reserve("slide_13.html", text)
+        self.assertFalse(findings)
+
+    def test_comparison_conclusion_archetype_warns_when_cards_are_ad_hoc(self) -> None:
+        text = """
+        <div class="slide-container">
+          <main class="ds-stage">
+            <section class="ds-comparison">
+              <article class="ds-panel"></article>
+            </section>
+            <section aria-label="結論"></section>
+          </main>
+        </div>
+        """
+        findings = slide_governance.validate_comparison_conclusion_archetype("slide_13.html", text)
+        self.assertTrue(any(finding.code == "comparison-conclusion-archetype-missing" for finding in findings))
+
     def test_review_rules_cover_parallel_card_alignment(self) -> None:
         review_rules_text = slide_governance.REVIEW_RULES_PATH.read_text(encoding="utf-8")
         self.assertIn("parallel-card-track-alignment", review_rules_text)

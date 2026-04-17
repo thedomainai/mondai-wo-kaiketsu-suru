@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>問題解決の全工程で最も重要なステップ</title>
+<title>なぜ最初に目的と制約に合意をするのか</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
@@ -11,58 +11,58 @@
 .issue-stage{position:absolute;left:80px;top:156px;width:1120px;height:504px;display:grid;grid-template-columns:440px minmax(0,1fr);column-gap:48px;align-items:center}
 .issue-lead{display:flex;flex-direction:column;gap:20px}
 .issue-lead__head{margin:0;font-size:32px;font-weight:900;line-height:1.5}
-.issue-lead__head em{font-style:normal;background:linear-gradient(transparent 60%,rgba(0,0,0,.1) 60%)}
-.issue-lead__body{margin:0;font-size:16px;line-height:1.95;color:rgba(0,0,0,.68)}
+.issue-lead__head em{font-style:normal;background:linear-gradient(transparent 60%,var(--ink-10) 60%)}
+.issue-lead__body{margin:0;font-size:16px;line-height:1.95;color:var(--ink-68)}
 .issue-lead__callout{margin:0;padding:16px 20px;border-left:4px solid var(--soft-black);background:rgba(0,0,0,.03);font-size:17px;font-weight:900;line-height:1.72}
 .cascade{display:grid;grid-template-columns:1fr;row-gap:0}
 .cascade__origin{display:grid;grid-template-columns:188px 20px minmax(0,1fr);align-items:center;margin-bottom:14px}
-.cascade__branch{margin-left:28px;padding-left:22px;border-left:2px solid rgba(0,0,0,.18);display:grid;row-gap:12px}
+.cascade__branch{margin-left:28px;padding-left:22px;border-left:2px solid var(--ink-18);display:grid;row-gap:12px}
 .cascade__branch-label{margin:0 0 2px;color:rgba(0,0,0,.42);font-family:"Space Grotesk",sans-serif;font-size:10px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
 .cascade__row{display:grid;grid-template-columns:164px 16px minmax(0,1fr);align-items:center}
 .cascade__node{padding:12px 16px;border-radius:8px;text-align:center}
-.cascade__node--ok{border:2px solid rgba(0,0,0,.82);background:#fff}
+.cascade__node--ok{border:2px solid var(--ink-82);background:var(--surface-white)}
 .cascade__node--ng{border:2px solid rgba(0,0,0,.15);background:rgba(0,0,0,.025)}
-.cascade__node--origin{padding:14px 16px;border:3px solid rgba(0,0,0,.88);background:#fff;box-shadow:0 8px 20px rgba(0,0,0,.08)}
+.cascade__node--origin{padding:14px 16px;border:3px solid rgba(0,0,0,.88);background:var(--surface-white);box-shadow:0 8px 20px var(--ink-08)}
 .cascade__node-kicker{margin:0 0 6px;font-family:"Space Grotesk",sans-serif;font-size:10px;font-weight:900;letter-spacing:1.8px;text-transform:uppercase;color:rgba(0,0,0,.42)}
 .cascade__node-label{margin:0;font-size:13px;font-weight:900;line-height:1.5}
 .cascade__node-label--ok{color:var(--soft-black)}
-.cascade__node-label--ng{color:rgba(0,0,0,.34)}
+.cascade__node-label--ng{color:var(--ink-34)}
 .cascade__wire{display:flex;align-items:center;justify-content:center}
-.cascade__impact{display:flex;align-items:center;justify-content:center;color:rgba(0,0,0,.34);font-size:15px;font-weight:900}
+.cascade__impact{display:flex;align-items:center;justify-content:center;color:var(--ink-34);font-size:15px;font-weight:900}
 .cascade__result{padding:10px 14px;border-radius:6px;display:flex;align-items:center;gap:8px}
-.cascade__result--ok{background:rgba(0,0,0,.04)}
-.cascade__result--ng{background:rgba(0,0,0,.04)}
+.cascade__result--ok{background:var(--ink-04)}
+.cascade__result--ng{background:var(--ink-04)}
 .cascade__result--origin{background:rgba(0,0,0,.06)}
 .cascade__result-text{margin:0;font-size:13px;line-height:1.55}
 .cascade__result-text--ok{font-weight:700;color:var(--soft-black)}
 .cascade__result-text--ng{color:rgba(0,0,0,.4)}
 .cascade__badge{display:inline-block;padding:2px 10px;border-radius:12px;font-family:"Space Grotesk",sans-serif;font-size:10px;font-weight:900;letter-spacing:1px;text-transform:uppercase;margin-right:6px}
-.cascade__badge--hit{background:var(--soft-black);color:#fff}
-.cascade__badge--start{background:var(--soft-black);color:#fff}
-.cascade__badge--miss{background:rgba(0,0,0,.1);color:rgba(0,0,0,.4)}
+.cascade__badge--hit{background:var(--soft-black);color:var(--surface-white)}
+.cascade__badge--start{background:var(--soft-black);color:var(--surface-white)}
+.cascade__badge--miss{background:var(--ink-10);color:rgba(0,0,0,.4)}
 .cascade__summary{display:flex;align-items:center;gap:10px;margin-top:2px;padding:12px 14px;border-radius:6px;background:rgba(0,0,0,.03)}
-.cascade__summary p{margin:0;font-size:13px;font-weight:700;line-height:1.6;color:rgba(0,0,0,.5)}
+.cascade__summary p{margin:0;font-size:13px;font-weight:700;line-height:1.6;color:var(--ink-50)}
 </style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第04章 論点を定義する" data-header-title="問題解決の全工程で最も重要なステップ" data-header-subtitle="問いの発射角度が、その後の分解・仮説・検証の全てを決める" data-footer="standard" data-footer-page="31">
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第04章 目的と制約に合意する" data-header-title="なぜ最初に目的と制約に合意をするのか" data-header-subtitle="問いの前に、何を達成し何を守るゲームかをそろえる" data-footer="standard" data-footer-page="31">
 <div class="issue-stage">
   <div class="issue-lead">
-    <p class="issue-lead__head">問いを誤れば<br/><em>行動は誤る</em></p>
-    <p class="issue-lead__body">論点定義は、問題解決の最初の一手であると同時に、最も重い一手である。ここで問いの方向を誤ると、分解も仮説も検証も、すべて間違った方角に積み上がる。</p>
-    <p class="issue-lead__callout">後から精度を上げることはできても、<br/>発射角度を間違えた弾は戻せない。</p>
+    <p class="issue-lead__head">目的を誤れば<br/><em>後ろはずれる</em></p>
+    <p class="issue-lead__body">目的が違えば正しい問いは変わり、制約が違えば正しい解も変わる。問いを立てる前に、何を達成し、何を守るのかをそろえなければ、その後の論点定義・分解・仮説構築は同じ土俵に乗らない。</p>
+    <p class="issue-lead__callout">問いの前に、目的と制約をそろえる。<br/>ここでゲームの条件が決まる。</p>
   </div>
 
   <div class="cascade">
     <div class="cascade__origin">
       <div class="cascade__node cascade__node--origin">
         <p class="cascade__node-kicker">Origin</p>
-        <p class="cascade__node-label cascade__node-label--ok">論点定義</p>
+        <p class="cascade__node-label cascade__node-label--ok">目的・制約の合意</p>
       </div>
       <div class="cascade__wire"></div>
       <div class="cascade__result cascade__result--ok cascade__result--origin">
         <span class="cascade__badge cascade__badge--start">START</span>
-        <p class="cascade__result-text cascade__result-text--ok">問いの向きがここで決まる</p>
+        <p class="cascade__result-text cascade__result-text--ok">何を目指し、何を守るかがここで決まる</p>
       </div>
     </div>
 
@@ -71,12 +71,12 @@
 
       <div class="cascade__row">
         <div class="cascade__node cascade__node--ok">
-          <p class="cascade__node-label cascade__node-label--ok">論点分解</p>
+          <p class="cascade__node-label cascade__node-label--ok">論点定義</p>
         </div>
         <div class="cascade__impact">→</div>
         <div class="cascade__result cascade__result--ok">
           <span class="cascade__badge cascade__badge--hit">HIT</span>
-          <p class="cascade__result-text cascade__result-text--ok">正しい構造に分かれる</p>
+          <p class="cascade__result-text cascade__result-text--ok">何を問うべきかが定まる</p>
         </div>
       </div>
 
@@ -87,24 +87,24 @@
         <div class="cascade__impact">→</div>
         <div class="cascade__result cascade__result--ok">
           <span class="cascade__badge cascade__badge--hit">HIT</span>
-          <p class="cascade__result-text cascade__result-text--ok">筋のいい仮説が出る</p>
+          <p class="cascade__result-text cascade__result-text--ok">評価軸に沿って仮の答えを置ける</p>
         </div>
       </div>
 
       <div class="cascade__row">
         <div class="cascade__node cascade__node--ok">
-          <p class="cascade__node-label cascade__node-label--ok">検証</p>
+          <p class="cascade__node-label cascade__node-label--ok">解の選択</p>
         </div>
         <div class="cascade__impact">→</div>
         <div class="cascade__result cascade__result--ok">
           <span class="cascade__badge cascade__badge--hit">HIT</span>
-          <p class="cascade__result-text cascade__result-text--ok">行動が決まる</p>
+          <p class="cascade__result-text cascade__result-text--ok">守る条件の中で行動を決められる</p>
         </div>
       </div>
 
       <div class="cascade__summary">
         <span class="cascade__badge cascade__badge--miss">MISS</span>
-        <p>問いを誤ると、以後の分解・仮説・検証もずれ続ける。</p>
+        <p>目的か制約がずれると、以後の問い・仮説・解もずれ続ける。</p>
       </div>
     </div>
   </div>

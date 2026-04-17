@@ -1,7 +1,67 @@
 <!DOCTYPE html>
-<html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>6. Tips</title><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/><link href="./slides.css" rel="stylesheet"/><script defer src="./slides.js"></script>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>仮説検証の全体像</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
+<link href="./slides.css" rel="stylesheet"/>
+<script defer src="./slides.js"></script>
 <style>
-.layers-wrap{position:absolute;left:80px;top:178px;width:1120px;display:flex;flex-direction:column;gap:22px}.layers-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}.layer-card{min-height:356px;padding:22px 20px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff;display:grid;grid-template-rows:auto auto 1fr auto;row-gap:16px}.layer-card__eyebrow{margin:0;color:rgba(0,0,0,.34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.layer-card__head{margin:0;font-size:25px;font-weight:900;line-height:1.42}.layer-card__body{display:flex;flex-direction:column;gap:16px;font-size:15px;line-height:1.75;color:rgba(0,0,0,.7)}.layer-card__body p{margin:0}.layer-card__foot{min-height:58px;margin:0;padding-top:16px;border-top:1px solid rgba(0,0,0,.08);font-size:14px;font-weight:700;line-height:1.7;color:rgba(0,0,0,.62)}.layers-summary{padding:18px 22px;border-top:1px solid rgba(0,0,0,.1)}.layers-summary p{margin:0;font-size:18px;font-weight:900;line-height:1.8}
-</style></head><body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第08章 問題解決におけるコミュニケーション" data-header-title="6. Tips" data-header-subtitle="誤解は『表現』『論理』『判断』の3層で起きる" data-footer="standard" data-footer-page="64"><div class="layers-wrap"><div class="layers-grid"><section class="layer-card"><p class="layer-card__eyebrow">表現</p><p class="layer-card__head">同じ言葉でも、相手の頭の中の像はずれる</p><div class="layer-card__body"><p><strong>典型的なズレ</strong><br/>抽象語の放置 / 同じ言葉でも頭に浮かぶ情景が違う</p><p><strong>先回り</strong><br/>定義する、数値化する、具体例を置く</p></div><p class="layer-card__foot">相手が同じものを見ている状態を先につくる。</p></section><section class="layer-card"><p class="layer-card__eyebrow">論理</p><p class="layer-card__head">結論までの階段が抜けると、相手は追えない</p><div class="layer-card__body"><p><strong>典型的なズレ</strong><br/>前提共有の不足 / 中間ステップの省略 / 論理の飛躍</p><p><strong>先回り</strong><br/>前提を明示する、なぜそう言えるかを階段状に置く</p></div><p class="layer-card__foot">相手が「なるほど、そうつながるのか」と追える形にする。</p></section><section class="layer-card"><p class="layer-card__eyebrow">判断</p><p class="layer-card__head">判断材料が足りないと、納得しても決められない</p><div class="layer-card__body"><p><strong>典型的なズレ</strong><br/>相手が本当に気にする論点に答えていない / 反論や懸念が未処理</p><p><strong>先回り</strong><br/>懸念、反論、トレードオフ、残論点を先に出す</p></div><p class="layer-card__foot">相手が「この条件なら判断できる」と思える材料を先に揃える。</p></section></div><div class="layers-summary"></div></div></div></body>
+.stage{position:absolute;left:80px;top:156px;width:1120px;display:flex;flex-direction:column;gap:18px}.kicker{margin:0;color:var(--accent-purple);font-size:15px;font-weight:900;line-height:1.55}.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.card{--stack-card-gap-lead-title:18px;--stack-card-gap-head-body:16px;min-height:236px;padding:18px 18px 16px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white)}.card__num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:999px;border:2px solid var(--ink-82);font-family:"Space Grotesk",sans-serif;font-size:16px;font-weight:900;line-height:1}.card__title{margin:0;font-size:22px;font-weight:900;line-height:1.45}.card__body{color:rgba(0,0,0,.72);font-size:15px;line-height:1.68}.bridge{display:grid;grid-template-columns:220px 1fr 220px;gap:18px;align-items:stretch}.bridge__card{min-height:120px;padding:16px 18px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white);display:flex;flex-direction:column;justify-content:center}.bridge__label{margin:0 0 6px;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.bridge__title{margin:0;font-size:19px;font-weight:900;line-height:1.5}.bridge__text{margin:6px 0 0;color:rgba(0,0,0,.7);font-size:14px;line-height:1.68}.bridge__center{min-height:120px;padding:18px 20px;border:2px solid var(--ink-82);border-radius:8px;background:var(--surface-white);display:flex;align-items:center;justify-content:center}.bridge__center p{margin:0;font-size:18px;font-weight:900;line-height:1.6;text-align:center}.summary{padding-top:12px;border-top:1px solid var(--ink-10)}.summary p{margin:0;font-size:17px;font-weight:900;line-height:1.65}
+</style>
+</head>
+<body>
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第08章 論点と仮説を検証する" data-header-title="仮説検証の全体像" data-header-subtitle="設計、優先順位、解釈、行動の4段で、不確実性を意思決定に変える" data-footer="standard" data-footer-page="64">
+  <div class="stage">
+    <p class="kicker">第7章で学ぶのは、個別のテクニックではない。仮説を意思決定に変えるための一連の流れそのものである。</p>
+    <div class="flow">
+      <section class="card stack-card">
+        <div class="stack-card__head">
+          <span class="card__num">1</span>
+          <p class="card__title">設計</p>
+        </div>
+        <p class="card__body stack-card__body">何が分かれば支持できるかを定め、何で確かめるかを決める。</p>
+      </section>
+      <section class="card stack-card">
+        <div class="stack-card__head">
+          <span class="card__num">2</span>
+          <p class="card__title">優先順位</p>
+        </div>
+        <p class="card__body stack-card__body">設計した検証案の中から、外すと痛い不確実性に先に当てる。</p>
+      </section>
+      <section class="card stack-card">
+        <div class="stack-card__head">
+          <span class="card__num">3</span>
+          <p class="card__title">解釈</p>
+        </div>
+        <p class="card__body stack-card__body">事実と解釈を分け、評価軸に照らして結果を判断へ変える。</p>
+      </section>
+      <section class="card stack-card">
+        <div class="stack-card__head">
+          <span class="card__num">4</span>
+          <p class="card__title">行動</p>
+        </div>
+        <p class="card__body stack-card__body">支持されたか、外れたか、まだ判断できないかで次の一手を決める。</p>
+      </section>
+    </div>
+    <div class="bridge">
+      <section class="bridge__card">
+        <p class="bridge__label">Chapter 06</p>
+        <p class="bridge__title">仮説を置く</p>
+        <p class="bridge__text">まずはベストエフォートの答えを置く。</p>
+      </section>
+      <section class="bridge__center">
+        <p>第7章は、置いた仮説を<br/>判断に使える形へ変える章である</p>
+      </section>
+      <section class="bridge__card">
+        <p class="bridge__label">Chapter 08</p>
+        <p class="bridge__title">解を伝える</p>
+        <p class="bridge__text">判断した内容を、相手が動ける形で渡す。</p>
+      </section>
+    </div>
+    <div class="summary"><p>仮説検証とは、証明ではない。不確実性を下げ、次の判断と行動を可能にするためのプロセスである。</p></div>
+  </div>
+</div>
+</body>
 </html>

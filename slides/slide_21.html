@@ -10,19 +10,19 @@
 <style>
 
 .theme-wrap{position:absolute;left:80px;top:190px;width:1120px;display:grid;grid-template-columns:1fr 220px 1fr;column-gap:24px;row-gap:28px;align-items:center;}
-.theme-block{min-height:250px;padding:28px 26px;border:1px solid rgba(0,0,0,0.1);border-radius:8px;background:#fff;display:flex;flex-direction:column;justify-content:center;}
-.theme-block--main{background:#1a1a1a;color:#fff;border-color:#1a1a1a;}
+.theme-block{min-height:250px;padding:28px 26px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white);display:flex;flex-direction:column;justify-content:center;}
+.theme-block--main{background:var(--ink-100);color:var(--surface-white);border-color:var(--ink-100);}
 .theme-block--ghost{background:transparent;}
-.theme-kicker{margin:0;font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;color:rgba(0,0,0,0.34);text-transform:uppercase;}
+.theme-kicker{margin:0;font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;color:var(--ink-34);text-transform:uppercase;}
 .theme-block--main .theme-kicker{color:rgba(255,255,255,0.54);}
 .theme-head{margin:0;font-size:42px;font-weight:900;line-height:1.1;}
 .theme-copy{margin:0;font-size:18px;line-height:1.75;color:rgba(0,0,0,0.66);}
 .theme-block--main .theme-copy{color:rgba(255,255,255,0.82);}
 .theme-connector{display:flex;align-items:center;justify-content:center;}
-.theme-connector__badge{position:relative;display:flex;align-items:center;justify-content:center;width:132px;min-height:168px;padding:22px 18px;border:1px solid rgba(0,0,0,0.14);background:rgba(0,0,0,0.04);clip-path:polygon(34% 0,100% 0,84% 50%,100% 100%,34% 100%,0 50%);}
+.theme-connector__badge{position:relative;display:flex;align-items:center;justify-content:center;width:132px;min-height:168px;padding:22px 18px;border:1px solid var(--ink-14);background:var(--ink-04);clip-path:polygon(34% 0,100% 0,84% 50%,100% 100%,34% 100%,0 50%);}
 .theme-connector__badge::before{content:"";position:absolute;inset:10px 12px;border:1px solid rgba(255,255,255,0.45);clip-path:polygon(34% 0,100% 0,84% 50%,100% 100%,34% 100%,0 50%);}
 .theme-connector__text{position:relative;z-index:1;font-size:16px;font-weight:900;line-height:1.5;text-align:center;}
-.theme-footer{grid-column:1 / -1;padding:18px 22px;border-top:1px solid rgba(0,0,0,0.1);}
+.theme-footer{grid-column:1 / -1;padding:18px 22px;border-top:1px solid var(--ink-10);}
 .theme-footer p{margin:0;font-size:18px;font-weight:900;line-height:1.8;}
 
 </style>

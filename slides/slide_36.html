@@ -3,31 +3,54 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>論点分解における重要な5つのポイント</title>
+<title>章のまとめ</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
 <style>
-.principles-wrap{position:absolute;left:80px;top:156px;width:1120px;height:504px;display:flex;align-items:center;justify-content:center}
-.principles-list{width:min(100%,960px);display:flex;flex-direction:column;gap:12px}
-.principle-row{display:grid;grid-template-columns:72px 252px 1fr;gap:18px;align-items:center;padding:14px 0;border-top:1px solid rgba(0,0,0,.08)}
-.principle-row:first-child{border-top:none}
-.principle-row__num{color:rgba(0,0,0,.34);font-family:"Space Grotesk",sans-serif;font-size:14px;font-weight:900;letter-spacing:2px}
-.principle-row__title{font-size:22px;font-weight:900;line-height:1.45}
-.principle-row__body{font-size:14px;line-height:1.75;color:rgba(0,0,0,.66)}
+.summary-stage{position:absolute;left:80px;top:176px;width:1120px;display:grid;grid-template-rows:auto auto auto;row-gap:22px}
+.summary-hero{padding:26px 30px 24px;border:1px solid var(--ink-08);border-radius:8px;background:var(--surface-white)}
+.summary-kicker{margin:0 0 14px;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+.summary-head{margin:0 0 14px;font-size:34px;font-weight:900;line-height:1.42;color:var(--soft-black)}
+.summary-copy{margin:0;font-size:16px;line-height:1.82;color:rgba(0,0,0,.66)}
+.summary-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.summary-card{padding:22px 22px 20px;border:1px solid var(--ink-08);border-radius:8px;background:var(--surface-white)}
+.summary-card__num{margin:0 0 12px;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:13px;font-weight:900;letter-spacing:2px}
+.summary-card__head{margin:0 0 10px;font-size:22px;font-weight:900;line-height:1.45;color:var(--soft-black)}
+.summary-card__body{margin:0;font-size:14px;line-height:1.78;color:rgba(0,0,0,.64)}
+.summary-bar{padding:16px 20px;border-top:1px solid var(--ink-10)}
+.summary-bar p{margin:0;font-size:18px;font-weight:900;line-height:1.68;color:var(--soft-black)}
 </style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第05章 論点を分解する" data-header-title="論点分解における重要な5つのポイント" data-header-subtitle="構造を見失わず、次に何を考えるべきかを明らかにする分解を目指す" data-footer="standard" data-footer-page="36">
-<div class="principles-wrap">
-<div class="principles-list">
-<div class="principle-row"><p class="principle-row__num">01</p><p class="principle-row__title">ツリー状に分解する</p><p class="principle-row__body">親から子へと階層を切り分け、どこで考えているかを明確にする。</p></div>
-<div class="principle-row"><p class="principle-row__num">02</p><p class="principle-row__title">MECEに分解する</p><p class="principle-row__body">漏れなく、重複なく。下位要素で上位要素を説明しきれる形にする。</p></div>
-<div class="principle-row"><p class="principle-row__num">03</p><p class="principle-row__title">モデル（式）で考える</p><p class="principle-row__body">四則演算や因果でつなぎ、どの変数を動かせば上位が変わるかを見えるようにする。</p></div>
-<div class="principle-row"><p class="principle-row__num">04</p><p class="principle-row__title">1つを長く考えすぎない</p><p class="principle-row__body">進まないなら論点が違うか、まだ粗い。立ち止まって問いの置き方を見直す。</p></div>
-<div class="principle-row"><p class="principle-row__num">05</p><p class="principle-row__title">上下を行き来する</p><p class="principle-row__body">トップダウンで構造を整え、ボトムアップで切り口を補う。両方を往復して磨く。</p></div>
-</div>
-</div>
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第04章 目的と制約に合意する" data-header-title="章のまとめ" data-header-subtitle="問いを定義する前に、達成したいことと守る条件をそろえる" data-footer="standard" data-footer-page="36">
+  <div class="summary-stage">
+    <section class="summary-hero">
+      <p class="summary-kicker">Chapter 04 Summary</p>
+      <p class="summary-head">目的を誤れば後ろの工程はずれ、<br/>制約が変われば後ろの工程も変わる</p>
+      <p class="summary-copy">だから問いの前に、何を達成し、何を守るのかをそろえる。目的と制約が固定されて初めて、後ろの論点定義・分解・仮説構築が同じ土俵で回り始める。</p>
+    </section>
+
+    <div class="summary-grid">
+      <section class="summary-card">
+        <p class="summary-card__num">01</p>
+        <p class="summary-card__head">目的を判断可能な形にする</p>
+        <p class="summary-card__body">達成できたかを後から判定できる形まで目的を言語化する。抽象論のまま握らない。</p>
+      </section>
+
+      <section class="summary-card">
+        <p class="summary-card__num">02</p>
+        <p class="summary-card__head">制約を明示する</p>
+        <p class="summary-card__body">時間、資源、ルール、権限を明らかにし、Hard と Soft を分けて握る。</p>
+      </section>
+
+      <section class="summary-card">
+        <p class="summary-card__num">03</p>
+        <p class="summary-card__head">合意を固定する</p>
+        <p class="summary-card__body">会話で終わらせず、一文または一枚に残す。そこが後続工程の共通前提になる。</p>
+      </section>
+    </div>
+  </div>
 </div>
 </body>
 </html>

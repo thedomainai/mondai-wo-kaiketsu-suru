@@ -10,14 +10,14 @@
 <style>
 .logic-stage{position:absolute;left:250px;top:150px;bottom:88px;width:700px;display:flex;align-items:center}
 .logic-chain{display:grid;grid-template-columns:1fr;grid-template-rows:auto 34px auto 34px auto;align-items:stretch}
-.logic-card{min-height:104px;padding:18px 20px 16px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff;display:grid;grid-template-rows:auto auto 1fr;align-content:start}
-.logic-card__label{margin:0;color:rgba(0,0,0,.34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+.logic-card{min-height:104px;padding:18px 20px 16px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white);display:grid;grid-template-rows:auto auto 1fr;align-content:start}
+.logic-card__label{margin:0;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
 .logic-card__title{margin:10px 0 0;font-size:13px;font-weight:900;line-height:1.5;color:rgba(0,0,0,.72)}
 .logic-card__statement{margin:14px 0 0;font-size:22px;font-weight:900;line-height:1.45}
-.logic-card--conclusion{border:2px solid rgba(0,0,0,.82)}
+.logic-card--conclusion{border:2px solid var(--ink-82)}
 .logic-card--conclusion .logic-card__statement{font-size:24px}
 .logic-arrow{display:flex;align-items:center;justify-content:center}
-.logic-arrow::before{content:"";width:34px;height:16px;clip-path:polygon(0 0,100% 0,50% 100%);background:#1a1a1a}
+.logic-arrow::before{content:"";width:34px;height:16px;clip-path:polygon(0 0,100% 0,50% 100%);background:var(--ink-100)}
 </style>
 </head>
 <body>

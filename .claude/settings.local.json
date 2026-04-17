@@ -14,7 +14,21 @@
       "Bash(done)",
       "Bash({ echo \"=== FONT SIZES FROM slides.css ===\" grep -o 'font-size:[^;]*' ../slides.css)",
       "Bash(kill:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(find:*)",
+      "Bash(sort:*)",
+      "Bash(wc:*)",
+      "Bash(xargs:*)",
+      "Skill(wrapup)",
+      "Bash(open:*)",
+      "mcp__claude_ai_Mac_mini_Remote__run_command",
+      "Bash(/Applications/Google Chrome.app/Contents/MacOS/Google Chrome:*)",
+      "Bash(mdfind:*)",
+      "Bash(npm install:*)",
+      "Bash(node -e:*)",
+      "Bash(node:*)",
+      "Bash(git checkout:*)",
+      "Bash(git ls-files:*)"
     ]
   }
 }

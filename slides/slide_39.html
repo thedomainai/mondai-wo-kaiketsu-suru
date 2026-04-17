@@ -3,95 +3,112 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>原則3：モデル（式）で考える</title>
+<title>論点定義とは何か / なぜ重要か</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
 <style>
-.formula-grid{position:absolute;left:80px;top:186px;width:1120px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.formula-card{height:390px;padding:22px 20px 16px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff;display:flex;flex-direction:column;gap:14px}
-.formula-card__eyebrow{margin:0;color:rgba(0,0,0,.34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px}
-.formula-card__title{margin:0;font-size:24px;font-weight:900;line-height:1.4}
-.formula-card__formula{margin:0;padding:12px 14px;border-radius:8px;background:rgba(0,0,0,.04);font-size:15px;font-weight:900;line-height:1.6}
-.formula-card__body{display:flex;flex-direction:column;align-items:stretch;gap:10px}
-.formula-card__note{margin:0;font-size:12px;line-height:1.7;color:rgba(0,0,0,.68)}
-
-.sales-tree{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:max-content;column-gap:12px;row-gap:12px;padding-top:4px;align-content:start}
-.sales-tree::before{content:"";position:absolute;left:25%;right:25%;top:76px;height:1px;background:rgba(0,0,0,.18)}
-.tree-node,.term-pill{min-height:74px}
-.sales-tree__box{position:relative;padding:12px 10px;border-radius:8px;background:rgba(0,0,0,.04);text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.sales-tree__box strong{display:block;font-size:16px;line-height:1.35}
-.sales-tree__box span{display:block;margin-top:4px;font-size:12px;line-height:1.55;color:rgba(0,0,0,.62)}
-.sales-tree__box--root{grid-column:1 / span 2;justify-self:center;width:172px}
-.sales-tree__box--root::after{content:"";position:absolute;left:50%;top:100%;width:1px;height:18px;background:rgba(0,0,0,.18);transform:translateX(-50%)}
-.sales-tree__box--branch{padding-top:18px}
-.sales-tree__box--branch::before{content:"";position:absolute;left:50%;top:0;width:1px;height:18px;background:rgba(0,0,0,.18);transform:translateX(-50%)}
-
-.term-pill{padding:10px 10px;border-radius:8px;background:rgba(0,0,0,.04);font-size:15px;font-weight:700;line-height:1.45;text-align:center;display:flex;align-items:center;justify-content:center}
-.term-pill--strong{background:rgba(0,0,0,.08);font-weight:900}
-.operator{font-family:"Space Grotesk",sans-serif;font-size:18px;font-weight:900;line-height:1;text-align:center;color:rgba(0,0,0,.42)}
-.sum-model,.diff-model{display:grid;gap:12px}
-.sum-model__row{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);gap:8px;align-items:center}
-.diff-model__row{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:8px;align-items:center}
-
-.formula-bottom-note{position:absolute;left:80px;top:612px;width:1120px;padding-top:14px;border-top:1px solid rgba(0,0,0,.1)}
-.formula-bottom-note p{margin:0;font-size:14px;font-weight:900;line-height:1.7}
+.issue-stage{position:absolute;left:80px;top:156px;width:1120px;height:504px;display:grid;grid-template-columns:440px minmax(0,1fr);column-gap:48px;align-items:center}
+.issue-lead{display:flex;flex-direction:column;gap:20px}
+.issue-lead__head{margin:0;font-size:32px;font-weight:900;line-height:1.5}
+.issue-lead__head em{font-style:normal;background:linear-gradient(transparent 60%,var(--ink-10) 60%)}
+.issue-lead__body{margin:0;font-size:16px;line-height:1.95;color:var(--ink-68)}
+.issue-lead__callout{margin:0;padding:16px 20px;border-left:4px solid var(--soft-black);background:rgba(0,0,0,.03);font-size:17px;font-weight:900;line-height:1.72}
+.cascade{display:grid;grid-template-columns:1fr;row-gap:0}
+.cascade__origin{display:grid;grid-template-columns:188px 20px minmax(0,1fr);align-items:center;margin-bottom:14px}
+.cascade__branch{margin-left:28px;padding-left:22px;border-left:2px solid var(--ink-18);display:grid;row-gap:12px}
+.cascade__branch-label{margin:0 0 2px;color:rgba(0,0,0,.42);font-family:"Space Grotesk",sans-serif;font-size:10px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+.cascade__row{display:grid;grid-template-columns:164px 16px minmax(0,1fr);align-items:center}
+.cascade__node{padding:12px 16px;border-radius:8px;text-align:center}
+.cascade__node--ok{border:2px solid var(--ink-82);background:var(--surface-white)}
+.cascade__node--ng{border:2px solid rgba(0,0,0,.15);background:rgba(0,0,0,.025)}
+.cascade__node--origin{padding:14px 16px;border:3px solid rgba(0,0,0,.88);background:var(--surface-white);box-shadow:0 8px 20px var(--ink-08)}
+.cascade__node-kicker{margin:0 0 6px;font-family:"Space Grotesk",sans-serif;font-size:10px;font-weight:900;letter-spacing:1.8px;text-transform:uppercase;color:rgba(0,0,0,.42)}
+.cascade__node-label{margin:0;font-size:13px;font-weight:900;line-height:1.5}
+.cascade__node-label--ok{color:var(--soft-black)}
+.cascade__node-label--ng{color:var(--ink-34)}
+.cascade__wire{display:flex;align-items:center;justify-content:center}
+.cascade__impact{display:flex;align-items:center;justify-content:center;color:var(--ink-34);font-size:15px;font-weight:900}
+.cascade__result{padding:10px 14px;border-radius:6px;display:flex;align-items:center;gap:8px}
+.cascade__result--ok{background:var(--ink-04)}
+.cascade__result--ng{background:var(--ink-04)}
+.cascade__result--origin{background:rgba(0,0,0,.06)}
+.cascade__result-text{margin:0;font-size:13px;line-height:1.55}
+.cascade__result-text--ok{font-weight:700;color:var(--soft-black)}
+.cascade__result-text--ng{color:rgba(0,0,0,.4)}
+.cascade__badge{display:inline-block;padding:2px 10px;border-radius:12px;font-family:"Space Grotesk",sans-serif;font-size:10px;font-weight:900;letter-spacing:1px;text-transform:uppercase;margin-right:6px}
+.cascade__badge--hit{background:var(--soft-black);color:var(--surface-white)}
+.cascade__badge--start{background:var(--soft-black);color:var(--surface-white)}
+.cascade__badge--miss{background:var(--ink-10);color:rgba(0,0,0,.4)}
+.cascade__summary{display:flex;align-items:center;gap:10px;margin-top:2px;padding:12px 14px;border-radius:6px;background:rgba(0,0,0,.03)}
+.cascade__summary p{margin:0;font-size:13px;font-weight:700;line-height:1.6;color:var(--ink-50)}
 </style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第05章 論点を分解する" data-header-title="原則3：モデル（式）で考える" data-header-subtitle="下位要素が上位要素を MECE に構成し、かつ式として読める状態をつくる" data-footer="standard" data-footer-page="39">
-<div class="formula-grid">
-<section class="formula-card">
-<p class="formula-card__eyebrow">Multiply</p>
-<p class="formula-card__title">掛け算の例</p>
-<p class="formula-card__formula">売上 = 客数 × 客単価</p>
-<div class="formula-card__body">
-<div class="sales-tree">
-<div class="sales-tree__box tree-node sales-tree__box--root"><strong>売上</strong><span>上位KPI</span></div>
-<div class="sales-tree__box tree-node sales-tree__box--branch"><strong>客数</strong><span>来店者数 × 購入率</span></div>
-<div class="sales-tree__box tree-node sales-tree__box--branch"><strong>客単価</strong><span>購入点数 × 平均単価</span></div>
-</div>
-<p class="formula-card__note">売上をツリーで置くと、効かせる変数がそのまま見える。</p>
-</div>
-</section>
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第05章 論点を定義する" data-header-title="論点定義とは何か / なぜ重要か" data-header-subtitle="上段の問いを見失わずに、行動を決める問いへ固定する" data-footer="standard" data-footer-page="39">
+<div class="issue-stage">
+  <div class="issue-lead">
+    <p class="issue-lead__head">問いを誤れば<br/><em>行動は誤る</em></p>
+    <p class="issue-lead__body">論点定義とは、上段の問いを見失わずに、行動を決める問いへ固定することである。ここが曖昧だと、その後の分解も仮説も検証も、どこに向かえばよいか定まらない。</p>
+    <p class="issue-lead__callout">論点定義は、問い作りではなく後工程全体の起点である。<br/>何を問うかで、後ろの工程は全部決まる。</p>
+  </div>
 
-<section class="formula-card">
-<p class="formula-card__eyebrow">Addition</p>
-<p class="formula-card__title">足し算の例</p>
-<p class="formula-card__formula">集客数 = 自然流入 + 広告流入 + 紹介流入</p>
-<div class="formula-card__body">
-<div class="sum-model">
-<div class="term-pill term-pill--strong">集客数</div>
-<div class="sum-model__row">
-<div class="term-pill">自然流入</div>
-<div class="operator">+</div>
-<div class="term-pill">広告流入</div>
-<div class="operator">+</div>
-<div class="term-pill">紹介流入</div>
-</div>
-</div>
-<p class="formula-card__note">足し算は、並列要素の寄与を漏れなく見るときに使う。</p>
-</div>
-</section>
+  <div class="cascade">
+    <div class="cascade__origin">
+      <div class="cascade__node cascade__node--origin">
+        <p class="cascade__node-kicker">Origin</p>
+        <p class="cascade__node-label cascade__node-label--ok">論点定義</p>
+      </div>
+      <div class="cascade__wire"></div>
+      <div class="cascade__result cascade__result--ok cascade__result--origin">
+        <span class="cascade__badge cascade__badge--start">START</span>
+        <p class="cascade__result-text cascade__result-text--ok">上段の問いと行動がここでつながる</p>
+      </div>
+    </div>
 
-<section class="formula-card">
-<p class="formula-card__eyebrow">Subtraction</p>
-<p class="formula-card__title">引き算の例</p>
-<p class="formula-card__formula">粗利 = 売上 - 原価</p>
-<div class="formula-card__body">
-<div class="diff-model">
-<div class="term-pill term-pill--strong">粗利</div>
-<div class="diff-model__row">
-<div class="term-pill">売上</div>
-<div class="operator">-</div>
-<div class="term-pill">原価</div>
+    <div class="cascade__branch">
+      <p class="cascade__branch-label">Downstream Impact</p>
+
+      <div class="cascade__row">
+        <div class="cascade__node cascade__node--ok">
+          <p class="cascade__node-label cascade__node-label--ok">分解</p>
+        </div>
+        <div class="cascade__impact">→</div>
+        <div class="cascade__result cascade__result--ok">
+          <span class="cascade__badge cascade__badge--hit">HIT</span>
+          <p class="cascade__result-text cascade__result-text--ok">何を構造化すべきかが定まる</p>
+        </div>
+      </div>
+
+      <div class="cascade__row">
+        <div class="cascade__node cascade__node--ok">
+          <p class="cascade__node-label cascade__node-label--ok">仮説</p>
+        </div>
+        <div class="cascade__impact">→</div>
+        <div class="cascade__result cascade__result--ok">
+          <span class="cascade__badge cascade__badge--hit">HIT</span>
+          <p class="cascade__result-text cascade__result-text--ok">何に仮の答えを置くかが定まる</p>
+        </div>
+      </div>
+
+      <div class="cascade__row">
+        <div class="cascade__node cascade__node--ok">
+          <p class="cascade__node-label cascade__node-label--ok">行動</p>
+        </div>
+        <div class="cascade__impact">→</div>
+        <div class="cascade__result cascade__result--ok">
+          <span class="cascade__badge cascade__badge--hit">HIT</span>
+          <p class="cascade__result-text cascade__result-text--ok">次に取るべき判断が定まる</p>
+        </div>
+      </div>
+
+      <div class="cascade__summary">
+        <span class="cascade__badge cascade__badge--miss">MISS</span>
+        <p>論点を誤ると、以後の分解・仮説・検証・行動もずれ続ける。</p>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-<p class="formula-card__note">引き算は、何を差し引いた残りを管理したいかを明確にする。</p>
-</div>
-</section>
-</div>
-<div class="formula-bottom-note"><p>式の型が決まると、全体を構成する変数と、次に動かすべき変数が同時に見える。</p></div>
 </div>
 </body>
 </html>

@@ -3,29 +3,54 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>理論的には何事も上手くいきます</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet"/>
+<title>コミュニケーションの再定義</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
+<style>
+.stage{position:absolute;left:80px;top:160px;width:1120px;display:flex;flex-direction:column;gap:20px}
+.lead{margin:0;font-size:18px;font-weight:700;line-height:1.85;color:#333}
+.lead strong{color:var(--soft-black)}
+.card-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.card{min-height:268px;padding:28px 22px 32px;border:1px solid var(--ink-10);border-top:3px solid var(--soft-black);background:var(--surface-white);border-radius:0 0 4px 4px}
+.card__eyebrow{margin:0;font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.8px;color:rgba(0,0,0,.32);text-transform:uppercase}
+.card__head{margin:34px 0 0;font-size:20px;font-weight:900;line-height:1.25;color:var(--soft-black)}
+.card__body{margin:32px 0 0;font-size:14px;font-weight:400;line-height:1.8;color:#555}
+.bottom-band{padding:18px 22px;border-top:1px solid var(--ink-10);display:flex;align-items:center;gap:20px}
+.bottom-band__label{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.6px;color:rgba(0,0,0,.35);white-space:nowrap}
+.bottom-band__text{margin:0;font-size:16px;font-weight:700;line-height:1.7;color:var(--soft-black)}
+</style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-background="halftone" data-slide-kind="closing">
-  <div style="position:absolute; left:80px; top:140px; width:1120px; z-index:10;">
-    <p style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:12px; letter-spacing:2px; color:rgba(0,0,0,0.34);">CLOSING MESSAGE</p>
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第09章 問題解決におけるコミュニケーション" data-header-title="コミュニケーションの再定義" data-header-subtitle="解を相手に伝えることも、問題解決の一部である" data-footer="standard" data-footer-page="67">
+
+<div class="stage">
+  <p class="lead">伝えるとは、自分の頭の中をそのまま出すことではない。<strong>相手側に残る誤解可能性を減らすように、設計し直すことだ。</strong></p>
+
+  <div class="card-row">
+    <div class="card">
+      <p class="card__eyebrow">WHAT</p>
+      <p class="card__head">誤解は必ず起きる</p>
+      <p class="card__body">同じ言葉でも前提・知識・関心が違えば、受け取り方は変わる。誤解ゼロは不可能。だから「排除するゲーム」と捉える。</p>
+    </div>
+    <div class="card">
+      <p class="card__eyebrow">WHY</p>
+      <p class="card__head">解が動かなければ意味がない</p>
+      <p class="card__body">正しい答えを出しても、相手が動かなければ問題は解決されない。伝達は問題解決の完結点である。</p>
+    </div>
+    <div class="card">
+      <p class="card__eyebrow">HOW</p>
+      <p class="card__head">相手の頭の中を先にモデル化する</p>
+      <p class="card__body">相手の知識・理解力・興味関心・センターピンを先に把握する。それに合わせて構造を設計し直す。</p>
+    </div>
   </div>
 
-  <div style="position:absolute; left:80px; top:206px; width:1120px; z-index:10;">
-    <p style="font-weight:900; font-size:48px; line-height:1.5; color:var(--soft-black); letter-spacing:0;">
-      問題を再現性高く解決する能力が身につけば、<br/>
-      世の中の全てが問題と論点に見え、<br/>
-      理論的には何事も上手くいきます。
-    </p>
+  <div class="bottom-band">
+    <span class="bottom-band__label">PRINCIPLE</span>
+    <p class="bottom-band__text">「何を言うか」より「どう受け取られるか」を先に設計する。誤解の起点を先回りして潰すことが、コミュニケーションの本質である。</p>
   </div>
+</div>
 
-  <div style="position:absolute; left:80px; top:560px; width:1120px; z-index:10; display:flex; align-items:center; gap:18px;">
-    <div style="width:88px; height:1px; background:rgba(0,0,0,0.18);"></div>
-    <p style="font-size:15px; font-weight:700; line-height:1.7; color:#555;">問題は、定義できる。論点は、分解できる。行動が、決まる。検証後、また問題が定義できる</p>
-  </div>
 </div>
 </body>
 </html>

@@ -3,17 +3,44 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>問題を解決しましょう</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet"/>
+<title>誤解がなぜいけないか</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
+<style>
+.stage{position:absolute;left:80px;top:156px;width:1120px;display:flex;flex-direction:column;gap:20px}
+.lead{margin:0;font-size:17px;font-weight:700;line-height:1.85;color:#4a3f2f}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{min-height:292px;padding:22px 20px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white)}
+.card__label{margin:0 0 10px;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+.card__title{margin:0 0 12px;font-size:24px;font-weight:900;line-height:1.4;color:var(--soft-black)}
+.card__text{margin:0;color:rgba(0,0,0,.72);font-size:14px;line-height:1.8}
+.summary{padding-top:16px;border-top:1px solid var(--ink-10)}
+.summary p{margin:0;font-size:17px;font-weight:900;line-height:1.7;color:var(--soft-black)}
+</style>
 </head>
 <body>
-<div class="slide-container slide-theme-mist" data-background="halftone" data-slide-kind="cta">
-
-  <div style="position:absolute; inset:0; z-index:10;">
-    <p style="position:absolute; left:80px; top:282px; width:1120px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:12px; line-height:1; letter-spacing:2px; color:rgba(0,0,0,0.34); text-align:center;">ACTION</p>
-    <p style="position:absolute; left:80px; top:332px; width:1120px; font-weight:900; font-size:72px; line-height:1.2; color:var(--soft-black); letter-spacing:-1px; text-align:center;">問題を解決しましょう</p>
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第09章 問題解決におけるコミュニケーション" data-header-title="誤解がなぜいけないか" data-header-subtitle="誤解は、理解だけでなく判断と行動も止める" data-footer="standard" data-footer-page="68">
+  <div class="stage">
+    <p class="lead">問題解決では、正しいことを考えただけでは足りない。<strong>誤解が残ると、相手は正しく理解できず、正しく判断できず、正しく動けない。</strong></p>
+    <div class="grid">
+      <section class="card">
+        <p class="card__label">Understanding</p>
+        <h2 class="card__title">理解がずれる</h2>
+        <p class="card__text">同じ言葉でも、相手の前提が違えば別の意味で受け取られる。出発点がずれると、その後の議論も全部ずれる。</p>
+      </section>
+      <section class="card">
+        <p class="card__label">Decision</p>
+        <h2 class="card__title">判断がずれる</h2>
+        <p class="card__text">結論や根拠が相手の判断軸に合っていないと、納得してもらえない。あるいは別の基準で判断されてしまう。</p>
+      </section>
+      <section class="card">
+        <p class="card__label">Action</p>
+        <h2 class="card__title">行動が止まる</h2>
+        <p class="card__text">ネクストアクションや前提条件が曖昧だと、聞き終わったあとに誰も動けない。解が現場で動作しない。</p>
+      </section>
+    </div>
+    <div class="summary"><p>誤解がいけないのは、相手が「わかった気になる」だけで終わり、問題解決が前に進まなくなるからである。</p></div>
   </div>
 </div>
 </body>

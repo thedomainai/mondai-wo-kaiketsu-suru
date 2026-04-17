@@ -3,47 +3,41 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>検証結果を読む</title>
+<title>仮説生成の技法</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
 <style>
-.stage{position:absolute;left:80px;top:156px;width:1120px;display:flex;flex-direction:column;gap:14px}.kicker{margin:0;color:#5a4970;font-size:15px;font-weight:900;line-height:1.55}.flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.step{height:224px;padding:16px 18px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff;display:grid;grid-template-rows:auto minmax(0,1fr);row-gap:22px}.step__head{display:grid;align-content:start;row-gap:8px}.step__label{margin:0;color:rgba(0,0,0,.34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.step__title{margin:0;font-size:22px;font-weight:900;line-height:1.42}.step__body-wrap{min-height:0;display:flex;align-items:center}.step__body{margin:0;color:rgba(0,0,0,.72);font-size:14px;line-height:1.65}.bottom{display:grid;grid-template-columns:1fr 1fr;gap:14px}.panel{padding:16px 18px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff}.panel__title{margin:0 0 12px;font-size:20px;font-weight:900;line-height:1.42}.axis-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.axis{padding:12px;border:1px solid rgba(0,0,0,.08);border-radius:8px;background:rgba(0,0,0,.02)}.axis p{margin:0;font-size:15px;font-weight:900;line-height:1.5}.axis span{display:block;margin-top:4px;color:rgba(0,0,0,.68);font-size:12px;font-weight:400;line-height:1.6}.list{display:grid;gap:10px}.list p{margin:0;font-size:15px;font-weight:900;line-height:1.55}.list span{display:block;margin-top:4px;color:rgba(0,0,0,.68);font-size:12px;font-weight:400;line-height:1.6}.summary{padding-top:10px;border-top:1px solid rgba(0,0,0,.1)}.summary p{margin:0;font-size:16px;font-weight:900;line-height:1.55}
+.stage{position:absolute;left:80px;top:164px;width:1120px;display:flex;flex-direction:column;gap:18px}.kicker{margin:0;color:var(--accent-purple);font-size:15px;font-weight:900;line-height:1.55}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.card{min-height:312px;padding:24px 24px 22px;border:1px solid var(--ink-12);border-radius:8px;background:var(--surface-white)}.card--strong{border-width:2px;border-color:var(--ink-82)}.slide-container .card__label{margin:0 0 16px;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.slide-container .card__title{margin:0 0 14px;font-size:26px;font-weight:900;line-height:1.35}.slide-container .card__text{margin:0 0 16px;color:rgba(0,0,0,.72);font-size:14px;line-height:1.72}.list{display:grid;gap:10px}.list p{margin:0;font-size:15px;font-weight:900;line-height:1.6}.summary{padding-top:14px;border-top:1px solid var(--ink-10)}.summary p{margin:0;font-size:18px;font-weight:900;line-height:1.65}
 </style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第07章 論点と仮説を検証する" data-header-title="検証結果を読む" data-header-subtitle="事実と解釈を分け、評価軸に照らして判断する" data-footer="standard" data-footer-page="54">
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第07章 仮説を構築する" data-header-title="仮説生成の技法" data-header-subtitle="分析と直感を往復しながら、筋の良い仮説を組み上げる" data-footer="standard" data-footer-page="54">
   <div class="stage">
-    <p class="kicker">数字や顧客の声は、置いただけではまだ判断ではない。何が起きたか、何を意味するか、だからどう張るかを分けて読んで初めて、意思決定に使える。</p>
-    <div class="flow">
-      <section class="step">
-        <div class="step__head">
-          <p class="step__label">Step 1</p>
-          <p class="step__title">事実</p>
-        </div>
-        <div class="step__body-wrap">
-          <p class="step__body">観測された数字、顧客の声、比較結果など、起きたことをそのまま置く。ここではまだ良し悪しを言わない。</p>
-        </div>
-      </section>
-      <section class="step">
-        <div class="step__head">
-          <p class="step__label">Step 2</p>
-          <p class="step__title">解釈</p>
-        </div>
-        <div class="step__body-wrap">
-          <p class="step__body">その事実が、どの論点にどう効くのかを読む。ここで初めて、仮説との接続が生まれる。</p>
+    <p class="kicker">仮説づくりは、分析だけでも足りないし、ひらめきだけでも危うい。両方を行き来して精度を上げる。</p>
+    <div class="grid">
+      <section class="card">
+        <p class="card__label">Analytical</p>
+        <p class="card__title">アナリティカル思考</p>
+        <p class="card__text">手元の情報を丁寧に分解し、どこまで言えるかを詰める。構造理解が深まり、仮説の穴も見つけやすい。</p>
+        <div class="list">
+          <p>事実を並べ、差分や因果を確認する</p>
+          <p>要素を切り、どこが効いているかを絞る</p>
+          <p>前提条件を露出させる</p>
         </div>
       </section>
-      <section class="step">
-        <div class="step__head">
-          <p class="step__label">Step 3</p>
-          <p class="step__title">判断</p>
-        </div>
-        <div class="step__body-wrap">
-          <p class="step__body">複数案があるなら、評価軸に沿って比べ、何を取って何を捨てるかを決める。</p>
+      <section class="card card--strong">
+        <p class="card__label">Conceptual</p>
+        <p class="card__title">コンセプチュアル思考</p>
+        <p class="card__text">知っている構造や似た事例を手掛かりに、大きく仮の答えを置く。情報が足りない局面でも前に進める。</p>
+        <div class="list">
+          <p>既知のフレームや事例を当てる</p>
+          <p>本質は何かをひとつ上から見る</p>
+          <p>大胆に仮置きして、あとで潰す</p>
         </div>
       </section>
     </div>
+    <div class="summary"><p>分析で地に足をつけ、直感で前に跳ぶ。この往復が、強い仮説をつくる。</p></div>
   </div>
 </div>
 </body>

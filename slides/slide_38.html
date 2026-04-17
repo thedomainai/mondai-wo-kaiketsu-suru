@@ -3,86 +3,12 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>原則2：MECEに分解する</title>
+<title>第05章 論点を定義する</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
-<style>
-.mece-deck{position:absolute;left:80px;top:172px;width:1120px}
-.mece-lead{margin:0 0 16px;width:980px;font-size:16px;line-height:1.78;color:rgba(0,0,0,.68)}
-.mece-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.mece-card{min-height:364px;padding:20px 24px 18px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:linear-gradient(180deg,#fff 0%,#fcfcfc 100%)}
-.mece-card__eyebrow{margin:0 0 8px;color:rgba(0,0,0,.34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px}
-.mece-card__head{margin:0 0 8px;font-size:30px;font-weight:900;line-height:1.2}
-.mece-card__body{margin:0;font-size:14px;line-height:1.82;color:rgba(0,0,0,.68)}
-.mece-visual{margin-top:14px}
-.mece-parent{display:inline-flex;align-items:center;justify-content:center;min-width:196px;padding:9px 16px;border-radius:999px;background:var(--soft-black);color:#fff;font-size:14px;font-weight:700;line-height:1.4}
-.mece-parent-wrap{display:flex;justify-content:center}
-.mece-connector{width:2px;height:22px;margin:8px auto;background:rgba(0,0,0,.18)}
-.mece-segments{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-radius:8px;overflow:hidden}
-.mece-segment{padding:16px 8px 14px;background:rgba(0,0,0,.05);text-align:center}
-.mece-segment + .mece-segment{border-left:1px solid rgba(0,0,0,.08)}
-.mece-segment strong{display:block;margin-bottom:5px;font-size:15px;line-height:1.4}
-.mece-segment span{display:block;font-size:12px;line-height:1.55;color:rgba(0,0,0,.58)}
-.mece-caption{margin:10px 0 0;font-size:13px;line-height:1.64;color:rgba(0,0,0,.6)}
-.mece-exclusive{display:grid;grid-template-columns:218px 1fr;gap:16px;align-items:center}
-.mece-ng{position:relative;height:170px}
-.mece-ng__label,.mece-ok__label{margin:0 0 10px;font-family:"Space Grotesk",sans-serif;font-size:11px;font-weight:900;letter-spacing:1.8px;color:rgba(0,0,0,.34)}
-.mece-bubble{position:absolute;display:flex;align-items:center;justify-content:center;width:116px;height:116px;border-radius:50%;font-size:14px;font-weight:700;line-height:1.45;text-align:center}
-.mece-bubble--left{left:8px;top:28px;background:rgba(0,0,0,.08)}
-.mece-bubble--right{left:90px;top:28px;background:rgba(0,0,0,.14)}
-.mece-overlap-note{position:absolute;left:72px;top:82px;width:88px;padding:5px 8px;border-radius:999px;background:#fff;border:1px solid rgba(0,0,0,.12);font-size:11px;font-weight:700;text-align:center}
-.mece-ok{display:flex;flex-direction:column}
-.mece-ok__stack{display:grid;gap:10px}
-.mece-ok__item{padding:12px 14px;border-radius:8px;background:rgba(0,0,0,.045);font-size:14px;font-weight:700;line-height:1.5}
-.mece-ok__item span{display:block;font-size:12px;font-weight:400;line-height:1.55;color:rgba(0,0,0,.58)}
-</style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第05章 論点を分解する" data-header-title="原則2：MECEに分解する" data-header-subtitle="MECEとは、もれなく・だぶりなく分けること" data-footer="standard" data-footer-page="38">
-<div class="mece-deck">
-<p class="mece-lead">分解の質は、下位の要素で上位の論点を全部説明しきれ、かつ各要素の境界が重ならないかで決まる。MECE は、その二つを同時に点検するための基準である。</p>
-<div class="mece-grid">
-<section class="mece-card">
-<p class="mece-card__eyebrow">Exhaustive</p>
-<p class="mece-card__head">もれなく</p>
-<p class="mece-card__body">上位の論点を、端から端まで下位要素で説明しきれる状態。工程のどこかが抜けると、ボトルネックを見落として手戻りが起きる。</p>
-<div class="mece-visual">
-<div class="mece-parent-wrap"><div class="mece-parent">採用プロセス 全体</div></div>
-<div class="mece-connector"></div>
-<div class="mece-segments">
-<div class="mece-segment"><strong>認知</strong><span>候補者に知ってもらう</span></div>
-<div class="mece-segment"><strong>応募</strong><span>応募してもらう</span></div>
-<div class="mece-segment"><strong>選考</strong><span>見極めて通過させる</span></div>
-<div class="mece-segment"><strong>入社</strong><span>承諾して入社してもらう</span></div>
-</div>
-<p class="mece-caption">候補者が通る全工程を置けているので、どこに課題があるかを漏らさず見られる。</p>
-</div>
-</section>
-<section class="mece-card">
-<p class="mece-card__eyebrow">Mutually Exclusive</p>
-<p class="mece-card__head">だぶりなく</p>
-<p class="mece-card__body">同じ切り口で区切り、一つの対象が複数の箱に入らない状態。包含関係や軸の混在があると、集計が二重になる。</p>
-<div class="mece-visual mece-exclusive">
-<div class="mece-ng">
-<p class="mece-ng__label">NG</p>
-<div class="mece-bubble mece-bubble--left">東京都</div>
-<div class="mece-bubble mece-bubble--right">首都圏</div>
-<div class="mece-overlap-note">東京が重複</div>
-</div>
-<div class="mece-ok">
-<p class="mece-ok__label">OK</p>
-<div class="mece-ok__stack">
-<div class="mece-ok__item">東京都<span>東京だけを切り出す</span></div>
-<div class="mece-ok__item">東京都以外の首都圏<span>神奈川・埼玉・千葉</span></div>
-<div class="mece-ok__item">その他地域<span>首都圏以外の全国</span></div>
-</div>
-</div>
-</div>
-<p class="mece-caption">地域の包含関係を混ぜずに切れば、どの売上も一度だけ数えられる。</p>
-</section>
-</div>
-</div>
-</div>
+<div class="slide-container slide-theme-mist" data-slide-kind="divider" data-background="halftone" data-divider-brand="ロジカル・シンキング研修" data-divider-index="05" data-divider-kicker="Chapter 05" data-divider-title="論点を定義する" data-divider-subtitle="上段の問いを見失わずに、行動を決める問いへ固定する"></div>
 </body>
 </html>

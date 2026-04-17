@@ -1,0 +1,17 @@
+{
+  "name": "slides-visual-regression",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Visual regression testing for slide deck",
+  "scripts": {
+    "test:baseline": "node visual-regression.mjs baseline",
+    "test:current": "node visual-regression.mjs current",
+    "test:compare": "node visual-regression.mjs compare",
+    "test:full": "npm run test:current && npm run test:compare"
+  },
+  "dependencies": {
+    "pixelmatch": "^6.0.0",
+    "pngjs": "^7.0.0",
+    "puppeteer": "^23.0.0"
+  }
+}

@@ -22,7 +22,12 @@
   }
 
   function renderStandardHeader(container) {
-    if (!container.dataset.headerTitle || container.querySelector(".slide-standard-header")) {
+    const headerCompatibleKinds = new Set(["content", "intro", "summary"]);
+    if (
+      !container.dataset.headerTitle ||
+      container.querySelector(".slide-standard-header") ||
+      !headerCompatibleKinds.has(container.dataset.slideKind || "")
+    ) {
       return;
     }
 

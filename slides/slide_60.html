@@ -3,44 +3,66 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>2. 誤解がなぜいけないか</title>
+<title>検証を設計する</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
 <style>
-.stage{position:absolute;left:80px;top:156px;width:1120px;display:flex;flex-direction:column;gap:20px}
-.lead{margin:0;font-size:17px;font-weight:700;line-height:1.85;color:#4a3f2f}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.card{min-height:292px;padding:22px 20px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff}
-.card__label{margin:0 0 10px;color:rgba(0,0,0,.34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
-.card__title{margin:0 0 12px;font-size:24px;font-weight:900;line-height:1.4;color:var(--soft-black)}
-.card__text{margin:0;color:rgba(0,0,0,.72);font-size:14px;line-height:1.8}
-.summary{padding-top:16px;border-top:1px solid rgba(0,0,0,.1)}
-.summary p{margin:0;font-size:17px;font-weight:900;line-height:1.7;color:var(--soft-black)}
+.stage{position:absolute;left:80px;top:156px;width:1120px;display:flex;flex-direction:column;gap:16px}.kicker{margin:0;color:var(--accent-purple);font-size:15px;font-weight:900;line-height:1.55}.grid{display:grid;grid-template-columns:1.02fr .98fr;gap:18px}.panel{border:1px solid var(--ink-12);border-radius:8px;background:var(--surface-white);overflow:hidden}.panel__head{padding:16px 20px;border-bottom:1px solid var(--ink-08);background:rgba(0,0,0,.03)}.panel__label{margin:0 0 6px;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.panel__title{margin:0;font-size:22px;font-weight:900;line-height:1.45}.panel__sub{margin:6px 0 0;color:var(--ink-68);font-size:14px;line-height:1.68}.rows{display:grid}.row{display:grid;grid-template-columns:1fr 36px 1.26fr;border-top:1px solid var(--ink-08)}.row:first-child{border-top:none}.cell{padding:16px 18px}.cell--muted{color:var(--ink-50)}.cell p{margin:0;font-size:16px;font-weight:900;line-height:1.58}.cell span{display:block;margin-top:4px;color:var(--ink-68);font-size:13px;font-weight:400;line-height:1.68}.arrow{display:flex;align-items:center;justify-content:center;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:24px;font-weight:900}.method-list{display:grid}.method{display:grid;grid-template-columns:170px 1fr;border-top:1px solid var(--ink-08)}.method:first-child{border-top:none}.method__q{padding:16px 18px;border-right:1px solid var(--ink-08)}.method__a{padding:16px 18px}.method__q p,.method__a p{margin:0;font-size:16px;font-weight:900;line-height:1.58}.method__q span,.method__a span{display:block;margin-top:4px;color:var(--ink-68);font-size:13px;font-weight:400;line-height:1.68}.summary{padding:14px 18px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white)}.summary p{margin:0;font-size:17px;font-weight:900;line-height:1.65}
 </style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第08章 問題解決におけるコミュニケーション" data-header-title="2. 誤解がなぜいけないか" data-header-subtitle="誤解は、理解だけでなく判断と行動も止める" data-footer="standard" data-footer-page="60">
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第08章 論点と仮説を検証する" data-header-title="検証を設計する" data-header-subtitle="何が分かれば支持できるかを定め、何で確かめるかを決める" data-footer="standard" data-footer-page="60">
   <div class="stage">
-    <p class="lead">問題解決では、正しいことを考えただけでは足りない。<strong>誤解が残ると、相手は正しく理解できず、正しく判断できず、正しく動けない。</strong></p>
+    <p class="kicker">優先順位をつける前に、まず検証そのものを設計する。検証とは、仮説を判定できる形にし、それを確かめる方法を決めることである。</p>
     <div class="grid">
-      <section class="card">
-        <p class="card__label">Understanding</p>
-        <h2 class="card__title">理解がずれる</h2>
-        <p class="card__text">同じ言葉でも、相手の前提が違えば別の意味で受け取られる。出発点がずれると、その後の議論も全部ずれる。</p>
+      <section class="panel">
+        <div class="panel__head">
+          <p class="panel__label">Design 1</p>
+          <p class="panel__title">判定条件を決める</p>
+          <p class="panel__sub">曖昧な仮説を、Yes / No や比較で判断できる命題に変える。</p>
+        </div>
+        <div class="rows">
+          <div class="row">
+            <div class="cell cell--muted"><p>若者に人気がある</p></div>
+            <div class="arrow">→</div>
+            <div class="cell"><p>20代の購入比率が全体平均より高い<span>さらに理由をインタビューで説明できる</span></p></div>
+          </div>
+          <div class="row">
+            <div class="cell cell--muted"><p>コストが高い</p></div>
+            <div class="arrow">→</div>
+            <div class="cell"><p>単位コストが競合A社比で120%超<span>主要因が製造工程にある</span></p></div>
+          </div>
+          <div class="row">
+            <div class="cell cell--muted"><p>市場は成長している</p></div>
+            <div class="arrow">→</div>
+            <div class="cell"><p>過去3年CAGRが10%以上<span>成長要因が今後も続く</span></p></div>
+          </div>
+        </div>
       </section>
-      <section class="card">
-        <p class="card__label">Decision</p>
-        <h2 class="card__title">判断がずれる</h2>
-        <p class="card__text">結論や根拠が相手の判断軸に合っていないと、納得してもらえない。あるいは別の基準で判断されてしまう。</p>
-      </section>
-      <section class="card">
-        <p class="card__label">Action</p>
-        <h2 class="card__title">行動が止まる</h2>
-        <p class="card__text">ネクストアクションや前提条件が曖昧だと、聞き終わったあとに誰も動けない。解が現場で動作しない。</p>
+
+      <section class="panel">
+        <div class="panel__head">
+          <p class="panel__label">Design 2</p>
+          <p class="panel__title">確かめ方を決める</p>
+          <p class="panel__sub">知りたい問いに合わせて、最も妥当で、かつ軽い手段から選ぶ。</p>
+        </div>
+        <div class="method-list">
+          <div class="method">
+            <div class="method__q"><p>現状把握<span>何が起きているかを知りたい</span></p></div>
+            <div class="method__a"><p>既存データ分析 / デスクリサーチ<span>まず事実の輪郭をつかむ</span></p></div>
+          </div>
+          <div class="method">
+            <div class="method__q"><p>理由探索<span>なぜそうなっているかを知りたい</span></p></div>
+            <div class="method__a"><p>ヒアリング / 観察<span>数字だけでは見えない文脈を拾う</span></p></div>
+          </div>
+          <div class="method">
+            <div class="method__q"><p>因果確認<span>打ち手が効くかを確かめたい</span></p></div>
+            <div class="method__a"><p>プロトタイプ / 実験 / A/Bテスト<span>条件を揃えて差を見る</span></p></div>
+          </div>
+        </div>
       </section>
     </div>
-    <div class="summary"><p>誤解がいけないのは、相手が「わかった気になる」だけで終わり、問題解決が前に進まなくなるからである。</p></div>
   </div>
 </div>
 </body>

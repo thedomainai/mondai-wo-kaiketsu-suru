@@ -10,23 +10,23 @@
 <style>
 /* Layout: shared premise bar + equal 2-column comparison cards */
 .role-stage{position:absolute;left:80px;top:156px;width:1120px;height:488px;display:grid;grid-template-rows:58px minmax(0,1fr);row-gap:18px}
-.role-context{display:grid;grid-template-columns:170px minmax(0,1fr);column-gap:20px;align-items:center;height:58px;padding:0 20px;border:1px solid rgba(0,0,0,.08);border-radius:8px;background:rgba(0,0,0,.025)}
-.role-context__label{margin:0;color:rgba(0,0,0,.34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+.role-context{display:grid;grid-template-columns:170px minmax(0,1fr);column-gap:20px;align-items:center;height:58px;padding:0 20px;border:1px solid var(--ink-08);border-radius:8px;background:rgba(0,0,0,.025)}
+.role-context__label{margin:0;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
 .role-context__text{margin:0;font-size:15px;font-weight:900;line-height:1.55}
 .role-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;min-height:0;align-items:stretch}
-.split-card{height:100%;padding:20px 24px 18px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff;display:grid;grid-template-rows:auto auto 1fr auto;row-gap:14px}
+.split-card{height:100%;padding:20px 24px 18px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white);display:grid;grid-template-rows:auto auto 1fr auto;row-gap:14px}
 .split-card__head{display:grid;row-gap:8px}
-.split-card__eyebrow{margin:0;color:rgba(0,0,0,.34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+.split-card__eyebrow{margin:0;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
 .split-card__title{margin:0;font-size:30px;font-weight:900;line-height:1.1}
 .split-card__lead{margin:0;font-size:17px;font-weight:900;line-height:1.45}
 .split-card__steps{margin:0;font-size:12px;font-weight:900;line-height:1.55;color:rgba(0,0,0,.56)}
 .split-card__steps span{color:var(--soft-black)}
 .split-card__body{display:grid;grid-template-rows:repeat(3,minmax(0,1fr));min-height:0}
-.split-card__point{display:grid;align-content:start;gap:6px;padding:10px 0;border-top:1px solid rgba(0,0,0,.08)}
+.split-card__point{display:grid;align-content:start;gap:6px;padding:10px 0;border-top:1px solid var(--ink-08)}
 .split-card__point:first-child{padding-top:0;border-top:none}
 .split-card__point-title{margin:0;font-size:15px;font-weight:900;line-height:1.45}
-.split-card__point-text{margin:0;color:rgba(0,0,0,.68);font-size:12.5px;line-height:1.58}
-.split-card__foot{margin:0;padding-top:12px;border-top:1px solid rgba(0,0,0,.08);font-size:13.5px;font-weight:900;line-height:1.55}
+.split-card__point-text{margin:0;color:var(--ink-68);font-size:12.5px;line-height:1.58}
+.split-card__foot{margin:0;padding-top:12px;border-top:1px solid var(--ink-08);font-size:13.5px;font-weight:900;line-height:1.55}
 </style>
 </head>
 <body>

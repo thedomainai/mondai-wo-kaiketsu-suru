@@ -13,7 +13,7 @@
     padding: 0;
     overflow: hidden;
     font-family: "Noto Sans JP", sans-serif;
-    background: #ffffff;
+    background: var(--surface-white);
   }
 
   .slide-container {
@@ -21,7 +21,7 @@
     height: 720px;
     position: relative;
     overflow: hidden;
-    background: #ffffff;
+    background: var(--surface-white);
   }
 
   p {
@@ -33,7 +33,7 @@
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1.6px;
-    color: rgba(0, 0, 0, 0.34);
+    color: var(--ink-34);
   }
 
   .content-stage {
@@ -58,7 +58,7 @@
   .stage-intro__text {
     font-size: 15px;
     font-weight: 700;
-    color: #5b476d;
+    color: var(--accent-purple);
   }
 
   .stage-intro__tag {
@@ -66,15 +66,15 @@
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 1.4px;
-    color: #5b476d;
+    color: var(--accent-purple);
   }
 
   .stage-axis {
     min-height: 0;
     padding: 0 16px;
-    border-top: 1px solid rgba(0, 0, 0, 0.14);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    background: #f7f7f7;
+    border-top: 1px solid var(--ink-14);
+    border-bottom: 1px solid var(--ink-08);
+    background: var(--surface-mist);
     display: grid;
     grid-template-columns: 84px 1fr 170px;
     column-gap: 14px;
@@ -135,9 +135,9 @@
   .person-card {
     height: 100%;
     padding: 14px;
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    border: 1px solid var(--ink-12);
     border-radius: 8px;
-    background: #ffffff;
+    background: var(--surface-white);
     display: grid;
     grid-template-rows: 42px minmax(0, 1fr);
     row-gap: 12px;
@@ -168,17 +168,17 @@
   .person-card__token--outline {
     border: 2px solid rgba(0, 0, 0, 0.28);
     color: rgba(0, 0, 0, 0.76);
-    background: #ffffff;
+    background: var(--surface-white);
   }
 
   .person-card__token--soft {
     background: #6a6a6a;
-    color: #ffffff;
+    color: var(--surface-white);
   }
 
   .person-card__token--solid {
     background: var(--soft-black);
-    color: #ffffff;
+    color: var(--surface-white);
   }
 
   .person-card__token-text {
@@ -202,7 +202,7 @@
 
   .person-card__visual {
     min-height: 0;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--ink-08);
     border-radius: 8px;
     background: #fcfcfc;
     overflow: hidden;
@@ -229,7 +229,7 @@
   }
 
   .svg-node--outline {
-    fill: #ffffff;
+    fill: var(--surface-white);
     stroke: var(--soft-black);
     stroke-width: 1.6;
   }

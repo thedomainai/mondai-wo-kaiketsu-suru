@@ -68,7 +68,7 @@ CSS_URL_RE = re.compile(r"""url\((?:'|")?(?P<path>\./[^)'"]+)(?:'|")?\)""")
 TOTAL_SLIDES_RE = re.compile(r"TOTAL_SLIDES\s*=\s*(\d+)")
 PAGE_REF_RE = re.compile(r"^(?:P)?(?P<label>\d+)$", re.IGNORECASE)
 SLIDES_BLOCK_RE = re.compile(
-    r"// BEGIN GENERATED SLIDES\s*\nconst slides = \[\n.*?\n\];\n// END GENERATED SLIDES",
+    r"// BEGIN GENERATED SLIDES\s*\nconst slides = \[\n.*?\];\n// END GENERATED SLIDES",
     re.DOTALL,
 )
 HEADER_RE = re.compile(r"(<h1 id=\"deckTitle\">)(.*?)(</h1>)", re.DOTALL)
@@ -76,6 +76,8 @@ COUNTER_RE = re.compile(r"(<span id=\"counter\">)(.*?)(</span>)", re.DOTALL)
 MOBILE_COUNTER_RE = re.compile(r"(<div id=\"mCounter\"[^>]*>)(.*?)(</div>)", re.DOTALL)
 STYLE_BLOCK_RE = re.compile(r"<style[^>]*>(?P<body>.*?)</style>", re.IGNORECASE | re.DOTALL)
 CSS_RULE_RE = re.compile(r"(?P<selector>[^{}]+)\{(?P<body>[^{}]+)\}", re.DOTALL)
+CLASS_ATTR_RE = re.compile(r'class="(?P<classes>[^"]+)"', re.IGNORECASE)
+CSS_CLASS_SELECTOR_RE = re.compile(r"\.([A-Za-z][\w-]*)")
 INLINE_TEXT_STYLE_RE = re.compile(
     r'<(?P<tag>p|h[1-6]|span)\b[^>]*style="(?P<style>[^"]+)"',
     re.IGNORECASE | re.DOTALL,
@@ -290,7 +292,18 @@ def normalize_markup_text(text: str) -> str:
     return normalize_title(HTML_TAG_RE.sub(" ", text))
 
 
+def html_uses_class(text: str, class_name: str) -> bool:
+    pattern = re.compile(r'class="[^"]*\b' + re.escape(class_name) + r'\b[^"]*"', re.IGNORECASE)
+    return bool(pattern.search(text))
+
+
+def resolve_slides_root(root: Path) -> Path:
+    candidate = root / "slides"
+    return candidate if candidate.exists() else root
+
+
 def discover_slide_paths(root: Path = SLIDES_DIR) -> list[Path]:
+    root = resolve_slides_root(root)
     slide_paths = sorted(root.glob(SLIDE_GLOB), key=slide_sort_key)
     invalid = [path.name for path in slide_paths if not SLIDE_NAME_RE.fullmatch(path.name)]
     if invalid:
@@ -314,6 +327,7 @@ def slide_sort_key(slide_path: Path) -> int:
 
 
 def numeric_slide_files(root: Path = SLIDES_DIR) -> list[Path]:
+    root = resolve_slides_root(root)
     return sorted(
         (path for path in root.glob(SLIDE_GLOB) if NUMERIC_SLIDE_NAME_RE.fullmatch(path.name)),
         key=slide_sort_key,
@@ -328,6 +342,13 @@ def iter_css_sources(file_label: str, text: str) -> list[str]:
     if file_label.endswith(".css"):
         return [text]
     return [match.group("body") for match in STYLE_BLOCK_RE.finditer(text)]
+
+
+def collect_defined_css_classes(*css_texts: str) -> set[str]:
+    defined_classes: set[str] = set()
+    for css_text in css_texts:
+        defined_classes.update(CSS_CLASS_SELECTOR_RE.findall(css_text))
+    return defined_classes
 
 
 def expand_margin_vertical_tokens(value: str) -> tuple[str, str] | None:
@@ -1319,6 +1340,87 @@ def validate_vertical_rhythm_tokens(file_label: str, text: str) -> list[Finding]
     return findings
 
 
+def validate_defined_ds_classes(file_label: str, text: str, shared_defined_classes: set[str]) -> list[Finding]:
+    findings: list[Finding] = []
+    if not file_label.endswith(".html"):
+        return findings
+
+    local_defined_classes = collect_defined_css_classes(*iter_css_sources(file_label, text))
+    defined_classes = shared_defined_classes | local_defined_classes
+    reported_classes: set[str] = set()
+
+    for match in CLASS_ATTR_RE.finditer(text):
+        for class_name in match.group("classes").split():
+            if not class_name.startswith("ds-"):
+                continue
+            if class_name in defined_classes or class_name in reported_classes:
+                continue
+            findings.append(
+                Finding(
+                    "warning",
+                    "undefined-ds-class",
+                    f"`{class_name}` is used in markup but not defined in shared or local CSS",
+                    file_label,
+                )
+            )
+            reported_classes.add(class_name)
+
+    return findings
+
+
+def validate_footer_safe_area_reserve(file_label: str, text: str) -> list[Finding]:
+    findings: list[Finding] = []
+    if not file_label.endswith(".html"):
+        return findings
+    if 'data-footer="standard"' not in text or not html_uses_class(text, "ds-stage"):
+        return findings
+
+    # Generic ds-summary blocks can remain in normal flow. Reserved footer-safe area
+    # is required only for explicit conclusion docks.
+    has_conclusion = 'aria-label="結論"' in text or html_uses_class(text, "ds-summary-dock")
+    if not has_conclusion:
+        return findings
+
+    has_stage_reserve = html_uses_class(text, "ds-stage--summary-reserve")
+    has_summary_dock = html_uses_class(text, "ds-summary-dock")
+
+    if has_stage_reserve and has_summary_dock:
+        return findings
+
+    if has_summary_dock and not has_stage_reserve:
+        message = "Docked conclusion uses `ds-summary-dock` but the main stage does not reserve footer-safe area via `ds-stage--summary-reserve`"
+    else:
+        message = "Conclusion block appears in a standard-footer slide without `ds-stage--summary-reserve` + `ds-summary-dock`; footer-safe-area collision risk remains"
+
+    findings.append(Finding("warning", "footer-safe-area-overlap-risk", message, file_label))
+    return findings
+
+
+def validate_comparison_conclusion_archetype(file_label: str, text: str) -> list[Finding]:
+    findings: list[Finding] = []
+    if not file_label.endswith(".html"):
+        return findings
+    if not html_uses_class(text, "ds-comparison"):
+        return findings
+
+    has_conclusion = 'aria-label="結論"' in text or html_uses_class(text, "ds-summary-dock")
+    if not has_conclusion:
+        return findings
+
+    if html_uses_class(text, "ds-comparison--cards") and html_uses_class(text, "ds-compare-card"):
+        return findings
+
+    findings.append(
+        Finding(
+            "warning",
+            "comparison-conclusion-archetype-missing",
+            "Comparison + conclusion slide should use `ds-comparison--cards` with `ds-compare-card` slots (`head / media / body`) instead of ad hoc nested grids",
+            file_label,
+        )
+    )
+    return findings
+
+
 def validate_inventory(root: Path, manifest: dict[str, Any]) -> list[Finding]:
     findings: list[Finding] = []
     actual_files = [path.name for path in discover_slide_paths(root)]
@@ -1399,6 +1501,8 @@ def audit_deck(root: Path = ROOT) -> list[Finding]:
     kind_specs = load_kind_specs()
     legacy_map = load_legacy_map()
     slides_dir = root / "slides"
+    shared_css = read_text(slides_dir / "slides.css")
+    shared_defined_classes = collect_defined_css_classes(shared_css)
     findings: list[Finding] = []
     findings.extend(validate_inventory(slides_dir, manifest))
     findings.extend(validate_index_html(root, manifest))
@@ -1412,8 +1516,11 @@ def audit_deck(root: Path = ROOT) -> list[Finding]:
         findings.extend(validate_page_number(slide, text))
         findings.extend(validate_agenda_source(slide, text))
         findings.extend(validate_vertical_rhythm_tokens(slide["file"], text))
+        findings.extend(validate_defined_ds_classes(slide["file"], text, shared_defined_classes))
+        findings.extend(validate_footer_safe_area_reserve(slide["file"], text))
+        findings.extend(validate_comparison_conclusion_archetype(slide["file"], text))
 
-    findings.extend(validate_vertical_rhythm_tokens("slides.css", read_text(slides_dir / "slides.css")))
+    findings.extend(validate_vertical_rhythm_tokens("slides.css", shared_css))
     findings.extend(validate_stale_totals(root / "scripts", manifest, legacy_map))
     return findings
 

@@ -3,53 +3,191 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>合意の完成形</title>
+<title>合意の形成</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
 <style>
-.summary-stage{position:absolute;left:80px;top:176px;width:1120px;display:grid;grid-template-rows:auto auto auto;row-gap:22px}
-.summary-hero{padding:26px 30px 24px;border:1px solid var(--ink-08);border-radius:8px;background:var(--surface-white)}
-.summary-kicker{margin:0 0 14px;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
-.summary-head{margin:0 0 14px;font-size:34px;font-weight:900;line-height:1.42;color:var(--soft-black)}
-.summary-copy{margin:0;font-size:16px;line-height:1.82;color:rgba(0,0,0,.66)}
-.summary-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.summary-card{padding:22px 22px 20px;border:1px solid var(--ink-08);border-radius:8px;background:var(--surface-white)}
-.summary-card__num{margin:0 0 12px;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:13px;font-weight:900;letter-spacing:2px}
-.summary-card__head{margin:0 0 10px;font-size:22px;font-weight:900;line-height:1.45;color:var(--soft-black)}
-.summary-card__body{margin:0;font-size:14px;line-height:1.78;color:rgba(0,0,0,.64)}
-.summary-bar{padding:16px 20px;border-top:1px solid var(--ink-10)}
-.summary-bar p{margin:0;font-size:18px;font-weight:900;line-height:1.68;color:var(--soft-black)}
+.ag-stage {
+  position: absolute;
+  left: 80px;
+  top: var(--header-band-height);
+  width: 1120px;
+  height: calc(660px - var(--header-band-height));
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 12px;
+  padding: 16px 0 16px;
+}
+
+/* ── Row 1: Agreement Shape ── */
+.ag-shape {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 22px;
+  border-radius: 8px;
+  background: var(--soft-black);
+  color: var(--surface-white);
+}
+.ag-shape__label {
+  flex-shrink: 0;
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.5);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+.ag-shape__body {
+  flex: 1;
+}
+.ag-shape__head {
+  margin: 0 0 4px;
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.3;
+  color: #fff;
+}
+.ag-shape__copy {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(255,255,255,.7);
+}
+
+/* ── Row 2: 型 ── */
+.ag-template {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 22px;
+  border-radius: 8px;
+  border: 1px solid var(--ink-08);
+  background: var(--surface-white);
+}
+.ag-template__label {
+  flex-shrink: 0;
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink-34);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+.ag-template__items {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.ag-template__item {
+  padding: 5px 14px;
+  border-radius: 99px;
+  border: 1px solid var(--ink-18);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink-68);
+  background: var(--surface-mist);
+}
+
+/* ── Row 3: Before / After ── */
+.ag-example {
+  display: grid;
+  grid-template-columns: 1fr 36px 1fr;
+  gap: 0;
+  align-items: stretch;
+}
+.ag-example__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 22px;
+  border-radius: 8px;
+  border: 1px solid var(--ink-08);
+  background: var(--surface-white);
+}
+.ag-example__card--after {
+  border: 2px solid var(--soft-black);
+}
+.ag-example__label {
+  margin: 0 0 6px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink-34);
+}
+.ag-example__card--after .ag-example__label {
+  color: var(--soft-black);
+}
+.ag-example__text {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.65;
+  color: var(--ink-68);
+}
+.ag-example__card--after .ag-example__text {
+  color: var(--soft-black);
+}
+.ag-example__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-34);
+  font-size: 18px;
+  font-weight: 900;
+}
 </style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第04章 目的と制約に合意する" data-header-title="合意の完成形" data-header-subtitle="一文または一枚に固定して初めて合意になる" data-footer="standard" data-footer-page="35">
-  <div class="summary-stage">
-    <section class="summary-hero">
-      <p class="summary-kicker">Agreement Shape</p>
-      <p class="summary-head">目的と制約は、<br/>会話でなく形で残す</p>
-      <p class="summary-copy">「何を達成するか」「何を守るか」がその場で共有された気になっていても、あとで簡単にずれる。だから一文または一枚に落とし、誰でも同じ前提に戻れる状態をつくる。</p>
-    </section>
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第04章 目的と制約に合意する" data-header-title="合意の形成" data-header-subtitle="目的と制約は、会話でなくテキストで残す" data-footer="standard" data-footer-page="35">
+  <div class="ag-stage">
 
-    <div class="summary-grid">
-      <section class="summary-card">
-        <p class="summary-card__num">01</p>
-        <p class="summary-card__head">型</p>
-        <p class="summary-card__body">目的 / 成功基準 / 期限 / 守る条件 / 使える資源 / スコープ外 / 意思決定者 を最低限そろえる。</p>
-      </section>
-
-      <section class="summary-card">
-        <p class="summary-card__num">02</p>
-        <p class="summary-card__head">Before</p>
-        <p class="summary-card__body">採用を強化したい。</p>
-      </section>
-
-      <section class="summary-card">
-        <p class="summary-card__num">03</p>
-        <p class="summary-card__head">After</p>
-        <p class="summary-card__body">半年で営業職の採用充足率を80%まで引き上げる。既存予算内で進め、現場工数を増やしすぎず、最終意思決定者は事業責任者とする。</p>
-      </section>
+    <!-- Row 1: Agreement Shape -->
+    <div class="ag-shape">
+      <p class="ag-shape__label">Agreement Shape</p>
+      <div class="ag-shape__body">
+        <p class="ag-shape__head">目的と制約は、会話でなくテキストで残す</p>
+        <p class="ag-shape__copy">「何を達成するか」「何を守るか」がその場で共有された気になっていても、あとで簡単にずれる。一文または一枚に落とし、誰でも同じ前提に戻れる状態をつくる。</p>
+      </div>
     </div>
+
+    <!-- Row 2: 型 -->
+    <div class="ag-template">
+      <p class="ag-template__label">型</p>
+      <div class="ag-template__items">
+        <span class="ag-template__item">目的</span>
+        <span class="ag-template__item">成功基準</span>
+        <span class="ag-template__item">期限</span>
+        <span class="ag-template__item">守る条件</span>
+        <span class="ag-template__item">使える資源</span>
+        <span class="ag-template__item">スコープ外</span>
+        <span class="ag-template__item">意思決定者</span>
+      </div>
+    </div>
+
+    <!-- Row 3: Before / After -->
+    <div class="ag-example">
+      <div class="ag-example__card">
+        <p class="ag-example__label">Before</p>
+        <p class="ag-example__text">採用を強化したい。</p>
+      </div>
+      <div class="ag-example__arrow">→</div>
+      <div class="ag-example__card ag-example__card--after">
+        <p class="ag-example__label">After</p>
+        <p class="ag-example__text">半年で営業職の採用充足率を80%まで引き上げる。既存予算内で進め、現場工数を増やしすぎず、最終意思決定者は事業責任者とする。</p>
+      </div>
+    </div>
+
   </div>
 </div>
 </body>

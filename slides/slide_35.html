@@ -23,15 +23,15 @@
 /* ── Row 1: Agreement Shape ── */
 .ag-shape {
   display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 0 22px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 22px;
   border-radius: 8px;
   background: var(--soft-black);
   color: var(--surface-white);
 }
 .ag-shape__label {
-  flex-shrink: 0;
   margin: 0;
   font-family: "Space Grotesk", sans-serif;
   font-size: 10px;
@@ -39,11 +39,6 @@
   letter-spacing: 2px;
   text-transform: uppercase;
   color: rgba(255,255,255,.5);
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-}
-.ag-shape__body {
-  flex: 1;
 }
 .ag-shape__head {
   margin: 0 0 4px;
@@ -155,10 +150,8 @@
     <!-- Row 1: Agreement Shape -->
     <div class="ag-shape">
       <p class="ag-shape__label">Agreement Shape</p>
-      <div class="ag-shape__body">
-        <p class="ag-shape__head">目的と制約は、会話でなくテキストで残す</p>
-        <p class="ag-shape__copy">「何を達成するか」「何を守るか」がその場で共有された気になっていても、あとで簡単にずれる。一文または一枚に落とし、誰でも同じ前提に戻れる状態をつくる。</p>
-      </div>
+      <p class="ag-shape__head">目的と制約は、会話でなくテキストで残す</p>
+      <p class="ag-shape__copy">「何を達成するか」「何を守るか」がその場で共有された気になっていても、あとで簡単にずれる。一文または一枚に落とし、誰でも同じ前提に戻れる状態をつくる。</p>
     </div>
 
     <!-- Row 2: 型 -->

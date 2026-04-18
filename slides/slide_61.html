@@ -3,50 +3,37 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>検証の優先順位</title>
+<title>仮説は未確定でも先に置く</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
 <style>
-.stage{position:absolute;left:80px;top:160px;width:1120px;display:flex;flex-direction:column;gap:16px}.kicker{margin:0;color:var(--accent-purple);font-size:15px;font-weight:900;line-height:1.55}.matrix-wrap{display:grid;grid-template-columns:204px 1fr;gap:20px;align-items:stretch}.axis-note{min-height:392px;padding:20px 18px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white);display:flex;flex-direction:column;justify-content:center}.axis-note p{margin:0;font-size:15px;font-weight:900;line-height:1.7}.axis-note span{display:block;margin-top:10px;color:var(--ink-68);font-size:13px;font-weight:400;line-height:1.7}.matrix-shell{position:relative}.matrix{position:relative;height:392px;border:1px solid var(--ink-12);border-radius:8px;background:var(--surface-white)}.matrix::before,.matrix::after{content:"";position:absolute;background:var(--ink-14)}.matrix::before{left:50%;top:24px;bottom:24px;width:1px}.matrix::after{top:50%;left:24px;right:24px;height:1px}.matrix-grid{position:absolute;inset:24px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr))}.quad{padding:16px 18px}.quad p{margin:0}.quad__label{margin:0 0 10px;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:1.6px}.quad__title{font-size:19px;font-weight:900;line-height:1.48}.quad__text{margin-top:8px;color:var(--ink-68);font-size:14px;line-height:1.68}.tl,.bl{margin-right:24px}.tr,.br{margin-left:24px}.tl,.tr{margin-bottom:24px}.bl,.br{margin-top:24px}.tr{border:2px solid var(--ink-82);border-radius:8px}.y-axis{position:absolute;left:-34px;top:50%;z-index:2;transform:translateY(-50%) rotate(-90deg);transform-origin:center;color:rgba(0,0,0,.46);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;white-space:nowrap}.x-axis{position:absolute;left:50%;bottom:-28px;transform:translateX(-50%);color:rgba(0,0,0,.42);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;white-space:nowrap}.summary{padding-top:14px;border-top:1px solid var(--ink-10)}.summary p{margin:0;font-size:17px;font-weight:900;line-height:1.65}
+.stage{position:absolute;left:80px;top:164px;width:1120px;display:flex;flex-direction:column;gap:18px}.kicker{margin:0;color:var(--accent-purple);font-size:15px;font-weight:900;line-height:1.55}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.card{min-height:320px;padding:24px;border:1px solid var(--ink-12);border-radius:8px;background:var(--surface-white);display:flex;flex-direction:column;gap:var(--space-stack-title-body)}.card--strong{border-width:2px;border-color:var(--ink-82)}.slide-container .card__label,.slide-container .card__title{margin:0}.slide-container .card__label{color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.slide-container .card__title{font-size:26px;font-weight:900;line-height:1.35}.list{display:grid;gap:12px}.list p{margin:0;font-size:16px;font-weight:900;line-height:1.65}.list span{display:block;color:rgba(0,0,0,.7);font-size:14px;font-weight:400;line-height:1.7}.summary{padding-top:14px;border-top:1px solid var(--ink-10)}.summary p{margin:0;font-size:18px;font-weight:900;line-height:1.65}
 </style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第08章 論点と仮説を検証する" data-header-title="検証の優先順位" data-header-subtitle="外れると痛く、確かめると判断が動くものから当てる" data-footer="standard" data-footer-page="61">
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第07章 仮説を構築する" data-header-title="仮説は未確定でも先に置く" data-header-subtitle="仮の答え" data-footer="standard" data-footer-page="61">
   <div class="stage">
-    <p class="kicker">検証案が複数あるなら、全部を同時には当てられない。だからこそ、外れたときの影響が大きく、かつ追加の検証で判断が更新されるものから先に確かめる。</p>
-    <div class="matrix-wrap">
-      <div class="axis-note">
-        <p>優先順位は、<br/>「外れると痛いか」<br/>「確かめると判断が動くか」<br/>で決める<span>後者が検証価値である。追加の証拠で意思決定が更新されるほど、先に確かめる意味がある。</span></p>
-      </div>
-      <div class="matrix-shell">
-        <div class="matrix">
-          <div class="matrix-grid">
-            <section class="quad tl">
-              <p class="quad__label">影響大 / 検証価値小</p>
-              <p class="quad__title">重要だが、前提を置いて進める</p>
-              <p class="quad__text">追加で見ても判断はあまり動かない。今は前提を明示して進める。</p>
-            </section>
-            <section class="quad tr">
-              <p class="quad__label">CENTER PIN</p>
-              <p class="quad__title">最初に検証する</p>
-              <p class="quad__text">ここを押さえると結論が固まる。先に当てるべき領域である。</p>
-            </section>
-            <section class="quad bl">
-              <p class="quad__label">影響小 / 検証価値小</p>
-              <p class="quad__title">後回しでよい</p>
-              <p class="quad__text">追加で見ても全体の判断はほとんど動かない。優先度は低い。</p>
-            </section>
-            <section class="quad br">
-              <p class="quad__label">影響小 / 検証価値大</p>
-              <p class="quad__title">直近では優先しない</p>
-              <p class="quad__text">学びはあるが、今の意思決定を大きくは左右しない。</p>
-            </section>
-          </div>
+    <p class="kicker">仮説づくりでいちばん危険なのは、間違うことではなく、答えを出さないまま時間だけを使うことだ。</p>
+    <div class="grid">
+      <section class="card">
+        <div class="stack-card__head"><p class="card__label">Avoid</p><p class="card__title">よくある逃げ方</p></div>
+        <div class="list">
+          <p>「まだ情報が足りない」<span>もっと集めれば正解が出るはずだと思い、判断を先送りする。</span></p>
+          <p>「もう少し整理してから」<span>構造化を続けるが、結局どこにも賭けないまま終わる。</span></p>
+          <p>「どちらもあり得る」<span>可能性を並べるだけで、自分の見立てを置かない。</span></p>
         </div>
-      </div>
+      </section>
+      <section class="card card--strong">
+        <div class="stack-card__head"><p class="card__label">Do</p><p class="card__title">取るべき姿勢</p></div>
+        <div class="list">
+          <p>いま最も筋の良い答えをひとつ置く<span>精度は後で上げればよい。まずは賭ける先を決める。</span></p>
+          <p>外れたときに学べる形にする<span>前提と検証方法まで含めると、外れ方が次の論点を教えてくれる。</span></p>
+          <p>周囲に見せて更新する<span>仮説は頭の中で抱えるより、見える形に出したほうが速く強くなる。</span></p>
+        </div>
+      </section>
     </div>
-    <div class="summary"><p>先に当てるべきなのは、「外れると痛く、確かめることで判断が動く」仮説である。</p></div>
+    <div class="summary"><p>仮説は、当てにいくものではない。外れ方から学ぶために、先に置くものだ。</p></div>
   </div>
 </div>
 </body>

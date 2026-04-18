@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ケーススタディ</title>
+<title>最適解との差分で現在地を知る</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
@@ -12,17 +12,18 @@
 .work-card{min-height:314px;padding:28px 24px 24px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white)}
 .work-card--task{display:flex;flex-direction:column}
 .work-card--process{display:flex;flex-direction:column}
-.work-card__eyebrow{margin:0 0 var(--space-stack-lead-title);color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
-.work-card__head{margin:0 0 var(--space-stack-title-body);font-size:24px;font-weight:900;line-height:1.4}
+.work-card__eyebrow,.work-card__head{margin:0}
+.work-card__eyebrow{color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+.work-card__head{font-size:24px;font-weight:900;line-height:1.4}
 .work-card__body{padding:0;background:transparent}
-.work-card--task .work-card__body{margin-top:auto;margin-bottom:auto}
+.work-card--task .work-card__body{margin-top:var(--space-stack-title-body);margin-bottom:auto}
 .work-card__body p{margin:0;font-size:16px;line-height:1.85}
 .work-card__prompt{font-weight:900;font-style:italic}
 .work-card__body p + p{margin-top:var(--space-stack-lead-title)}
 .work-card__body ol{margin:12px 0 0 1.4em;padding:0;font-size:16px;line-height:1.85}
 .work-card__body li + li{margin-top:4px}
 .work-steps{display:flex;flex-direction:column;gap:18px}
-.work-card--process .work-steps{margin-top:auto;margin-bottom:auto}
+.work-card--process .work-steps{margin-top:var(--space-stack-title-body);margin-bottom:auto}
 .work-step{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:center}
 .work-step__num{width:34px;height:34px;border-radius:50%;background:var(--ink-100);color:var(--surface-white);font-family:"Space Grotesk",sans-serif;font-size:14px;font-weight:900;display:flex;align-items:center;justify-content:center}
 .work-step__copy{margin:0;font-size:16px;font-weight:700;line-height:1.55}
@@ -31,11 +32,10 @@
 </style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第01章 ワーク" data-header-title="ケーススタディ" data-header-subtitle="問題解決は基本的に最適解（ToBe）がある。最適解と自分の解（AsIs）の差分を知る" data-footer="standard" data-footer-page="11">
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第01章 ワーク" data-header-title="最適解との差分で現在地を知る" data-header-subtitle="ケーススタディ" data-footer="standard" data-footer-page="11">
 <div class="work-wrap">
 <section class="work-card work-card--task">
-<p class="work-card__eyebrow">Task</p>
-<p class="work-card__head">お題</p>
+<div class="stack-card__head"><p class="work-card__eyebrow">Task</p><p class="work-card__head">お題</p></div>
 <div class="work-card__body">
 <p class="work-card__prompt">「美味しいハンバーガー」をつくるにはどうすべきか？</p>
 <ol>
@@ -45,8 +45,7 @@
 </div>
 </section>
 <section class="work-card work-card--process">
-<p class="work-card__eyebrow">Process</p>
-<p class="work-card__head">進め方</p>
+<div class="stack-card__head"><p class="work-card__eyebrow">Process</p><p class="work-card__head">進め方</p></div>
 <div class="work-steps">
 <div class="work-step"><div class="work-step__num">1</div><p class="work-step__copy">個人ワークとして5分間で考える</p></div>
 <div class="work-step"><div class="work-step__num">2</div><p class="work-step__copy">頭の中だけで済ませず、メモに書き出す</p></div>

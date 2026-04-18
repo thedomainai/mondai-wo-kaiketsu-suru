@@ -1,0 +1,2297 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Header Copy Revision V1 vs V2</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Helvetica Neue", sans-serif;
+  background: #f5f5f3;
+  color: #1a1a1a;
+  padding: 20px;
+}
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+h1 {
+  font-size: 18px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+.lead {
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(0,0,0,.62);
+  margin-bottom: 16px;
+}
+.summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.summary-card {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+.summary-card__label {
+  font-size: 11px;
+  color: rgba(0,0,0,.42);
+  margin-bottom: 6px;
+}
+.summary-card__value {
+  font-size: 24px;
+  font-weight: 900;
+}
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.card {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 8px;
+  padding: 14px;
+}
+.same-card {
+  border-color: rgba(0,0,0,.08);
+}
+.changed-card {
+  border-color: rgba(0,0,0,.18);
+}
+.card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+.page {
+  font-size: 10px;
+  letter-spacing: 1.6px;
+  color: rgba(0,0,0,.36);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.chapter {
+  font-size: 13px;
+  font-weight: 700;
+}
+.file {
+  font-size: 11px;
+  color: rgba(0,0,0,.38);
+}
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.panel {
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 8px;
+  padding: 12px;
+  background: rgba(255,255,255,.72);
+}
+.panel-diff {
+  background: rgba(0,0,0,.015);
+}
+.panel-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(0,0,0,.42);
+  margin-bottom: 10px;
+  letter-spacing: 1.2px;
+}
+.field + .field {
+  margin-top: 12px;
+}
+.field-name, .diff-name {
+  font-size: 11px;
+  color: rgba(0,0,0,.45);
+  margin-bottom: 5px;
+}
+.field-value {
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1.45;
+}
+.diff-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+.badge {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 4px 8px;
+}
+.badge.same {
+  background: rgba(0,0,0,.06);
+  color: rgba(0,0,0,.54);
+}
+.badge.changed {
+  background: #111;
+  color: #fff;
+}
+@media (max-width: 900px) {
+  .summary { grid-template-columns: 1fr; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .card-head { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Header Copy Revision: V1 vs V2</h1>
+    <p class="lead">V1 = <code>header-copy-revision.md</code> の current mapping。V2 = <code>header-copy-revision-ver2.md</code> の proposed mapping。各 slide の main message と slide title を横並びで比較しています。</p>
+    <div class="summary">
+      <div class="summary-card">
+        <p class="summary-card__label">Slides Compared</p>
+        <p class="summary-card__value">53</p>
+      </div>
+      <div class="summary-card">
+        <p class="summary-card__label">Fully Same</p>
+        <p class="summary-card__value">53</p>
+      </div>
+      <div class="summary-card">
+        <p class="summary-card__label">Changed</p>
+        <p class="summary-card__value">0</p>
+      </div>
+    </div>
+    <div class="cards">
+      
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 11</p>
+        <p class="chapter">第01章 ワーク</p>
+      </div>
+      <p class="file">slide_11.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">最適解との差分で現在地を知る</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">ケーススタディ</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">最適解との差分で現在地を知る</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">ケーススタディ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 13</p>
+        <p class="chapter">第01章 ワーク</p>
+      </div>
+      <p class="file">slide_13.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">思考差はゴール理解と問い精度で決まる</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">思考差の構造</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">思考差はゴール理解と問い精度で決まる</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">思考差の構造</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 14</p>
+        <p class="chapter">第01章 ワーク</p>
+      </div>
+      <p class="file">slide_14.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">構造把握の深さが思考差を広げる</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">思考差の抽象化</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">構造把握の深さが思考差を広げる</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">思考差の抽象化</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 18</p>
+        <p class="chapter">第02章 前提・背景</p>
+      </div>
+      <p class="file">slide_18.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">問題解決力は期待値で測る</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">問題解決力とは</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">問題解決力は期待値で測る</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">問題解決力とは</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 19</p>
+        <p class="chapter">第02章 前提・背景</p>
+      </div>
+      <p class="file">slide_19.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">結果と行動を分けて期待値を測る</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">期待値評価</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">結果と行動を分けて期待値を測る</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">期待値評価</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 20</p>
+        <p class="chapter">第02章 前提・背景</p>
+      </div>
+      <p class="file">slide_20.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">再現性は正しく外し続ける力</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">再現性の3原則</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">再現性は正しく外し続ける力</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">再現性の3原則</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 21</p>
+        <p class="chapter">第02章 前提・背景</p>
+      </div>
+      <p class="file">slide_21.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">ロジカル・シンキングは再現性を上げる道具</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">研修のテーマ</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">ロジカル・シンキングは再現性を上げる道具</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">研修のテーマ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 24</p>
+        <p class="chapter">第03章 問題解決の概要</p>
+      </div>
+      <p class="file">slide_24.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">問題解決は次の行動を決めること</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">問題解決の定義</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">問題解決は次の行動を決めること</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">問題解決の定義</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 25</p>
+        <p class="chapter">第03章 問題解決の概要</p>
+      </div>
+      <p class="file">slide_25.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">問題解決は7ステップで進める</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">問題解決の7ステップ</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">問題解決は7ステップで進める</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">問題解決の7ステップ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 26</p>
+        <p class="chapter">第03章 問題解決の概要</p>
+      </div>
+      <p class="file">slide_26.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">戦略と実行では思考の重心が違う</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">役割別の重心</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">戦略と実行では思考の重心が違う</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">役割別の重心</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 27</p>
+        <p class="chapter">第03章 問題解決の概要</p>
+      </div>
+      <p class="file">slide_27.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">答えより問いに時間を使う</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">問いの重要性</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">答えより問いに時間を使う</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">問いの重要性</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 28</p>
+        <p class="chapter">第03章 問題解決の概要</p>
+      </div>
+      <p class="file">slide_28.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">現在地を掴み高速で行き来する</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">プロセスの4要点</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">現在地を掴み高速で行き来する</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">プロセスの4要点</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 31</p>
+        <p class="chapter">第04章 目的と制約に合意する</p>
+      </div>
+      <p class="file">slide_31.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">目的と制約のズレが全工程を壊す</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">目的と制約の重要性</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">目的と制約のズレが全工程を壊す</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">目的と制約の重要性</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 32</p>
+        <p class="chapter">第04章 目的と制約に合意する</p>
+      </div>
+      <p class="file">slide_32.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">目的が変われば問いも分解も変わる</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">目的差分の事例</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">目的が変われば問いも分解も変わる</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">目的差分の事例</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 33</p>
+        <p class="chapter">第04章 目的と制約に合意する</p>
+      </div>
+      <p class="file">slide_33.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">目的は判定可能な形まで落とす</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">目的の定義</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">目的は判定可能な形まで落とす</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">目的の定義</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 34</p>
+        <p class="chapter">第04章 目的と制約に合意する</p>
+      </div>
+      <p class="file">slide_34.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">制約は先に固定する</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">制約の定義</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">制約は先に固定する</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">制約の定義</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 35</p>
+        <p class="chapter">第04章 目的と制約に合意する</p>
+      </div>
+      <p class="file">slide_35.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">合意は会話でなく一文で残す</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">合意の完成形</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">合意は会話でなく一文で残す</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">合意の完成形</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 36</p>
+        <p class="chapter">第04章 目的と制約に合意する</p>
+      </div>
+      <p class="file">slide_36.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">問いの前に目的と制約を固める</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">第04章まとめ</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">問いの前に目的と制約を固める</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">第04章まとめ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 39</p>
+        <p class="chapter">第05章 論点を定義する</p>
+      </div>
+      <p class="file">slide_39.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">論点を誤ると後工程が全部ずれる</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">論点定義の重要性</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">論点を誤ると後工程が全部ずれる</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">論点定義の重要性</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 40</p>
+        <p class="chapter">第05章 論点を定義する</p>
+      </div>
+      <p class="file">slide_40.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">論点はゴール・一文・べきで定める</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">論点定義の3ポイント</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">論点はゴール・一文・べきで定める</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">論点定義の3ポイント</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 41</p>
+        <p class="chapter">第05章 論点を定義する</p>
+      </div>
+      <p class="file">slide_41.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">「べき」がなければ論点にならない</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">「べき」の意味</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">「べき」がなければ論点にならない</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">「べき」の意味</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 42</p>
+        <p class="chapter">第05章 論点を定義する</p>
+      </div>
+      <p class="file">slide_42.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">行動を決める問いへ固定する</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">第05章まとめ</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">行動を決める問いへ固定する</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">第05章まとめ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 44</p>
+        <p class="chapter">第06章 論点を分解する</p>
+      </div>
+      <p class="file">slide_44.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">論点は一段ずつ構造化する</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">論点分解の定義</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">論点は一段ずつ構造化する</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">論点分解の定義</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 45</p>
+        <p class="chapter">第06章 論点を分解する</p>
+      </div>
+      <p class="file">slide_45.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">分解は親から子へ一段ずつ降りる</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">原則1 ツリー分解</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">分解は親から子へ一段ずつ降りる</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">原則1 ツリー分解</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 46</p>
+        <p class="chapter">第06章 論点を分解する</p>
+      </div>
+      <p class="file">slide_46.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">MECEで上位を説明し切る</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">原則2 MECE分解</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">MECEで上位を説明し切る</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">原則2 MECE分解</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 47</p>
+        <p class="chapter">第06章 論点を分解する</p>
+      </div>
+      <p class="file">slide_47.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">式で分けると動かす変数が見える</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">原則3 モデル分解</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">式で分けると動かす変数が見える</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">原則3 モデル分解</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 48</p>
+        <p class="chapter">第06章 論点を分解する</p>
+      </div>
+      <p class="file">slide_48.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">詰まりは論点ズレのサイン</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">原則4 5分ルール</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">詰まりは論点ズレのサイン</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">原則4 5分ルール</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 49</p>
+        <p class="chapter">第06章 論点を分解する</p>
+      </div>
+      <p class="file">slide_49.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">分解は上下を往復して磨く</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">原則5 階層往復</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">分解は上下を往復して磨く</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">原則5 階層往復</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 50</p>
+        <p class="chapter">第06章 論点を分解する</p>
+      </div>
+      <p class="file">slide_50.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">横の漏れは兄弟比較で見つかる</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">誤り1 横の漏れ</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">横の漏れは兄弟比較で見つかる</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">誤り1 横の漏れ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 51</p>
+        <p class="chapter">第06章 論点を分解する</p>
+      </div>
+      <p class="file">slide_51.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">軸ズレは同階層の比較軸を崩す</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">誤り2 横のダブり・軸ズレ</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">軸ズレは同階層の比較軸を崩す</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">誤り2 横のダブり・軸ズレ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 52</p>
+        <p class="chapter">第06章 論点を分解する</p>
+      </div>
+      <p class="file">slide_52.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">親の定義ズレが子の意味を濁らせる</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">誤り3 親定義のズレ</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">親の定義ズレが子の意味を濁らせる</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">誤り3 親定義のズレ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 53</p>
+        <p class="chapter">第06章 論点を分解する</p>
+      </div>
+      <p class="file">slide_53.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">階層飛ばしは中間説明を失わせる</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">誤り4 階層飛ばし</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">階層飛ばしは中間説明を失わせる</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">誤り4 階層飛ばし</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 55</p>
+        <p class="chapter">第07章 仮説を構築する</p>
+      </div>
+      <p class="file">slide_55.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">仮説は正誤と誤因を見極める基準点</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">仮説構築の目的</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">仮説は正誤と誤因を見極める基準点</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">仮説構築の目的</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 56</p>
+        <p class="chapter">第07章 仮説を構築する</p>
+      </div>
+      <p class="file">slide_56.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">良い仮説は明確・迅速・可動</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">良い仮説の条件</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">良い仮説は明確・迅速・可動</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">良い仮説の条件</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 57</p>
+        <p class="chapter">第07章 仮説を構築する</p>
+      </div>
+      <p class="file">slide_57.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">仮説構築は4ステップで進める</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">仮説構築の4ステップ</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">仮説構築は4ステップで進める</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">仮説構築の4ステップ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 58</p>
+        <p class="chapter">第07章 仮説を構築する</p>
+      </div>
+      <p class="file">slide_58.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">分析と直感を往復して仮説を磨く</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">仮説生成の技法</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">分析と直感を往復して仮説を磨く</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">仮説生成の技法</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 60</p>
+        <p class="chapter">第07章 仮説を構築する</p>
+      </div>
+      <p class="file">slide_60.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">知見不足は深く潜って補う</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">Deep Dive</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">知見不足は深く潜って補う</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">Deep Dive</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 61</p>
+        <p class="chapter">第07章 仮説を構築する</p>
+      </div>
+      <p class="file">slide_61.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">仮説は未確定でも先に置く</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">仮の答え</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">仮説は未確定でも先に置く</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">仮の答え</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 64</p>
+        <p class="chapter">第08章 論点と仮説を検証する</p>
+      </div>
+      <p class="file">slide_64.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">検証は判定条件から設計する</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">検証の設計</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">検証は判定条件から設計する</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">検証の設計</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 65</p>
+        <p class="chapter">第08章 論点と仮説を検証する</p>
+      </div>
+      <p class="file">slide_65.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">優先順位は影響度と判断変化で決める</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">検証優先順位</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">優先順位は影響度と判断変化で決める</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">検証優先順位</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 66</p>
+        <p class="chapter">第08章 論点と仮説を検証する</p>
+      </div>
+      <p class="file">slide_66.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">結果は事実・解釈・判断に分ける</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">検証結果の読み方</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">結果は事実・解釈・判断に分ける</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">検証結果の読み方</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 67</p>
+        <p class="chapter">第08章 論点と仮説を検証する</p>
+      </div>
+      <p class="file">slide_67.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">検証結果は次の行動を分ける</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">検証後アクション</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">検証結果は次の行動を分ける</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">検証後アクション</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 68</p>
+        <p class="chapter">第08章 論点と仮説を検証する</p>
+      </div>
+      <p class="file">slide_68.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">仮説検証は不確実性を意思決定へ変える</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">仮説検証の全体像</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">仮説検証は不確実性を意思決定へ変える</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">仮説検証の全体像</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 71</p>
+        <p class="chapter">第09章 問題解決におけるコミュニケーション</p>
+      </div>
+      <p class="file">slide_71.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">伝わらない解は解に数えない</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">コミュニケーションの再定義</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">伝わらない解は解に数えない</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">コミュニケーションの再定義</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 72</p>
+        <p class="chapter">第09章 問題解決におけるコミュニケーション</p>
+      </div>
+      <p class="file">slide_72.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">誤解は理解・判断・行動を止める</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">誤解がなぜいけないか</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">誤解は理解・判断・行動を止める</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">誤解がなぜいけないか</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 73</p>
+        <p class="chapter">第09章 問題解決におけるコミュニケーション</p>
+      </div>
+      <p class="file">slide_73.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">誤解は受け手理解と内容設計で減らす</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">誤解を減らす2要素</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">誤解は受け手理解と内容設計で減らす</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">誤解を減らす2要素</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 74</p>
+        <p class="chapter">第09章 問題解決におけるコミュニケーション</p>
+      </div>
+      <p class="file">slide_74.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">伝える前に相手の知識と関心を読む</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">受け手の理解</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">伝える前に相手の知識と関心を読む</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">受け手の理解</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 75</p>
+        <p class="chapter">第09章 問題解決におけるコミュニケーション</p>
+      </div>
+      <p class="file">slide_75.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">内容はScope・Decision・Riskで積む</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">内容設計</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">内容はScope・Decision・Riskで積む</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">内容設計</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 76</p>
+        <p class="chapter">第09章 問題解決におけるコミュニケーション</p>
+      </div>
+      <p class="file">slide_76.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">誤解は3層で先回りして潰す</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">コミュニケーションのTips</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">誤解は3層で先回りして潰す</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">コミュニケーションのTips</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 82</p>
+        <p class="chapter">補足 ロジックツリーのレビュー</p>
+      </div>
+      <p class="file">slide_82.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">失敗は3類型で見抜ける</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">ロジックツリーのよくある失敗</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">失敗は3類型で見抜ける</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">ロジックツリーのよくある失敗</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 83</p>
+        <p class="chapter">補足 ロジックツリーのレビュー</p>
+      </div>
+      <p class="file">slide_83.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">同階層には同種の答えだけを置く</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">失敗1 並列化ミス</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">同階層には同種の答えだけを置く</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">失敗1 並列化ミス</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 84</p>
+        <p class="chapter">補足 ロジックツリーのレビュー</p>
+      </div>
+      <p class="file">slide_84.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">親子は一段でつながる粒度にする</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">失敗2 階層飛び</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">親子は一段でつながる粒度にする</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">失敗2 階層飛び</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card same-card">
+    <div class="card-head">
+      <div>
+        <p class="page">SLIDE 85</p>
+        <p class="chapter">補足 ロジックツリーのレビュー</p>
+      </div>
+      <p class="file">slide_85.html</p>
+    </div>
+    <div class="compare-grid">
+      <div class="panel">
+        <p class="panel-label">V1</p>
+        <div class="field">
+          <p class="field-name">Main Message</p>
+          <p class="field-value">分け方は次の行動を変えて初めて意味を持つ</p>
+        </div>
+        <div class="field">
+          <p class="field-name">Slide Title</p>
+          <p class="field-value">失敗3 分類効用不足</p>
+        </div>
+      </div>
+      <div class="panel panel-diff">
+        <div class="diff-row">
+          <p class="diff-name">Main Message</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">分け方は次の行動を変えて初めて意味を持つ</p>
+        </div>
+        <div class="diff-row">
+          <p class="diff-name">Slide Title</p>
+          <p class="badge same">Same</p>
+        </div>
+        <div class="field">
+          <p class="field-name">V2</p>
+          <p class="field-value">失敗3 分類効用不足</p>
+        </div>
+      </div>
+    </div>
+  </section>
+    </div>
+  </div>
+</body>
+</html>

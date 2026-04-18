@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>役割ごとの重心</title>
+<title>戦略と実行では思考の重心が違う</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
@@ -15,7 +15,7 @@
 .role-context__text{margin:0;font-size:15px;font-weight:900;line-height:1.55}
 .role-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;min-height:0;align-items:stretch}
 .split-card{height:100%;padding:20px 24px 18px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white);display:grid;grid-template-rows:auto auto 1fr auto;row-gap:14px}
-.split-card__head{display:grid;row-gap:8px}
+.split-card__head{display:grid;row-gap:var(--space-stack-title-body)}
 .split-card__eyebrow{margin:0;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
 .split-card__title{margin:0;font-size:30px;font-weight:900;line-height:1.1}
 .split-card__lead{margin:0;font-size:17px;font-weight:900;line-height:1.45}
@@ -30,13 +30,12 @@
 </style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第03章 問題解決の概要" data-header-title="エグゼキューションにおいては期待値ではなく、目先の一手一手の成功に執着する" data-header-subtitle="役割ごとの重心" data-footer="standard" data-footer-page="26">
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第03章 問題解決の概要" data-header-title="戦略と実行では思考の重心が違う" data-header-subtitle="役割別の重心" data-footer="standard" data-footer-page="26">
 <main class="role-stage">
   <section class="role-grid">
     <article class="split-card">
       <div class="split-card__head">
-        <p class="split-card__eyebrow">Strategy</p>
-        <p class="split-card__title">戦略</p>
+        <div class="stack-card__head"><p class="split-card__eyebrow">Strategy</p><p class="split-card__title">戦略</p></div>
         <p class="split-card__lead">正しい行動の選択に集中する</p>
         <p class="split-card__steps">重点: <span>ゴールの定義 / 制約の定義 / 論点定義</span></p>
       </div>
@@ -59,8 +58,7 @@
 
     <article class="split-card">
       <div class="split-card__head">
-        <p class="split-card__eyebrow">Execution</p>
-        <p class="split-card__title">実行</p>
+        <div class="stack-card__head"><p class="split-card__eyebrow">Execution</p><p class="split-card__title">実行</p></div>
         <p class="split-card__lead">行動の結果の着地を合わせることに集中する</p>
         <p class="split-card__steps">重点: <span>仮説検証 / 現場実装 / フィードバック</span></p>
       </div>

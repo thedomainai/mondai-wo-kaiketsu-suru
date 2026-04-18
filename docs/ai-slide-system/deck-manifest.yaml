@@ -13,7 +13,7 @@ deck:
     cover_file: slide_01.html
     first_labeled_file: slide_01.html
     label_format: zero-padded-2
-    max_label: '81'
+    max_label: '85'
   agenda_source: manifest.slides[].agenda
   allowed_slide_kinds:
   - cover
@@ -27,14 +27,14 @@ deck:
   - cta
   - qa
 counts:
-  total_slides: 81
+  total_slides: 85
   by_kind:
     cover: 1
     intro: 6
     agenda: 9
     divider: 9
     center-title: 3
-    content: 49
+    content: 53
     summary: 1
     closing: 1
     cta: 1
@@ -117,62 +117,66 @@ chapters:
   - slide_47.html
   - slide_48.html
   - slide_49.html
-- id: section-07
-  number: 7
-  title: 仮説を構築する
-  agenda_file: null
-  divider_file: slide_50.html
-  slide_files:
   - slide_50.html
   - slide_51.html
   - slide_52.html
   - slide_53.html
+- id: section-07
+  number: 7
+  title: 仮説を構築する
+  agenda_file: null
+  divider_file: slide_54.html
+  slide_files:
   - slide_54.html
   - slide_55.html
   - slide_56.html
   - slide_57.html
-- id: section-08
-  number: 8
-  title: 論点と仮説を検証する
-  agenda_file: slide_58.html
-  divider_file: slide_59.html
-  slide_files:
   - slide_58.html
   - slide_59.html
   - slide_60.html
   - slide_61.html
+- id: section-08
+  number: 8
+  title: 論点と仮説を検証する
+  agenda_file: slide_62.html
+  divider_file: slide_63.html
+  slide_files:
   - slide_62.html
   - slide_63.html
   - slide_64.html
-- id: section-09
-  number: 9
-  title: 問題解決におけるコミュニケーション
-  agenda_file: slide_65.html
-  divider_file: slide_66.html
-  slide_files:
   - slide_65.html
   - slide_66.html
   - slide_67.html
   - slide_68.html
+- id: section-09
+  number: 9
+  title: 問題解決におけるコミュニケーション
+  agenda_file: slide_69.html
+  divider_file: slide_70.html
+  slide_files:
   - slide_69.html
   - slide_70.html
   - slide_71.html
   - slide_72.html
-- id: section-10
-  number: 10
-  title: まとめ
-  agenda_file: slide_73.html
-  divider_file: null
-  slide_files:
   - slide_73.html
   - slide_74.html
   - slide_75.html
   - slide_76.html
+- id: section-10
+  number: 10
+  title: まとめ
+  agenda_file: slide_77.html
+  divider_file: null
+  slide_files:
   - slide_77.html
   - slide_78.html
   - slide_79.html
   - slide_80.html
   - slide_81.html
+  - slide_82.html
+  - slide_83.html
+  - slide_84.html
+  - slide_85.html
 agendas:
 - file: slide_08.html
   mode: timed-overview
@@ -438,7 +442,7 @@ agendas:
     label: まとめ
     state: soft
     duration: null
-- file: slide_58.html
+- file: slide_62.html
   mode: progress
   active_item: 08
   items:
@@ -482,7 +486,7 @@ agendas:
     label: まとめ
     state: soft
     duration: null
-- file: slide_65.html
+- file: slide_69.html
   mode: progress
   active_item: 09
   items:
@@ -526,7 +530,7 @@ agendas:
     label: まとめ
     state: soft
     duration: null
-- file: slide_73.html
+- file: slide_77.html
   mode: progress
   active_item: '10'
   items:
@@ -788,8 +792,8 @@ slides:
   page_label: '11'
   kind: content
   runtime_shape: content
-  title: 'ワーク: 問題解決の体験（ケーススタディ）'
-  index_title: 'ワーク: 問題解決の体験（ケーススタディ）'
+  title: 最適解との差分で現在地を知る
+  index_title: 最適解との差分で現在地を知る
   section_id: section-01
   section_number: 1
   section_title: ワーク
@@ -810,8 +814,8 @@ slides:
   page_label: '13'
   kind: content
   runtime_shape: content
-  title: 思考の差はどこに現れるか
-  index_title: 思考の差はどこに現れるか
+  title: 思考差はゴール理解と問い精度で決まる
+  index_title: 思考差はゴール理解と問い精度で決まる
   section_id: section-01
   section_number: 1
   section_title: ワーク
@@ -821,8 +825,8 @@ slides:
   page_label: '14'
   kind: content
   runtime_shape: content
-  title: 見えている要素とつながりで差が出る
-  index_title: 見えている要素とつながりで差が出る
+  title: 構造把握の深さが思考差を広げる
+  index_title: 構造把握の深さが思考差を広げる
   section_id: section-01
   section_number: 1
   section_title: ワーク
@@ -909,8 +913,8 @@ slides:
   page_label: '18'
   kind: content
   runtime_shape: content
-  title: 高い問題解決能力 = 高い問題解決期待値
-  index_title: 高い問題解決能力 = 高い問題解決期待値
+  title: 問題解決力は期待値で測る
+  index_title: 問題解決力は期待値で測る
   section_id: section-02
   section_number: 2
   section_title: 前提・背景
@@ -920,8 +924,8 @@ slides:
   page_label: '19'
   kind: content
   runtime_shape: content
-  title: 結果と行動を切り離す
-  index_title: 結果と行動を切り離す
+  title: 結果と行動を分けて期待値を測る
+  index_title: 結果と行動を分けて期待値を測る
   section_id: section-02
   section_number: 2
   section_title: 前提・背景
@@ -931,8 +935,8 @@ slides:
   page_label: '20'
   kind: content
   runtime_shape: content
-  title: 再現性とは「正しく間違えること」
-  index_title: 再現性とは「正しく間違えること」
+  title: 再現性は正しく外し続ける力
+  index_title: 再現性は正しく外し続ける力
   section_id: section-02
   section_number: 2
   section_title: 前提・背景
@@ -942,8 +946,8 @@ slides:
   page_label: '21'
   kind: content
   runtime_shape: content
-  title: '研修のテーマ: 再現性高く問題を解決する'
-  index_title: '研修のテーマ: 再現性高く問題を解決する'
+  title: ロジカル・シンキングは再現性を上げる道具
+  index_title: ロジカル・シンキングは再現性を上げる道具
   section_id: section-02
   section_number: 2
   section_title: 前提・背景
@@ -1019,8 +1023,8 @@ slides:
   page_label: '24'
   kind: content
   runtime_shape: content
-  title: 問題解決とは論点に対して答えを出すこと
-  index_title: 問題解決とは論点に対して答えを出すこと
+  title: 問題解決は次の行動を決めること
+  index_title: 問題解決は次の行動を決めること
   section_id: section-03
   section_number: 3
   section_title: 問題解決の概要
@@ -1030,8 +1034,8 @@ slides:
   page_label: '25'
   kind: content
   runtime_shape: content
-  title: 7ステップのフレームワーク
-  index_title: 7ステップのフレームワーク
+  title: 問題解決は7ステップで進める
+  index_title: 問題解決は7ステップで進める
   section_id: section-03
   section_number: 3
   section_title: 問題解決の概要
@@ -1041,8 +1045,8 @@ slides:
   page_label: '26'
   kind: content
   runtime_shape: content
-  title: 実務では役割ごとに重心が変わる
-  index_title: 実務では役割ごとに重心が変わる
+  title: 戦略と実行では思考の重心が違う
+  index_title: 戦略と実行では思考の重心が違う
   section_id: section-03
   section_number: 3
   section_title: 問題解決の概要
@@ -1052,8 +1056,8 @@ slides:
   page_label: '27'
   kind: content
   runtime_shape: content
-  title: アインシュタインの言葉
-  index_title: アインシュタインの言葉
+  title: 答えより問いに時間を使う
+  index_title: 答えより問いに時間を使う
   section_id: section-03
   section_number: 3
   section_title: 問題解決の概要
@@ -1063,8 +1067,8 @@ slides:
   page_label: '28'
   kind: content
   runtime_shape: content
-  title: 問題解決のプロセスを回す際に重要な点
-  index_title: 問題解決のプロセスを回す際に重要な点
+  title: 現在地を掴み高速で行き来する
+  index_title: 現在地を掴み高速で行き来する
   section_id: section-03
   section_number: 3
   section_title: 問題解決の概要
@@ -1140,8 +1144,8 @@ slides:
   page_label: '31'
   kind: content
   runtime_shape: content
-  title: なぜ最初に目的と制約に合意をするのか
-  index_title: なぜ最初に目的と制約に合意をするのか
+  title: 目的と制約のズレが全工程を壊す
+  index_title: 目的と制約のズレが全工程を壊す
   section_id: section-04
   section_number: 4
   section_title: 目的と制約に合意する
@@ -1151,8 +1155,8 @@ slides:
   page_label: '32'
   kind: content
   runtime_shape: content
-  title: 同じテーマでも、目的が違えば分解は変わる
-  index_title: 同じテーマでも、目的が違えば分解は変わる
+  title: 目的が変われば問いも分解も変わる
+  index_title: 目的が変われば問いも分解も変わる
   section_id: section-04
   section_number: 4
   section_title: 目的と制約に合意する
@@ -1162,8 +1166,8 @@ slides:
   page_label: '33'
   kind: content
   runtime_shape: content
-  title: 目的を定義/合意する
-  index_title: 目的を定義/合意する
+  title: 目的は判定可能な形まで落とす
+  index_title: 目的は判定可能な形まで落とす
   section_id: section-04
   section_number: 4
   section_title: 目的と制約に合意する
@@ -1173,8 +1177,8 @@ slides:
   page_label: '34'
   kind: content
   runtime_shape: content
-  title: 制約を定義する
-  index_title: 制約を定義する
+  title: 制約は先に固定する
+  index_title: 制約は先に固定する
   section_id: section-04
   section_number: 4
   section_title: 目的と制約に合意する
@@ -1184,8 +1188,8 @@ slides:
   page_label: '35'
   kind: content
   runtime_shape: content
-  title: 合意の完成形
-  index_title: 合意の完成形
+  title: 合意は会話でなく一文で残す
+  index_title: 合意は会話でなく一文で残す
   section_id: section-04
   section_number: 4
   section_title: 目的と制約に合意する
@@ -1195,8 +1199,8 @@ slides:
   page_label: '36'
   kind: content
   runtime_shape: content
-  title: 章のまとめ
-  index_title: 章のまとめ
+  title: 問いの前に目的と制約を固める
+  index_title: 問いの前に目的と制約を固める
   section_id: section-04
   section_number: 4
   section_title: 目的と制約に合意する
@@ -1272,8 +1276,8 @@ slides:
   page_label: '39'
   kind: content
   runtime_shape: content
-  title: 論点定義とは何か / なぜ重要か
-  index_title: 論点定義とは何か / なぜ重要か
+  title: 論点を誤ると後工程が全部ずれる
+  index_title: 論点を誤ると後工程が全部ずれる
   section_id: section-05
   section_number: 5
   section_title: 論点を定義する
@@ -1283,8 +1287,8 @@ slides:
   page_label: '40'
   kind: content
   runtime_shape: content
-  title: 論点定義の3ポイント
-  index_title: 論点定義の3ポイント
+  title: 論点はゴール・一文・べきで定める
+  index_title: 論点はゴール・一文・べきで定める
   section_id: section-05
   section_number: 5
   section_title: 論点を定義する
@@ -1294,8 +1298,8 @@ slides:
   page_label: '41'
   kind: content
   runtime_shape: content
-  title: 「べき」の徹底解説
-  index_title: 「べき」の徹底解説
+  title: 「べき」がなければ論点にならない
+  index_title: 「べき」がなければ論点にならない
   section_id: section-05
   section_number: 5
   section_title: 論点を定義する
@@ -1305,8 +1309,8 @@ slides:
   page_label: '42'
   kind: content
   runtime_shape: content
-  title: 章のまとめ
-  index_title: 章のまとめ
+  title: 行動を決める問いへ固定する
+  index_title: 行動を決める問いへ固定する
   section_id: section-05
   section_number: 5
   section_title: 論点を定義する
@@ -1327,8 +1331,8 @@ slides:
   page_label: '44'
   kind: content
   runtime_shape: content
-  title: 論点分解とは何か / なぜ重要か
-  index_title: 論点分解とは何か / なぜ重要か
+  title: 論点は一段ずつ構造化する
+  index_title: 論点は一段ずつ構造化する
   section_id: section-06
   section_number: 6
   section_title: 論点を分解する
@@ -1338,8 +1342,8 @@ slides:
   page_label: '45'
   kind: content
   runtime_shape: content
-  title: 原則1：ツリー状に分解する
-  index_title: 原則1：ツリー状に分解する
+  title: 分解は親から子へ一段ずつ降りる
+  index_title: 分解は親から子へ一段ずつ降りる
   section_id: section-06
   section_number: 6
   section_title: 論点を分解する
@@ -1349,8 +1353,8 @@ slides:
   page_label: '46'
   kind: content
   runtime_shape: content
-  title: 原則2：MECEに分解する
-  index_title: 原則2：MECEに分解する
+  title: MECEで上位を説明し切る
+  index_title: MECEで上位を説明し切る
   section_id: section-06
   section_number: 6
   section_title: 論点を分解する
@@ -1360,8 +1364,8 @@ slides:
   page_label: '47'
   kind: content
   runtime_shape: content
-  title: 原則3：モデル（式）で考える
-  index_title: 原則3：モデル（式）で考える
+  title: 式で分けると動かす変数が見える
+  index_title: 式で分けると動かす変数が見える
   section_id: section-06
   section_number: 6
   section_title: 論点を分解する
@@ -1371,8 +1375,8 @@ slides:
   page_label: '48'
   kind: content
   runtime_shape: content
-  title: 原則4：5分以上1つの論点を考えない
-  index_title: 原則4：5分以上1つの論点を考えない
+  title: 詰まりは論点ズレのサイン
+  index_title: 詰まりは論点ズレのサイン
   section_id: section-06
   section_number: 6
   section_title: 論点を分解する
@@ -1382,8 +1386,8 @@ slides:
   page_label: '49'
   kind: content
   runtime_shape: content
-  title: 原則5：トップダウンとボトムアップを行き来する
-  index_title: 原則5：トップダウンとボトムアップを行き来する
+  title: 分解は上下を往復して磨く
+  index_title: 分解は上下を往復して磨く
   section_id: section-06
   section_number: 6
   section_title: 論点を分解する
@@ -1391,6 +1395,50 @@ slides:
 - order: 50
   file: slide_50.html
   page_label: '50'
+  kind: content
+  runtime_shape: content
+  title: 横の漏れは兄弟比較で見つかる
+  index_title: 横の漏れは兄弟比較で見つかる
+  section_id: section-06
+  section_number: 6
+  section_title: 論点を分解する
+  index_type: normal
+- order: 51
+  file: slide_51.html
+  page_label: '51'
+  kind: content
+  runtime_shape: content
+  title: 軸ズレは同階層の比較軸を崩す
+  index_title: 軸ズレは同階層の比較軸を崩す
+  section_id: section-06
+  section_number: 6
+  section_title: 論点を分解する
+  index_type: normal
+- order: 52
+  file: slide_52.html
+  page_label: '52'
+  kind: content
+  runtime_shape: content
+  title: 親の定義ズレが子の意味を濁らせる
+  index_title: 親の定義ズレが子の意味を濁らせる
+  section_id: section-06
+  section_number: 6
+  section_title: 論点を分解する
+  index_type: normal
+- order: 53
+  file: slide_53.html
+  page_label: '53'
+  kind: content
+  runtime_shape: content
+  title: 階層飛ばしは中間説明を失わせる
+  index_title: 階層飛ばしは中間説明を失わせる
+  section_id: section-06
+  section_number: 6
+  section_title: 論点を分解する
+  index_type: normal
+- order: 54
+  file: slide_54.html
+  page_label: '54'
   kind: divider
   runtime_shape: divider
   title: 仮説を構築する
@@ -1399,57 +1447,13 @@ slides:
   section_number: 7
   section_title: 仮説を構築する
   index_type: chapter-title
-- order: 51
-  file: slide_51.html
-  page_label: '51'
-  kind: content
-  runtime_shape: content
-  title: 仮説構築の目的
-  index_title: 仮説構築の目的
-  section_id: section-07
-  section_number: 7
-  section_title: 仮説を構築する
-  index_type: normal
-- order: 52
-  file: slide_52.html
-  page_label: '52'
-  kind: content
-  runtime_shape: content
-  title: 良い仮説とは
-  index_title: 良い仮説とは
-  section_id: section-07
-  section_number: 7
-  section_title: 仮説を構築する
-  index_type: normal
-- order: 53
-  file: slide_53.html
-  page_label: '53'
-  kind: content
-  runtime_shape: content
-  title: 仮説の基本手順
-  index_title: 仮説の基本手順
-  section_id: section-07
-  section_number: 7
-  section_title: 仮説を構築する
-  index_type: normal
-- order: 54
-  file: slide_54.html
-  page_label: '54'
-  kind: content
-  runtime_shape: content
-  title: 仮説生成の技法
-  index_title: 仮説生成の技法
-  section_id: section-07
-  section_number: 7
-  section_title: 仮説を構築する
-  index_type: normal
 - order: 55
   file: slide_55.html
   page_label: '55'
-  kind: center-title
-  runtime_shape: center-title
-  title: 知見がないとき、どう進めるか
-  index_title: 知見がないとき、どう進めるか
+  kind: content
+  runtime_shape: content
+  title: 仮説は正誤と誤因を見極める基準点
+  index_title: 仮説は正誤と誤因を見極める基準点
   section_id: section-07
   section_number: 7
   section_title: 仮説を構築する
@@ -1459,8 +1463,8 @@ slides:
   page_label: '56'
   kind: content
   runtime_shape: content
-  title: Deep Dive：情報の海に潜る
-  index_title: Deep Dive：情報の海に潜る
+  title: 良い仮説は明確・迅速・可動
+  index_title: 良い仮説は明確・迅速・可動
   section_id: section-07
   section_number: 7
   section_title: 仮説を構築する
@@ -1470,8 +1474,8 @@ slides:
   page_label: '57'
   kind: content
   runtime_shape: content
-  title: 仮の答えを出すことから逃げない
-  index_title: 仮の答えを出すことから逃げない
+  title: 仮説構築は4ステップで進める
+  index_title: 仮説構築は4ステップで進める
   section_id: section-07
   section_number: 7
   section_title: 仮説を構築する
@@ -1479,6 +1483,50 @@ slides:
 - order: 58
   file: slide_58.html
   page_label: '58'
+  kind: content
+  runtime_shape: content
+  title: 分析と直感を往復して仮説を磨く
+  index_title: 分析と直感を往復して仮説を磨く
+  section_id: section-07
+  section_number: 7
+  section_title: 仮説を構築する
+  index_type: normal
+- order: 59
+  file: slide_59.html
+  page_label: '59'
+  kind: center-title
+  runtime_shape: center-title
+  title: 知見がないとき、どう進めるか
+  index_title: 知見がないとき、どう進めるか
+  section_id: section-07
+  section_number: 7
+  section_title: 仮説を構築する
+  index_type: normal
+- order: 60
+  file: slide_60.html
+  page_label: '60'
+  kind: content
+  runtime_shape: content
+  title: 知見不足は深く潜って補う
+  index_title: 知見不足は深く潜って補う
+  section_id: section-07
+  section_number: 7
+  section_title: 仮説を構築する
+  index_type: normal
+- order: 61
+  file: slide_61.html
+  page_label: '61'
+  kind: content
+  runtime_shape: content
+  title: 仮説は未確定でも先に置く
+  index_title: 仮説は未確定でも先に置く
+  section_id: section-07
+  section_number: 7
+  section_title: 仮説を構築する
+  index_type: normal
+- order: 62
+  file: slide_62.html
+  page_label: '62'
   kind: agenda
   runtime_shape: agenda
   title: アジェンダ
@@ -1531,9 +1579,9 @@ slides:
       label: まとめ
       state: soft
       duration: null
-- order: 59
-  file: slide_59.html
-  page_label: '59'
+- order: 63
+  file: slide_63.html
+  page_label: '63'
   kind: divider
   runtime_shape: divider
   title: 論点と仮説を検証する
@@ -1542,57 +1590,13 @@ slides:
   section_number: 8
   section_title: 論点と仮説を検証する
   index_type: chapter-title
-- order: 60
-  file: slide_60.html
-  page_label: '60'
-  kind: content
-  runtime_shape: content
-  title: 検証を設計する
-  index_title: 検証を設計する
-  section_id: section-08
-  section_number: 8
-  section_title: 論点と仮説を検証する
-  index_type: normal
-- order: 61
-  file: slide_61.html
-  page_label: '61'
-  kind: content
-  runtime_shape: content
-  title: 何を先に検証するか
-  index_title: 何を先に検証するか
-  section_id: section-08
-  section_number: 8
-  section_title: 論点と仮説を検証する
-  index_type: normal
-- order: 62
-  file: slide_62.html
-  page_label: '62'
-  kind: content
-  runtime_shape: content
-  title: 検証結果を読む
-  index_title: 検証結果を読む
-  section_id: section-08
-  section_number: 8
-  section_title: 論点と仮説を検証する
-  index_type: normal
-- order: 63
-  file: slide_63.html
-  page_label: '63'
-  kind: content
-  runtime_shape: content
-  title: 検証結果から次の行動を決める
-  index_title: 検証結果から次の行動を決める
-  section_id: section-08
-  section_number: 8
-  section_title: 論点と仮説を検証する
-  index_type: normal
 - order: 64
   file: slide_64.html
   page_label: '64'
   kind: content
   runtime_shape: content
-  title: 仮説検証の全体像
-  index_title: 仮説検証の全体像
+  title: 検証は判定条件から設計する
+  index_title: 検証は判定条件から設計する
   section_id: section-08
   section_number: 8
   section_title: 論点と仮説を検証する
@@ -1600,6 +1604,50 @@ slides:
 - order: 65
   file: slide_65.html
   page_label: '65'
+  kind: content
+  runtime_shape: content
+  title: 優先順位は影響度と判断変化で決める
+  index_title: 優先順位は影響度と判断変化で決める
+  section_id: section-08
+  section_number: 8
+  section_title: 論点と仮説を検証する
+  index_type: normal
+- order: 66
+  file: slide_66.html
+  page_label: '66'
+  kind: content
+  runtime_shape: content
+  title: 結果は事実・解釈・判断に分ける
+  index_title: 結果は事実・解釈・判断に分ける
+  section_id: section-08
+  section_number: 8
+  section_title: 論点と仮説を検証する
+  index_type: normal
+- order: 67
+  file: slide_67.html
+  page_label: '67'
+  kind: content
+  runtime_shape: content
+  title: 検証結果は次の行動を分ける
+  index_title: 検証結果は次の行動を分ける
+  section_id: section-08
+  section_number: 8
+  section_title: 論点と仮説を検証する
+  index_type: normal
+- order: 68
+  file: slide_68.html
+  page_label: '68'
+  kind: content
+  runtime_shape: content
+  title: 仮説検証は不確実性を意思決定へ変える
+  index_title: 仮説検証は不確実性を意思決定へ変える
+  section_id: section-08
+  section_number: 8
+  section_title: 論点と仮説を検証する
+  index_type: normal
+- order: 69
+  file: slide_69.html
+  page_label: '69'
   kind: agenda
   runtime_shape: agenda
   title: アジェンダ
@@ -1652,9 +1700,9 @@ slides:
       label: まとめ
       state: soft
       duration: null
-- order: 66
-  file: slide_66.html
-  page_label: '66'
+- order: 70
+  file: slide_70.html
+  page_label: '70'
   kind: divider
   runtime_shape: divider
   title: 問題解決におけるコミュニケーション
@@ -1663,50 +1711,6 @@ slides:
   section_number: 9
   section_title: 問題解決におけるコミュニケーション
   index_type: chapter-title
-- order: 67
-  file: slide_67.html
-  page_label: '67'
-  kind: content
-  runtime_shape: content
-  title: コミュニケーションの再定義
-  index_title: コミュニケーションの再定義
-  section_id: section-09
-  section_number: 9
-  section_title: 問題解決におけるコミュニケーション
-  index_type: normal
-- order: 68
-  file: slide_68.html
-  page_label: '68'
-  kind: content
-  runtime_shape: content
-  title: 誤解がなぜいけないか
-  index_title: 誤解がなぜいけないか
-  section_id: section-09
-  section_number: 9
-  section_title: 問題解決におけるコミュニケーション
-  index_type: normal
-- order: 69
-  file: slide_69.html
-  page_label: '69'
-  kind: content
-  runtime_shape: content
-  title: 誤解を排除するための2要素
-  index_title: 誤解を排除するための2要素
-  section_id: section-09
-  section_number: 9
-  section_title: 問題解決におけるコミュニケーション
-  index_type: normal
-- order: 70
-  file: slide_70.html
-  page_label: '70'
-  kind: content
-  runtime_shape: content
-  title: 受け手の理解
-  index_title: 受け手の理解
-  section_id: section-09
-  section_number: 9
-  section_title: 問題解決におけるコミュニケーション
-  index_type: normal
   legacy_exceptions:
   - summary-agenda-without-divider
 - order: 71
@@ -1714,8 +1718,8 @@ slides:
   page_label: '71'
   kind: content
   runtime_shape: content
-  title: 内容設計
-  index_title: 内容設計
+  title: 伝わらない解は解に数えない
+  index_title: 伝わらない解は解に数えない
   section_id: section-09
   section_number: 9
   section_title: 問題解決におけるコミュニケーション
@@ -1728,8 +1732,8 @@ slides:
   page_label: '72'
   kind: content
   runtime_shape: content
-  title: Tips
-  index_title: Tips
+  title: 誤解は理解・判断・行動を止める
+  index_title: 誤解は理解・判断・行動を止める
   section_id: section-09
   section_number: 9
   section_title: 問題解決におけるコミュニケーション
@@ -1740,6 +1744,56 @@ slides:
 - order: 73
   file: slide_73.html
   page_label: '73'
+  kind: content
+  runtime_shape: content
+  title: 誤解は受け手理解と内容設計で減らす
+  index_title: 誤解は受け手理解と内容設計で減らす
+  section_id: section-09
+  section_number: 9
+  section_title: 問題解決におけるコミュニケーション
+  index_type: normal
+  legacy_exceptions:
+  - manual-cta-layout
+  - manual-footer-reimplementation
+- order: 74
+  file: slide_74.html
+  page_label: '74'
+  kind: content
+  runtime_shape: content
+  title: 伝える前に相手の知識と関心を読む
+  index_title: 伝える前に相手の知識と関心を読む
+  section_id: section-09
+  section_number: 9
+  section_title: 問題解決におけるコミュニケーション
+  index_type: normal
+  legacy_exceptions:
+  - manual-qa-layout
+  - manual-footer-reimplementation
+- order: 75
+  file: slide_75.html
+  page_label: '75'
+  kind: content
+  runtime_shape: content
+  title: 内容はScope・Decision・Riskで積む
+  index_title: 内容はScope・Decision・Riskで積む
+  section_id: section-09
+  section_number: 9
+  section_title: 問題解決におけるコミュニケーション
+  index_type: normal
+- order: 76
+  file: slide_76.html
+  page_label: '76'
+  kind: content
+  runtime_shape: content
+  title: 誤解は3層で先回りして潰す
+  index_title: 誤解は3層で先回りして潰す
+  section_id: section-09
+  section_number: 9
+  section_title: 問題解決におけるコミュニケーション
+  index_type: normal
+- order: 77
+  file: slide_77.html
+  page_label: '77'
   kind: agenda
   runtime_shape: agenda
   title: アジェンダ
@@ -1792,12 +1846,9 @@ slides:
       label: まとめ
       state: active
       duration: null
-  legacy_exceptions:
-  - manual-cta-layout
-  - manual-footer-reimplementation
-- order: 74
-  file: slide_74.html
-  page_label: '74'
+- order: 78
+  file: slide_78.html
+  page_label: '78'
   kind: summary
   runtime_shape: custom
   title: まとめ
@@ -1806,12 +1857,9 @@ slides:
   section_number: 10
   section_title: まとめ
   index_type: normal
-  legacy_exceptions:
-  - manual-qa-layout
-  - manual-footer-reimplementation
-- order: 75
-  file: slide_75.html
-  page_label: '75'
+- order: 79
+  file: slide_79.html
+  page_label: '79'
   kind: closing
   runtime_shape: custom
   title: 理論的には何事も上手くいきます
@@ -1820,9 +1868,9 @@ slides:
   section_number: 10
   section_title: まとめ
   index_type: normal
-- order: 76
-  file: slide_76.html
-  page_label: '76'
+- order: 80
+  file: slide_80.html
+  page_label: '80'
   kind: cta
   runtime_shape: custom
   title: 問題を解決しましょう
@@ -1831,9 +1879,9 @@ slides:
   section_number: 10
   section_title: まとめ
   index_type: normal
-- order: 77
-  file: slide_77.html
-  page_label: '77'
+- order: 81
+  file: slide_81.html
+  page_label: '81'
   kind: qa
   runtime_shape: custom
   title: Q&A
@@ -1842,46 +1890,46 @@ slides:
   section_number: 10
   section_title: まとめ
   index_type: normal
-- order: 78
-  file: slide_78.html
-  page_label: '78'
+- order: 82
+  file: slide_82.html
+  page_label: '82'
   kind: content
   runtime_shape: content
-  title: ロジックツリーのよくある失敗
-  index_title: ロジックツリーのよくある失敗
+  title: 失敗は3類型で見抜ける
+  index_title: 失敗は3類型で見抜ける
   section_id: section-10
   section_number: 10
   section_title: まとめ
   index_type: normal
-- order: 79
-  file: slide_79.html
-  page_label: '79'
+- order: 83
+  file: slide_83.html
+  page_label: '83'
   kind: content
   runtime_shape: content
-  title: 1. 並列化を誤る
-  index_title: 1. 並列化を誤る
+  title: 同階層には同種の答えだけを置く
+  index_title: 同階層には同種の答えだけを置く
   section_id: section-10
   section_number: 10
   section_title: まとめ
   index_type: normal
-- order: 80
-  file: slide_80.html
-  page_label: '80'
+- order: 84
+  file: slide_84.html
+  page_label: '84'
   kind: content
   runtime_shape: content
-  title: 2. 階層の飛び幅を誤る
-  index_title: 2. 階層の飛び幅を誤る
+  title: 親子は一段でつながる粒度にする
+  index_title: 親子は一段でつながる粒度にする
   section_id: section-10
   section_number: 10
   section_title: まとめ
   index_type: normal
-- order: 81
-  file: slide_81.html
-  page_label: '81'
+- order: 85
+  file: slide_85.html
+  page_label: '85'
   kind: content
   runtime_shape: content
-  title: 3. 分類の効用を欠く
-  index_title: 3. 分類の効用を欠く
+  title: 分け方は次の行動を変えて初めて意味を持つ
+  index_title: 分け方は次の行動を変えて初めて意味を持つ
   section_id: section-10
   section_number: 10
   section_title: まとめ

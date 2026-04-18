@@ -3,43 +3,99 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>仮説構築の目的</title>
+<title>軸ズレは同階層の比較軸を崩す</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
 <style>
-.stage{position:absolute;left:80px;top:164px;width:1120px;--panel-label-title-gap:34px;--panel-title-rows-gap:48px}.kicker{margin:0 0 24px;color:var(--accent-purple);font-size:15px;font-weight:900;line-height:1.55}.kicker-spacer{height:56px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}.panel{min-height:356px;padding:26px;border:1px solid var(--ink-12);border-radius:8px;background:var(--surface-white)}.panel--strong{border-width:2px;border-color:var(--ink-82)}.panel__label{margin:0 0 var(--panel-label-title-gap);color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.panel__title{margin:0 0 var(--panel-title-rows-gap);font-size:24px;font-weight:900;line-height:1.35}.rows{display:grid;gap:18px}.row{display:grid;grid-template-columns:102px 1fr;gap:16px;padding-top:18px;border-top:1px solid var(--ink-08)}.row:first-child{padding-top:0;border-top:none}.row__key{color:rgba(0,0,0,.4);font-size:14px;font-weight:700;line-height:1.5}.row__value{font-size:16px;font-weight:900;line-height:1.65}.summary{margin-top:16px;padding-top:16px;border-top:1px solid var(--ink-10)}.summary p{margin:0;font-size:18px;font-weight:900;line-height:1.65}
+.error-stage{position:absolute;left:80px;top:156px;width:1120px;display:grid;grid-template-rows:auto 1fr;gap:18px}
+.intro-band{padding:16px 18px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white);display:grid;grid-template-columns:340px 1fr 260px;gap:20px;align-items:start}
+.intro-lead{display:grid}
+.error-copy__eyebrow{margin:0;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+.error-copy__head{margin:0;font-size:34px;font-weight:900;line-height:1.34;color:var(--soft-black)}
+.intro-body{display:grid;gap:10px}
+.intro-body p,.intro-note{margin:0;font-size:14px;line-height:1.72;color:var(--ink-68)}
+.intro-note{padding-left:16px;border-left:3px solid var(--ink-14);font-weight:900;color:var(--soft-black)}
+.compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.panel{position:relative;min-height:382px;padding:18px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white);overflow:hidden}
+.panel__label{margin:0 0 12px;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+.panel__caption{margin:0;position:absolute;left:18px;bottom:16px;font-size:12px;font-weight:900;line-height:1.55;color:var(--soft-black)}
+.diagram{position:relative;height:296px}
+.diagram svg{position:absolute;inset:0;width:100%;height:100%}
+.node{position:absolute;min-width:98px;padding:10px 10px;border-radius:8px;border:1px solid var(--ink-12);background:var(--surface-white);text-align:center;box-sizing:border-box}
+.node strong{display:block;font-size:13px;font-weight:900;line-height:1.3;color:var(--soft-black)}
+.node span{display:block;margin-top:3px;font-size:10px;line-height:1.45;color:var(--ink-62)}
+.node--active{border-width:2px;border-color:var(--ink-82);box-shadow:0 10px 22px var(--ink-08)}
+.node--muted{background:rgba(0,0,0,.03);border-color:var(--ink-08)}
+.node--muted strong,.node--muted span{color:rgba(0,0,0,.34)}
+.node--strike strong{text-decoration:line-through}
+.tag{position:absolute;margin:0;padding:4px 8px;border-radius:999px;background:rgba(0,0,0,.06);font-family:"Space Grotesk",sans-serif;font-size:10px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:var(--ink-50)}
+.before .top-a,.after .top-a{left:14px;top:26px}
+.before .top-b,.after .top-b{left:126px;top:26px}
+.before .top-c,.after .top-c{right:14px;top:26px}
+.before .bottom-a,.after .bottom-a{left:24px;top:174px}
+.before .bottom-b,.after .bottom-b{left:132px;top:174px}
+.before .bottom-c,.after .bottom-c{right:24px;top:174px}
+.before .tag,.after .tag{left:18px;top:108px}
 </style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第07章 仮説を構築する" data-header-title="仮説構築の目的" data-header-subtitle="仮説は、検証の基準点を置くために作る" data-footer="standard" data-footer-page="51">
-  <div class="stage">
-    <p class="kicker">仮説は、答えを決め打ちするためではなく、何を確かめれば前に進めるかを明確にするために置く。</p>
-    <div class="kicker-spacer" aria-hidden="true"></div>
-    <div class="grid">
-      <section class="panel">
-        <p class="panel__label">Without Hypothesis</p>
-        <p class="panel__title">仮説がないと、検証はただの情報収集になる</p>
-        <div class="rows">
-          <div class="row"><p class="row__key">起きること</p><p class="row__value">何を見ればよいかが定まらず、広く浅く集めるだけになる</p></div>
-          <div class="row"><p class="row__key">困ること</p><p class="row__value">結果が出ても、何が示唆なのか解釈できない</p></div>
-          <div class="row"><p class="row__key">その先</p><p class="row__value">次に何を考えるべきかが決まらず、議論が漂う</p></div>
-        </div>
-      </section>
-      <section class="panel panel--strong">
-        <p class="panel__label">With Hypothesis</p>
-        <p class="panel__title">仮説があると、検証結果が次の行動を教えてくれる</p>
-        <div class="rows">
-          <div class="row"><p class="row__key">見えるもの</p><p class="row__value">どの前提が効いているか、どこが不確実かが見える</p></div>
-          <div class="row"><p class="row__key">確かめ方</p><p class="row__value">当たり外れではなく、どの条件を潰すかで検証を設計できる</p></div>
-          <div class="row"><p class="row__key">その先</p><p class="row__value">外れた理由がそのまま論点の更新や打ち手の見直しにつながる</p></div>
-        </div>
-      </section>
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第06章 論点を分解する" data-header-title="軸ズレは同階層の比較軸を崩す" data-header-subtitle="誤り2 横のダブり・軸ズレ" data-footer="standard" data-footer-page="51">
+<main class="error-stage">
+  <section class="intro-band">
+    <div class="intro-lead stack-card__head">
+      <p class="error-copy__eyebrow">Error Pattern 02</p>
+      <p class="error-copy__head">横のダブり・軸ズレは、<br/>同階層の粒度を崩す</p>
     </div>
-    <div class="summary">
-      <p>仮説は、未来を言い当てるための予言ではない。軌道修正のための基準点である。</p>
+    <div class="intro-body">
+      <p>同じ階層に、チャネル名と指標名と状態名が混ざると、比較できないツリーになる。重複や軸ズレが起きると、何を並べているのか自体が曖昧になる。</p>
+      <p>直し方は、まず重複を外し、そのうえで同じ比較軸になるよう要素を組み替えること。追加ではなく、並び方そのものを修正する。</p>
     </div>
-  </div>
+    <p class="intro-note">同じ比較軸に揃うよう、同階層の要素を組み替える。</p>
+  </section>
+
+  <section class="compare">
+    <article class="panel before">
+      <p class="panel__label">Before</p>
+      <div class="diagram" aria-label="横のダブりと軸ズレの修正前">
+        <svg viewBox="0 0 352 296" aria-hidden="true">
+          <path d="M 44 126 L 308 126" stroke="var(--ink-10)" stroke-width="2" fill="none" stroke-dasharray="6 5"></path>
+          <path d="M 44 126 L 44 170" stroke="var(--ink-10)" stroke-width="2" fill="none" stroke-dasharray="6 5"></path>
+          <path d="M 176 126 L 176 170" stroke="var(--ink-10)" stroke-width="2" fill="none" stroke-dasharray="6 5"></path>
+          <path d="M 308 126 L 308 170" stroke="var(--ink-10)" stroke-width="2" fill="none" stroke-dasharray="6 5"></path>
+        </svg>
+        <div class="node node--muted node--strike top-a"><strong>広告流入</strong><span>チャネル</span></div>
+        <div class="node node--muted node--strike top-b"><strong>広告CVR</strong><span>指標</span></div>
+        <div class="node node--muted top-c"><strong>SNS流入</strong><span>重複気味</span></div>
+        <div class="node node--muted bottom-a"><strong>流入数</strong><span>置き換え候補</span></div>
+        <div class="node node--muted bottom-b"><strong>CVR</strong><span>置き換え候補</span></div>
+        <div class="node node--muted bottom-c"><strong>再訪率</strong><span>置き換え候補</span></div>
+        <p class="tag">Mixed Axes</p>
+      </div>
+      <p class="panel__caption">チャネル・指標・状態名が同階層で混ざっている。</p>
+    </article>
+
+    <article class="panel after">
+      <p class="panel__label">After</p>
+      <div class="diagram" aria-label="横のダブりと軸ズレの修正後">
+        <svg viewBox="0 0 352 296" aria-hidden="true">
+          <path d="M 44 126 L 308 126" stroke="var(--ink-16)" stroke-width="2" fill="none"></path>
+          <path d="M 44 126 L 44 170" stroke="var(--ink-16)" stroke-width="2" fill="none"></path>
+          <path d="M 176 126 L 176 170" stroke="var(--ink-16)" stroke-width="2" fill="none"></path>
+          <path d="M 308 126 L 308 170" stroke="var(--ink-16)" stroke-width="2" fill="none"></path>
+        </svg>
+        <div class="node node--muted top-a"><strong>広告流入</strong><span>削除した旧案</span></div>
+        <div class="node node--muted top-b"><strong>広告CVR</strong><span>削除した旧案</span></div>
+        <div class="node node--muted top-c"><strong>SNS流入</strong><span>削除した旧案</span></div>
+        <div class="node node--active bottom-a"><strong>流入数</strong><span>量で統一</span></div>
+        <div class="node node--active bottom-b"><strong>CVR</strong><span>率で統一</span></div>
+        <div class="node node--active bottom-c"><strong>再訪率</strong><span>同粒度で再配置</span></div>
+        <p class="tag">Reframe</p>
+      </div>
+      <p class="panel__caption">同じ比較軸に揃うよう、同階層の要素を組み替える。</p>
+    </article>
+  </section>
+</main>
 </div>
 </body>
 </html>

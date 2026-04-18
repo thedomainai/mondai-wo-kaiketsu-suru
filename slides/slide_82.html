@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>失敗は3類型で見抜ける</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
+<link href="./slides.css" rel="stylesheet"/>
+<script defer src="./slides.js"></script>
+</head>
+<body>
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="補足 ロジックツリーのレビュー" data-header-title="失敗は3類型で見抜ける" data-header-subtitle="ロジックツリーのよくある失敗" data-footer="standard" data-footer-page="82">
+  <div class="ds-stage" style="--stage-top:160px;--stage-gap:var(--sp-16)">
+    <section class="ds-summary--box" style="display:grid;grid-template-columns:1fr auto;gap:var(--sp-16);align-items:end">
+      <div style="display:grid;gap:var(--sp-8)">
+        <p class="ds-eyebrow">Appendix Overview</p>
+        <p class="ds-body--lg ds-black ds-bold" style="line-height:1.72">良いロジックツリーは、同じ階層が同じ種類の答えでそろい、親子が一段でつながり、分けたあとに次の行動が変わる。</p>
+      </div>
+      <div class="ds-badge ds-badge--dark" style="padding:var(--sp-8) var(--sp-12);font-size:var(--fs-13)">4-slide appendix</div>
+    </section>
+
+    <section style="position:relative;height:360px">
+      <div style="position:absolute;left:560px;top:18px;width:160px;height:30px;background:var(--ink-18)"></div>
+      <div style="position:absolute;left:187px;top:118px;width:906px;height:2px;background:var(--ink-18)"></div>
+      <div style="position:absolute;left:187px;top:118px;width:2px;height:22px;background:var(--ink-18)"></div>
+      <div style="position:absolute;left:640px;top:118px;width:2px;height:22px;background:var(--ink-18)"></div>
+      <div style="position:absolute;left:1091px;top:118px;width:2px;height:22px;background:var(--ink-18)"></div>
+
+      <div style="position:absolute;left:446px;top:0;width:388px;padding:var(--sp-16) var(--sp-20);background:var(--surface-white);box-shadow:0 var(--sp-12) var(--sp-24) var(--ink-08);text-align:center;box-sizing:border-box;display:grid;gap:var(--sp-8)">
+        <p class="ds-eyebrow">Root</p>
+        <p class="ds-title-sm ds-black">ロジックツリー作成時のよくある失敗</p>
+        <p class="ds-body--sm ds-ink-68" style="line-height:1.6">失敗を個別事象で覚えるのではなく、直すべき構造で見る。</p>
+      </div>
+
+      <div class="ds-grid ds-grid--3" style="position:absolute;left:0;right:0;bottom:0;--ds-grid-gap:var(--sp-24);align-items:stretch">
+        <article class="ds-card" style="padding:var(--sp-16) var(--sp-20);display:grid;grid-template-rows:auto auto 1fr auto;gap:var(--sp-12)">
+          <p class="ds-eyebrow">01</p>
+          <p class="ds-title-sm ds-black" style="line-height:1.45">並列化を誤る</p>
+          <div style="display:grid;gap:var(--sp-8)">
+            <div style="padding:var(--sp-8) var(--sp-12);background:var(--accent-red);font-size:var(--fs-13);font-weight:700;line-height:1.5">内訳関係の混在</div>
+            <div style="padding:var(--sp-8) var(--sp-12);background:var(--accent-red);font-size:var(--fs-13);font-weight:700;line-height:1.5">結果と要因の混在</div>
+            <div style="padding:var(--sp-8) var(--sp-12);background:var(--accent-red);font-size:var(--fs-13);font-weight:700;line-height:1.5">分類軸の混在</div>
+          </div>
+          <p class="ds-body--sm ds-ink-68" style="line-height:1.68">同じ階層には、同じ問いに対する同種の答えだけを置く。</p>
+        </article>
+
+        <article class="ds-card" style="padding:var(--sp-16) var(--sp-20);display:grid;grid-template-rows:auto auto 1fr auto;gap:var(--sp-12)">
+          <p class="ds-eyebrow">02</p>
+          <p class="ds-title-sm ds-black" style="line-height:1.45">階層の飛び幅を誤る</p>
+          <div style="display:grid;gap:var(--sp-8)">
+            <div style="padding:var(--sp-8) var(--sp-12);background:var(--accent-purple);font-size:var(--fs-13);font-weight:700;line-height:1.5">中間階層の欠落</div>
+            <div style="padding:var(--sp-8) var(--sp-12);background:var(--accent-purple);font-size:var(--fs-13);font-weight:700;line-height:1.5">深さの不揃い</div>
+            <div style="padding:var(--sp-8) var(--sp-12);background:var(--accent-purple);font-size:var(--fs-13);font-weight:700;line-height:1.5">親子関係の不明瞭</div>
+          </div>
+          <p class="ds-body--sm ds-ink-68" style="line-height:1.68">親から子へは、一段で意味がつながる大きさで降りる。</p>
+        </article>
+
+        <article class="ds-card" style="padding:var(--sp-16) var(--sp-20);display:grid;grid-template-rows:auto auto 1fr auto;gap:var(--sp-12)">
+          <p class="ds-eyebrow">03</p>
+          <p class="ds-title-sm ds-black" style="line-height:1.45">分類の効用を欠く</p>
+          <div style="display:grid;gap:var(--sp-8)">
+            <div style="padding:var(--sp-8) var(--sp-12);background:var(--surface-card);font-size:var(--fs-13);font-weight:700;line-height:1.5">打ち手不在</div>
+            <div style="padding:var(--sp-8) var(--sp-12);background:var(--surface-card);font-size:var(--fs-13);font-weight:700;line-height:1.5">優先順位不在</div>
+            <div style="padding:var(--sp-8) var(--sp-12);background:var(--surface-card);font-size:var(--fs-13);font-weight:700;line-height:1.5">検証論点不在</div>
+          </div>
+          <p class="ds-body--sm ds-ink-68" style="line-height:1.68">分けた結果、次の行動・順番・確認事項が変わる必要がある。</p>
+        </article>
+      </div>
+    </section>
+  </div>
+</div>
+</body>
+</html>

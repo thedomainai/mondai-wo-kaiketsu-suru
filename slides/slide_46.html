@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>原則2：MECEに分解する</title>
+<title>MECEで上位を説明し切る</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
@@ -11,11 +11,11 @@
 .mece-deck{position:absolute;left:80px;top:172px;width:1120px}
 .mece-lead{margin:0 0 16px;width:980px;font-size:16px;line-height:1.78;color:var(--ink-68)}
 .mece-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.mece-card{min-height:364px;padding:20px 24px 18px;border:1px solid var(--ink-10);border-radius:8px;background:linear-gradient(180deg,var(--surface-white) 0%,#fcfcfc 100%)}
-.mece-card__eyebrow{margin:0 0 8px;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px}
-.mece-card__head{margin:0 0 8px;font-size:30px;font-weight:900;line-height:1.2}
+.mece-card{min-height:364px;padding:20px 24px 18px;border:1px solid var(--ink-10);border-radius:8px;background:linear-gradient(180deg,var(--surface-white) 0%,#fcfcfc 100%);box-shadow:none}
+.mece-card__eyebrow{margin:0;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px}
+.mece-card__title{margin:0;font-size:30px;font-weight:900;line-height:1.2}
 .mece-card__body{margin:0;font-size:14px;line-height:1.82;color:var(--ink-68)}
-.mece-visual{margin-top:14px}
+.mece-visual{margin-top:0}
 .mece-parent{display:inline-flex;align-items:center;justify-content:center;min-width:196px;padding:9px 16px;border-radius:999px;background:var(--soft-black);color:var(--surface-white);font-size:14px;font-weight:700;line-height:1.4}
 .mece-parent-wrap{display:flex;justify-content:center}
 .mece-connector{width:2px;height:22px;margin:8px auto;background:var(--ink-18)}
@@ -39,13 +39,15 @@
 </style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第06章 論点を分解する" data-header-title="原則2：MECEに分解する" data-header-subtitle="漏れなく、重複なく、上位を説明しきる" data-footer="standard" data-footer-page="46">
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第06章 論点を分解する" data-header-title="MECEで上位を説明し切る" data-header-subtitle="原則2 MECE分解" data-footer="standard" data-footer-page="46">
 <div class="mece-deck">
 <p class="mece-lead">分解の質は、下位の要素で上位の論点を全部説明しきれ、かつ各要素の境界が重ならないかで決まる。MECE は、その二つを同時に点検するための基準である。</p>
 <div class="mece-grid">
-<section class="mece-card">
+<section class="mece-card ds-card">
+<div class="ds-card__head">
 <p class="mece-card__eyebrow">Exhaustive</p>
-<p class="mece-card__head">もれなく</p>
+<p class="mece-card__title">もれなく</p>
+</div>
 <p class="mece-card__body">上位の論点を、端から端まで下位要素で説明しきれる状態。工程のどこかが抜けると、ボトルネックを見落として手戻りが起きる。</p>
 <div class="mece-visual">
 <div class="mece-parent-wrap"><div class="mece-parent">採用プロセス 全体</div></div>
@@ -59,9 +61,11 @@
 <p class="mece-caption">候補者が通る全工程を置けているので、どこに課題があるかを漏らさず見られる。</p>
 </div>
 </section>
-<section class="mece-card">
+<section class="mece-card ds-card">
+<div class="ds-card__head">
 <p class="mece-card__eyebrow">Mutually Exclusive</p>
-<p class="mece-card__head">だぶりなく</p>
+<p class="mece-card__title">だぶりなく</p>
+</div>
 <p class="mece-card__body">同じ切り口で区切り、一つの対象が複数の箱に入らない状態。包含関係や軸の混在があると、集計が二重になる。</p>
 <div class="mece-visual mece-exclusive">
 <div class="mece-ng">

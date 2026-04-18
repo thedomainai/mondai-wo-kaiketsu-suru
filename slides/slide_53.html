@@ -3,28 +3,90 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>仮説の基本手順</title>
+<title>階層飛ばしは中間説明を失わせる</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
 <style>
-.stage{position:absolute;left:80px;top:160px;width:1120px;display:flex;flex-direction:column;gap:18px}.kicker{margin:0;color:var(--accent-purple);font-size:15px;font-weight:900;line-height:1.55}.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.step{min-height:250px;padding:22px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white);display:flex;flex-direction:column}.slide-container .step__num{margin:0 0 16px;color:rgba(0,0,0,.28);font-family:"Space Grotesk",sans-serif;font-size:14px;font-weight:900;letter-spacing:2px}.slide-container .step__title{margin:0 0 12px;font-size:21px;font-weight:900;line-height:1.45}.slide-container .step__text{margin:0;color:rgba(0,0,0,.72);font-size:14px;line-height:1.72}.template{padding:18px 22px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white)}.template p{margin:0;font-size:16px;font-weight:900;line-height:1.8}
+.error-stage{position:absolute;left:80px;top:156px;width:1120px;display:grid;grid-template-rows:auto 1fr;gap:18px}
+.intro-band{padding:16px 18px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white);display:grid;grid-template-columns:340px 1fr 260px;gap:20px;align-items:start}
+.intro-lead{display:grid}
+.error-copy__eyebrow{margin:0;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+.error-copy__head{margin:0;font-size:34px;font-weight:900;line-height:1.34;color:var(--soft-black)}
+.intro-body{display:grid;gap:10px}
+.intro-body p,.intro-note{margin:0;font-size:14px;line-height:1.72;color:var(--ink-68)}
+.intro-note{padding-left:16px;border-left:3px solid var(--ink-14);font-weight:900;color:var(--soft-black)}
+.compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.panel{position:relative;min-height:382px;padding:18px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white);overflow:hidden}
+.panel__label{margin:0 0 12px;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+.panel__caption{margin:0;position:absolute;left:18px;bottom:16px;font-size:12px;font-weight:900;line-height:1.55;color:var(--soft-black)}
+.diagram{position:relative;height:296px}
+.diagram svg{position:absolute;inset:0;width:100%;height:100%}
+.node{position:absolute;min-width:106px;padding:10px 10px;border-radius:8px;border:1px solid var(--ink-12);background:var(--surface-white);text-align:center;box-sizing:border-box}
+.node strong{display:block;font-size:13px;font-weight:900;line-height:1.3;color:var(--soft-black)}
+.node span{display:block;margin-top:3px;font-size:10px;line-height:1.45;color:var(--ink-62)}
+.node--active{border-width:2px;border-color:var(--ink-82);box-shadow:0 10px 22px var(--ink-08)}
+.node--muted{background:rgba(0,0,0,.03);border-color:var(--ink-08)}
+.node--muted strong,.node--muted span{color:rgba(0,0,0,.34)}
+.node--inserted{border-width:2px;border-style:dashed;background:rgba(0,0,0,.02)}
+.tag{position:absolute;margin:0;padding:4px 8px;border-radius:999px;background:rgba(0,0,0,.06);font-family:"Space Grotesk",sans-serif;font-size:10px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:var(--ink-50)}
+.before .root,.after .root{left:118px;top:26px}
+.before .mid,.after .mid{left:124px;top:138px}
+.before .a,.after .a{left:18px;top:214px}
+.before .b,.after .b{right:18px;top:214px}
+.before .tag,.after .tag{right:18px;top:146px}
 </style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第07章 仮説を構築する" data-header-title="仮説の基本手順" data-header-subtitle="答え・根拠・前提・検証方法を一続きで置く" data-footer="standard" data-footer-page="53">
-  <div class="stage">
-    <p class="kicker">いきなり「答え」だけを置くと弱い。論点、根拠、前提、確かめ方まで一続きで置くと、仮説は一気に使えるものになる。</p>
-    <div class="flow">
-      <section class="step"><p class="step__num">01</p><p class="step__title">論点に対する仮の答えを置く</p><p class="step__text">まずは「結局どうだと思うのか」を逃げずに言語化する。曖昧な方向性ではなく、Yes / No や優先順位の形まで寄せる。</p></section>
-      <section class="step"><p class="step__num">02</p><p class="step__title">なぜそう思うかを書く</p><p class="step__text">過去事例、構造理解、直感、観察のどれでもよいので、仮の答えを支える根拠を置く。</p></section>
-      <section class="step"><p class="step__num">03</p><p class="step__title">成立条件を切り出す</p><p class="step__text">どの前提が崩れるとこの仮説が壊れるのかを明示すると、検証ポイントがはっきりする。</p></section>
-      <section class="step"><p class="step__num">04</p><p class="step__title">検証方法を決める</p><p class="step__text">データ、現場観察、インタビュー、実験のどれで確かめるかを決め、次の行動に変える。</p></section>
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第06章 論点を分解する" data-header-title="階層飛ばしは中間説明を失わせる" data-header-subtitle="誤り4 階層飛ばし" data-footer="standard" data-footer-page="53">
+<main class="error-stage">
+  <section class="intro-band">
+    <div class="intro-lead stack-card__head">
+      <p class="error-copy__eyebrow">Error Pattern 04</p>
+      <p class="error-copy__head">階層飛ばしは、<br/>中間の説明責任を失わせる</p>
     </div>
-    <div class="template">
-      <p>論点: 何が本当にボトルネックか / 仮説: 新規獲得ではなく初回継続率が主因 / 根拠: 流入は足りているが2回目利用で落ちる / 主要前提: 初回体験が価値実感に届いていない / 検証方法: 初回利用者インタビューと行動ログで離脱点を特定する</p>
+    <div class="intro-body">
+      <p>上位論点から、いきなり細かい指標へ飛ぶと、そのあいだの意味づけが抜け落ちる。親と子の粒度差が大きく、間を説明するラベルが存在しない状態である。</p>
+      <p>直し方は、上下のあいだに中間階層を入れること。新しい要素を増やすのではなく、新しい段を挿入して一段ずつ降りる構造に戻す。</p>
     </div>
-  </div>
+    <p class="intro-note">中間階層を挿入し、一段ずつ説明できる形に戻す。</p>
+  </section>
+
+  <section class="compare">
+    <article class="panel before">
+      <p class="panel__label">Before</p>
+      <div class="diagram" aria-label="階層飛ばしの修正前">
+        <svg viewBox="0 0 352 296" aria-hidden="true">
+          <path d="M 176 78 L 74 214" stroke="var(--ink-10)" stroke-width="2" fill="none" stroke-dasharray="6 5"></path>
+          <path d="M 176 78 L 278 214" stroke="var(--ink-10)" stroke-width="2" fill="none" stroke-dasharray="6 5"></path>
+        </svg>
+        <div class="node node--active root"><strong>売上停滞</strong><span>上位論点</span></div>
+        <div class="node node--muted mid"><strong>中間階層なし</strong><span>意味づけが抜ける</span></div>
+        <div class="node node--muted a"><strong>流入数</strong><span>細かすぎる</span></div>
+        <div class="node node--muted b"><strong>CVR</strong><span>細かすぎる</span></div>
+        <p class="tag">Jump</p>
+      </div>
+      <p class="panel__caption">上位論点から下位指標へ飛んでおり、間の段が欠けている。</p>
+    </article>
+
+    <article class="panel after">
+      <p class="panel__label">After</p>
+      <div class="diagram" aria-label="階層飛ばしの修正後">
+        <svg viewBox="0 0 352 296" aria-hidden="true">
+          <path d="M 176 78 L 176 138" stroke="var(--ink-16)" stroke-width="2" fill="none"></path>
+          <path d="M 176 182 L 74 214" stroke="var(--ink-16)" stroke-width="2" fill="none"></path>
+          <path d="M 176 182 L 278 214" stroke="var(--ink-16)" stroke-width="2" fill="none"></path>
+        </svg>
+        <div class="node node--active root"><strong>売上停滞</strong><span>上位論点</span></div>
+        <div class="node node--inserted mid"><strong>集客</strong><span>新階層を挿入</span></div>
+        <div class="node node--muted a"><strong>流入数</strong><span>集客の一部</span></div>
+        <div class="node node--muted b"><strong>CVR</strong><span>集客の一部</span></div>
+        <p class="tag">Insert</p>
+      </div>
+      <p class="panel__caption">中間階層を挿入し、一段ずつ説明できる形に戻す。</p>
+    </article>
+  </section>
+</main>
 </div>
 </body>
 </html>

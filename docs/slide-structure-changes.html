@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>スライド構成変更計画</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Helvetica Neue", "Noto Sans JP", sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    background: #f5f5f3;
+    color: #1a1a1a;
+    padding: 16px;
+  }
+  h1 {
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #1a1a1a;
+  }
+  h2 {
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(0,0,0,.42);
+    margin: 28px 0 12px;
+  }
+  .rule-box {
+    background: #1a1a1a;
+    color: #fff;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  .rule-box code {
+    font-family: monospace;
+    font-size: 12px;
+    white-space: pre-wrap;
+  }
+  /* カード一覧 */
+  .cards { display: flex; flex-direction: column; gap: 10px; }
+  .card {
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,.1);
+    padding: 12px 14px;
+  }
+  .card.has-delete { border-left: 3px solid #c96a6a; }
+  .card.no-delete  { border-left: 3px solid rgba(0,0,0,.12); }
+  .card-num {
+    font-family: "Space Grotesk", monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: rgba(0,0,0,.36);
+    margin-bottom: 6px;
+  }
+  .card-chapter {
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(0,0,0,.42);
+    margin-bottom: 4px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 900;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+  }
+  .card-msg {
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(0,0,0,.62);
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+  .delete-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #c96a6a;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .delete-text {
+    font-size: 12px;
+    color: #9e3434;
+    background: rgba(201,106,106,.06);
+    border-radius: 4px;
+    padding: 6px 8px;
+    line-height: 1.55;
+  }
+  .no-delete-tag {
+    font-size: 11px;
+    color: rgba(0,0,0,.38);
+    font-style: italic;
+  }
+  /* skip table */
+  .skip-list { display: flex; flex-direction: column; gap: 6px; }
+  .skip-item {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,.08);
+    border-radius: 6px;
+    padding: 8px 12px;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 8px;
+    font-size: 12px;
+  }
+  .skip-num { font-weight: 900; color: rgba(0,0,0,.42); }
+  .skip-reason { color: rgba(0,0,0,.58); }
+  .count-bar {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .count-chip {
+    padding: 6px 12px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .count-chip.red { background: rgba(201,106,106,.12); color: #9e3434; }
+  .count-chip.gray { background: rgba(0,0,0,.06); color: rgba(0,0,0,.54); }
+</style>
+</head>
+<body>
+
+<h1>スライド構成変更計画</h1>
+
+<h2>新しい構成ルール</h2>
+<div class="rule-box">
+<code>header
+  章タイトル        → data-header-chapter
+  メインメッセージ  → data-header-subtitle を昇格
+  スライドタイトル  → data-header-title
+
+body
+  ディスクリプション: メインメッセージの補足
+  メインコンテンツ: 図解など
+
+※ 最下部の締め文・格言・結語は削除</code>
+</div>
+
+<h2>変更一覧（contentスライド）</h2>
+<div class="count-bar">
+  <span class="count-chip red">🗑 削除あり 33枚</span>
+  <span class="count-chip gray">✓ 削除なし 8枚</span>
+</div>
+<div class="cards">
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 11</div>
+    <div class="card-chapter">第01章 ワーク</div>
+    <div class="card-title">問題解決は基本的に最適解（ToBe）がある。最適解と自分の解（AsIs）の差分を知る</div>
+    <div class="card-msg">ワーク: 問題解決の体験（ケーススタディ）</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「このワークの目的は、研修前の自分がどのように問いを捉え、どう分解しようとするかを可視化すること。」</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 13</div>
+    <div class="card-chapter">第01章 ワーク</div>
+    <div class="card-title">構成要素を見るか、価値が生まれる条件を見るか</div>
+    <div class="card-msg">思考の差はどこに現れるか</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「美味しいハンバーガーをつくれる可能性が高いのは〜Bさんである」（結論帯）</div>
+  </div>
+
+  <div class="card no-delete">
+    <div class="card-num">SLIDE 14</div>
+    <div class="card-chapter">第01章 ワーク</div>
+    <div class="card-title">頭の中で何が見え、どう構造化されているかを比べる</div>
+    <div class="card-msg">見えている要素とつながりで差が出る</div>
+    <div class="no-delete-tag">末尾はカード内コンテンツのため削除なし</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 18</div>
+    <div class="card-chapter">第02章 前提・背景</div>
+    <div class="card-title">本質は「必ず解けること」ではなく「高い期待値で解けること」</div>
+    <div class="card-msg">高い問題解決能力 = 高い問題解決期待値</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「1回の勝ち負けではなく、100回繰り返したときの平均で設計する。51回勝てるやり方なら、戦略として正しい。」</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 19</div>
+    <div class="card-chapter">第02章 前提・背景</div>
+    <div class="card-title">結果の良し悪しだけでは、思考と行動の質は判断できない</div>
+    <div class="card-msg">結果と行動を切り離す</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「コントロールできるのは一部だけである。だからこそ、外れた結果ではなく、そこに至るプロセスを学習対象にする。」</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 20</div>
+    <div class="card-chapter">第02章 前提・背景</div>
+    <div class="card-title">誤りを検知した階層で、同じ親の別の枝を探索する</div>
+    <div class="card-msg">再現性とは「正しく間違えること」</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「繰り返せなくなる失敗を避けることが、探索を続ける前提になる。」（card__footの最後）</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 21</div>
+    <div class="card-chapter">第02章 前提・背景</div>
+    <div class="card-title">問題解決とロジカルシンキングを、1本の流れとして捉える</div>
+    <div class="card-msg">研修のテーマ: 再現性高く問題を解決する</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「この研修では、論理的思考を単体のテクニックではなく、問題解決を前に進めるための技術として扱う。」</div>
+  </div>
+
+  <div class="card no-delete">
+    <div class="card-num">SLIDE 24</div>
+    <div class="card-chapter">第03章 問題解決の概要</div>
+    <div class="card-title">論点に答えることは、次の行動を決めることに等しい</div>
+    <div class="card-msg">問題解決とは論点に対して答えを出すこと</div>
+    <div class="no-delete-tag">末尾はConclusionカード内コンテンツのため削除なし</div>
+  </div>
+
+  <div class="card no-delete">
+    <div class="card-num">SLIDE 25</div>
+    <div class="card-chapter">第03章 問題解決の概要</div>
+    <div class="card-title">問題解決には定石と呼べる流れがあり、現実にはそのステップを何度も行き来する</div>
+    <div class="card-msg">7ステップのフレームワーク</div>
+    <div class="no-delete-tag">末尾はステップカード内コンテンツのため削除なし</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 26</div>
+    <div class="card-chapter">第03章 問題解決の概要</div>
+    <div class="card-title">戦略は正しい行動を見つけることに、実行はその質を高めることに時間を使う</div>
+    <div class="card-msg">実務では役割ごとに重心が変わる</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「実行は気合ではなく、検証と学習で精度を上げる営みである。」（split-card__foot）</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 27</div>
+    <div class="card-chapter">第03章 問題解決の概要</div>
+    <div class="card-title">答えの前に、問いの置き方に時間を使う</div>
+    <div class="card-msg">アインシュタインの言葉</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「もし地球を救うために1時間を与えられたなら、55分を問いの理解に使い、5分を打ち手の策定に使う。」（日本語訳）</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 28</div>
+    <div class="card-chapter">第03章 問題解決の概要</div>
+    <div class="card-title">今どの段階にいるかを理解し、次に考えるべきことを見失わず、高速でステップを行き来する</div>
+    <div class="card-msg">問題解決のプロセスを回す際に重要な点</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「一周ごとに精度を上げる。理屈として流れが見えているだけでも、難しい問題に直面したときの立ち尽くし方が変わる。」（04カードのcard__body）</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 31</div>
+    <div class="card-chapter">第04章 目的と制約に合意する</div>
+    <div class="card-title">問いの前に、何を達成し何を守るゲームかをそろえる</div>
+    <div class="card-msg">なぜ最初に目的と制約に合意をするのか</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「目的か制約がずれると、以後の問い・仮説・解もずれ続ける。」</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 32</div>
+    <div class="card-chapter">第04章 目的と制約に合意する</div>
+    <div class="card-title">目的が固定されて初めて、分解の正しさを判断できる</div>
+    <div class="card-msg">同じテーマでも、目的が違えば分解は変わる</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「同じテーマでも、目的が違えば問うべきことも分け方も変わる。」</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 33</div>
+    <div class="card-chapter">第04章 目的と制約に合意する</div>
+    <div class="card-title">自分で置くときも、他者から受けるときも、達成像を判断可能な形にする</div>
+    <div class="card-msg">目的を定義/合意する</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「抽象すぎても具体すぎても、後ろの論点定義と分解が不安定になる。」</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 34</div>
+    <div class="card-chapter">第04章 目的と制約に合意する</div>
+    <div class="card-title">できることではなく、守るべき条件を先に明らかにする</div>
+    <div class="card-msg">制約を定義する</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「制約を置かないまま進めると、後から〜前の工程がまとめて崩れる。」</div>
+  </div>
+
+  <div class="card no-delete">
+    <div class="card-num">SLIDE 35</div>
+    <div class="card-chapter">第04章 目的と制約に合意する</div>
+    <div class="card-title">目的と制約は、一文または一枚で固定する</div>
+    <div class="card-msg">合意の完成形</div>
+    <div class="no-delete-tag">末尾はBefore/Afterカード内コンテンツのため削除なし</div>
+  </div>
+
+  <div class="card no-delete">
+    <div class="card-num">SLIDE 36</div>
+    <div class="card-chapter">第04章 目的と制約に合意する</div>
+    <div class="card-title">問いを定義する前に、達成したいことと守る条件をそろえる</div>
+    <div class="card-msg">章のまとめ</div>
+    <div class="no-delete-tag">末尾はまとめカード内コンテンツのため削除なし</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 39</div>
+    <div class="card-chapter">第05章 論点を定義する</div>
+    <div class="card-title">上段の問いを見失わずに、行動を決める問いへ固定する</div>
+    <div class="card-msg">論点定義とは何か / なぜ重要か</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「論点を誤ると、以後の分解・仮説・検証・行動もずれ続ける。」</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 40</div>
+    <div class="card-chapter">第05章 論点を定義する</div>
+    <div class="card-title">上段の問いを捉え、一文化し、「べき」で判断にする</div>
+    <div class="card-msg">論点定義の3ポイント</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「「べき」がないと、分かった気になって終わり、行動に接続しない。」</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 41</div>
+    <div class="card-chapter">第05章 論点を定義する</div>
+    <div class="card-title">行動に結びつかない問いは、問題を解決する論点になっていない</div>
+    <div class="card-msg">「べき」の徹底解説</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「問いの目的は、次に取るべき行動を決めることである。」</div>
+  </div>
+
+  <div class="card no-delete">
+    <div class="card-num">SLIDE 42</div>
+    <div class="card-chapter">第05章 論点を定義する</div>
+    <div class="card-title">上段の問いを見失わずに、行動を決める問いへ固定する</div>
+    <div class="card-msg">章のまとめ</div>
+    <div class="no-delete-tag">末尾はまとめカード内コンテンツのため削除なし</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 44</div>
+    <div class="card-chapter">第06章 論点を分解する</div>
+    <div class="card-title">上位の問いを、答えを構成する下位論点へ構造的に展開する</div>
+    <div class="card-msg">論点分解とは何か / なぜ重要か</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「何を確かめれば前に進めるかが分かり、検証が実務に下りる。」</div>
+  </div>
+
+  <div class="card no-delete">
+    <div class="card-num">SLIDE 45</div>
+    <div class="card-chapter">第06章 論点を分解する</div>
+    <div class="card-title">論点はツリー構造で階層的に分解する</div>
+    <div class="card-msg">原則1：ツリー状に分解する</div>
+    <div class="no-delete-tag">末尾はポイント箇条書きのため削除なし</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 46</div>
+    <div class="card-chapter">第06章 論点を分解する</div>
+    <div class="card-title">MECEとは、もれなく・だぶりなく分けること</div>
+    <div class="card-msg">原則2：MECEに分解する</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「地域の包含関係を混ぜずに切れば、どの売上も一度だけ数えられる。」</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 47</div>
+    <div class="card-chapter">第06章 論点を分解する</div>
+    <div class="card-title">下位要素が上位要素をMECEに構成し、かつ式として読める状態をつくる</div>
+    <div class="card-msg">原則3：モデル（式）で考える</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「式の型が決まると、全体を構成する変数と、次に動かすべき変数が同時に見える。」</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 48</div>
+    <div class="card-chapter">第06章 論点を分解する</div>
+    <div class="card-title">進まない時間は、深さではなくズレのサインであることが多い</div>
+    <div class="card-msg">原則4：5分以上1つの論点を考えない</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「1つの論点の中に複数の論点が混ざっている。さらに分解して、検証可能な単位まで小さくする。」（Case 02の説明文）</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 49</div>
+    <div class="card-chapter">第06章 論点を分解する</div>
+    <div class="card-title">構造から降りるだけでも、思いつきから積むだけでも、分解は弱くなる</div>
+    <div class="card-msg">原則5：トップダウンとボトムアップを行き来する</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「灰色は未探索の枝。太い輪郭と矢印が、いま往復している思考の経路。」（図のキャプション）</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 51</div>
+    <div class="card-chapter">第07章 仮説を構築する</div>
+    <div class="card-title">正しい答えを当てるより、検証できる基準点を置く</div>
+    <div class="card-msg">仮説構築の目的</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「仮説は、未来を言い当てるための予言ではない。軌道修正のための基準点である。」</div>
+  </div>
+
+  <div class="card no-delete">
+    <div class="card-num">SLIDE 52</div>
+    <div class="card-chapter">第07章 仮説を構築する</div>
+    <div class="card-title">雑な思いつきではなく、検証に耐える形まで置く</div>
+    <div class="card-msg">良い仮説とは</div>
+    <div class="no-delete-tag">末尾はBad/Betterカード内コンテンツのため削除なし</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 53</div>
+    <div class="card-chapter">第07章 仮説を構築する</div>
+    <div class="card-title">論点に対する仮の答えを、前提と検証方法まで含めて置く</div>
+    <div class="card-msg">仮説の基本手順</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「論点: 何が本当にボトルネックか / 仮説: 〜」（完成形例の帯全体）</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 54</div>
+    <div class="card-chapter">第07章 仮説を構築する</div>
+    <div class="card-title">分析と直感を往復しながら、筋の良い仮説を組み上げる</div>
+    <div class="card-msg">仮説生成の技法</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「分析で地に足をつけ、直感で前に跳ぶ。この往復が、強い仮説をつくる。」</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 56</div>
+    <div class="card-chapter">第07章 仮説を構築する</div>
+    <div class="card-title">知見がないときは、広く浴びてから仮の筋をつかみにいく</div>
+    <div class="card-msg">Deep Dive：情報の海に潜る</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「Deep Dive は「調べ続ける」ことではない。仮説の種を拾い、次の一手に変えるための探索である。」</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 57</div>
+    <div class="card-chapter">第07章 仮説を構築する</div>
+    <div class="card-title">情報が足りなくても、その時点の答えを置くから前に進める</div>
+    <div class="card-msg">仮の答えを出すことから逃げない</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「仮説は、当てにいくものではない。外れ方から学ぶために、先に置くものだ。」</div>
+  </div>
+
+  <div class="card no-delete">
+    <div class="card-num">SLIDE 60</div>
+    <div class="card-chapter">第08章 論点と仮説を検証する</div>
+    <div class="card-title">何が分かれば支持できるかを定め、何で確かめるかを決める</div>
+    <div class="card-msg">検証を設計する</div>
+    <div class="no-delete-tag">末尾は対応表内コンテンツのため削除なし</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 61</div>
+    <div class="card-chapter">第08章 論点と仮説を検証する</div>
+    <div class="card-title">外れたときの影響と、検証価値の高いものから当てる</div>
+    <div class="card-msg">何を先に検証するか</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「先に当てるべきなのは、「外れると痛く、確かめることで判断が動く」仮説である。」</div>
+  </div>
+
+  <div class="card no-delete">
+    <div class="card-num">SLIDE 62</div>
+    <div class="card-chapter">第08章 論点と仮説を検証する</div>
+    <div class="card-title">事実と解釈を分け、評価軸に照らして判断する</div>
+    <div class="card-msg">検証結果を読む</div>
+    <div class="no-delete-tag">末尾はStep 3カード内コンテンツのため削除なし</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 63</div>
+    <div class="card-chapter">第08章 論点と仮説を検証する</div>
+    <div class="card-title">検証の価値は、次の一手が明確になることにある</div>
+    <div class="card-msg">検証結果から次の行動を決める</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「検証は終点ではない。次の行動を決めるための分岐点である。」</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 64</div>
+    <div class="card-chapter">第08章 論点と仮説を検証する</div>
+    <div class="card-title">設計、優先順位、解釈、行動の4段で、不確実性を意思決定に変える</div>
+    <div class="card-msg">仮説検証の全体像</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「仮説検証とは、証明ではない。不確実性を下げ、次の判断と行動を可能にするためのプロセスである。」</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 67</div>
+    <div class="card-chapter">第09章 問題解決におけるコミュニケーション</div>
+    <div class="card-title">解を相手に伝えることも、問題解決の一部である</div>
+    <div class="card-msg">コミュニケーションの再定義</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「「何を言うか」より「どう受け取られるか」を先に設計する。誤解の起点を先回りして潰すことが、コミュニケーションの本質である。」（PRINCIPLEブロック）</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 68</div>
+    <div class="card-chapter">第09章 問題解決におけるコミュニケーション</div>
+    <div class="card-title">誤解は、理解だけでなく判断と行動も止める</div>
+    <div class="card-msg">誤解がなぜいけないか</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「誤解がいけないのは、相手が「わかった気になる」だけで終わり、問題解決が前に進まなくなるからである。」</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 69</div>
+    <div class="card-chapter">第09章 問題解決におけるコミュニケーション</div>
+    <div class="card-title">誤解は『誰に伝えるか』と『何をどう並べるか』の両方で減らす</div>
+    <div class="card-msg">誤解を排除するための2要素</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「つまり、誤解を排除するとは「相手を読むこと」と「内容を組むこと」を両立させることである。」</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 70</div>
+    <div class="card-chapter">第09章 問題解決におけるコミュニケーション</div>
+    <div class="card-title">相手の知識・理解力・関心を読む</div>
+    <div class="card-msg">受け手の理解</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「受け手理解は、相手が何を知っていて、どこまで追えて、何に関心を持つかを読むことである。」</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 71</div>
+    <div class="card-chapter">第09章 問題解決におけるコミュニケーション</div>
+    <div class="card-title">役割ごとに情報を整理する</div>
+    <div class="card-msg">内容設計</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「内容設計は、3段の役割が混ざらないように積み、その段の中で必要な要素だけを横に並べる。」</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 72</div>
+    <div class="card-chapter">第09章 問題解決におけるコミュニケーション</div>
+    <div class="card-title">誤解は『表現』『論理』『判断』の3層で起きる</div>
+    <div class="card-msg">Tips</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「相手が「この条件なら判断できる」と思える材料を先に揃える。」（判断カードのlayer-card__foot）</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 78</div>
+    <div class="card-chapter">補足 ロジックツリーのレビュー</div>
+    <div class="card-title">誤りは、並列化 / 階層の飛び幅 / 分類の効用 の3類型に集約できる</div>
+    <div class="card-msg">ロジックツリーのよくある失敗</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「分けた結果、次の行動・順番・確認事項が変わる必要がある。」</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 79</div>
+    <div class="card-chapter">補足 ロジックツリーのレビュー</div>
+    <div class="card-title">同じ階層には、同じ問いに対する同種の答えだけを置く</div>
+    <div class="card-msg">1. 並列化を誤る</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「見抜く問い: その3つは、本当に「同じ問いに対する同種の答え」になっているか。」</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 80</div>
+    <div class="card-chapter">補足 ロジックツリーのレビュー</div>
+    <div class="card-title">親から子へは、一段で意味がつながる大きさで降りる</div>
+    <div class="card-msg">2. 階層の飛び幅を誤る</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「見抜く問い: 子は、親をどう分けるかの答えになっているか。一段で言い換えられるか。」</div>
+  </div>
+
+  <div class="card has-delete">
+    <div class="card-num">SLIDE 81</div>
+    <div class="card-chapter">補足 ロジックツリーのレビュー</div>
+    <div class="card-title">分けた結果、打ち手・優先順位・検証論点が変わる必要がある</div>
+    <div class="card-msg">3. 分類の効用を欠く</div>
+    <div class="delete-label">削除する末尾テキスト</div>
+    <div class="delete-text">「見抜く問い: この分け方で、次の行動・順番・確かめることは本当に変わるか。」</div>
+  </div>
+
+</div>
+</body>
+</html>

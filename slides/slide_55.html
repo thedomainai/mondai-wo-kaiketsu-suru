@@ -3,18 +3,126 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>知見がないとき、どう進めるか</title>
+<title>仮説は正誤と誤因を見極める基準点</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
+<style>
+.stage {
+  position: absolute;
+  left: 80px;
+  top: 164px;
+  width: 1120px;
+}
+
+.kicker {
+  margin: 0 0 var(--sp-24);
+  color: var(--accent-purple);
+  font-size: var(--fs-15);
+  font-weight: 900;
+  line-height: 1.55;
+}
+
+.kicker-spacer {
+  height: 32px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+}
+
+.panel {
+  min-height: 356px;
+  padding: 26px;
+  border: 1px solid var(--ink-12);
+  background: var(--surface-white);
+  box-shadow: none;
+  --panel-gap: var(--space-stack-title-body);
+}
+
+.panel--strong {
+  border-width: 2px;
+  border-color: var(--ink-82);
+}
+
+.rows {
+  display: grid;
+  gap: var(--sp-18);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 102px 1fr;
+  gap: var(--sp-16);
+  padding-top: var(--sp-18);
+  border-top: 1px solid var(--ink-08);
+}
+
+.row:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.row__key {
+  color: var(--ink-50);
+  font-size: var(--fs-14);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.row__value {
+  font-size: var(--fs-16);
+  font-weight: 900;
+  line-height: 1.65;
+}
+
+.summary {
+  margin-top: var(--sp-16);
+  padding-top: var(--sp-16);
+  border-top: 1px solid var(--ink-10);
+}
+
+.summary p {
+  margin: 0;
+  font-size: var(--fs-18);
+  font-weight: 900;
+  line-height: 1.65;
+}
+</style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper slide-center-title" data-slide-kind="center-title" data-footer="standard" data-footer-page="55">
-  <div class="content">
-    <div class="inner">
-      <p class="chapter">HYPOTHESIS</p>
-      <p class="title">知見がないとき、どう進めるか</p>
-      <p class="subtitle">浅い答えを急がず、探索で種を拾い、仮置きで前に進める</p>
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第07章 仮説を構築する" data-header-title="仮説は正誤と誤因を見極める基準点" data-header-subtitle="仮説構築の目的" data-footer="standard" data-footer-page="55">
+  <div class="stage">
+    <p class="kicker">仮説は、答えを決め打ちするためではなく、何を確かめれば前に進めるかを明確にするために置く。</p>
+    <div class="kicker-spacer" aria-hidden="true"></div>
+    <div class="grid">
+      <section class="panel ds-panel">
+        <div class="ds-panel__head ds-panel__head--loose">
+          <p class="ds-panel__label">Without Hypothesis</p>
+          <p class="ds-panel__title ds-panel__title--xl">仮説がないと、検証はただの情報収集になる</p>
+        </div>
+        <div class="rows">
+          <div class="row"><p class="row__key">起きること</p><p class="row__value">何を見ればよいかが定まらず、広く浅く集めるだけになる</p></div>
+          <div class="row"><p class="row__key">困ること</p><p class="row__value">結果が出ても、何が示唆なのか解釈できない</p></div>
+          <div class="row"><p class="row__key">その先</p><p class="row__value">次に何を考えるべきかが決まらず、議論が漂う</p></div>
+        </div>
+      </section>
+      <section class="panel ds-panel panel--strong">
+        <div class="ds-panel__head ds-panel__head--loose">
+          <p class="ds-panel__label">With Hypothesis</p>
+          <p class="ds-panel__title ds-panel__title--xl">仮説があると、検証結果が次の行動を教えてくれる</p>
+        </div>
+        <div class="rows">
+          <div class="row"><p class="row__key">見えるもの</p><p class="row__value">どの前提が効いているか、どこが不確実かが見える</p></div>
+          <div class="row"><p class="row__key">確かめ方</p><p class="row__value">当たり外れではなく、どの条件を潰すかで検証を設計できる</p></div>
+          <div class="row"><p class="row__key">その先</p><p class="row__value">外れた理由がそのまま論点の更新や打ち手の見直しにつながる</p></div>
+        </div>
+      </section>
+    </div>
+    <div class="summary">
+      <p>仮説は、未来を言い当てるための予言ではない。軌道修正のための基準点である。</p>
     </div>
   </div>
 </div>

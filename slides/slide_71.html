@@ -3,84 +3,52 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>内容設計</title>
+<title>伝わらない解は解に数えない</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
 <style>
-.stage{position:absolute;left:80px;top:188px;width:1120px;display:flex;flex-direction:column;gap:10px}
-.kicker{margin:0;color:var(--accent-purple);font-size:14px;font-weight:900;line-height:1.45}
-.rows{display:flex;flex-direction:column;gap:10px}
-.row{padding:12px 12px;border:1px solid var(--ink-10);border-radius:8px;display:grid;grid-template-columns:130px 1fr;gap:12px;align-items:start}
-.row__eyebrow{margin:0;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
-.row__titlecol{display:flex;flex-direction:column;gap:4px}
-.row__cards{display:grid;gap:10px;align-self:stretch}
-.row__cards--2{grid-template-columns:repeat(2,minmax(0,1fr))}
-.row__cards--3{grid-template-columns:repeat(3,minmax(0,1fr))}
-.row__card{padding:12px 14px;border:1px solid var(--ink-08);border-radius:8px;min-height:86px}
-.row__card h3{margin:0;font-size:20px;font-weight:900;line-height:1.25;color:#3f352c}
-.row__card p{margin:4px 0 0;font-size:11px;font-weight:400;line-height:1.45;color:rgba(0,0,0,.66)}
-.summary{padding-top:8px;border-top:1px solid var(--ink-10)}
-.summary p{margin:0;font-size:14px;font-weight:900;line-height:1.45}
+.stage{position:absolute;left:80px;top:160px;width:1120px;display:flex;flex-direction:column;gap:20px}
+.lead{margin:0;font-size:18px;font-weight:700;line-height:1.85;color:#333}
+.lead strong{color:var(--soft-black)}
+.card-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.card{min-height:268px;padding:28px 22px 32px;border:1px solid var(--ink-10);border-top:3px solid var(--soft-black);background:var(--surface-white);border-radius:0 0 4px 4px;display:flex;flex-direction:column;gap:var(--space-stack-title-body)}
+.card__eyebrow,.card__head,.card__body{margin:0}
+.card__eyebrow{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.8px;color:rgba(0,0,0,.32);text-transform:uppercase}
+.card__head{font-size:20px;font-weight:900;line-height:1.25;color:var(--soft-black)}
+.card__body{font-size:14px;font-weight:400;line-height:1.8;color:#555}
+.bottom-band{padding:18px 22px;border-top:1px solid var(--ink-10);display:flex;align-items:center;gap:20px}
+.bottom-band__label{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.6px;color:rgba(0,0,0,.35);white-space:nowrap}
+.bottom-band__text{margin:0;font-size:16px;font-weight:700;line-height:1.7;color:var(--soft-black)}
 </style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第09章 問題解決におけるコミュニケーション" data-header-title="内容設計" data-header-subtitle="Scope・Decision・Riskの3段に積む" data-footer="standard" data-footer-page="71">
-  <div class="stage">
-    <p class="kicker">内容設計は、要素をばらばらに置くのではなく、上から順に役割の異なる3段で積む。各段の中で必要な要素を横に並べると、何をそろえ、何で判断し、どこが未確定かが追いやすくなる。</p>
-    <div class="rows">
-      <section class="row">
-        <div class="row__titlecol">
-          <p class="row__eyebrow">Scope</p>
-        </div>
-        <div class="row__cards row__cards--2">
-          <div class="row__card">
-            <h3>ゴール</h3>
-            <p>理解してほしいのか、判断してほしいのか、動いてほしいのかを決める。</p>
-          </div>
-          <div class="row__card">
-            <h3>前提・背景</h3>
-            <p>どの状況を前提に結論を置くのかを先にそろえる。</p>
-          </div>
-        </div>
-      </section>
-      <section class="row">
-        <div class="row__titlecol">
-          <p class="row__eyebrow">Decision</p>
-        </div>
-        <div class="row__cards row__cards--3">
-          <div class="row__card">
-            <h3>結論</h3>
-            <p>だから何をどうするのかを、判断できる粒度で明示する。</p>
-          </div>
-          <div class="row__card">
-            <h3>根拠</h3>
-            <p>なぜそう言えるのかを、相手の判断軸に接続して示す。</p>
-          </div>
-          <div class="row__card">
-            <h3>ネクストアクション</h3>
-            <p>誰が、何を、いつまでにやるかまで落として止まらない形にする。</p>
-          </div>
-        </div>
-      </section>
-      <section class="row">
-        <div class="row__titlecol">
-          <p class="row__eyebrow">Risk</p>
-        </div>
-        <div class="row__cards row__cards--2">
-          <div class="row__card">
-            <h3>残論点</h3>
-            <p>まだ詰め切れていない論点や、追加検討が必要な点を開示する。</p>
-          </div>
-          <div class="row__card">
-            <h3>情報確度</h3>
-            <p>確定情報、仮説、見込みを混ぜずに示し、どこまで言えるかを明確にする。</p>
-          </div>
-        </div>
-      </section>
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第09章 問題解決におけるコミュニケーション" data-header-title="伝わらない解は解に数えない" data-header-subtitle="コミュニケーションの再定義" data-footer="standard" data-footer-page="71">
+
+<div class="stage">
+  <p class="lead">伝えるとは、自分の頭の中をそのまま出すことではない。<strong>相手側に残る誤解可能性を減らすように、設計し直すことだ。</strong></p>
+
+  <div class="card-row">
+    <div class="card">
+      <div class="stack-card__head"><p class="card__eyebrow">WHAT</p><p class="card__head">誤解は必ず起きる</p></div>
+      <p class="card__body">同じ言葉でも前提・知識・関心が違えば、受け取り方は変わる。誤解ゼロは不可能。だから「排除するゲーム」と捉える。</p>
     </div>
-    <div class="summary"><p>内容設計は、3段の役割が混ざらないように積み、その段の中で必要な要素だけを横に並べる。</p></div>
+    <div class="card">
+      <div class="stack-card__head"><p class="card__eyebrow">WHY</p><p class="card__head">解が動かなければ意味がない</p></div>
+      <p class="card__body">正しい答えを出しても、相手が動かなければ問題は解決されない。伝達は問題解決の完結点である。</p>
+    </div>
+    <div class="card">
+      <div class="stack-card__head"><p class="card__eyebrow">HOW</p><p class="card__head">相手の頭の中を先にモデル化する</p></div>
+      <p class="card__body">相手の知識・理解力・興味関心・センターピンを先に把握する。それに合わせて構造を設計し直す。</p>
+    </div>
   </div>
+
+  <div class="bottom-band">
+    <span class="bottom-band__label">PRINCIPLE</span>
+    <p class="bottom-band__text">「何を言うか」より「どう受け取られるか」を先に設計する。誤解の起点を先回りして潰すことが、コミュニケーションの本質である。</p>
+  </div>
+</div>
+
 </div>
 </body>
 </html>

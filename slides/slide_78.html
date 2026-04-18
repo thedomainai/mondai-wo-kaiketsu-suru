@@ -3,70 +3,68 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ロジックツリーのよくある失敗</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
+<title>まとめ</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="補足 ロジックツリーのレビュー" data-header-title="ロジックツリーのよくある失敗" data-header-subtitle="失敗は3類型に集約できる" data-footer="standard" data-footer-page="78">
-  <div class="ds-stage" style="--stage-top:160px;--stage-gap:var(--sp-16)">
-    <section class="ds-summary--box" style="display:grid;grid-template-columns:1fr auto;gap:var(--sp-16);align-items:end">
-      <div style="display:grid;gap:var(--sp-8)">
-        <p class="ds-eyebrow">Appendix Overview</p>
-        <p class="ds-body--lg ds-black ds-bold" style="line-height:1.72">良いロジックツリーは、同じ階層が同じ種類の答えでそろい、親子が一段でつながり、分けたあとに次の行動が変わる。</p>
+<div class="slide-container slide-theme-paper" data-slide-kind="summary">
+  <div style="position:absolute; left:0; top:0; width:1280px; height:var(--header-band-height); background:var(--surface-white); z-index:50;"></div>
+  <div style="position:absolute; right:80px; top:var(--header-pill-top); z-index:55;">
+    <p style="margin:0; padding:5px 18px; border:2px solid var(--soft-black); border-radius:9999px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:var(--font-size-header-pill); color:var(--soft-black); letter-spacing:1px; background:#ffffff; display:inline-block;">ロジカル・シンキング研修</p>
+  </div>
+  <div style="position:absolute; left:80px; top:var(--header-text-top); width:960px; z-index:55;">
+    <p style="margin:0 0 var(--space-header-chapter-title); font-weight:400; font-size:var(--font-size-header-chapter); color:#999; letter-spacing:0.5px;">第10章 まとめ</p>
+    <p style="margin:0 0 var(--space-header-title-subtitle); font-weight:900; font-size:var(--font-size-header-title); color:var(--soft-black); line-height:var(--line-height-header-title);">まとめ</p>
+    <p style="margin:0; font-weight:400; font-size:var(--font-size-header-subtitle); color:#888; line-height:var(--line-height-header-subtitle);">前提から仮説構築までの要点</p>
+  </div>
+
+  <div style="position:absolute; left:80px; top:170px; width:1120px; z-index:10;">
+    <div style="width:100%; padding:18px 24px; background:var(--soft-black); color:var(--surface-white); border-radius:8px; box-sizing:border-box;">
+      <p style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:12px; letter-spacing:1.8px; color:rgba(255,255,255,0.62); margin:0 0 10px 0;">CORE MESSAGE</p>
+      <p style="font-weight:900; font-size:26px; line-height:1.4; margin:0;">正しい問いを立て、正しく分解し、仮説を置いて検証し、受け手に伝える。<br/>この一連の精度が、行動の期待値を押し上げる。</p>
+    </div>
+    <div style="margin-top:16px; display:grid; grid-template-columns:repeat(3, 1fr); gap:14px 18px;">
+      <div style="padding:16px 18px; border:1px solid var(--ink-08); background:var(--surface-white); border-radius:8px; min-height:114px; box-sizing:border-box;">
+        <p style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:11px; letter-spacing:1.6px; color:#888; margin:0 0 8px 0;">PREMISE</p>
+        <p style="font-weight:900; font-size:17px; line-height:1.4; color:var(--soft-black); margin:0 0 6px 0;">行動と結果は切り離す</p>
+        <p style="font-size:12px; line-height:1.65; color:#444;">再現性とは、正しく間違えながら成功確率を高め続けられる状態である。</p>
       </div>
-      <div class="ds-badge ds-badge--dark" style="padding:var(--sp-8) var(--sp-12);font-size:var(--fs-13)">4-slide appendix</div>
-    </section>
-
-    <section style="position:relative;height:360px">
-      <div style="position:absolute;left:560px;top:18px;width:160px;height:30px;background:var(--ink-18)"></div>
-      <div style="position:absolute;left:187px;top:118px;width:906px;height:2px;background:var(--ink-18)"></div>
-      <div style="position:absolute;left:187px;top:118px;width:2px;height:22px;background:var(--ink-18)"></div>
-      <div style="position:absolute;left:640px;top:118px;width:2px;height:22px;background:var(--ink-18)"></div>
-      <div style="position:absolute;left:1091px;top:118px;width:2px;height:22px;background:var(--ink-18)"></div>
-
-      <div style="position:absolute;left:446px;top:0;width:388px;padding:var(--sp-16) var(--sp-20);background:var(--surface-white);box-shadow:0 var(--sp-12) var(--sp-24) var(--ink-08);text-align:center;box-sizing:border-box;display:grid;gap:var(--sp-8)">
-        <p class="ds-eyebrow">Root</p>
-        <p class="ds-title-sm ds-black">ロジックツリー作成時のよくある失敗</p>
-        <p class="ds-body--sm ds-ink-68" style="line-height:1.6">失敗を個別事象で覚えるのではなく、直すべき構造で見る。</p>
+      <div style="padding:16px 18px; border:1px solid var(--ink-08); background:var(--surface-white); border-radius:8px; min-height:114px; box-sizing:border-box;">
+        <p style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:11px; letter-spacing:1.6px; color:#888; margin:0 0 8px 0;">OVERVIEW</p>
+        <p style="font-weight:900; font-size:17px; line-height:1.4; color:var(--soft-black); margin:0 0 6px 0;">問題解決とは行動を決めること</p>
+        <p style="font-size:12px; line-height:1.65; color:#444;">論点に解を出し、次の一手を定めることが問題解決の本質である。</p>
       </div>
-
-      <div class="ds-grid ds-grid--3" style="position:absolute;left:0;right:0;bottom:0;--ds-grid-gap:var(--sp-24);align-items:stretch">
-        <article class="ds-card" style="padding:var(--sp-16) var(--sp-20);display:grid;grid-template-rows:auto auto 1fr auto;gap:var(--sp-12)">
-          <p class="ds-eyebrow">01</p>
-          <p class="ds-title-sm ds-black" style="line-height:1.45">並列化を誤る</p>
-          <div style="display:grid;gap:var(--sp-8)">
-            <div style="padding:var(--sp-8) var(--sp-12);background:var(--accent-red);font-size:var(--fs-13);font-weight:700;line-height:1.5">内訳関係の混在</div>
-            <div style="padding:var(--sp-8) var(--sp-12);background:var(--accent-red);font-size:var(--fs-13);font-weight:700;line-height:1.5">結果と要因の混在</div>
-            <div style="padding:var(--sp-8) var(--sp-12);background:var(--accent-red);font-size:var(--fs-13);font-weight:700;line-height:1.5">分類軸の混在</div>
-          </div>
-          <p class="ds-body--sm ds-ink-68" style="line-height:1.68">同じ階層には、同じ問いに対する同種の答えだけを置く。</p>
-        </article>
-
-        <article class="ds-card" style="padding:var(--sp-16) var(--sp-20);display:grid;grid-template-rows:auto auto 1fr auto;gap:var(--sp-12)">
-          <p class="ds-eyebrow">02</p>
-          <p class="ds-title-sm ds-black" style="line-height:1.45">階層の飛び幅を誤る</p>
-          <div style="display:grid;gap:var(--sp-8)">
-            <div style="padding:var(--sp-8) var(--sp-12);background:var(--accent-purple);font-size:var(--fs-13);font-weight:700;line-height:1.5">中間階層の欠落</div>
-            <div style="padding:var(--sp-8) var(--sp-12);background:var(--accent-purple);font-size:var(--fs-13);font-weight:700;line-height:1.5">深さの不揃い</div>
-            <div style="padding:var(--sp-8) var(--sp-12);background:var(--accent-purple);font-size:var(--fs-13);font-weight:700;line-height:1.5">親子関係の不明瞭</div>
-          </div>
-          <p class="ds-body--sm ds-ink-68" style="line-height:1.68">親から子へは、一段で意味がつながる大きさで降りる。</p>
-        </article>
-
-        <article class="ds-card" style="padding:var(--sp-16) var(--sp-20);display:grid;grid-template-rows:auto auto 1fr auto;gap:var(--sp-12)">
-          <p class="ds-eyebrow">03</p>
-          <p class="ds-title-sm ds-black" style="line-height:1.45">分類の効用を欠く</p>
-          <div style="display:grid;gap:var(--sp-8)">
-            <div style="padding:var(--sp-8) var(--sp-12);background:var(--surface-card);font-size:var(--fs-13);font-weight:700;line-height:1.5">打ち手不在</div>
-            <div style="padding:var(--sp-8) var(--sp-12);background:var(--surface-card);font-size:var(--fs-13);font-weight:700;line-height:1.5">優先順位不在</div>
-            <div style="padding:var(--sp-8) var(--sp-12);background:var(--surface-card);font-size:var(--fs-13);font-weight:700;line-height:1.5">検証論点不在</div>
-          </div>
-          <p class="ds-body--sm ds-ink-68" style="line-height:1.68">分けた結果、次の行動・順番・確認事項が変わる必要がある。</p>
-        </article>
+      <div style="padding:16px 18px; border:1px solid var(--ink-08); background:var(--surface-white); border-radius:8px; min-height:114px; box-sizing:border-box;">
+        <p style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:11px; letter-spacing:1.6px; color:#888; margin:0 0 8px 0;">ISSUE</p>
+        <p style="font-weight:900; font-size:17px; line-height:1.4; color:var(--soft-black); margin:0 0 6px 0;">問いの質が勝敗を決める</p>
+        <p style="font-size:12px; line-height:1.65; color:#444;">問いを誤れば、その後の分解も仮説も検証もすべてずれる。</p>
       </div>
-    </section>
+      <div style="padding:16px 18px; border:1px solid var(--ink-08); background:var(--surface-white); border-radius:8px; min-height:114px; box-sizing:border-box;">
+        <p style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:11px; letter-spacing:1.6px; color:#888; margin:0 0 8px 0;">DECOMPOSITION</p>
+        <p style="font-weight:900; font-size:17px; line-height:1.4; color:var(--soft-black); margin:0 0 6px 0;">1階層ずつ、MECEに分解する</p>
+        <p style="font-size:12px; line-height:1.65; color:#444;">上下の階層を行き来しながら、構造の漏れと重なりを消していく。</p>
+      </div>
+      <div style="padding:16px 18px; border:1px solid var(--ink-08); background:var(--surface-white); border-radius:8px; min-height:114px; box-sizing:border-box;">
+        <p style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:11px; letter-spacing:1.6px; color:#888; margin:0 0 8px 0;">HYPOTHESIS</p>
+        <p style="font-weight:900; font-size:17px; line-height:1.4; color:var(--soft-black); margin:0 0 6px 0;">仮説は順序と再現性を生む</p>
+        <p style="font-size:12px; line-height:1.65; color:#444;">正解を当てるためではなく、何を検証しどう修正するかを明確にするために置く。</p>
+      </div>
+      <div style="padding:16px 18px; border:1px solid var(--ink-08); background:#f4f4f4; border-radius:8px; min-height:114px; box-sizing:border-box;">
+        <p style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:11px; letter-spacing:1.6px; color:#888; margin:0 0 8px 0;">FLOW</p>
+        <p style="font-weight:900; font-size:17px; line-height:1.4; color:var(--soft-black); margin:0 0 6px 0;">論点定義 → 分解 → 仮説 → 検証 → 伝達</p>
+        <p style="font-size:12px; line-height:1.65; color:#444;">この流れを雑にしないことが、仕事の期待値を上げる最短ルートである。</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:absolute; left:0; top:660px; width:1280px; height:60px; background:var(--surface-white); z-index:50;"></div>
+  <div style="position:absolute; left:80px; top:680px; z-index:55;">
+    <p style="margin:0; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:var(--font-size-footer-meta); color:#bbb; letter-spacing:1.5px;">LOGICAL THINKING TRAINING</p>
+  </div>
+  <div style="position:absolute; right:80px; top:680px; z-index:55;">
+    <p style="margin:0; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:var(--font-size-footer-meta); color:#bbb; letter-spacing:0.5px;">78</p>
   </div>
 </div>
 </body>

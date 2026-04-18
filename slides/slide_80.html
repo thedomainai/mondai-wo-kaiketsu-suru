@@ -3,93 +3,17 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>2. 階層の飛び幅を誤る</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
+<title>問題を解決しましょう</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="補足 ロジックツリーのレビュー" data-header-title="2. 階層の飛び幅を誤る" data-header-subtitle="子は親を一段で言い換えられる粒度にする" data-footer="standard" data-footer-page="80">
-  <div class="ds-stage" style="--stage-top:160px;--stage-gap:var(--sp-12)">
-    <section class="ds-summary--box" style="display:grid;grid-template-columns:1fr auto;gap:var(--sp-16);align-items:center">
-      <div style="display:flex;flex-direction:column;gap:var(--sp-8)">
-        <p class="ds-eyebrow">Case Question</p>
-        <p class="ds-body--lg ds-black ds-bold" style="line-height:1.65">良い分解は、親から子への説明を一段で言える。飛びすぎても、枝ごとに深さがずれても、比較が効かなくなる。</p>
-      </div>
-      <div class="ds-badge ds-badge--dark" style="padding:var(--sp-8) var(--sp-12);font-size:var(--fs-12)">NG例で確認</div>
-    </section>
+<div class="slide-container slide-theme-mist" data-background="halftone" data-slide-kind="cta">
 
-    <div class="ds-grid ds-grid--3" style="--ds-grid-gap:var(--sp-20);align-items:stretch">
-      <article class="ds-card" style="padding:var(--sp-16);display:grid;grid-template-rows:auto 1fr auto;row-gap:var(--sp-12)">
-        <div style="display:flex;flex-direction:column;gap:var(--sp-4)">
-          <p class="ds-eyebrow">01</p>
-          <p class="ds-title-sm ds-black" style="line-height:1.45">中間階層の欠落</p>
-        </div>
-        <div style="position:relative;min-height:190px;padding:var(--sp-12);border-radius:var(--sp-8);background:var(--surface-mist)">
-          <div style="position:absolute;left:50%;top:18px;transform:translateX(-50%);width:164px;padding:var(--sp-8);border-radius:var(--sp-8);background:var(--surface-white);border:2px solid var(--ink-100);font-size:var(--fs-12);font-weight:700;line-height:1.5;text-align:center">美味しいハンバーガー</div>
-          <div style="position:absolute;left:50%;top:64px;transform:translateX(-50%);width:2px;height:22px;background:var(--ink-18)"></div>
-          <div style="position:absolute;left:40px;top:86px;width:232px;height:2px;background:var(--ink-18)"></div>
-          <div style="position:absolute;left:40px;top:86px;width:2px;height:22px;background:var(--ink-18)"></div>
-          <div style="position:absolute;left:156px;top:86px;width:2px;height:22px;background:var(--ink-18)"></div>
-          <div style="position:absolute;left:272px;top:86px;width:2px;height:22px;background:var(--ink-18)"></div>
-          <div style="position:absolute;left:8px;top:108px;width:96px;padding:var(--sp-8);border-radius:var(--sp-8);background:var(--surface-white);border:1px solid var(--ink-18);font-size:var(--fs-11);font-weight:700;line-height:1.45;text-align:center">牛肉の<br/>脂肪比率</div>
-          <div style="position:absolute;left:118px;top:108px;width:96px;padding:var(--sp-8);border-radius:var(--sp-8);background:var(--surface-white);border:1px solid var(--ink-18);font-size:var(--fs-11);font-weight:700;line-height:1.45;text-align:center">鉄板温度</div>
-          <div style="position:absolute;left:228px;top:108px;width:96px;padding:var(--sp-8);border-radius:var(--sp-8);background:var(--surface-white);border:1px solid var(--ink-18);font-size:var(--fs-11);font-weight:700;line-height:1.45;text-align:center">レタスの<br/>水切り</div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:var(--sp-4);padding-top:var(--sp-12);border-top:1px solid var(--ink-08)">
-          <p class="ds-eyebrow">何がダメか</p>
-          <p class="ds-body--sm ds-ink-68" style="line-height:1.65">いきなり具体論に飛んでおり、「素材」「調理」「組み合わせ」といった中間階層が抜けている。</p>
-        </div>
-      </article>
-
-      <article class="ds-card" style="padding:var(--sp-16);display:grid;grid-template-rows:auto 1fr auto;row-gap:var(--sp-12)">
-        <div style="display:flex;flex-direction:column;gap:var(--sp-4)">
-          <p class="ds-eyebrow">02</p>
-          <p class="ds-title-sm ds-black" style="line-height:1.45">深さの不揃い</p>
-        </div>
-        <div style="position:relative;min-height:190px;padding:var(--sp-12);border-radius:var(--sp-8);background:var(--surface-mist)">
-          <div style="position:absolute;left:50%;top:18px;transform:translateX(-50%);width:164px;padding:var(--sp-8);border-radius:var(--sp-8);background:var(--surface-white);border:2px solid var(--ink-100);font-size:var(--fs-12);font-weight:700;line-height:1.5;text-align:center">美味しいハンバーガー</div>
-          <div style="position:absolute;left:50%;top:64px;transform:translateX(-50%);width:2px;height:22px;background:var(--ink-18)"></div>
-          <div style="position:absolute;left:44px;top:86px;width:224px;height:2px;background:var(--ink-18)"></div>
-          <div style="position:absolute;left:44px;top:86px;width:2px;height:22px;background:var(--ink-18)"></div>
-          <div style="position:absolute;left:156px;top:86px;width:2px;height:22px;background:var(--ink-18)"></div>
-          <div style="position:absolute;left:268px;top:86px;width:2px;height:22px;background:var(--ink-18)"></div>
-          <div style="position:absolute;left:10px;top:108px;width:88px;padding:var(--sp-8);border-radius:var(--sp-8);background:var(--surface-white);border:1px solid var(--ink-18);font-size:var(--fs-11);font-weight:700;line-height:1.45;text-align:center">パティ</div>
-          <div style="position:absolute;left:122px;top:108px;width:88px;padding:var(--sp-8);border-radius:var(--sp-8);background:var(--surface-white);border:1px solid var(--ink-18);font-size:var(--fs-11);font-weight:700;line-height:1.45;text-align:center">バンズ</div>
-          <div style="position:absolute;left:234px;top:108px;width:88px;padding:var(--sp-8);border-radius:var(--sp-8);background:var(--surface-white);border:1px solid var(--ink-18);font-size:var(--fs-11);font-weight:700;line-height:1.45;text-align:center">ソース</div>
-          <div style="position:absolute;left:54px;top:144px;width:2px;height:18px;background:var(--ink-18)"></div>
-          <div style="position:absolute;left:18px;top:162px;width:74px;padding:var(--sp-8);border-radius:var(--sp-8);background:var(--surface-white);border:1px dashed var(--ink-18);font-size:var(--fs-11);font-weight:700;line-height:1.4;text-align:center">焼き方</div>
-          <div style="position:absolute;left:54px;top:194px;width:2px;height:12px;background:var(--ink-18)"></div>
-          <div style="position:absolute;left:10px;top:206px;width:88px;padding:var(--sp-8);border-radius:var(--sp-8);background:var(--surface-white);border:1px dashed var(--ink-18);font-size:var(--fs-11);font-weight:700;line-height:1.35;text-align:center">焼き時間</div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:var(--sp-4);padding-top:var(--sp-12);border-top:1px solid var(--ink-08)">
-          <p class="ds-eyebrow">何がダメか</p>
-          <p class="ds-body--sm ds-ink-68" style="line-height:1.65">「パティ」だけ下へ潜っており、枝ごとに比較すべき深さがそろっていない。</p>
-        </div>
-      </article>
-
-      <article class="ds-card" style="padding:var(--sp-16);display:grid;grid-template-rows:auto 1fr auto;row-gap:var(--sp-12)">
-        <div style="display:flex;flex-direction:column;gap:var(--sp-4)">
-          <p class="ds-eyebrow">03</p>
-          <p class="ds-title-sm ds-black" style="line-height:1.45">親子関係の不明瞭</p>
-        </div>
-        <div style="position:relative;min-height:190px;padding:var(--sp-12);border-radius:var(--sp-8);background:var(--surface-mist)">
-          <div style="position:absolute;left:50%;top:18px;transform:translateX(-50%);width:164px;padding:var(--sp-8);border-radius:var(--sp-8);background:var(--surface-white);border:2px solid var(--ink-100);font-size:var(--fs-12);font-weight:700;line-height:1.5;text-align:center">美味しいハンバーガー</div>
-          <div style="position:absolute;left:50%;top:64px;transform:translateX(-50%);width:2px;height:22px;background:var(--ink-18)"></div>
-          <div style="position:absolute;left:50%;top:86px;transform:translateX(-50%);width:98px;padding:var(--sp-8);border-radius:var(--sp-8);background:var(--surface-white);border:1px solid var(--ink-18);font-size:var(--fs-11);font-weight:700;line-height:1.45;text-align:center">ソース</div>
-          <div style="position:absolute;left:50%;top:122px;transform:translateX(-50%);width:2px;height:20px;background:var(--ink-18)"></div>
-          <div style="position:absolute;left:50%;top:142px;transform:translateX(-50%);width:98px;padding:var(--sp-8);border-radius:var(--sp-8);background:var(--surface-white);border:1px dashed var(--ink-18);font-size:var(--fs-11);font-weight:700;line-height:1.45;text-align:center">焼き加減</div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:var(--sp-4);padding-top:var(--sp-12);border-top:1px solid var(--ink-08)">
-          <p class="ds-eyebrow">何がダメか</p>
-          <p class="ds-body--sm ds-ink-68" style="line-height:1.65">「焼き加減」は「ソース」の分け方ではない。子が親をどう分けるかの答えになっていない。</p>
-        </div>
-      </article>
-    </div>
-
-    <section class="ds-summary" style="padding:var(--sp-8) var(--sp-16);border-radius:var(--sp-8);background:var(--surface-card)">
-      <p class="ds-body ds-black ds-bold">見抜く問い: 子は、親をどう分けるかの答えになっているか。一段で言い換えられるか。</p>
-    </section>
+  <div style="position:absolute; inset:0; z-index:10;">
+    <p style="position:absolute; left:80px; top:282px; width:1120px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:12px; line-height:1; letter-spacing:2px; color:rgba(0,0,0,0.34); text-align:center;">ACTION</p>
+    <p style="position:absolute; left:80px; top:332px; width:1120px; font-weight:900; font-size:72px; line-height:1.2; color:var(--soft-black); letter-spacing:-1px; text-align:center;">問題を解決しましょう</p>
   </div>
 </div>
 </body>

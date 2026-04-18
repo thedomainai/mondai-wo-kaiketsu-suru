@@ -3,69 +3,54 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>アジェンダ｜第10章 まとめ</title>
+<title>誤解は受け手理解と内容設計で減らす</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
+<style>
+.stage{position:absolute;left:80px;top:156px;width:1120px;display:flex;flex-direction:column;gap:22px}
+.lead{margin:0;font-size:17px;font-weight:700;line-height:1.85;color:#4a3f2f}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.pillar{padding:24px 24px 22px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white);display:flex;flex-direction:column;gap:16px}
+.pillar__num{margin:0;font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;color:var(--ink-34)}
+.pillar__title{margin:0;font-size:28px;font-weight:900;line-height:1.35;color:var(--soft-black)}
+.pillar__text{margin:0;font-size:14px;line-height:1.8;color:rgba(0,0,0,.72)}
+.pill-list{display:flex;flex-wrap:wrap;gap:8px}
+.pill{padding:8px 12px;border:1px solid var(--ink-10);border-radius:999px;background:#faf8f4;font-size:13px;font-weight:700;line-height:1.4;color:#4d4339}
+.summary{padding-top:18px;border-top:1px solid var(--ink-10)}
+.summary p{margin:0;font-size:17px;font-weight:900;line-height:1.7;color:var(--soft-black)}
+</style>
 </head>
 <body>
-<div class="slide-container slide-theme-mist" data-slide-kind="agenda" data-background="grain" data-grain-opacity="0.5" data-vignette="true">
-  <div class="agenda-panel">
-    <p class="agenda-panel__eyebrow">Agenda</p>
-    <h1 class="agenda-panel__title agenda-panel__title--spaced">アジェンダ</h1>
-  </div>
-  <div class="agenda-panel__list-wrap">
-    <div class="agenda-panel__list">
-                        <div class="agenda-panel__row">
-        <span class="agenda-panel__index">01</span>
-        <span class="agenda-panel__item">ワーク</span>
-      </div>
-
-      <div class="agenda-panel__row">
-        <span class="agenda-panel__index">02</span>
-        <span class="agenda-panel__item">前提・背景</span>
-      </div>
-
-      <div class="agenda-panel__row">
-        <span class="agenda-panel__index">03</span>
-        <span class="agenda-panel__item">問題解決の概要</span>
-      </div>
-
-      <div class="agenda-panel__row">
-        <span class="agenda-panel__index">04</span>
-        <span class="agenda-panel__item">目的と制約に合意する</span>
-      </div>
-
-      <div class="agenda-panel__row">
-        <span class="agenda-panel__index">05</span>
-        <span class="agenda-panel__item">論点を定義する</span>
-      </div>
-
-      <div class="agenda-panel__row">
-        <span class="agenda-panel__index">06</span>
-        <span class="agenda-panel__item">論点を分解する</span>
-      </div>
-
-      <div class="agenda-panel__row">
-        <span class="agenda-panel__index">07</span>
-        <span class="agenda-panel__item">仮説を構築する</span>
-      </div>
-
-      <div class="agenda-panel__row">
-        <span class="agenda-panel__index">08</span>
-        <span class="agenda-panel__item">論点と仮説を検証する</span>
-      </div>
-
-      <div class="agenda-panel__row">
-        <span class="agenda-panel__index">09</span>
-        <span class="agenda-panel__item">問題解決におけるコミュニケーション</span>
-      </div>
-
-      <div class="agenda-panel__row agenda-panel__row--active agenda-panel__row--last">
-        <span class="agenda-panel__index agenda-panel__index--active">10</span>
-        <span class="agenda-panel__item agenda-panel__item--active">まとめ</span>
-      </div>
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第09章 問題解決におけるコミュニケーション" data-header-title="誤解は受け手理解と内容設計で減らす" data-header-subtitle="誤解を減らす2要素" data-footer="standard" data-footer-page="73">
+  <div class="stage">
+    <p class="lead">誤解を減らすには、相手に合わせるだけでも、内容を整えるだけでも足りない。<strong>受け手の理解</strong>と<strong>内容の設計</strong>の2つを分けて考えると、どこで伝達が崩れているかが見えやすくなる。</p>
+    <div class="grid">
+      <section class="pillar">
+        <p class="pillar__num">01</p>
+        <h2 class="pillar__title">受け手の理解</h2>
+        <p class="pillar__text">相手の知識量、理解力、関心を読む。相手の頭の中を外すと、正しい内容でも別の意味で受け取られる。</p>
+        <div class="pill-list">
+          <span class="pill">知識</span>
+          <span class="pill">理解力</span>
+          <span class="pill">興味関心</span>
+        </div>
+      </section>
+      <section class="pillar">
+        <p class="pillar__num">02</p>
+        <h2 class="pillar__title">内容の設計</h2>
+        <p class="pillar__text">相手が理解し、判断し、動ける順番で情報を並べる。内容の設計が粗いと、納得はしても決められない、あるいは動けない状態が残る。</p>
+        <div class="pill-list">
+          <span class="pill">ゴール</span>
+          <span class="pill">前提・背景</span>
+          <span class="pill">結論</span>
+          <span class="pill">根拠</span>
+          <span class="pill">ネクストアクション</span>
+          <span class="pill">補足</span>
+        </div>
+      </section>
     </div>
+    <div class="summary"><p>つまり、誤解を排除するとは「相手を読むこと」と「内容を組むこと」を両立させることである。</p></div>
   </div>
 </div>
 </body>

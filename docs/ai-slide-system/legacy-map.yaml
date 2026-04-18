@@ -1,5 +1,5 @@
 deck:
-  total_slides: 81
+  total_slides: 85
   runtime_shapes:
   - agenda
   - center-title
@@ -322,38 +322,38 @@ slides:
     page_label: '49'
     legacy_exceptions: []
   slide_50.html:
-    canonical_kind: divider
-    runtime_shape: divider
-    section_id: section-07
+    canonical_kind: content
+    runtime_shape: content
+    section_id: section-06
     page_label: '50'
     legacy_exceptions: []
   slide_51.html:
     canonical_kind: content
     runtime_shape: content
-    section_id: section-07
+    section_id: section-06
     page_label: '51'
     legacy_exceptions: []
   slide_52.html:
     canonical_kind: content
     runtime_shape: content
-    section_id: section-07
+    section_id: section-06
     page_label: '52'
     legacy_exceptions: []
   slide_53.html:
     canonical_kind: content
     runtime_shape: content
-    section_id: section-07
+    section_id: section-06
     page_label: '53'
     legacy_exceptions: []
   slide_54.html:
-    canonical_kind: content
-    runtime_shape: content
+    canonical_kind: divider
+    runtime_shape: divider
     section_id: section-07
     page_label: '54'
     legacy_exceptions: []
   slide_55.html:
-    canonical_kind: center-title
-    runtime_shape: center-title
+    canonical_kind: content
+    runtime_shape: content
     section_id: section-07
     page_label: '55'
     legacy_exceptions: []
@@ -370,38 +370,38 @@ slides:
     page_label: '57'
     legacy_exceptions: []
   slide_58.html:
-    canonical_kind: agenda
-    runtime_shape: agenda
-    section_id: section-08
+    canonical_kind: content
+    runtime_shape: content
+    section_id: section-07
     page_label: '58'
     legacy_exceptions: []
   slide_59.html:
-    canonical_kind: divider
-    runtime_shape: divider
-    section_id: section-08
+    canonical_kind: center-title
+    runtime_shape: center-title
+    section_id: section-07
     page_label: '59'
     legacy_exceptions: []
   slide_60.html:
     canonical_kind: content
     runtime_shape: content
-    section_id: section-08
+    section_id: section-07
     page_label: '60'
     legacy_exceptions: []
   slide_61.html:
     canonical_kind: content
     runtime_shape: content
-    section_id: section-08
+    section_id: section-07
     page_label: '61'
     legacy_exceptions: []
   slide_62.html:
-    canonical_kind: content
-    runtime_shape: content
+    canonical_kind: agenda
+    runtime_shape: agenda
     section_id: section-08
     page_label: '62'
     legacy_exceptions: []
   slide_63.html:
-    canonical_kind: content
-    runtime_shape: content
+    canonical_kind: divider
+    runtime_shape: divider
     section_id: section-08
     page_label: '63'
     legacy_exceptions: []
@@ -412,38 +412,38 @@ slides:
     page_label: '64'
     legacy_exceptions: []
   slide_65.html:
-    canonical_kind: agenda
-    runtime_shape: agenda
-    section_id: section-09
+    canonical_kind: content
+    runtime_shape: content
+    section_id: section-08
     page_label: '65'
     legacy_exceptions: []
   slide_66.html:
-    canonical_kind: divider
-    runtime_shape: divider
-    section_id: section-09
+    canonical_kind: content
+    runtime_shape: content
+    section_id: section-08
     page_label: '66'
     legacy_exceptions: []
   slide_67.html:
     canonical_kind: content
     runtime_shape: content
-    section_id: section-09
+    section_id: section-08
     page_label: '67'
     legacy_exceptions: []
   slide_68.html:
     canonical_kind: content
     runtime_shape: content
-    section_id: section-09
+    section_id: section-08
     page_label: '68'
     legacy_exceptions: []
   slide_69.html:
-    canonical_kind: content
-    runtime_shape: content
+    canonical_kind: agenda
+    runtime_shape: agenda
     section_id: section-09
     page_label: '69'
     legacy_exceptions: []
   slide_70.html:
-    canonical_kind: content
-    runtime_shape: content
+    canonical_kind: divider
+    runtime_shape: divider
     section_id: section-09
     page_label: '70'
     legacy_exceptions:
@@ -465,60 +465,84 @@ slides:
     - manual-closing-layout
     - manual-footer-reimplementation
   slide_73.html:
-    canonical_kind: agenda
-    runtime_shape: agenda
-    section_id: section-10
+    canonical_kind: content
+    runtime_shape: content
+    section_id: section-09
     page_label: '73'
     legacy_exceptions:
     - manual-cta-layout
     - manual-footer-reimplementation
   slide_74.html:
-    canonical_kind: summary
-    runtime_shape: custom
-    section_id: section-10
+    canonical_kind: content
+    runtime_shape: content
+    section_id: section-09
     page_label: '74'
     legacy_exceptions:
     - manual-qa-layout
     - manual-footer-reimplementation
   slide_75.html:
-    canonical_kind: closing
-    runtime_shape: custom
-    section_id: section-10
+    canonical_kind: content
+    runtime_shape: content
+    section_id: section-09
     page_label: '75'
     legacy_exceptions: []
   slide_76.html:
-    canonical_kind: cta
-    runtime_shape: custom
-    section_id: section-10
+    canonical_kind: content
+    runtime_shape: content
+    section_id: section-09
     page_label: '76'
     legacy_exceptions: []
   slide_77.html:
-    canonical_kind: qa
-    runtime_shape: custom
+    canonical_kind: agenda
+    runtime_shape: agenda
     section_id: section-10
     page_label: '77'
     legacy_exceptions: []
   slide_78.html:
-    canonical_kind: content
-    runtime_shape: content
+    canonical_kind: summary
+    runtime_shape: custom
     section_id: section-10
     page_label: '78'
     legacy_exceptions: []
   slide_79.html:
-    canonical_kind: content
-    runtime_shape: content
+    canonical_kind: closing
+    runtime_shape: custom
     section_id: section-10
     page_label: '79'
     legacy_exceptions: []
   slide_80.html:
-    canonical_kind: content
-    runtime_shape: content
+    canonical_kind: cta
+    runtime_shape: custom
     section_id: section-10
     page_label: '80'
     legacy_exceptions: []
   slide_81.html:
+    canonical_kind: qa
+    runtime_shape: custom
+    section_id: section-10
+    page_label: '81'
+    legacy_exceptions: []
+  slide_82.html:
     canonical_kind: content
     runtime_shape: content
     section_id: section-10
-    page_label: '81'
+    page_label: '82'
+    legacy_exceptions: []
+  slide_83.html:
+    canonical_kind: content
+    runtime_shape: content
+    section_id: section-10
+    page_label: '83'
+    legacy_exceptions: []
+  slide_84.html:
+    canonical_kind: content
+    runtime_shape: content
+    section_id: section-10
+    page_label: '84'
+    legacy_exceptions: []
+  slide_85.html:
+    canonical_kind: content
+    runtime_shape: content
+    section_id: section-10
+    page_label: '85'
     legacy_exceptions: []

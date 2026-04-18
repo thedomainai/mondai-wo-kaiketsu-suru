@@ -3,44 +3,62 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>誤解がなぜいけないか</title>
+<title>仮説検証は不確実性を意思決定へ変える</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
 <style>
-.stage{position:absolute;left:80px;top:156px;width:1120px;display:flex;flex-direction:column;gap:20px}
-.lead{margin:0;font-size:17px;font-weight:700;line-height:1.85;color:#4a3f2f}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.card{min-height:292px;padding:22px 20px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white)}
-.card__label{margin:0 0 10px;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
-.card__title{margin:0 0 12px;font-size:24px;font-weight:900;line-height:1.4;color:var(--soft-black)}
-.card__text{margin:0;color:rgba(0,0,0,.72);font-size:14px;line-height:1.8}
-.summary{padding-top:16px;border-top:1px solid var(--ink-10)}
-.summary p{margin:0;font-size:17px;font-weight:900;line-height:1.7;color:var(--soft-black)}
+.stage{position:absolute;left:80px;top:156px;width:1120px;display:flex;flex-direction:column;gap:18px}.kicker{margin:0;color:var(--accent-purple);font-size:15px;font-weight:900;line-height:1.55}.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.card{--stack-card-gap-lead-title:18px;--stack-card-gap-head-body:16px;min-height:236px;padding:18px 18px 16px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white)}.card__num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:999px;border:2px solid var(--ink-82);font-family:"Space Grotesk",sans-serif;font-size:16px;font-weight:900;line-height:1}.card__title{margin:0;font-size:22px;font-weight:900;line-height:1.45}.card__body{color:rgba(0,0,0,.72);font-size:15px;line-height:1.68}.bridge{display:grid;grid-template-columns:220px 1fr 220px;gap:18px;align-items:stretch}.bridge__card{min-height:120px;padding:16px 18px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white);display:flex;flex-direction:column;justify-content:center;gap:var(--space-stack-title-body)}.bridge__label,.bridge__title,.bridge__text{margin:0}.bridge__label{color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.bridge__title{font-size:19px;font-weight:900;line-height:1.5}.bridge__text{color:rgba(0,0,0,.7);font-size:14px;line-height:1.68}.bridge__center{min-height:120px;padding:18px 20px;border:2px solid var(--ink-82);border-radius:8px;background:var(--surface-white);display:flex;align-items:center;justify-content:center}.bridge__center p{margin:0;font-size:18px;font-weight:900;line-height:1.6;text-align:center}.summary{padding-top:12px;border-top:1px solid var(--ink-10)}.summary p{margin:0;font-size:17px;font-weight:900;line-height:1.65}
 </style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第09章 問題解決におけるコミュニケーション" data-header-title="誤解がなぜいけないか" data-header-subtitle="誤解は理解・判断・行動を連鎖して止める" data-footer="standard" data-footer-page="68">
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第08章 論点と仮説を検証する" data-header-title="仮説検証は不確実性を意思決定へ変える" data-header-subtitle="仮説検証の全体像" data-footer="standard" data-footer-page="68">
   <div class="stage">
-    <p class="lead">問題解決では、正しいことを考えただけでは足りない。<strong>誤解が残ると、相手は正しく理解できず、正しく判断できず、正しく動けない。</strong></p>
-    <div class="grid">
-      <section class="card">
-        <p class="card__label">Understanding</p>
-        <h2 class="card__title">理解がずれる</h2>
-        <p class="card__text">同じ言葉でも、相手の前提が違えば別の意味で受け取られる。出発点がずれると、その後の議論も全部ずれる。</p>
+    <p class="kicker">第7章で学ぶのは、個別のテクニックではない。仮説を意思決定に変えるための一連の流れそのものである。</p>
+    <div class="flow">
+      <section class="card stack-card">
+        <div class="stack-card__head">
+          <span class="card__num">1</span>
+          <p class="card__title">設計</p>
+        </div>
+        <p class="card__body stack-card__body">何が分かれば支持できるかを定め、何で確かめるかを決める。</p>
       </section>
-      <section class="card">
-        <p class="card__label">Decision</p>
-        <h2 class="card__title">判断がずれる</h2>
-        <p class="card__text">結論や根拠が相手の判断軸に合っていないと、納得してもらえない。あるいは別の基準で判断されてしまう。</p>
+      <section class="card stack-card">
+        <div class="stack-card__head">
+          <span class="card__num">2</span>
+          <p class="card__title">優先順位</p>
+        </div>
+        <p class="card__body stack-card__body">設計した検証案の中から、外すと痛い不確実性に先に当てる。</p>
       </section>
-      <section class="card">
-        <p class="card__label">Action</p>
-        <h2 class="card__title">行動が止まる</h2>
-        <p class="card__text">ネクストアクションや前提条件が曖昧だと、聞き終わったあとに誰も動けない。解が現場で動作しない。</p>
+      <section class="card stack-card">
+        <div class="stack-card__head">
+          <span class="card__num">3</span>
+          <p class="card__title">解釈</p>
+        </div>
+        <p class="card__body stack-card__body">事実と解釈を分け、評価軸に照らして結果を判断へ変える。</p>
+      </section>
+      <section class="card stack-card">
+        <div class="stack-card__head">
+          <span class="card__num">4</span>
+          <p class="card__title">行動</p>
+        </div>
+        <p class="card__body stack-card__body">支持されたか、外れたか、まだ判断できないかで次の一手を決める。</p>
       </section>
     </div>
-    <div class="summary"><p>誤解がいけないのは、相手が「わかった気になる」だけで終わり、問題解決が前に進まなくなるからである。</p></div>
+    <div class="bridge">
+      <section class="bridge__card">
+        <div class="stack-card__head"><p class="bridge__label">Chapter 06</p><p class="bridge__title">仮説を置く</p></div>
+        <p class="bridge__text">まずはベストエフォートの答えを置く。</p>
+      </section>
+      <section class="bridge__center">
+        <p>第7章は、置いた仮説を<br/>判断に使える形へ変える章である</p>
+      </section>
+      <section class="bridge__card">
+        <div class="stack-card__head"><p class="bridge__label">Chapter 08</p><p class="bridge__title">解を伝える</p></div>
+        <p class="bridge__text">判断した内容を、相手が動ける形で渡す。</p>
+      </section>
+    </div>
+    <div class="summary"><p>仮説検証とは、証明ではない。不確実性を下げ、次の判断と行動を可能にするためのプロセスである。</p></div>
   </div>
 </div>
 </body>

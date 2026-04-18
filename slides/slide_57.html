@@ -3,39 +3,27 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>仮の答えから逃げない</title>
+<title>仮説構築は4ステップで進める</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
 <style>
-.stage{position:absolute;left:80px;top:164px;width:1120px;display:flex;flex-direction:column;gap:18px}.kicker{margin:0;color:var(--accent-purple);font-size:15px;font-weight:900;line-height:1.55}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.card{min-height:320px;padding:24px;border:1px solid var(--ink-12);border-radius:8px;background:var(--surface-white)}.card--strong{border-width:2px;border-color:var(--ink-82)}.slide-container .card__label{margin:0 0 16px;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.slide-container .card__title{margin:0 0 24px;font-size:26px;font-weight:900;line-height:1.35}.list{display:grid;gap:12px}.list p{margin:0;font-size:16px;font-weight:900;line-height:1.65}.list span{display:block;color:rgba(0,0,0,.7);font-size:14px;font-weight:400;line-height:1.7}.summary{padding-top:14px;border-top:1px solid var(--ink-10)}.summary p{margin:0;font-size:18px;font-weight:900;line-height:1.65}
+.stage{position:absolute;left:80px;top:160px;width:1120px;display:flex;flex-direction:column;gap:18px}.kicker{margin:0;color:var(--accent-purple);font-size:15px;font-weight:900;line-height:1.55}.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.step{min-height:250px;padding:22px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white);display:flex;flex-direction:column;gap:var(--space-stack-title-body)}.slide-container .step__num,.slide-container .step__title{margin:0}.slide-container .step__num{color:rgba(0,0,0,.28);font-family:"Space Grotesk",sans-serif;font-size:14px;font-weight:900;letter-spacing:2px}.slide-container .step__title{font-size:21px;font-weight:900;line-height:1.45}.slide-container .step__text{margin:0;color:rgba(0,0,0,.72);font-size:14px;line-height:1.72}.template{padding:18px 22px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white)}.template p{margin:0;font-size:16px;font-weight:900;line-height:1.8}
 </style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第07章 仮説を構築する" data-header-title="仮の答えから逃げない" data-header-subtitle="今の最善を置くから、前に進める" data-footer="standard" data-footer-page="57">
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第07章 仮説を構築する" data-header-title="仮説構築は4ステップで進める" data-header-subtitle="仮説構築の4ステップ" data-footer="standard" data-footer-page="57">
   <div class="stage">
-    <p class="kicker">仮説づくりでいちばん危険なのは、間違うことではなく、答えを出さないまま時間だけを使うことだ。</p>
-    <div class="grid">
-      <section class="card">
-        <p class="card__label">Avoid</p>
-        <p class="card__title">よくある逃げ方</p>
-        <div class="list">
-          <p>「まだ情報が足りない」<span>もっと集めれば正解が出るはずだと思い、判断を先送りする。</span></p>
-          <p>「もう少し整理してから」<span>構造化を続けるが、結局どこにも賭けないまま終わる。</span></p>
-          <p>「どちらもあり得る」<span>可能性を並べるだけで、自分の見立てを置かない。</span></p>
-        </div>
-      </section>
-      <section class="card card--strong">
-        <p class="card__label">Do</p>
-        <p class="card__title">取るべき姿勢</p>
-        <div class="list">
-          <p>いま最も筋の良い答えをひとつ置く<span>精度は後で上げればよい。まずは賭ける先を決める。</span></p>
-          <p>外れたときに学べる形にする<span>前提と検証方法まで含めると、外れ方が次の論点を教えてくれる。</span></p>
-          <p>周囲に見せて更新する<span>仮説は頭の中で抱えるより、見える形に出したほうが速く強くなる。</span></p>
-        </div>
-      </section>
+    <p class="kicker">いきなり「答え」だけを置くと弱い。論点、根拠、前提、確かめ方まで一続きで置くと、仮説は一気に使えるものになる。</p>
+    <div class="flow">
+      <section class="step"><div class="stack-card__head"><p class="step__num">01</p><p class="step__title">論点に対する仮の答えを置く</p></div><p class="step__text">まずは「結局どうだと思うのか」を逃げずに言語化する。曖昧な方向性ではなく、Yes / No や優先順位の形まで寄せる。</p></section>
+      <section class="step"><div class="stack-card__head"><p class="step__num">02</p><p class="step__title">なぜそう思うかを書く</p></div><p class="step__text">過去事例、構造理解、直感、観察のどれでもよいので、仮の答えを支える根拠を置く。</p></section>
+      <section class="step"><div class="stack-card__head"><p class="step__num">03</p><p class="step__title">成立条件を切り出す</p></div><p class="step__text">どの前提が崩れるとこの仮説が壊れるのかを明示すると、検証ポイントがはっきりする。</p></section>
+      <section class="step"><div class="stack-card__head"><p class="step__num">04</p><p class="step__title">検証方法を決める</p></div><p class="step__text">データ、現場観察、インタビュー、実験のどれで確かめるかを決め、次の行動に変える。</p></section>
     </div>
-    <div class="summary"><p>仮説は、当てにいくものではない。外れ方から学ぶために、先に置くものだ。</p></div>
+    <div class="template">
+      <p>論点: 何が本当にボトルネックか / 仮説: 新規獲得ではなく初回継続率が主因 / 根拠: 流入は足りているが2回目利用で落ちる / 主要前提: 初回体験が価値実感に届いていない / 検証方法: 初回利用者インタビューと行動ログで離脱点を特定する</p>
+    </div>
   </div>
 </div>
 </body>

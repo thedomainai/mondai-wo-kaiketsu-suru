@@ -3,51 +3,40 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>論点分解とは何か / なぜ重要か</title>
+<title>論点は一段ずつ構造化する</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
 <style>
-.summary-stage{position:absolute;left:80px;top:176px;width:1120px;display:grid;grid-template-rows:auto auto auto;row-gap:22px}
+.summary-stage{position:absolute;left:80px;top:176px;width:1120px;display:grid;grid-template-rows:auto auto;row-gap:22px}
 .summary-hero{padding:26px 30px 24px;border:1px solid var(--ink-08);border-radius:8px;background:var(--surface-white)}
 .summary-kicker{margin:0 0 14px;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
-.summary-head{margin:0 0 14px;font-size:34px;font-weight:900;line-height:1.42;color:var(--soft-black)}
-.summary-copy{margin:0;font-size:16px;line-height:1.82;color:rgba(0,0,0,.66)}
-.summary-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.summary-card{padding:22px 22px 20px;border:1px solid var(--ink-08);border-radius:8px;background:var(--surface-white)}
-.summary-card__num{margin:0 0 12px;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:13px;font-weight:900;letter-spacing:2px}
-.summary-card__head{margin:0 0 10px;font-size:22px;font-weight:900;line-height:1.45;color:var(--soft-black)}
-.summary-card__body{margin:0;font-size:14px;line-height:1.78;color:rgba(0,0,0,.64)}
-.summary-bar{padding:16px 20px;border-top:1px solid var(--ink-10)}
-.summary-bar p{margin:0;font-size:18px;font-weight:900;line-height:1.68;color:var(--soft-black)}
+.summary-head{margin:0;font-size:34px;font-weight:900;line-height:1.42;color:var(--soft-black)}
+.summary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.summary-card{padding:24px 24px 22px;border:1px solid var(--ink-08);border-radius:8px;background:var(--surface-white);min-height:250px}
+.summary-card__label,.summary-card__head{margin:0}
+.summary-card__label{color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+.summary-card__head{font-size:24px;font-weight:900;line-height:1.42;color:var(--soft-black)}
+.summary-card__body{margin:0;font-size:15px;line-height:1.82;color:rgba(0,0,0,.68)}
 </style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第06章 論点を分解する" data-header-title="論点分解とは何か / なぜ重要か" data-header-subtitle="上位の問いを、検証可能な単位まで分解する" data-footer="standard" data-footer-page="44">
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第06章 論点を分解する" data-header-title="論点は一段ずつ構造化する" data-header-subtitle="論点分解の定義" data-footer="standard" data-footer-page="44">
   <div class="summary-stage">
     <section class="summary-hero">
       <p class="summary-kicker">Decomposition</p>
-      <p class="summary-head">分解とは、<br/>答えを構成する論点へ降りること</p>
-      <p class="summary-copy">上位の問いを、答えを構成する下位論点へ構造的に展開する。これができないと、何を確かめ、どこを動かすべきかが見えない。論点分解は、思いつきを並べる作業ではなく構造化の工程である。</p>
+      <p class="summary-head">分解とは、正しく間違えるために行う問いの整理である</p>
     </section>
 
     <div class="summary-grid">
-      <section class="summary-card">
-        <p class="summary-card__num">01</p>
-        <p class="summary-card__head">全体像が見える</p>
-        <p class="summary-card__body">上位と下位の関係が見えると、どこで考えているかを見失わない。</p>
+      <section class="summary-card stack-card">
+        <div class="stack-card__head"><p class="summary-card__label">What It Is</p><p class="summary-card__head">論点分解とは何か</p></div>
+        <p class="summary-card__body stack-card__body">論点の全体像を捉えるために、できる限り1段ずつ、上階層を構成する要素をMECEに整理すること。</p>
       </section>
 
-      <section class="summary-card">
-        <p class="summary-card__num">02</p>
-        <p class="summary-card__head">ボトルネックが見える</p>
-        <p class="summary-card__body">どこが詰まりで、どの変数を動かせばよいかが見つけやすくなる。</p>
-      </section>
-
-      <section class="summary-card">
-        <p class="summary-card__num">03</p>
-        <p class="summary-card__head">検証単位まで落とせる</p>
-        <p class="summary-card__body">何を確かめれば前に進めるかが分かり、検証が実務に下りる。</p>
+      <section class="summary-card stack-card">
+        <div class="stack-card__head"><p class="summary-card__label">Why It Matters</p><p class="summary-card__head">なぜ重要か</p></div>
+        <p class="summary-card__body stack-card__body">事象の全体像を適確に捉えられなければ、自分がどこでどう間違えて、どこに戻ればいいかが判定できない。そんな状況下では正しく間違えることができず、正しく間違えられないということは問題解決ができないということと同義である。</p>
       </section>
     </div>
   </div>

@@ -3,110 +3,162 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>原則5：上下を往復する</title>
+<title>分解は上下を往復して磨く</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
 <style>
-.swing-layout{position:absolute;left:80px;top:186px;width:1120px;display:grid;grid-template-columns:332px 1fr;gap:28px;align-items:start}
-.swing-copy{display:flex;flex-direction:column;justify-content:center;gap:18px;min-height:404px}
-.swing-copy__eyebrow{margin:0;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
-.swing-copy__head{margin:0;font-size:34px;font-weight:900;line-height:1.42}
-.swing-copy__body{margin:0;font-size:15px;line-height:1.9;color:var(--ink-68)}
+.roundtrip-stage{position:absolute;left:80px;top:152px;width:1120px;display:grid;grid-template-rows:auto 1fr;gap:14px}
+.message-band{padding:12px 16px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white);display:grid;grid-template-columns:260px 1fr;gap:14px;align-items:start}
+.message-band__eyebrow{margin:0;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+.message-band__head{margin:0;font-size:20px;font-weight:900;line-height:1.45;color:var(--soft-black)}
+.message-band__body{display:grid;gap:6px}
+.message-band__copy{margin:0;font-size:13px;line-height:1.68;color:var(--ink-68)}
+.message-band__legend{margin:0;font-size:12px;font-weight:700;line-height:1.65;color:var(--ink-50)}
 
-.swing-diagram{position:relative;height:404px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white);overflow:hidden}
-.swing-diagram svg{position:absolute;inset:0;width:100%;height:100%}
-.tree-node{position:absolute;width:164px;padding:14px 12px;border-radius:8px;background:var(--surface-white);border:1px solid var(--ink-12);text-align:center;box-sizing:border-box}
-.tree-node strong{display:block;font-size:17px;font-weight:900;line-height:1.38}
-.tree-node span{display:block;margin-top:4px;font-size:12px;line-height:1.55;color:rgba(0,0,0,.62)}
-.tree-node--root{left:296px;top:34px;width:180px;border:2px solid var(--ink-84);box-shadow:0 10px 24px var(--ink-08)}
-.tree-node--mid-left{left:74px;top:152px}
-.tree-node--mid-center{left:306px;top:152px;border:2px solid var(--ink-84);box-shadow:0 10px 20px rgba(0,0,0,.07)}
-.tree-node--mid-right{left:538px;top:152px}
-.tree-node--leaf-left{left:232px;top:286px}
-.tree-node--leaf-center{left:406px;top:286px;border:2px solid var(--ink-84);background:rgba(0,0,0,.03)}
-.tree-node--leaf-right{left:580px;top:286px}
-.tree-node--muted{background:rgba(0,0,0,.028);border-color:var(--ink-08)}
-.tree-node--muted strong,.tree-node--muted span{color:rgba(0,0,0,.36)}
+.pattern-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.pattern-card{padding:14px 14px 12px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white);display:grid;grid-template-rows:auto auto 1fr;gap:var(--space-stack-title-body);min-height:160px}
+.pattern-card__num{margin:0;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px}
+.pattern-card__head{margin:0;font-size:20px;font-weight:900;line-height:1.32;color:var(--soft-black)}
+.pattern-card__body{margin:0;font-size:12px;line-height:1.58;color:var(--ink-68)}
 
-.swing-label{position:absolute;margin:0;font-family:"Space Grotesk",sans-serif;font-size:11px;font-weight:900;letter-spacing:1.8px;text-transform:uppercase;color:var(--ink-30)}
-.swing-label--down{right:26px;top:114px;writing-mode:vertical-rl}
-.swing-label--up{left:26px;top:196px;writing-mode:vertical-rl}
-.swing-legend{position:absolute;left:28px;bottom:20px;margin:0;font-size:12px;font-weight:700;line-height:1.6;color:var(--ink-50)}
+.mini-diagram{position:relative;height:74px;border-top:1px solid var(--ink-08);padding-top:10px}
+.mini-diagram svg{position:absolute;inset:0;width:100%;height:100%}
+.mini-node{position:absolute;min-width:86px;max-width:118px;padding:6px 8px;border-radius:8px;border:1px solid var(--ink-12);background:var(--surface-white);text-align:center;box-sizing:border-box}
+.mini-node strong{display:block;font-size:11px;font-weight:900;line-height:1.25;color:var(--soft-black)}
+.mini-node span{display:block;margin-top:2px;font-size:9px;line-height:1.35;color:var(--ink-62)}
+.mini-node--active{border-width:2px;border-color:var(--ink-84);box-shadow:0 8px 18px var(--ink-08)}
+.mini-node--muted{background:rgba(0,0,0,.03);border-color:var(--ink-08)}
+.mini-node--muted strong,.mini-node--muted span{color:rgba(0,0,0,.34)}
+.mini-node--added{border-style:dashed;border-width:2px;background:rgba(0,0,0,.02)}
+.mini-node--inserted{border-width:2px;background:rgba(0,0,0,.03)}
+.mini-node--strike strong{text-decoration:line-through}
+.mini-tag{position:absolute;margin:0;padding:2px 6px;border-radius:999px;background:rgba(0,0,0,.06);font-family:"Space Grotesk",sans-serif;font-size:9px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:var(--ink-50)}
+
+.card-1 .root{left:192px;top:0}
+.card-1 .leaf-a{left:20px;top:42px}
+.card-1 .leaf-b{left:196px;top:42px}
+.card-1 .leaf-c{right:20px;top:42px}
+.card-1 .tag{right:22px;top:22px}
+
+.card-2 .old-a{left:10px;top:0}
+.card-2 .old-b{left:140px;top:0}
+.card-2 .old-c{right:10px;top:0}
+.card-2 .new-a{left:22px;top:42px}
+.card-2 .new-b{left:196px;top:42px}
+.card-2 .new-c{right:22px;top:42px}
+.card-2 .tag-old{left:12px;top:22px}
+.card-2 .tag-new{left:12px;top:60px}
+
+.card-3 .old-parent{left:26px;top:0}
+.card-3 .new-parent{right:24px;top:0}
+.card-3 .child-a{left:34px;top:42px}
+.card-3 .child-b{left:196px;top:42px}
+.card-3 .child-c{right:28px;top:42px}
+.card-3 .tag{right:32px;top:24px}
+
+.card-4 .root{left:192px;top:0}
+.card-4 .leaf-a{left:30px;top:48px}
+.card-4 .leaf-b{right:30px;top:48px}
+.card-4 .mid{left:194px;top:30px}
+.card-4 .tag{right:34px;top:18px}
 </style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第06章 論点を分解する" data-header-title="原則5：上下を往復する" data-header-subtitle="上から降りて、下から補正する" data-footer="standard" data-footer-page="49">
-<div class="swing-layout">
-<section class="swing-copy">
-<p class="swing-copy__eyebrow">Round Trip</p>
-<p class="swing-copy__head">構造で降りて、<br/>具体で戻る</p>
-<p class="swing-copy__body">最初に上位の論点から枝を置き、全体の見取り図をつくる。途中で具体例や現場の違和感が見つかったら、下位から上位へ戻って問いの置き方を補正する。</p>
-</section>
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第06章 論点を分解する" data-header-title="分解は上下を往復して磨く" data-header-subtitle="原則5 階層往復" data-footer="standard" data-footer-page="49">
+<main class="roundtrip-stage">
+  <section class="message-band">
+    <div class="stack-card__head">
+      <p class="message-band__eyebrow">Round Trip</p>
+      <p class="message-band__head">階層を行き来すると、<br/>ツリーの誤りの型が見える</p>
+    </div>
+    <div class="message-band__body">
+      <p class="message-band__copy">トップダウンで枝を置いたあと、下位の具体から上位へ戻る。すると、漏れ、ダブり、親定義の誤り、階層飛ばしのどれが起きているかを見分けられる。</p>
+      <p class="message-band__legend">灰色 = 見直し対象 / 濃色 = 採用 / 破線 = 新しく追加した要素・階層</p>
+    </div>
+  </section>
 
-<section class="swing-diagram" aria-label="トップダウンとボトムアップを往復するツリー図">
-<svg viewBox="0 0 760 404" aria-hidden="true">
-  <defs>
-    <marker id="arrow-down" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--ink-68)"></path>
-    </marker>
-    <marker id="arrow-up" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(0,0,0,.42)"></path>
-    </marker>
-  </defs>
+  <section class="pattern-grid">
+    <article class="pattern-card card-1">
+      <div class="stack-card__head"><p class="pattern-card__num">01</p><p class="pattern-card__head">横の漏れを見つける</p></div>
+      <p class="pattern-card__body">分解の軸は正しかったが、同じ階層にあるべき要素が抜けていた。足りない要素を追加する。</p>
+      <div class="mini-diagram" aria-label="同階層の不足要素を追加する図">
+        <svg viewBox="0 0 540 92" aria-hidden="true">
+          <path d="M 270 28 L 270 48" stroke="var(--ink-16)" stroke-width="2" fill="none"></path>
+          <path d="M 70 48 L 470 48" stroke="var(--ink-16)" stroke-width="2" fill="none"></path>
+          <path d="M 70 48 L 70 56" stroke="var(--ink-16)" stroke-width="2" fill="none"></path>
+          <path d="M 270 48 L 270 56" stroke="var(--ink-16)" stroke-width="2" fill="none" stroke-dasharray="6 5"></path>
+          <path d="M 470 48 L 470 56" stroke="var(--ink-16)" stroke-width="2" fill="none"></path>
+        </svg>
+        <div class="mini-node mini-node--active root"><strong>集客</strong><span>軸は維持</span></div>
+        <div class="mini-node mini-node--muted leaf-a"><strong>流入数</strong><span>既存要素</span></div>
+        <div class="mini-node mini-node--added leaf-b"><strong>来訪意図</strong><span>不足を追加</span></div>
+        <div class="mini-node mini-node--muted leaf-c"><strong>CVR</strong><span>既存要素</span></div>
+        <p class="mini-tag tag">Add</p>
+      </div>
+    </article>
 
-  <path d="M 380 94 L 380 132" stroke="var(--ink-14)" stroke-width="2" fill="none"></path>
-  <path d="M 150 152 L 610 152" stroke="var(--ink-14)" stroke-width="2" fill="none"></path>
-  <path d="M 150 152 L 150 176" stroke="var(--ink-14)" stroke-width="2" fill="none"></path>
-  <path d="M 380 152 L 380 176" stroke="var(--ink-18)" stroke-width="2" fill="none"></path>
-  <path d="M 610 152 L 610 176" stroke="var(--ink-14)" stroke-width="2" fill="none"></path>
-  <path d="M 380 220 L 380 258" stroke="var(--ink-18)" stroke-width="2" fill="none"></path>
-  <path d="M 306 258 L 554 258" stroke="var(--ink-14)" stroke-width="2" fill="none"></path>
-  <path d="M 306 258 L 306 286" stroke="var(--ink-14)" stroke-width="2" fill="none"></path>
-  <path d="M 480 258 L 480 286" stroke="var(--ink-22)" stroke-width="2" fill="none"></path>
-  <path d="M 554 258 L 554 286" stroke="var(--ink-14)" stroke-width="2" fill="none"></path>
+    <article class="pattern-card card-2">
+      <div class="stack-card__head"><p class="pattern-card__num">02</p><p class="pattern-card__head">横のダブり・軸ズレを正す</p></div>
+      <p class="pattern-card__body">同じ階層の要素が重複している、または切り口が揃っていなかった。重複を外し、必要に応じて同階層の要素を組み替える。</p>
+      <div class="mini-diagram" aria-label="同階層の要素を組み替える図">
+        <svg viewBox="0 0 540 92" aria-hidden="true">
+          <path d="M 74 34 L 466 34" stroke="var(--ink-10)" stroke-width="1.5" fill="none" stroke-dasharray="5 5"></path>
+          <path d="M 86 64 L 454 64" stroke="var(--ink-18)" stroke-width="2" fill="none"></path>
+        </svg>
+        <div class="mini-node mini-node--muted mini-node--strike old-a"><strong>広告流入</strong><span>チャネル</span></div>
+        <div class="mini-node mini-node--muted mini-node--strike old-b"><strong>広告CVR</strong><span>指標</span></div>
+        <div class="mini-node mini-node--muted old-c"><strong>SNS流入</strong><span>重複</span></div>
+        <div class="mini-node mini-node--active new-a"><strong>流入数</strong><span>切り口を統一</span></div>
+        <div class="mini-node mini-node--active new-b"><strong>CVR</strong><span>指標で統一</span></div>
+        <div class="mini-node mini-node--active new-c"><strong>再訪率</strong><span>同粒度で再配置</span></div>
+        <p class="mini-tag tag-old">Old</p>
+        <p class="mini-tag tag-new">New</p>
+      </div>
+    </article>
 
-  <path d="M 432 118 C 470 150, 490 204, 490 286" stroke="rgba(0,0,0,.7)" stroke-width="2.5" fill="none" marker-end="url(#arrow-down)"></path>
-  <path d="M 268 286 C 252 238, 280 184, 340 144" stroke="rgba(0,0,0,.4)" stroke-width="2.5" stroke-dasharray="7 7" fill="none" marker-end="url(#arrow-up)"></path>
-  <path d="M 340 144 C 350 118, 356 96, 362 84" stroke="rgba(0,0,0,.4)" stroke-width="2.5" stroke-dasharray="7 7" fill="none" marker-end="url(#arrow-up)"></path>
-  <circle cx="380" cy="152" r="5" fill="var(--ink-78)"></circle>
-  <circle cx="480" cy="286" r="5" fill="var(--ink-78)"></circle>
-</svg>
+    <article class="pattern-card card-3">
+      <div class="stack-card__head"><p class="pattern-card__num">03</p><p class="pattern-card__head">親の定義・グルーピングを直す</p></div>
+      <p class="pattern-card__body">上位階層のラベルやまとめ方が誤っていた。紐づく上位論点の定義やグルーピングを修正する。</p>
+      <div class="mini-diagram" aria-label="親のラベルとグルーピングを修正する図">
+        <svg viewBox="0 0 540 92" aria-hidden="true">
+          <path d="M 116 28 L 116 48" stroke="var(--ink-10)" stroke-width="1.5" fill="none" stroke-dasharray="5 5"></path>
+          <path d="M 116 48 L 270 48" stroke="var(--ink-10)" stroke-width="1.5" fill="none" stroke-dasharray="5 5"></path>
+          <path d="M 116 48 L 116 56" stroke="var(--ink-10)" stroke-width="1.5" fill="none" stroke-dasharray="5 5"></path>
+          <path d="M 270 28 L 270 48" stroke="var(--ink-18)" stroke-width="2" fill="none"></path>
+          <path d="M 270 48 L 432 48" stroke="var(--ink-18)" stroke-width="2" fill="none"></path>
+          <path d="M 270 48 L 270 56" stroke="var(--ink-18)" stroke-width="2" fill="none"></path>
+          <path d="M 432 48 L 432 56" stroke="var(--ink-18)" stroke-width="2" fill="none"></path>
+        </svg>
+        <div class="mini-node mini-node--muted old-parent"><strong>集客</strong><span>まとめ方が粗い</span></div>
+        <div class="mini-node mini-node--active new-parent"><strong>新規獲得効率</strong><span>親定義を変更</span></div>
+        <div class="mini-node mini-node--muted child-a"><strong>流入数</strong><span>同じ事実</span></div>
+        <div class="mini-node mini-node--active child-b"><strong>CVR</strong><span>新親に紐づく</span></div>
+        <div class="mini-node mini-node--active child-c"><strong>CPA</strong><span>新親に紐づく</span></div>
+        <p class="mini-tag tag">Relabel</p>
+      </div>
+    </article>
 
-<div class="tree-node tree-node--root">
-  <strong>売上が伸びない理由</strong>
-  <span>まず上位の問いを置く</span>
-</div>
-<div class="tree-node tree-node--mid-left tree-node--muted">
-  <strong>商品力</strong>
-  <span>価値訴求は十分か</span>
-</div>
-<div class="tree-node tree-node--mid-center">
-  <strong>集客</strong>
-  <span>どこで詰まっているか</span>
-</div>
-<div class="tree-node tree-node--mid-right tree-node--muted">
-  <strong>営業体制</strong>
-  <span>失注要因は何か</span>
-</div>
-<div class="tree-node tree-node--leaf-left tree-node--muted">
-  <strong>流入数</strong>
-  <span>媒体別で減っているか</span>
-</div>
-<div class="tree-node tree-node--leaf-center">
-  <strong>広告経由 CVR</strong>
-  <span>具体の違和感から戻る</span>
-</div>
-<div class="tree-node tree-node--leaf-right tree-node--muted">
-  <strong>再訪率</strong>
-  <span>比較で深掘る候補</span>
-</div>
-
-<p class="swing-label swing-label--down">Top Down</p>
-<p class="swing-label swing-label--up">Bottom Up</p>
-<p class="swing-legend">灰色は未探索の枝。太い輪郭と矢印が、いま往復している思考の経路。</p>
-</section>
-</div>
+    <article class="pattern-card card-4">
+      <div class="stack-card__head"><p class="pattern-card__num">04</p><p class="pattern-card__head">新しい階層を挿入する</p></div>
+      <p class="pattern-card__body">1段ずつ分解できておらず、粒度が飛んでいた。上下のあいだに新しい階層を挿入する。</p>
+      <div class="mini-diagram" aria-label="新しい階層を挿入する図">
+        <svg viewBox="0 0 540 92" aria-hidden="true">
+          <path d="M 270 24 L 120 64" stroke="var(--ink-10)" stroke-width="1.5" fill="none" stroke-dasharray="5 5"></path>
+          <path d="M 270 24 L 420 64" stroke="var(--ink-10)" stroke-width="1.5" fill="none" stroke-dasharray="5 5"></path>
+          <path d="M 270 24 L 270 50" stroke="var(--ink-18)" stroke-width="2" fill="none"></path>
+          <path d="M 270 50 L 120 64" stroke="var(--ink-18)" stroke-width="2" fill="none"></path>
+          <path d="M 270 50 L 420 64" stroke="var(--ink-18)" stroke-width="2" fill="none"></path>
+        </svg>
+        <div class="mini-node mini-node--active root"><strong>売上停滞</strong><span>上位論点</span></div>
+        <div class="mini-node mini-node--inserted mid"><strong>集客</strong><span>新階層を追加</span></div>
+        <div class="mini-node mini-node--muted leaf-a"><strong>流入数</strong><span>粒度が飛んでいた</span></div>
+        <div class="mini-node mini-node--muted leaf-b"><strong>CVR</strong><span>粒度が飛んでいた</span></div>
+        <p class="mini-tag tag">Insert</p>
+      </div>
+    </article>
+  </section>
+</main>
 </div>
 </body>
 </html>

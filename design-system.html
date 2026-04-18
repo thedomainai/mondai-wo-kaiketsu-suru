@@ -860,15 +860,31 @@ body {
 <section class="section" id="card">
   <p class="section__eyebrow">Components</p>
   <h2 class="section__title">Card</h2>
-  <p class="section__desc">情報のグルーピング。4 つのバリアントで強調度を使い分ける。</p>
+  <p class="section__desc">情報のグルーピング。card は head → body を持ち、head 内の eyebrow → title は shared vertical-rhythm token で管理する。カード外でも同じ縦積みは <code>.stack-card</code> を使って揃える。</p>
+
+  <div style="margin-bottom:32px;padding:28px 32px;background:var(--surface-mist);border-radius:12px;font-family:'Space Grotesk',sans-serif;font-size:13px;line-height:1.8">
+    <strong style="color:var(--ink-100)">Slot structure:</strong>
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin-top:12px;color:var(--ink-68)">
+      <code style="font-size:12px;color:var(--accent-purple);background:rgba(90,73,112,.06);padding:1px 6px;border-radius:3px">.stack-card / .stack-card__head</code><span>汎用 stack container</span>
+      <span style="color:var(--ink-18);text-align:center">↕ gap</span><span style="color:var(--ink-34)">--stack-card-gap-head-body (default: --space-stack-title-body = 12px)</span>
+      <code style="font-size:12px;color:var(--accent-purple);background:rgba(90,73,112,.06);padding:1px 6px;border-radius:3px">.ds-card__head</code><span>Card head stack container</span>
+      <span style="color:var(--ink-18);text-align:center">↕ gap</span><span style="color:var(--ink-34)">--card-gap (default: --space-stack-title-body = 12px)</span>
+      <code style="font-size:12px;color:var(--accent-purple);background:rgba(90,73,112,.06);padding:1px 6px;border-radius:3px">.ds-card__body</code><span>Body area</span>
+      <code style="font-size:12px;color:var(--accent-purple);background:rgba(90,73,112,.06);padding:1px 6px;border-radius:3px">lead-in → title</code><span>Head 内は `--space-stack-lead-title` を既定にする</span>
+      <span style="color:var(--ink-18);text-align:center">↕ gap</span><span style="color:var(--ink-34)">Looser heads use `--space-stack-lead-title-loose`</span>
+    </div>
+    <p style="margin-top:12px;color:var(--ink-34)"><code style="font-size:12px">.stack-card</code> は汎用の head → body stack、<code style="font-size:12px">.ds-card__head</code> は card 専用 head slot として使う。</p>
+  </div>
 
   <div class="gallery gallery--4">
     <div class="specimen">
       <div class="specimen__preview" style="padding:20px 16px">
         <div class="demo-card">
-          <p class="demo-eyebrow" style="margin-bottom:10px">Eyebrow</p>
-          <p style="font-size:15px;font-weight:700;margin-bottom:8px">Default Card</p>
-          <p style="font-size:13px;color:var(--ink-68);line-height:1.6">Subtle border, clean look.</p>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <p class="demo-eyebrow" style="margin:0">Eyebrow</p>
+            <p style="font-size:15px;font-weight:700;line-height:1.45;margin:0">Default Card</p>
+          </div>
+          <p style="font-size:13px;color:var(--ink-68);line-height:1.6;margin:0">Subtle border, clean look.</p>
         </div>
       </div>
       <div class="specimen__info">
@@ -879,9 +895,11 @@ body {
     <div class="specimen">
       <div class="specimen__preview" style="padding:20px 16px">
         <div class="demo-card demo-card--strong">
-          <p class="demo-eyebrow" style="margin-bottom:10px">Eyebrow</p>
-          <p style="font-size:15px;font-weight:700;margin-bottom:8px">Strong Card</p>
-          <p style="font-size:13px;color:var(--ink-68);line-height:1.6">Strong border for emphasis.</p>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <p class="demo-eyebrow" style="margin:0">Eyebrow</p>
+            <p style="font-size:15px;font-weight:700;line-height:1.45;margin:0">Strong Card</p>
+          </div>
+          <p style="font-size:13px;color:var(--ink-68);line-height:1.6;margin:0">Strong border for emphasis.</p>
         </div>
       </div>
       <div class="specimen__info">
@@ -892,9 +910,11 @@ body {
     <div class="specimen">
       <div class="specimen__preview" style="padding:20px 16px">
         <div class="demo-card demo-card--flat">
-          <p class="demo-eyebrow" style="margin-bottom:10px">Eyebrow</p>
-          <p style="font-size:15px;font-weight:700;margin-bottom:8px">Flat Card</p>
-          <p style="font-size:13px;color:var(--ink-68);line-height:1.6">Mist background, no shadow.</p>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <p class="demo-eyebrow" style="margin:0">Eyebrow</p>
+            <p style="font-size:15px;font-weight:700;line-height:1.45;margin:0">Flat Card</p>
+          </div>
+          <p style="font-size:13px;color:var(--ink-68);line-height:1.6;margin:0">Mist background, no shadow.</p>
         </div>
       </div>
       <div class="specimen__info">
@@ -905,9 +925,11 @@ body {
     <div class="specimen">
       <div class="specimen__preview" style="padding:20px 16px">
         <div class="demo-card demo-card--tint">
-          <p class="demo-eyebrow" style="margin-bottom:10px">Eyebrow</p>
-          <p style="font-size:15px;font-weight:700;margin-bottom:8px">Tint Card</p>
-          <p style="font-size:13px;color:var(--ink-68);line-height:1.6">Tinted fill, neutral full border.</p>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <p class="demo-eyebrow" style="margin:0">Eyebrow</p>
+            <p style="font-size:15px;font-weight:700;line-height:1.45;margin:0">Tint Card</p>
+          </div>
+          <p style="font-size:13px;color:var(--ink-68);line-height:1.6;margin:0">Tinted fill, neutral full border.</p>
         </div>
       </div>
       <div class="specimen__info">
@@ -917,26 +939,26 @@ body {
     </div>
   </div>
 
-  <p class="section__desc" style="margin-top:20px"><code>.ds-stack</code> を説明文や label/title/body の単純な縦積みに使う。子の margin は持たせず、親の <code>gap</code> に集約する。</p>
+  <p class="section__desc" style="margin-top:20px"><code>.stack-card</code> / <code>.ds-card__head</code> / <code>.ds-panel__head</code> が縦の距離責任を持つ。子の margin は持たせず、親の <code>gap</code> に集約する。</p>
 </section>
 
 <!-- ===== PANEL & ROWS ===== -->
 <section class="section" id="panel">
   <p class="section__eyebrow">Components</p>
   <h2 class="section__title">Panel &amp; Rows</h2>
-  <p class="section__desc">内部 slot 構造を持つコンテナ。label → title → body(.ds-rows) の距離は親 gap が管理する。</p>
+  <p class="section__desc">内部 slot 構造を持つコンテナ。panel は head → body を持ち、head 内の label → title → sub は shared vertical-rhythm token で管理する。</p>
 
   <!-- Slot structure diagram -->
   <div style="margin-bottom:32px;padding:28px 32px;background:var(--surface-mist);border-radius:12px;font-family:'Space Grotesk',sans-serif;font-size:13px;line-height:1.8">
     <strong style="color:var(--ink-100)">Slot structure:</strong>
     <div style="display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin-top:12px;color:var(--ink-68)">
-      <code style="font-size:12px;color:var(--accent-purple);background:rgba(90,73,112,.06);padding:1px 6px;border-radius:3px">.ds-panel__label</code><span>Eyebrow (Space Grotesk, 12px, uppercase)</span>
-      <span style="color:var(--ink-18);text-align:center">↕ gap</span><span style="color:var(--ink-34)">--panel-gap (default: --sp-16 = 16px)</span>
-      <code style="font-size:12px;color:var(--accent-purple);background:rgba(90,73,112,.06);padding:1px 6px;border-radius:3px">.ds-panel__title</code><span>Heading (16px, bold)</span>
-      <span style="color:var(--ink-18);text-align:center">↕ gap</span><span style="color:var(--ink-34)">same --panel-gap</span>
+      <code style="font-size:12px;color:var(--accent-purple);background:rgba(90,73,112,.06);padding:1px 6px;border-radius:3px">.ds-panel__head</code><span>Head stack container</span>
+      <span style="color:var(--ink-18);text-align:center">↕ gap</span><span style="color:var(--ink-34)">--panel-gap (default: --space-stack-title-body = 12px)</span>
       <code style="font-size:12px;color:var(--accent-purple);background:rgba(90,73,112,.06);padding:1px 6px;border-radius:3px">.ds-rows</code><span>Body area (flex:1, fills remaining space)</span>
+      <code style="font-size:12px;color:var(--accent-purple);background:rgba(90,73,112,.06);padding:1px 6px;border-radius:3px">.ds-panel__label → .ds-panel__title</code><span>Head 内は `--space-stack-lead-title` を既定にする</span>
+      <span style="color:var(--ink-18);text-align:center">↕ gap</span><span style="color:var(--ink-34)">Looser heads use `--space-stack-lead-title-loose`</span>
     </div>
-    <p style="margin-top:12px;color:var(--ink-34)"><code style="font-size:12px">.ds-panel > * { margin: 0 }</code> — 子の margin は殺す。距離は親 gap が持つ。</p>
+    <p style="margin-top:12px;color:var(--ink-34)"><code style="font-size:12px">.ds-panel__head</code> が head 内の距離責任を持ち、panel 本体は head と body の距離を持つ。</p>
   </div>
 
   <!-- Panel specimens -->
@@ -944,8 +966,10 @@ body {
     <div class="specimen">
       <div class="specimen__preview" style="padding:20px 16px">
         <div class="demo-panel" style="display:flex;flex-direction:column;gap:16px">
-          <p style="color:var(--ink-34);font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin:0">LABEL</p>
-          <p style="font-size:16px;font-weight:700;margin:0">Panel Title</p>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <p style="color:var(--ink-34);font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin:0">LABEL</p>
+            <p style="font-size:16px;font-weight:700;line-height:1.45;margin:0">Panel Title</p>
+          </div>
           <div class="demo-rows">
             <div class="demo-row"><span class="demo-row__label">Label A</span><span class="demo-row__value">Value description text</span></div>
             <div class="demo-row"><span class="demo-row__label">Label B</span><span class="demo-row__value">Another value here</span></div>
@@ -960,8 +984,10 @@ body {
     <div class="specimen">
       <div class="specimen__preview" style="padding:20px 16px">
         <div class="demo-panel" style="display:flex;flex-direction:column;gap:16px;border:2px solid var(--ink-100)">
-          <p style="color:var(--ink-34);font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin:0">LABEL</p>
-          <p style="font-size:16px;font-weight:700;margin:0">Strong Panel</p>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <p style="color:var(--ink-34);font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin:0">LABEL</p>
+            <p style="font-size:16px;font-weight:700;line-height:1.45;margin:0">Strong Panel</p>
+          </div>
           <div class="demo-rows">
             <div class="demo-row"><span class="demo-row__label">Label A</span><span class="demo-row__value">Value description text</span></div>
             <div class="demo-row"><span class="demo-row__label">Label B</span><span class="demo-row__value">Another value here</span></div>

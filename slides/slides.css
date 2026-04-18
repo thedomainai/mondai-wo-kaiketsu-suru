@@ -117,8 +117,8 @@
   --font-size-agenda-title: var(--fs-52);
 
   /* ===== VERTICAL RHYTHM TOKENS ===== */
-  --space-stack-lead-title: var(--sp-12);
-  --space-stack-title-body: var(--sp-16);
+  --space-stack-lead-title: var(--sp-6);
+  --space-stack-title-body: var(--sp-12);
   --space-stack-lead-title-loose: 36px;
   --space-stack-title-body-loose: var(--sp-24);
 
@@ -759,10 +759,26 @@ body {
   row-gap: var(--stack-card-gap-head-body, var(--space-stack-title-body));
 }
 
+.stack-card > * {
+  margin: 0;
+}
+
+.stack-card--loose {
+  --stack-card-gap-head-body: var(--space-stack-title-body-loose);
+}
+
 .stack-card__head {
   display: grid;
   align-content: start;
   row-gap: var(--stack-card-gap-lead-title, var(--space-stack-lead-title));
+}
+
+.stack-card__head > * {
+  margin: 0;
+}
+
+.stack-card__head--loose {
+  --stack-card-gap-lead-title: var(--space-stack-lead-title-loose);
 }
 
 .stack-card__body {
@@ -817,6 +833,39 @@ body {
 
 .ds-stage--summary-reserve {
   --stage-bottom-reserve: var(--stage-summary-reserve, 88px);
+}
+
+/* ---------- DESCRIPTION: body top supplementary text ---------- */
+/* Sits as the first child of .ds-stage. Provides a one-line description
+   that supplements the header main message. flex-shrink:0 ensures the
+   main content below never gets compressed.
+   Override with --description-fs (font-size), --description-color. */
+.ds-description {
+  flex-shrink: 0;
+  width: 100%;
+  padding: var(--sp-8) var(--sp-16);
+  background: var(--surface-mist);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  min-height: 36px;
+}
+
+.ds-description__text {
+  margin: 0;
+  color: var(--description-color, var(--ink-68));
+  font-size: var(--description-fs, var(--fs-14));
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+/* Variant: no fill, bottom-border separator instead */
+.ds-description--inline {
+  background: transparent;
+  padding-left: 0;
+  padding-right: 0;
+  border-bottom: 1px solid var(--ink-08);
+  border-radius: 0;
 }
 
 /* ---------- GRID LAYOUTS ---------- */
@@ -971,11 +1020,11 @@ body {
 .ds-card {
   display: flex;
   flex-direction: column;
-  gap: var(--card-gap, var(--sp-12));
+  gap: var(--card-gap, var(--space-stack-title-body));
   padding: var(--pad-card-md);
   background: var(--surface-card);
   border: 1px solid var(--ink-08);
-  border-radius: 8px;
+  border-radius: 6px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 }
 
@@ -1032,7 +1081,17 @@ body {
 }
 
 .ds-card__head {
-  /* slot: managed by parent gap */
+  display: flex;
+  flex-direction: column;
+  gap: var(--card-head-gap, var(--space-stack-lead-title));
+}
+
+.ds-card__head > * {
+  margin: 0;
+}
+
+.ds-card__head--loose {
+  --card-head-gap: var(--space-stack-lead-title-loose);
 }
 
 .ds-card__body {
@@ -1045,7 +1104,7 @@ body {
 .ds-panel {
   display: flex;
   flex-direction: column;
-  gap: var(--panel-gap, var(--sp-16));
+  gap: var(--panel-gap, var(--space-stack-title-body));
   padding: var(--pad-card-lg);
   background: var(--surface-card);
   border: 1px solid var(--ink-08);
@@ -1068,7 +1127,7 @@ body {
 .ds-panel-flat {
   display: flex;
   flex-direction: column;
-  gap: var(--panel-gap, var(--sp-16));
+  gap: var(--panel-gap, var(--space-stack-title-body));
   padding: var(--pad-card-lg);
   background: var(--surface-mist);
   border: 1px solid var(--ink-08);
@@ -1084,7 +1143,7 @@ body {
 .ds-panel-inverse {
   display: flex;
   flex-direction: column;
-  gap: var(--panel-gap, var(--sp-16));
+  gap: var(--panel-gap, var(--space-stack-title-body));
   padding: var(--pad-card-lg);
   background: var(--ink-100);
   color: var(--surface-white);
@@ -1105,10 +1164,42 @@ body {
   text-transform: uppercase;
 }
 
+.ds-panel__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--panel-head-gap, var(--space-stack-lead-title));
+}
+
+.ds-panel__head > * {
+  margin: 0;
+}
+
+.ds-panel__head--loose {
+  --panel-head-gap: var(--space-stack-lead-title-loose);
+}
+
 .ds-panel__title {
   color: var(--ink-100);
   font-size: var(--fs-16);
   font-weight: 700;
+  line-height: 1.45;
+}
+
+.ds-panel__title--lg {
+  font-size: var(--fs-22);
+  font-weight: 900;
+}
+
+.ds-panel__title--xl {
+  font-size: var(--fs-24);
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+.ds-panel__sub {
+  color: var(--ink-68);
+  font-size: var(--fs-14);
+  line-height: 1.68;
 }
 
 /* ---------- ROW LIST (inside panels) ---------- */

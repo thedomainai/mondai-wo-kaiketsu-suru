@@ -3,38 +3,40 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Deep Dive</title>
+<title>良い仮説は明確・迅速・可動</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
 <style>
-.stage{position:absolute;left:80px;top:164px;width:1120px;display:flex;flex-direction:column;gap:18px}.kicker{margin:0;color:var(--accent-purple);font-size:15px;font-weight:900;line-height:1.55}.grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px}.panel{min-height:330px;padding:24px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white)}.slide-container .panel__title{margin:0 0 24px;font-size:24px;font-weight:900;line-height:1.4}.items{display:grid;gap:12px}.item{padding-top:12px;border-top:1px solid var(--ink-08)}.item:first-child{padding-top:0;border-top:none}.item p{margin:0}.item__head{margin-bottom:4px;font-size:16px;font-weight:900;line-height:1.55}.item__text{color:rgba(0,0,0,.7);font-size:14px;line-height:1.72}.rule{margin-top:16px;padding:14px 18px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white)}.rule p{margin:0;font-size:17px;font-weight:900;line-height:1.65}
+.stage{position:absolute;left:80px;top:160px;width:1120px;display:flex;flex-direction:column;gap:18px}.kicker{margin:0;color:var(--accent-purple);font-size:15px;font-weight:900;line-height:1.55}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.card{min-height:320px;padding:22px;border:1px solid var(--ink-12);border-radius:8px;background:var(--surface-white);display:flex;flex-direction:column;gap:var(--space-stack-title-body)}.card--strong{border-width:2px;border-color:var(--ink-82)}.slide-container .card__num,.slide-container .card__title{margin:0}.slide-container .card__num{color:rgba(0,0,0,.28);font-family:"Space Grotesk",sans-serif;font-size:14px;font-weight:900;letter-spacing:2px}.slide-container .card__title{font-size:24px;font-weight:900;line-height:1.4}.points{display:grid;gap:18px}.points p{margin:0;font-size:15px;font-weight:900;line-height:1.6}.points span{display:block;margin-top:6px;color:var(--ink-68);font-size:13px;font-weight:400;line-height:1.6}.example{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:stretch}.example__box{padding:16px 18px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white)}.example__box--strong{border-width:2px;border-color:var(--ink-82)}.slide-container .example__label{margin:0 0 8px;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.slide-container .example__text{margin:0;font-size:17px;font-weight:900;line-height:1.55}
 </style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第07章 仮説を構築する" data-header-title="Deep Dive" data-header-subtitle="知見がないときは、潜って種を拾う" data-footer="standard" data-footer-page="56">
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第07章 仮説を構築する" data-header-title="良い仮説は明確・迅速・可動" data-header-subtitle="良い仮説の条件" data-footer="standard" data-footer-page="56">
   <div class="stage">
-    <p class="kicker">知見がないまま机上でこねても限界がある。まずは情報の海に潜り、感じた違和感や共通項から仮説の種を拾う。</p>
+    <p class="kicker">良い仮説は、当たりそうに見える仮説ではない。判定ができて、すぐ確かめに行ける仮説である。</p>
     <div class="grid">
-      <section class="panel">
-        <p class="panel__title">潜るときに見るもの</p>
-        <div class="items">
-          <div class="item"><p class="item__head">論点は片隅に置く</p><p class="item__text">最初から正解を探しにいかず、まず何が起きているかを浴びる。</p></div>
-          <div class="item"><p class="item__head">素朴な感情を拾う</p><p class="item__text">面白い、変だ、うまくいっていない、といった違和感は仮説の起点になる。</p></div>
-          <div class="item"><p class="item__head">似ているものを横に並べる</p><p class="item__text">成功例、失敗例、競合、他業界を並べると、構造の差が見えやすくなる。</p></div>
-          <div class="item"><p class="item__head">予想外の接続点を探す</p><p class="item__text">一見関係ない事実同士がつながる瞬間に、仮説の骨格が生まれる。</p></div>
+      <section class="card">
+        <div class="stack-card__head"><p class="card__num">01</p><p class="card__title">判定基準が具体的かつ簡潔である</p></div>
+        <div class="points">
+          <p>誰について、何をもってそう言うのかが一文で追える<span>主語と判定基準が曖昧だと、議論も検証もぶれる。</span></p>
+          <p>抽象語ではなく、比較対象や基準に落ちている<span>「人気」「高い」「良い」ではなく、何を見れば判定できるかが分かる。</span></p>
+          <p>長く説明しなくても要点が伝わる<span>仮説そのものが簡潔であるほど、検証の起点として使いやすい。</span></p>
         </div>
       </section>
-      <section class="panel">
-        <p class="panel__title">制御を失わないためのルール</p>
-        <div class="items">
-          <div class="item"><p class="item__head">時間を切る</p><p class="item__text">無限に潜らない。今日は何を拾うかを決めて潜る。</p></div>
-          <div class="item"><p class="item__head">戻る場所を持つ</p><p class="item__text">論点、仮説、前提のどれに効く情報なのかを都度メモしておく。</p></div>
-          <div class="item"><p class="item__head">途中でも仮の答えを置く</p><p class="item__text">情報が揃い切るのを待たず、いま言える筋を一度まとめる。</p></div>
+      <section class="card card--strong">
+        <div class="stack-card__head"><p class="card__num">02</p><p class="card__title">検証が具体的かつ容易である</p></div>
+        <div class="points">
+          <p>必要なデータや観察対象が取れる<span>手に入らない情報に依存している時点で、実務上は使いにくい。</span></p>
+          <p>どう確かめるかが具体的である<span>データ、観察、インタビュー、実験のどれで見るかが決まっている。</span></p>
+          <p>時間・コスト・体制の中で回せる<span>検証の実現性がない仮説は、正しくても前に進めない。</span></p>
         </div>
       </section>
     </div>
-    <div class="rule"><p>Deep Dive は「調べ続ける」ことではない。仮説の種を拾い、次の一手に変えるための探索である。</p></div>
+    <div class="example">
+      <div class="example__box"><p class="example__label">Bad</p><p class="example__text">若者に人気がある商品だと思う</p></div>
+      <div class="example__box example__box--strong"><p class="example__label">Better</p><p class="example__text">20代の購入比率が全体平均より明確に高い</p></div>
+    </div>
   </div>
 </div>
 </body>

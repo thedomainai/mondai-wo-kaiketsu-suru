@@ -73,12 +73,12 @@ Custom slide でも背景はこの family に寄せる。新規 background style
 
 ### Vertical rhythm
 
-- `--space-stack-lead-title: 12px`
-- `--space-stack-title-body: 16px`
-- `--space-stack-lead-title-loose: 24px`
-- `--space-stack-title-body-loose: 36px`
+- `--space-stack-lead-title: 6px`
+- `--space-stack-title-body: 12px`
+- `--space-stack-lead-title-loose: 36px`
+- `--space-stack-title-body-loose: 24px`
 
-lead-in (`eyebrow / kicker / label / num`) → title → body の距離は、この 4 token を SSOT にする。shared header / divider / center-title / agenda も別 token を増やさず、この scale に乗せる。局所修正で `padding-bottom` や生の `8px` を足して吸収しない。
+lead-in (`eyebrow / kicker / label / num`) → title → body の距離は、この 4 token を SSOT にする。`stack-card` / `ds-card__head` / `ds-panel__head` の shared slot もこの scale に乗せる。局所修正で `padding-bottom` や生の `8px` を足して吸収しない。
 
 ### Optical gap（廃止）
 
@@ -168,6 +168,7 @@ optical gap 指示は受け入れない。「見た目で 48px」のような要
 | Class | Role |
 |---|---|
 | `.ds-stage` | Main content area below header. Override with `--stage-top`, `--stage-gap` |
+| `.ds-description` / `.ds-description__text` | Body top description strip. First child of `.ds-stage`. `--description-fs` (default `--fs-14`), `--description-color` (default `--ink-68`). Variant: `--inline` (no fill, bottom-border). |
 | `.ds-stage--summary-reserve` | Reserve a fixed bottom zone for a docked conclusion / summary above the footer |
 | `.ds-grid` `.ds-grid--2..5` | Grid layouts. Override with `--ds-grid-gap` |
 | `.ds-stack` | Vertical stack. Child margins are reset; spacing is owned by parent `gap` via `--stack-gap` |
@@ -178,9 +179,12 @@ optical gap 指示は受け入れない。「見た目で 48px」のような要
 | `.ds-body` / `.ds-body--sm` / `.ds-body--lg` | Body text (15/13/16px) |
 | `.ds-number` | Large index number (Space Grotesk) |
 | `.ds-kicker` | Accent-colored statement (purple, 15px bold) |
-| `.ds-card` / `.ds-card--strong` / `.ds-card--flat` | Card component (flex column + gap) |
-| `.ds-panel` / `.ds-panel--strong` | Panel with slot structure: label → title → body. Internal gap: `--panel-gap` (default: --sp-16) |
-| `.ds-panel__label` / `.ds-panel__title` | Panel slots (label: eyebrow, title: heading) |
+| `.ds-card` / `.ds-card--strong` / `.ds-card--flat` | Card component (flex column + gap). Head/body gap: `--card-gap` (default: `--space-stack-title-body`) |
+| `.ds-card__head` / `.ds-card__head--loose` | Card head stack. eyebrow → title の距離を shared vertical-rhythm token で管理する |
+| `.ds-card__body` | Card body slot. head の下に置く本文領域 |
+| `.ds-panel` / `.ds-panel--strong` | Panel with slot structure: head → body. Head/body gap: `--panel-gap` (default: `--space-stack-title-body`) |
+| `.ds-panel__head` / `.ds-panel__head--loose` | Panel head stack. label → title → sub の距離を shared vertical-rhythm token で管理する |
+| `.ds-panel__label` / `.ds-panel__title` / `.ds-panel__sub` | Panel slots (label: eyebrow, title: heading, sub: supporting copy) |
 | `.ds-rows` / `.ds-row` | Row list inside panels. Row: grid 2-col (key + value). `flex:1` for equal height distribution |
 | `.ds-row--center` / `.ds-rows--center` | Row vertical alignment: center (default: start/top) |
 | `.ds-comparison` | Parallel panels with subgrid row matching. `--panel-slots`, `--row-count` for track control |

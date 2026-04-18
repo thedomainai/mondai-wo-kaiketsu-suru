@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>原則3：モデル（式）で考える</title>
+<title>式で分けると動かす変数が見える</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
 <style>
 .formula-grid{position:absolute;left:80px;top:186px;width:1120px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.formula-card{height:390px;padding:22px 20px 16px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white);display:flex;flex-direction:column;gap:14px}
+.formula-card{height:390px;padding:22px 20px 16px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white);display:flex;flex-direction:column;gap:var(--space-stack-title-body)}
 .formula-card__eyebrow{margin:0;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px}
 .formula-card__title{margin:0;font-size:24px;font-weight:900;line-height:1.4}
 .formula-card__formula{margin:0;padding:12px 14px;border-radius:8px;background:var(--ink-04);font-size:15px;font-weight:900;line-height:1.6}
@@ -39,11 +39,10 @@
 </style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第06章 論点を分解する" data-header-title="原則3：モデル（式）で考える" data-header-subtitle="式で分解すると、動かすべき変数が見える" data-footer="standard" data-footer-page="47">
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第06章 論点を分解する" data-header-title="式で分けると動かす変数が見える" data-header-subtitle="原則3 モデル分解" data-footer="standard" data-footer-page="47">
 <div class="formula-grid">
 <section class="formula-card">
-<p class="formula-card__eyebrow">Multiply</p>
-<p class="formula-card__title">掛け算の例</p>
+<div class="stack-card__head"><p class="formula-card__eyebrow">Multiply</p><p class="formula-card__title">掛け算の例</p></div>
 <p class="formula-card__formula">売上 = 客数 × 客単価</p>
 <div class="formula-card__body">
 <div class="sales-tree">
@@ -56,8 +55,7 @@
 </section>
 
 <section class="formula-card">
-<p class="formula-card__eyebrow">Addition</p>
-<p class="formula-card__title">足し算の例</p>
+<div class="stack-card__head"><p class="formula-card__eyebrow">Addition</p><p class="formula-card__title">足し算の例</p></div>
 <p class="formula-card__formula">集客数 = 自然流入 + 広告流入 + 紹介流入</p>
 <div class="formula-card__body">
 <div class="sum-model">
@@ -75,8 +73,7 @@
 </section>
 
 <section class="formula-card">
-<p class="formula-card__eyebrow">Subtraction</p>
-<p class="formula-card__title">引き算の例</p>
+<div class="stack-card__head"><p class="formula-card__eyebrow">Subtraction</p><p class="formula-card__title">引き算の例</p></div>
 <p class="formula-card__formula">粗利 = 売上 - 原価</p>
 <div class="formula-card__body">
 <div class="diff-model">

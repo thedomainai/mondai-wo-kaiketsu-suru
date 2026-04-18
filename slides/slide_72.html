@@ -1,7 +1,45 @@
 <!DOCTYPE html>
-<html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>コミュニケーションのTips</title><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/><link href="./slides.css" rel="stylesheet"/><script defer src="./slides.js"></script>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>誤解は理解・判断・行動を止める</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
+<link href="./slides.css" rel="stylesheet"/>
+<script defer src="./slides.js"></script>
 <style>
-.layers-wrap{position:absolute;left:80px;top:178px;width:1120px;display:flex;flex-direction:column;gap:22px}.layers-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}.layer-card{min-height:356px;padding:22px 20px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white);display:grid;grid-template-rows:auto auto 1fr auto;row-gap:16px}.layer-card__eyebrow{margin:0;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.layer-card__head{margin:0;font-size:25px;font-weight:900;line-height:1.42}.layer-card__body{display:flex;flex-direction:column;gap:16px;font-size:15px;line-height:1.75;color:rgba(0,0,0,.7)}.layer-card__body p{margin:0}.layer-card__foot{min-height:58px;margin:0;padding-top:16px;border-top:1px solid var(--ink-08);font-size:14px;font-weight:700;line-height:1.7;color:rgba(0,0,0,.62)}.layers-summary{padding:18px 22px;border-top:1px solid var(--ink-10)}.layers-summary p{margin:0;font-size:18px;font-weight:900;line-height:1.8}
-</style></head><body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第09章 問題解決におけるコミュニケーション" data-header-title="コミュニケーションのTips" data-header-subtitle="誤解は表現・論理・判断の3層で起きる" data-footer="standard" data-footer-page="72"><div class="layers-wrap"><div class="layers-grid"><section class="layer-card"><p class="layer-card__eyebrow">表現</p><p class="layer-card__head">同じ言葉でも、相手の頭の中の像はずれる</p><div class="layer-card__body"><p><strong>典型的なズレ</strong><br/>抽象語の放置 / 同じ言葉でも頭に浮かぶ情景が違う</p><p><strong>先回り</strong><br/>定義する、数値化する、具体例を置く</p></div><p class="layer-card__foot">相手が同じものを見ている状態を先につくる。</p></section><section class="layer-card"><p class="layer-card__eyebrow">論理</p><p class="layer-card__head">結論までの階段が抜けると、相手は追えない</p><div class="layer-card__body"><p><strong>典型的なズレ</strong><br/>前提共有の不足 / 中間ステップの省略 / 論理の飛躍</p><p><strong>先回り</strong><br/>前提を明示する、なぜそう言えるかを階段状に置く</p></div><p class="layer-card__foot">相手が「なるほど、そうつながるのか」と追える形にする。</p></section><section class="layer-card"><p class="layer-card__eyebrow">判断</p><p class="layer-card__head">判断材料が足りないと、納得しても決められない</p><div class="layer-card__body"><p><strong>典型的なズレ</strong><br/>相手が本当に気にする論点に答えていない / 反論や懸念が未処理</p><p><strong>先回り</strong><br/>懸念、反論、トレードオフ、残論点を先に出す</p></div><p class="layer-card__foot">相手が「この条件なら判断できる」と思える材料を先に揃える。</p></section></div><div class="layers-summary"></div></div></div></body>
+.stage{position:absolute;left:80px;top:156px;width:1120px;display:flex;flex-direction:column;gap:20px}
+.lead{margin:0;font-size:17px;font-weight:700;line-height:1.85;color:#4a3f2f}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{min-height:292px;padding:22px 20px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white);display:flex;flex-direction:column;gap:var(--space-stack-title-body)}
+.card__label,.card__title,.card__text{margin:0}
+.card__label{color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+.card__title{font-size:24px;font-weight:900;line-height:1.4;color:var(--soft-black)}
+.card__text{color:rgba(0,0,0,.72);font-size:14px;line-height:1.8}
+.summary{padding-top:16px;border-top:1px solid var(--ink-10)}
+.summary p{margin:0;font-size:17px;font-weight:900;line-height:1.7;color:var(--soft-black)}
+</style>
+</head>
+<body>
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第09章 問題解決におけるコミュニケーション" data-header-title="誤解は理解・判断・行動を止める" data-header-subtitle="誤解がなぜいけないか" data-footer="standard" data-footer-page="72">
+  <div class="stage">
+    <p class="lead">問題解決では、正しいことを考えただけでは足りない。<strong>誤解が残ると、相手は正しく理解できず、正しく判断できず、正しく動けない。</strong></p>
+    <div class="grid">
+      <section class="card">
+        <div class="stack-card__head"><p class="card__label">Understanding</p><h2 class="card__title">理解がずれる</h2></div>
+        <p class="card__text">同じ言葉でも、相手の前提が違えば別の意味で受け取られる。出発点がずれると、その後の議論も全部ずれる。</p>
+      </section>
+      <section class="card">
+        <div class="stack-card__head"><p class="card__label">Decision</p><h2 class="card__title">判断がずれる</h2></div>
+        <p class="card__text">結論や根拠が相手の判断軸に合っていないと、納得してもらえない。あるいは別の基準で判断されてしまう。</p>
+      </section>
+      <section class="card">
+        <div class="stack-card__head"><p class="card__label">Action</p><h2 class="card__title">行動が止まる</h2></div>
+        <p class="card__text">ネクストアクションや前提条件が曖昧だと、聞き終わったあとに誰も動けない。解が現場で動作しない。</p>
+      </section>
+    </div>
+    <div class="summary"><p>誤解がいけないのは、相手が「わかった気になる」だけで終わり、問題解決が前に進まなくなるからである。</p></div>
+  </div>
+</div>
+</body>
 </html>

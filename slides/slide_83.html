@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>同階層には同種の答えだけを置く</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
+<link href="./slides.css" rel="stylesheet"/>
+<script defer src="./slides.js"></script>
+</head>
+<body>
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="補足 ロジックツリーのレビュー" data-header-title="同階層には同種の答えだけを置く" data-header-subtitle="失敗1 並列化ミス" data-footer="standard" data-footer-page="83">
+  <div class="ds-stage" style="--stage-top:160px;--stage-gap:var(--sp-12)">
+    <section class="ds-summary--box" style="display:grid;grid-template-columns:1fr auto;gap:var(--sp-16);align-items:center">
+      <div style="display:flex;flex-direction:column;gap:var(--sp-8)">
+        <p class="ds-eyebrow">Case Question</p>
+        <p class="ds-body--lg ds-black ds-bold" style="line-height:1.65">「美味しいハンバーガーをつくるにはどうすべきか」を分解するとき、同列の枝は必ず同じ種類の答えでそろえる。</p>
+      </div>
+      <div class="ds-badge ds-badge--dark" style="padding:var(--sp-8) var(--sp-12);font-size:var(--fs-12)">NG例で確認</div>
+    </section>
+
+    <div class="ds-grid ds-grid--3" style="--ds-grid-gap:var(--sp-20);align-items:stretch">
+      <article class="ds-card" style="padding:var(--sp-16);display:grid;grid-template-rows:auto 1fr auto;gap:var(--sp-12)">
+        <div style="display:flex;flex-direction:column;gap:var(--sp-4)">
+          <p class="ds-eyebrow">01</p>
+          <p class="ds-title-sm ds-black" style="line-height:1.45">内訳関係の混在</p>
+        </div>
+        <div style="position:relative;min-height:186px;padding:var(--sp-12);border-radius:var(--sp-8);background:var(--surface-mist)">
+          <div style="position:absolute;left:50%;top:var(--sp-16);transform:translateX(-50%);width:164px;padding:var(--sp-8);border-radius:var(--sp-8);background:var(--surface-white);border:2px solid var(--ink-100);font-size:var(--fs-12);font-weight:700;line-height:1.5;text-align:center">美味しいハンバーガー</div>
+          <div style="position:absolute;left:50%;top:60px;transform:translateX(-50%);width:2px;height:var(--sp-20);background:var(--ink-18)"></div>
+          <div style="position:absolute;left:52px;top:80px;width:210px;height:2px;background:var(--ink-18)"></div>
+          <div style="position:absolute;left:52px;top:80px;width:2px;height:var(--sp-20);background:var(--ink-18)"></div>
+          <div style="position:absolute;left:157px;top:80px;width:2px;height:var(--sp-20);background:var(--ink-18)"></div>
+          <div style="position:absolute;left:262px;top:80px;width:2px;height:var(--sp-20);background:var(--ink-18)"></div>
+          <div style="position:absolute;left:var(--sp-16);top:100px;width:72px;padding:var(--sp-8);border-radius:var(--sp-8);background:var(--surface-white);font-size:var(--fs-11);font-weight:700;line-height:1.45;text-align:center">味</div>
+          <div style="position:absolute;left:120px;top:100px;width:74px;padding:var(--sp-8);border-radius:var(--sp-8);background:var(--surface-white);font-size:var(--fs-11);font-weight:700;line-height:1.45;text-align:center">肉の<br/>旨味</div>
+          <div style="position:absolute;left:224px;top:100px;width:74px;padding:var(--sp-8);border-radius:var(--sp-8);background:var(--surface-white);font-size:var(--fs-11);font-weight:700;line-height:1.45;text-align:center">香ばしさ</div>
+        </div>
+        <div style="padding-top:var(--sp-12);display:flex;flex-direction:column;gap:var(--sp-4)">
+          <p class="ds-eyebrow">何がダメか</p>
+          <p class="ds-body--sm ds-ink-68" style="line-height:1.65">「肉の旨味」と「香ばしさ」は「味」の内訳であり、同じ階層の sibling ではない。</p>
+        </div>
+      </article>
+
+      <article class="ds-card" style="padding:var(--sp-16);display:grid;grid-template-rows:auto 1fr auto;gap:var(--sp-12)">
+        <div style="display:flex;flex-direction:column;gap:var(--sp-4)">
+          <p class="ds-eyebrow">02</p>
+          <p class="ds-title-sm ds-black" style="line-height:1.45">結果と要因の混在</p>
+        </div>
+        <div style="position:relative;min-height:186px;padding:var(--sp-12);border-radius:var(--sp-8);background:var(--surface-mist)">
+          <div style="position:absolute;left:50%;top:var(--sp-16);transform:translateX(-50%);width:164px;padding:var(--sp-8);border-radius:var(--sp-8);background:var(--surface-white);border:2px solid var(--ink-100);font-size:var(--fs-12);font-weight:700;line-height:1.5;text-align:center">美味しいハンバーガー</div>
+          <div style="position:absolute;left:50%;top:60px;transform:translateX(-50%);width:2px;height:var(--sp-20);background:var(--ink-18)"></div>
+          <div style="position:absolute;left:52px;top:80px;width:210px;height:2px;background:var(--ink-18)"></div>
+          <div style="position:absolute;left:52px;top:80px;width:2px;height:var(--sp-20);background:var(--ink-18)"></div>
+          <div style="position:absolute;left:157px;top:80px;width:2px;height:var(--sp-20);background:var(--ink-18)"></div>
+          <div style="position:absolute;left:262px;top:80px;width:2px;height:var(--sp-20);background:var(--ink-18)"></div>
+          <div style="position:absolute;left:var(--sp-16);top:100px;width:72px;padding:var(--sp-8);border-radius:var(--sp-8);background:var(--surface-white);font-size:var(--fs-11);font-weight:700;line-height:1.45;text-align:center">味</div>
+          <div style="position:absolute;left:120px;top:100px;width:74px;padding:var(--sp-8);border-radius:var(--sp-8);background:var(--surface-white);font-size:var(--fs-11);font-weight:700;line-height:1.45;text-align:center">調理<br/>方法</div>
+          <div style="position:absolute;left:224px;top:100px;width:74px;padding:var(--sp-8);border-radius:var(--sp-8);background:var(--surface-white);font-size:var(--fs-11);font-weight:700;line-height:1.45;text-align:center">素材</div>
+        </div>
+        <div style="padding-top:var(--sp-12);display:flex;flex-direction:column;gap:var(--sp-4)">
+          <p class="ds-eyebrow">何がダメか</p>
+          <p class="ds-body--sm ds-ink-68" style="line-height:1.65">「味」は結果で、「調理方法」と「素材」はその結果を決める要因なので、比較対象がずれている。</p>
+        </div>
+      </article>
+
+      <article class="ds-card" style="padding:var(--sp-16);display:grid;grid-template-rows:auto 1fr auto;gap:var(--sp-12)">
+        <div style="display:flex;flex-direction:column;gap:var(--sp-4)">
+          <p class="ds-eyebrow">03</p>
+          <p class="ds-title-sm ds-black" style="line-height:1.45">分類軸の混在</p>
+        </div>
+        <div style="position:relative;min-height:186px;padding:var(--sp-12);border-radius:var(--sp-8);background:var(--surface-mist)">
+          <div style="position:absolute;left:50%;top:var(--sp-16);transform:translateX(-50%);width:164px;padding:var(--sp-8);border-radius:var(--sp-8);background:var(--surface-white);border:2px solid var(--ink-100);font-size:var(--fs-12);font-weight:700;line-height:1.5;text-align:center">美味しいハンバーガー</div>
+          <div style="position:absolute;left:50%;top:60px;transform:translateX(-50%);width:2px;height:var(--sp-20);background:var(--ink-18)"></div>
+          <div style="position:absolute;left:52px;top:80px;width:210px;height:2px;background:var(--ink-18)"></div>
+          <div style="position:absolute;left:52px;top:80px;width:2px;height:var(--sp-20);background:var(--ink-18)"></div>
+          <div style="position:absolute;left:157px;top:80px;width:2px;height:var(--sp-20);background:var(--ink-18)"></div>
+          <div style="position:absolute;left:262px;top:80px;width:2px;height:var(--sp-20);background:var(--ink-18)"></div>
+          <div style="position:absolute;left:var(--sp-16);top:100px;width:72px;padding:var(--sp-8);border-radius:var(--sp-8);background:var(--surface-white);font-size:var(--fs-11);font-weight:700;line-height:1.45;text-align:center">パティ</div>
+          <div style="position:absolute;left:120px;top:100px;width:74px;padding:var(--sp-8);border-radius:var(--sp-8);background:var(--surface-white);font-size:var(--fs-11);font-weight:700;line-height:1.45;text-align:center">焼き方</div>
+          <div style="position:absolute;left:224px;top:100px;width:74px;padding:var(--sp-8);border-radius:var(--sp-8);background:var(--surface-white);font-size:var(--fs-11);font-weight:700;line-height:1.45;text-align:center">ジュー<br/>シーさ</div>
+        </div>
+        <div style="padding-top:var(--sp-12);display:flex;flex-direction:column;gap:var(--sp-4)">
+          <p class="ds-eyebrow">何がダメか</p>
+          <p class="ds-body--sm ds-ink-68" style="line-height:1.65">「パティ」は構成要素、「焼き方」は工程、「ジューシーさ」は評価結果で、分類軸がばらばらである。</p>
+        </div>
+      </article>
+    </div>
+
+    <section class="ds-summary" style="padding:var(--sp-8) var(--sp-16);border-radius:var(--sp-8);background:var(--surface-card)">
+      <p class="ds-body ds-black ds-bold">見抜く問い: その3つは、本当に「同じ問いに対する同種の答え」になっているか。</p>
+    </section>
+  </div>
+</div>
+</body>
+</html>

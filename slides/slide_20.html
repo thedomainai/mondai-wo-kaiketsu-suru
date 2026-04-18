@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>再現性の3原則</title>
+<title>再現性は正しく外し続ける力</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet"/>
 <link href="./slides.css" rel="stylesheet"/>
 <script defer src="./slides.js"></script>
@@ -14,7 +14,7 @@
 .failure-pill{padding:9px 14px;border:1px solid var(--ink-10);border-radius:999px;background:rgba(0,0,0,.03);font-size:14px;font-weight:700;line-height:1.4}
 .failure-pill--alert{border-color:rgba(176,58,58,.22);background:rgba(176,58,58,.06);color:var(--accent-red)}
 .principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.card{min-height:268px;padding:18px 18px 16px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white);display:grid;grid-template-rows:auto auto auto 1fr auto;row-gap:10px}
+.card{min-height:268px;padding:18px 18px 16px;border:1px solid var(--ink-10);border-radius:8px;background:var(--surface-white);display:grid;grid-template-rows:auto auto auto 1fr auto;row-gap:var(--space-stack-title-body)}
 .card__badge{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:var(--ink-100);color:var(--surface-white);font-family:"Space Grotesk",sans-serif;font-size:16px;font-weight:900;line-height:1}
 .card__eyebrow{margin:0;color:var(--ink-34);font-family:"Space Grotesk",sans-serif;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
 .card__head{margin:0;font-size:20px;font-weight:900;line-height:1.45}
@@ -29,7 +29,7 @@
 </style>
 </head>
 <body>
-<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第02章 前提・背景" data-header-title="再現性の3原則" data-header-subtitle="再現性とは、正しく間違え続けられること" data-footer="standard" data-footer-page="20">
+<div class="slide-container slide-theme-paper" data-slide-kind="content" data-header-chapter="第02章 前提・背景" data-header-title="再現性は正しく外し続ける力" data-header-subtitle="再現性の3原則" data-footer="standard" data-footer-page="20">
 <div class="stage">
 <section class="failure-strip">
 <p class="failure-strip__label">失敗の定義</p>
@@ -41,8 +41,7 @@
 <section class="principles">
 <article class="card">
 <div class="card__badge">01</div>
-<p class="card__eyebrow">Principle 01</p>
-<p class="card__head">できる限り早く / 小さく、<br/>誤りを認識する</p>
+<div class="stack-card__head"><p class="card__eyebrow">Principle 01</p><p class="card__head">できる限り早く / 小さく、<br/>誤りを認識する</p></div>
 <p class="card__body">1ステップずつ進めば、どこで外れたかが残る。失敗を早く小さく認識できるほど、学習コストは下がる。</p>
 <div class="mini">
 <svg aria-hidden="true" viewBox="0 0 300 92" xmlns="http://www.w3.org/2000/svg">
@@ -60,8 +59,7 @@
 
 <article class="card">
 <div class="card__badge">02</div>
-<p class="card__eyebrow">Principle 02</p>
-<p class="card__head">できる限り早く、<br/>適切な場所へ戻る</p>
+<div class="stack-card__head"><p class="card__eyebrow">Principle 02</p><p class="card__head">できる限り早く、<br/>適切な場所へ戻る</p></div>
 <p class="card__body">戻る場所がわからないと探索は迷走する。誤りを検知した階層で、同じ親を持つ別の枝へ移る。</p>
 <div class="mini">
 <svg aria-hidden="true" viewBox="0 0 300 92" xmlns="http://www.w3.org/2000/svg">
@@ -83,8 +81,7 @@
 
 <article class="card">
 <div class="card__badge">03</div>
-<p class="card__eyebrow">Principle 03</p>
-<p class="card__head">致命的な失敗を<br/>避ける</p>
+<div class="stack-card__head"><p class="card__eyebrow">Principle 03</p><p class="card__head">致命的な失敗を<br/>避ける</p></div>
 <p class="card__body">再現性は、無闇に当て続けて成功することではない。時間切れ・リソース切れ・取り返しのつかない失敗を避けながら、繰り返せる形で進むこと。</p>
 <div class="mini">
 <svg aria-hidden="true" viewBox="0 0 300 92" xmlns="http://www.w3.org/2000/svg">

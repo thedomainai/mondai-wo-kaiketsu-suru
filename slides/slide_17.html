@@ -30,6 +30,57 @@
   font-weight:900;
   line-height:1.3;
 }
+
+.p17-flow{
+  margin:6px auto 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:nowrap;
+  width:max-content;
+  max-width:980px;
+}
+
+.p17-flow__label{
+  color:rgba(0,0,0,.54);
+  font-size:13px;
+  font-weight:700;
+  line-height:1.4;
+  letter-spacing:0;
+  white-space:nowrap;
+}
+
+.p17-flow__arrow{
+  position:relative;
+  width:18px;
+  height:10px;
+  flex:0 0 auto;
+}
+
+.p17-flow__arrow::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:50%;
+  width:11px;
+  height:1.5px;
+  background:rgba(0,0,0,.34);
+  transform:translateY(-50%);
+}
+
+.p17-flow__arrow::after{
+  content:"";
+  position:absolute;
+  right:0;
+  top:50%;
+  width:0;
+  height:0;
+  border-top:5px solid transparent;
+  border-bottom:5px solid transparent;
+  border-left:7px solid rgba(0,0,0,.34);
+  transform:translateY(-50%);
+}
 </style>
 </head>
 <body>
@@ -38,7 +89,18 @@
     <div class="inner" style="max-width:980px;">
       <p class="chapter">QUESTION</p>
       <p class="title">問題解決力とは</p>
-      <p class="subtitle">ゴールを解像度高く定義or理解し、<br/>正しく問いを設定し、<br/>適切に分解し、<br/>筋の良い仮説を構築し、<br/>早く/的確に検証できる力</p>
+      <p class="subtitle">ゴールを解像度高く定義or理解し、<br>適確な解を導き出す能力</p>
+      <div class="p17-flow" aria-label="問題解決の流れ">
+        <span class="p17-flow__label">ゴールの定義/理解</span>
+        <span class="p17-flow__arrow" aria-hidden="true"></span>
+        <span class="p17-flow__label">論点の定義</span>
+        <span class="p17-flow__arrow" aria-hidden="true"></span>
+        <span class="p17-flow__label">論点の分解</span>
+        <span class="p17-flow__arrow" aria-hidden="true"></span>
+        <span class="p17-flow__label">仮説構築</span>
+        <span class="p17-flow__arrow" aria-hidden="true"></span>
+        <span class="p17-flow__label">仮説検証</span>
+      </div>
     </div>
   </div>
 </div>
